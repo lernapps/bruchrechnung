@@ -145,10 +145,19 @@ function toggle(i: number): void {
   </div>
 </template>
 <style scoped>
+button,
+input {
+  font: inherit;
+}
+
+input[type="range"] {
+  accent-color: var(--page-accent);
+}
+
 .tools {
   margin: 1rem 0;
   padding: 1rem;
-  border: 1px solid var(--vp-c-divider, #777);
+  border: 1px solid var(--page-border);
   border-radius: 8px;
 }
 .tools label {
@@ -162,13 +171,13 @@ function toggle(i: number): void {
   border: 1px solid currentColor;
   border-radius: 4px;
   color: inherit;
-  background: var(--vp-c-bg, #fff);
+  background: var(--page-background);
 }
 .pieces button {
   min-width: 44px;
   min-height: 44px;
   border: 1px solid currentColor;
-  background: var(--vp-c-bg, #fff);
+  background: var(--page-background);
   color: inherit;
   border-radius: 4px;
 }
@@ -182,7 +191,7 @@ function toggle(i: number): void {
   min-width: 0;
   min-height: 44px;
   border: 1px solid currentColor;
-  background: var(--vp-c-bg, #fff);
+  background: var(--page-background);
   color: inherit;
 }
 .product-model {
@@ -299,7 +308,7 @@ function toggle(i: number): void {
 }
 button:focus-visible,
 input:focus-visible {
-  outline: 3px solid #d39d12;
+  outline: 3px solid var(--page-text);
   outline-offset: 2px;
 }
 </style>

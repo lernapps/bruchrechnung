@@ -37,8 +37,17 @@ const result = computed(() => expanded(factor.value));
   </div>
 </template>
 <style scoped>
+button,
+input {
+  font: inherit;
+}
+
+input[type="range"] {
+  accent-color: var(--page-accent);
+}
+
 .cake-lab {
-  border: 1px solid var(--vp-c-divider, #777);
+  border: 1px solid var(--page-border);
   padding: 1rem;
   border-radius: 8px;
 }
@@ -65,7 +74,7 @@ const result = computed(() => expanded(factor.value));
   max-width: 220px;
 }
 path {
-  fill: var(--vp-c-bg, #fff);
+  fill: var(--page-background);
   stroke: currentColor;
   stroke-width: 0.6;
 }

@@ -36,6 +36,15 @@ const total = computed(() => n.value * 2);
   </div>
 </template>
 <style scoped>
+button,
+input {
+  font: inherit;
+}
+
+input[type="range"] {
+  accent-color: var(--page-accent);
+}
+
 label {
   display: block;
   margin: 1rem 0;

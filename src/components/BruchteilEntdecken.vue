@@ -55,8 +55,13 @@ function toggle(i: number): void {
   </div>
 </template>
 <style scoped>
+button,
+input {
+  font: inherit;
+}
+
 .part-lab {
-  border: 1px solid var(--vp-c-divider, #777);
+  border: 1px solid var(--page-border);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -81,10 +86,12 @@ function toggle(i: number): void {
 .part-lab button {
   min-height: 44px;
   padding: 0.6rem;
-  border: 1px solid currentColor;
-  border-radius: 6px;
-  background: var(--vp-c-bg, #fff);
-  color: inherit;
+  border: 2px solid var(--page-accent);
+  border-radius: 0.375rem;
+  font: inherit;
+  cursor: pointer;
+  background: var(--page-background);
+  color: var(--page-accent);
 }
 .groups button[aria-pressed="true"] {
   background: #16765d;
@@ -95,7 +102,7 @@ function toggle(i: number): void {
   white-space: nowrap;
 }
 button:focus-visible {
-  outline: 3px solid #d39d12;
+  outline: 3px solid var(--page-text);
   outline-offset: 2px;
 }
 </style>

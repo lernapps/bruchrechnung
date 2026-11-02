@@ -68,7 +68,7 @@ const objects = computed(() => props.total ?? props.n);
   gap: 1rem;
 }
 .model {
-  border: 1px solid var(--vp-c-divider, #777);
+  border: 1px solid var(--page-border);
   border-radius: 8px;
   padding: 1rem;
   display: flex;
@@ -90,7 +90,7 @@ svg {
   overflow: visible;
 }
 path {
-  fill: var(--vp-c-bg, #fff);
+  fill: var(--page-background);
   stroke: currentColor;
   stroke-width: 1.5;
 }

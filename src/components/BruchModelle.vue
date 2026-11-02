@@ -102,6 +102,15 @@ function toggle(i: number): void {
   </div>
 </template>
 <style scoped>
+button,
+input {
+  font: inherit;
+}
+
+input[type="range"] {
+  accent-color: var(--page-accent);
+}
+
 svg {
   width: 100%;
   max-width: 30rem;
@@ -114,7 +123,7 @@ svg {
   margin: 1rem auto;
 }
 path {
-  fill: var(--vp-c-bg, #fff);
+  fill: var(--page-background);
   stroke: currentColor;
   stroke-width: 1;
   cursor: pointer;
@@ -123,7 +132,7 @@ path.on {
   fill: #16765d;
 }
 path:focus-visible {
-  stroke: #d39d12;
+  stroke: var(--page-text);
   stroke-width: 3;
   outline: none;
 }
@@ -153,7 +162,7 @@ circle {
   min-width: 24px;
   min-height: 44px;
   border: 1px solid currentColor;
-  background: var(--vp-c-bg, #fff);
+  background: var(--page-background);
   color: inherit;
 }
 .objects button {
@@ -166,7 +175,7 @@ circle {
   color: white;
 }
 button:focus-visible {
-  outline: 3px solid #d39d12;
+  outline: 3px solid var(--page-text);
   outline-offset: 2px;
 }
 label {

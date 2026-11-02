@@ -155,6 +155,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Simulierter Kinder-Audit mit playwright-cli am unveränderten Commit 791940f: 6 Kapitelübersichten, 20 Lernseiten und alle Bedienungsformen tatsächlich besucht. Befunde in outputs/kinderperspektive-pruefung.md (außerhalb des App-Checkout). Danach fehlende/falsche Bedienelement-Texte korrigiert, Methoden eingeführt und statische Darstellungen passend benannt. Browserkontrolle aller 20 Seiten mit/ohne JavaScript, bei 360 px, sowie Flächenzähler bestanden; 13 interaktive und 7 anschauliche Abschnitte. Keine echte Kinderstudie oder Screenreader-Prüfung.
 
+
+- Theme-Regel aus Browserfeedback: Eigene Komponenten verwenden ausschließlich die vorhandenen Explainer-Variablen für Oberflächen, Text, Rahmen, Fokus und Bedienelement-Akzent (`--page-*`). Keine VitePress-Variablen oder weißen Fallback-Hintergründe. Fachliche Diagrammfarben bleiben mit jeweils eigenem kontrastreichem Textpaar und zusätzlicher Markierung verbunden. Hell- und Dunkelmodus prüfen.
+
 ## Explore
 
 <!--

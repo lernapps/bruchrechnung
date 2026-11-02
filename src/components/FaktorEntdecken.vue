@@ -61,8 +61,17 @@ function divide(factor: number): void {
   </div>
 </template>
 <style scoped>
+button,
+input {
+  font: inherit;
+}
+
+input[type="range"] {
+  accent-color: var(--page-accent);
+}
+
 .factor-lab {
-  border: 1px solid var(--vp-c-divider, #777);
+  border: 1px solid var(--page-border);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -85,16 +94,19 @@ function divide(factor: number): void {
   min-width: 44px;
   min-height: 44px;
   padding: 0.4rem 0.7rem;
-  border: 1px solid currentColor;
-  border-radius: 6px;
-  background: var(--vp-c-bg, #fff);
-  color: inherit;
+  border: 2px solid var(--page-accent);
+  border-radius: 0.375rem;
+  background: var(--page-background);
+  color: var(--page-accent);
+  font: inherit;
+  cursor: pointer;
 }
 .factor-lab button[aria-pressed="true"] {
-  outline: 2px solid #16765d;
+  background: var(--page-accent);
+  color: var(--page-on-accent);
 }
 .factor-lab button:focus-visible {
-  outline: 3px solid #d39d12;
+  outline: 3px solid var(--page-text);
   outline-offset: 3px;
 }
 </style>
