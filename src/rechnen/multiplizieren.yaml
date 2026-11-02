@@ -47,7 +47,7 @@
                     ],
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
+                  "ownLabel": "So schreibst du das",
                   "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",

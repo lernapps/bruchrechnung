@@ -44,7 +44,7 @@
                     ],
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
+                  "ownLabel": "So schreibst du das",
                   "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Gegenstände pro Gruppe",

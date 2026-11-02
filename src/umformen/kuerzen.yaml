@@ -46,7 +46,7 @@
                     ],
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
+                  "ownLabel": "So schreibst du das",
                   "toolLabel": "Gib deinen umgeformten Bruch ein. Zähler und Nenner werden durch / getrennt.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",

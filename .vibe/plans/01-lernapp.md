@@ -143,6 +143,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Browserkorrektur Plus/Minus: Die lose Markierreihe bei Plus/Minus wird durch wiederholte, gleich breite Streifen unter dem Regler ersetzt. Die gewählte Unterteilung „Teile pro Ganzem“ liegt dort als gestricheltes Raster über beiden gegebenen Anteilen; darüber stehen die ursprünglichen Streifen zum Vergleich. Ursprüngliche Grenzen und Flächenanteile bleiben sichtbar; kein gemeinsamer Nenner und kein Ergebnis werden automatisch gewählt.
 
+
+- Bruch-Eingabefelder zeigen bei gültiger Schreibweise mit / eine MathML-Vorschau „So schreibst du das“. Sie übernimmt den eigenen Zähler und Nenner unverändert, ohne Kürzung, Rechnung oder Korrektheitsanzeige. Für leere, unvollständige, ungültige und reine natürliche Zahleneingaben entfällt die Vorschau. Gemeinsame Hilfe `BruchEingabe` in Umformen, Grundaufgaben und Rechenarten.
+
 ## Explore
 
 <!--

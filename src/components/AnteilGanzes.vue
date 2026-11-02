@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import BruchEingabe from "./BruchEingabe.vue";
 import { generate, params } from "./BruchAufgaben.ts";
 import { fill } from "./BruchMath.ts";
 const props = defineProps<{
@@ -56,7 +57,7 @@ function toggle(i: number): void {
         >{{ inputLabel
         }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)"
       /></label>
-      <p aria-live="polite">{{ ownLabel }}: {{ input }}</p>
+      <BruchEingabe :value="input" :label="ownLabel" />
     </div>
   </div>
 </template>

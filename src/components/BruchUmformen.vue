@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import BruchEingabe from "./BruchEingabe.vue";
 import { generate, params } from "./BruchAufgaben.ts";
 import { fill, parse } from "./BruchMath.ts";
 import BruchBild from "./BruchBild.vue";
@@ -52,9 +53,10 @@ function update(value: string): void {
       <p>{{ toolLabel }}</p>
       <label
         >{{ inputLabel
-        }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)" /></label
-      ><template v-if="mine && mine.n <= 24 && mine.z <= mine.n * 3"
-        ><p>{{ ownLabel }}</p>
+        }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)"
+      /></label>
+      <BruchEingabe :value="input" :label="ownLabel" />
+      <template v-if="mine && mine.n <= 24 && mine.z <= mine.n * 3">
         <BruchBild :view="kind === 'expand' ? 'circle' : 'strip'" :z="mine.z" :n="mine.n" :labels="labels"
       /></template>
     </div>
