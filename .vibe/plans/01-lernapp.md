@@ -131,7 +131,7 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - `vp check --fix`, `vue-tsc --noEmit`, acht Testdateien mit zehn Tests und der Build bestanden. Generierte Aufgaben werden beim Build über feste Seeds geprüft; Komponenten zusätzlich mit alternativen richtigen Antworten.
 - 20 Lernseiten bei 360 und 1280 px geöffnet und Bildschirmfotos gespeichert; keine Überbreite und richtige Reihenfolge der Hauptabschnitte. Zahlenstrahl ohne Antwortvorschau und mit erfolgreicher Prüfung getestet; konkreten Lösungsweg geprüft. Faktorzerlegung von 12 bis 3 · 2 · 2 durchgespielt; alternative Antwort 4/18 für 2/9 erfolgreich geprüft.
-- `lernapps check` bleibt offen: zwei Browser-Schritte scheitern beim Start von Chromium an der macOS-Sandbox (MachPortRendezvousServer: Permission denied). Keine Prüfung abgeschaltet und keine Schutzvorkehrung umgangen. Der verfügbare Browser wurde für die oben genannten manuellen Prüfungen verwendet; das ersetzt keine vollständige axe-/End-to-end-Prüfung.
+- Beim ersten `lernapps check` scheiterten zwei Browser-Schritte beim Chromium-Start an der macOS-Sandbox (MachPortRendezvousServer: Permission denied). Nach freigegebener lokaler Ausführung konnte der vollständige Check laufen: zuletzt 12 Regeln ohne Befund am Implementierungsstand 1fd2b47. Keine Prüfung abgeschaltet und keine Schutzvorkehrung umgangen.
 - Phase bleibt deshalb Code. Veröffentlichung und Selbsteinschätzung aus Commit stehen noch aus.
 
 - Browserkorrektur Erweitern: Kuchenbeispiel konsequent mit `KuchenTeilen` als Kreis mit drei ursprünglichen Stücken; alle Stücke gleichmäßig unterteilen. Zähler und Nenner wachsen bei unverändertem Flächenanteil. Keine Prozent-/Balkengrafik für diese Herleitung. Die freie Entdeckung zeigt 2/3 und die umgeschriebene Form; Aufgaben haben getrennte eigene Eingaben ohne Ergebnisvorschau.
@@ -332,7 +332,6 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 
 - [x] `phase: code` ist gesetzt.
 - [ ] Show the creator a first look (`early-preview`): erste echte Lernseite mit interaktiven Modellen auf Desktop und bei 360 px zeigen; anschließend weiterarbeiten.
-- [ ] `npx --no -- lernapps check` passes.
 - [ ] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px. Compare
       each with the confirmed sketches; each figure in its own image (`npx --no -- lernapps screenshots --desktop`).
 - [ ] Every box of Explore, Plan and Code ticked.
@@ -340,6 +339,8 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
       No checkpoint here: set it before you ask or report anything, then start Commit in the same message.
 
 ### Completed
+
+- [x] `npx --no -- lernapps check` passes: 12 Regeln ohne Befund, Implementierungsstand 1fd2b47, einschließlich Browser-/Barrierefreiheitsprüfung.
 
 - [x] Alle 20 Seiten: je ein Verständnischeck und ein variierter Übungsblock mit mindestens sechs Varianten; gemeinsame Begriffe, Quellen und Tutorhinweise konsistent. Mindestens 140 Aufgabenstellungen insgesamt prüfen; Guide aktualisieren. Commit.
 - [x] The content guide matches what was built (`app-content-matches`).
