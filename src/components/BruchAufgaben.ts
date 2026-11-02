@@ -101,13 +101,21 @@ export const show = (answer: unknown): string => (String(answer) === "" ? "Keine
 export const reason = (t: Task, a: unknown, p: Props): string => fill(p.mistakes[a === "" ? 1 : 0] ?? "", params(t));
 export function describe(t: Task, p: Props): { task: string; solution: string } {
   const q = t.rz >= 0 ? reduce(t.rz, t.rn) : { z: t.rz, n: t.rn };
-  return {
-    task: fill(p.task, params(t)),
-    solution:
-      t.kind === "compare"
-        ? `Vergleichszeichen: ${solution(t)}`
-        : `${q.z}/${q.n}; bei verlangter Erweiterung: ${t.rz}/${t.rn}.`,
+  const result = q.n === 1 ? String(q.z) : `${q.z}/${q.n}`;
+  const common = t.n * t.d;
+  const paths: Record<string, string> = {
+    expand: `Zähler und Nenner mit ${t.f} multiplizieren: ${t.z} · ${t.f} = ${t.rz} und ${t.n} · ${t.f} = ${t.rn}. Der erweiterte Bruch lautet ${t.rz}/${t.rn}.`,
+    reduce: `Zähler und Nenner durch ${gcd(t.z, t.n)} teilen. So entsteht ${result}; die beiden Zahlen haben keinen gemeinsamen Teiler größer als 1.`,
+    compare: `Vergleiche ${t.z * t.d}/${common} und ${t.b * t.n}/${common}. Die gleich großen Teilstücke machen die Zähler vergleichbar. Das passende Zeichen ist ${solution(t)}.`,
+    part: `${t.G} Gegenstände auf ${t.n} Gruppen verteilen: ${t.G / t.n} pro Gruppe. ${t.z} Gruppen enthalten ${t.part} Gegenstände.`,
+    whole: `${t.part} Gegenstände bilden ${t.z} Gruppen. Eine Gruppe hat ${t.part / t.z} Gegenstände. Alle ${t.n} Gruppen haben zusammen ${t.G} Gegenstände.`,
+    ratio: `Der Anteil ist Bruchteil geteilt durch Ganzes: ${t.part}/${t.G}. Kürzen ergibt ${result}.`,
+    add: `Gemeinsam unterteilen: ${t.z * t.d}/${common} + ${t.b * t.n}/${common}. Zähler addieren, Nenner beibehalten und gegebenenfalls kürzen: ${result}.`,
+    subtract: `Die Teile haben denselben Nenner ${t.n}. ${t.z} Teile minus ${t.b} Teil ergibt ${t.rz}/${t.rn}, also ${result}.`,
+    multiply: `${t.b}/${t.d} von ${t.z}/${t.n}: Wähle ${t.b} von ${t.d} Zeilen der ${t.z} ausgewählten Spalten. Das sind ${t.rz} von ${t.rn} Feldern, also ${result}.`,
+    divide: `${t.z}/${t.n} sind ${t.z * 2}/${t.d}. Darin passen ${t.z * 2} Stücke der Größe 1/${t.d}.`,
   };
+  return { task: fill(p.task, params(t)), solution: paths[t.kind] ?? result };
 }
 export const about = {
   task: "Bruchmodell verändern, fehlende Größe berechnen oder Brüche vergleichen; die Frage nennt den gesuchten Wert.",

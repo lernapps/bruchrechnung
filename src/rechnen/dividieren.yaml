@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Durch Brüche dividieren",
+  "description": "Wie viele Achtelstücke passen in drei Viertel?",
+  "scope": "Division kann fragen: Wie oft passt die zweite Größe in die erste? Zum Dividieren durch einen Bruch multiplizierst du mit seinem Kehrbruch. Nur der **zweite** Bruch wird umgekehrt. Durch 0 darfst du nicht teilen. 3/4 sind 6/8. Daher passen sechs Achtel in drei Viertel: 3/4 : 1/8 = 3/4 · 8/1 = 6.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Du füllst Saft aus einem Gefäß in kleinere gleich große Gläser. Wie oft passt der Inhalt eines kleinen Glases in die vorhandene Menge?",
+            },
+            {
+              "type": "definition",
+              "term": "Kehrbruch",
+              "explanation": "Den Kehrbruch eines von null verschiedenen Bruchs erhältst du durch Vertauschen von Zähler und Nenner.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            { "type": "text", "text": "Wie viele Achtelstücke passen in drei Viertel?" },
+            {
+              "type": "table",
+              "caption": "Die Angaben im Beispiel",
+              "header": ["Erste Größe", "Zweite Größe"],
+              "rows": [["3/4 als Ausgangsgröße", "1/8 als Stückgröße"]],
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Division kann fragen: Wie oft passt die zweite Größe in die erste? Zum Dividieren durch einen Bruch multiplizierst du mit seinem Kehrbruch. Nur der **zweite** Bruch wird umgekehrt. Durch 0 darfst du nicht teilen.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "3/4 sind 6/8. Daher passen sechs Achtel in drei Viertel: 3/4 : 1/8 = 3/4 · 8/1 = 6.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "component": "BruchRechnen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "divide",
+                  "task": "Wie oft passt {b}/{d} in {z}/{n}? Lege die Stücke hinein und gib die Anzahl an.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "pieceLabel": "Bruchstück",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "2", "seed": 1 }, { "answer": "4/2", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Wie rechnest du 3/4 : 1/8?",
+              "options":
+                [
+                  {
+                    "text": "3/4 · 8/1",
+                    "correct": true,
+                    "info": "3/4 sind 6/8. Daher passen sechs Achtel in drei Viertel: 3/4 : 1/8 = 3/4 · 8/1 = 6.",
+                  },
+                  {
+                    "text": "4/3 · 1/8",
+                    "correct": false,
+                    "info": "Hier wurde der erste Bruch umgekehrt. Umgekehrt wird der Divisor, also der zweite Bruch.",
+                  },
+                  {
+                    "text": "3/4 · 1/8",
+                    "correct": false,
+                    "info": "Das wäre eine Multiplikation ohne Kehrbruch; gefragt ist die Zahl passender Achtelstücke.",
+                  },
+                ],
+              "explanation": "3/4 sind 6/8. Daher passen sechs Achtel in drei Viertel: 3/4 : 1/8 = 3/4 · 8/1 = 6.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Wie oft passt 1/{{n}} in 2 Ganze?" },
+              "answer": { "value": "n*2", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "n",
+                    "message": "Das wäre die Zahl der Bruchstücke in einem Ganzen. Gegeben sind zwei Ganze.",
+                  },
+                  { "value": "2", "message": "Du hast die Anzahl Ganzer statt der Anzahl Bruchstücke angegeben." },
+                ],
+              "hint": "Division kann fragen: Wie oft passt die zweite Größe in die erste? Zum Dividieren durch einen Bruch multiplizierst du mit seinem Kehrbruch.",
+              "steps":
+                [
+                  "In ein Ganzes passen {{n}} Stücke der Größe 1/{{n}}.",
+                  "In zwei Ganze passen doppelt so viele: $2 \\cdot {{n}} = {{answer}}$.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

@@ -1,0 +1,122 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Eine fehlende Zahl finden",
+  "description": "Welche Zahl ergänzt einen Bruch zu einem Ganzen? Nutze den Streifen als Kontrolle.",
+  "scope": "Bei einer Gleichung soll links und rechts derselbe Wert stehen. Finde die fehlende Zahl mit der Umkehroperation und setze sie zur Probe ein. Ein fehlender Summand entsteht durch Subtraktion, ein fehlender Faktor durch Division. x + 1/4 = 3/4. Also x = 3/4 − 1/4 = 2/4 = 1/2. Probe: 1/2 + 1/4 = 3/4.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Eine Rechenwaage soll auf beiden Seiten denselben Wert zeigen. Welche Zahl fehlt noch?",
+            },
+            {
+              "type": "definition",
+              "term": "Gleichung",
+              "explanation": "Eine Gleichung behauptet, dass zwei Ausdrücke denselben Wert haben. Eine gesuchte Zahl muss diese Gleichheit erfüllen.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Welche Zahl ergänzt einen Bruch zu einem Ganzen? Nutze den Streifen als Kontrolle.",
+            },
+            {
+              "type": "table",
+              "caption": "Die Angaben im Beispiel",
+              "header": ["Erste Größe", "Zweite Größe"],
+              "rows": [["x + 1/4", "3/4"]],
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Bei einer Gleichung soll links und rechts derselbe Wert stehen. Finde die fehlende Zahl mit der Umkehroperation und setze sie zur Probe ein. Ein fehlender Summand entsteht durch Subtraktion, ein fehlender Faktor durch Division.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [{ "type": "text", "text": "x + 1/4 = 3/4. Also x = 3/4 − 1/4 = 2/4 = 1/2. Probe: 1/2 + 1/4 = 3/4." }],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Welche Zahl löst x + 1/4 = 3/4?",
+              "options":
+                [
+                  {
+                    "text": "1/2",
+                    "correct": true,
+                    "info": "x + 1/4 = 3/4. Also x = 3/4 − 1/4 = 2/4 = 1/2. Probe: 1/2 + 1/4 = 3/4.",
+                  },
+                  { "text": "1", "correct": false, "info": "Mit 1 wäre die linke Seite größer als 3/4." },
+                  { "text": "1/4", "correct": false, "info": "Ein Viertel plus ein Viertel ergibt erst zwei Viertel." },
+                ],
+              "explanation": "x + 1/4 = 3/4. Also x = 3/4 − 1/4 = 2/4 = 1/2. Probe: 1/2 + 1/4 = 3/4.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Ergänze: x/{{n}} + 1/{{n}} = 1. Welchen Wert hat der Zähler x?" },
+              "answer": { "value": "n-1", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "n+1",
+                    "message": "Der fehlende Summand entsteht durch Subtrahieren, nicht durch Addieren.",
+                  },
+                  { "value": "n", "message": "Das wäre ein ganzes Ganzes vor dem zusätzlichen Bruchteil." },
+                ],
+              "hint": "Bei einer Gleichung soll links und rechts derselbe Wert stehen.",
+              "steps":
+                [
+                  "Ein Ganzes besteht aus {{n}}/{{n}}. Ein {{n}}-tel ist schon vorhanden.",
+                  "Es fehlen {{n}} − 1 = {{answer}} weitere {{n}}-tel. Das ist der gesuchte Zähler x.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

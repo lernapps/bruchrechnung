@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 3 }
+failedChecks: { checks-pass: 4 }
 ---
 
 # Plan: Bruchrechnung – Schritt für Schritt, first version
@@ -281,7 +281,6 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 
 - [ ] `grep '^phase:'` prints `phase: code`; else set it.
 - [ ] Show the creator a first look (`early-preview`): erste echte Lernseite mit interaktiven Modellen auf Desktop und bei 360 px zeigen; anschließend weiterarbeiten.
-- [ ] Kapitel 5: fünf Seiten und BruchRechnen in vier Rechenmodi; Terme, Gesetze und einfache Gleichungen; Fehlerrückmeldungen und Komponentenprüfungen. Commit.
 - [ ] Kapitel 6: vier Seiten zu Umwandlungen, Dezimalrechnung, Runden und Sachaufgaben; Prozent/relative Häufigkeit als Anteilsanwendungen. Commit.
 - [ ] Alle 20 Seiten: je ein Verständnischeck und ein variierter Übungsblock mit mindestens sechs Varianten; gemeinsame Begriffe, Quellen und Tutorhinweise konsistent. Mindestens 140 Aufgabenstellungen insgesamt prüfen; Guide aktualisieren. Commit.
 - [ ] The content guide matches what was built (`app-content-matches`).
@@ -293,6 +292,8 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
       No checkpoint here: set it before you ask or report anything, then start Commit in the same message.
 
 ### Completed
+
+- [x] Kapitel 5: fünf Seiten und BruchRechnen in vier Rechenmodi; Terme, Gesetze und einfache Gleichungen; Fehlerrückmeldungen und Komponentenprüfungen. Commit.
 
 - [x] Kapitel 4: drei Seiten und AnteilGanzes mit den drei Suchrichtungen, Mengenmodellen und Sachaufgaben. Commit.
 
