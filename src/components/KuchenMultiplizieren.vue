@@ -16,14 +16,24 @@ const d = ref(3);
 const b = ref(3);
 const patternId = useId();
 const selection = computed(() => cakeSelection(3, 4, b.value, d.value));
+function subdivide(value: number): void {
+  d.value = value;
+  b.value = value;
+}
 </script>
 <template>
   <div class="cake-product">
     <p>{{ instruction }}</p>
     <label
-      >{{ denominatorLabel }}: {{ d }}<input v-model.number="d" type="range" min="1" max="6" @input="b = d"
+      >{{ denominatorLabel }}: {{ d
+      }}<input
+        :value="d"
+        type="range"
+        min="1"
+        max="6"
+        @input="subdivide(Number(($event.target as HTMLInputElement).value))"
     /></label>
-    <label>{{ numeratorLabel }}: {{ b }}<input v-model.number="b" type="range" min="0" :max="d" /></label>
+    <label>{{ numeratorLabel }}: {{ b }}<input :key="d" v-model.number="b" type="range" min="0" :max="d" /></label>
     <div class="cakes">
       <figure>
         <svg viewBox="0 0 120 120" role="img" :aria-label="fill(imageLabel, { z: 3, n: 4 })">
