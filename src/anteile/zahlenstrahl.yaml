@@ -7,8 +7,25 @@
     [
       {
         "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Eine Zahl kann auch einen Platz auf einer Strecke haben. Wir betrachten zunächst nur die Strecke von 0 bis 1.",
+            },
+            {
+              "type": "definition",
+              "term": "Zahlenstrahl",
+              "explanation": "Auf einem Zahlenstrahl haben Zahlen feste Positionen. Gleiche Zahlenabstände werden als gleich lange Strecken dargestellt.",
+            },
+          ],
+      },
+      {
+        "type": "section",
         "id": "entdecken",
-        "title": "Entdecken",
+        "title": "Ausprobieren",
         "blocks":
           [
             {
@@ -36,24 +53,23 @@
                 },
               "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
             },
-          ],
-      },
-      {
-        "type": "section",
-        "id": "regel",
-        "title": "Regel",
-        "blocks":
-          [
             {
-              "type": "text",
-              "text": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt.",
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt.",
+                  },
+                ],
             },
           ],
       },
       {
         "type": "section",
         "id": "beispiel",
-        "title": "Beispiel",
+        "title": "Am Beispiel nachvollziehen",
         "blocks":
           [
             {

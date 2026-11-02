@@ -43,7 +43,7 @@ Jede Zeile nennt Kompetenz, Herleitung und typische Fehlvorstellung; Quellenkenn
 
 ### Seitenstruktur und Zuordnung
 
-Die Vorlage erzeugt Start, Kapitelübersichten, Navigation, Glossar und Tutor-Seiten. Jede Lernseite folgt **Entdecken → Regel → Beispiel → Üben**, mit festen Abschnitts-IDs `entdecken`, `regel`, `beispiel`, `ueben`. Kapitel und Seiten werden in YAML unter `src/` angelegt; die konkrete Dateibenennung folgt nach `create` dem installierten Schema. Kein eigenes Seitenlayout.
+Die Vorlage erzeugt Start, Kapitelübersichten, Navigation, Glossar und Tutor-Seiten. Jede Lernseite folgt **Begriffe klären → Ausprobieren → Am Beispiel nachvollziehen → Üben**, mit festen Abschnitts-IDs `entdecken`, `regel`, `beispiel`, `ueben`. Kapitel und Seiten werden in YAML unter `src/` angelegt; die konkrete Dateibenennung folgt nach `create` dem installierten Schema. Kein eigenes Seitenlayout.
 
 | Kapitel / Pfad | Lernseiten | Skizze |
 |---|---|---|
@@ -156,3 +156,14 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Zweite Vorschaukorrektur: Lerninhalte nicht vorwegnehmen. `darstellen` nur Ganzes, gleich große Teile, Zähler und Nenner; `zahlenstrahl` nur Positionen; `gemischte-zahlen` nur Ganze/Rest. Gleichwertigkeit erst in `umformen`, Rechenarten erst in `rechnen`. Jede Aufgabe muss die eigene Seitenkompetenz üben.
 
 - Verbindliche Übungsregel aus Browserfeedback: Vor der Prüfung weder markierte Anzahl als Ergebnisbruch anzeigen noch ein Ergebnisfeld durch Markieren, Regler oder Stückzähler ausfüllen. Modelle zeigen Gegebenes und eigene Markierungen. Zahlenstrahl-Seite ausschließlich 0 bis 1; unechte Brüche erst auf `gemischte-zahlen`.
+
+
+### Didaktischer Aufbau nach Browserfeedback
+
+- Alle 20 Seiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Titel „Begriffe klären“, „Ausprobieren“, „Am Beispiel nachvollziehen“, „Üben“.
+- `teilbarkeit/regeln`: Faktor und Produkt anhand von Bauklotz-Reihen, dann `FaktorEntdecken` zum selbstständigen Zerlegen einer Zahl von 2 bis 48; erst danach Primzahl und Primfaktorzerlegung definieren, zum Schluss Teilbarkeitsregeln als Abkürzungen. Jede Aufteilung bewahrt das Produkt; 1 und unpassende Faktoren sind ausgeschlossen. Eigene Tests prüfen genau das und das Ende bei Primzahlen.
+- Neue Kompetenz: Ich kann eine zusammengesetzte Zahl in Primfaktoren zerlegen. Übung `primfaktoren` mit sechs Fällen aus `src/data/primfaktoren.yaml`, zusätzlicher Verständnischeck `verstehen` und Gruppenübung `aufgaben`.
+- Quelle ergänzt und vollständig im Web gelesen: Serlo, „Primfaktorzerlegung“, https://de.serlo.org/mathe/1779/primfaktorzerlegung (Beispiele und Vorgehensweise).
+- Die offenen Zweitquellen sind ergänzt: Wikipedia „Teilbarkeit“ (Endstellen-/Quersummenregeln und Primzahlbegriff), ARD alpha „Addieren – so geht’s“, https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html (Stellenwerte beim Addieren/Subtrahieren), Serlo „Aufgaben zur Multiplikation und Division von Dezimalzahlen“, https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen (geöffnete Lösungen einschließlich Kommaregeln), ARD alpha „Dezimalbrüche runden“ (Regeln und Beispiele). Keine fremden Sätze/Abbildungen übernommen.
+- Standardübungen haben jetzt einen konkreten Lösungsweg mit den jeweiligen Zahlen und einer fachlichen Begründung; keine Sätze wie „Angaben einsetzen“ ohne Erklärung.
+- Übungsmodelle schreiben niemals einen aus Markierungen berechneten Bruch in das Antwortfeld. Bei BruchModelle erscheint die symbolische Darstellung erst nach der Prüfung. Entdeckermodelle sind ausdrücklich freie Erkundung und dürfen Zusammenhänge anzeigen.

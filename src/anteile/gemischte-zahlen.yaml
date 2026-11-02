@@ -7,8 +7,25 @@
     [
       {
         "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Eine Pizza reicht nicht immer. Was, wenn du eine ganze Pizza und noch ein halbes Stück einer zweiten meinst?",
+            },
+            {
+              "type": "definition",
+              "term": "Gemischte Zahl",
+              "explanation": "Eine gemischte Zahl besteht aus einer ganzen Zahl und einem echten Bruch. Beide Teile werden addiert.",
+            },
+          ],
+      },
+      {
+        "type": "section",
         "id": "entdecken",
-        "title": "Entdecken",
+        "title": "Ausprobieren",
         "blocks":
           [
             {
@@ -36,24 +53,23 @@
                 },
               "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
             },
-          ],
-      },
-      {
-        "type": "section",
-        "id": "regel",
-        "title": "Regel",
-        "blocks":
-          [
             {
-              "type": "text",
-              "text": "Ein unechter Bruch hat mindestens den Wert 1. Eine gemischte Zahl besteht aus einer ganzen Zahl und einem echten Bruch. Beim Umwandeln teilst du den Zähler durch den Nenner: Ganze plus Rest.",
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Ein unechter Bruch hat mindestens den Wert 1. Eine gemischte Zahl besteht aus einer ganzen Zahl und einem echten Bruch. Beim Umwandeln teilst du den Zähler durch den Nenner: Ganze plus Rest.",
+                  },
+                ],
             },
           ],
       },
       {
         "type": "section",
         "id": "beispiel",
-        "title": "Beispiel",
+        "title": "Am Beispiel nachvollziehen",
         "blocks":
           [
             {
