@@ -78,7 +78,9 @@ input[type="range"] {
   padding: 1rem;
 }
 .factor-lab label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
 }
 .factor-lab input {
   display: block;

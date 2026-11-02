@@ -52,7 +52,9 @@ input[type="range"] {
   border-radius: 8px;
 }
 .cake-lab label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
 }
 .cake-lab input {
   display: block;

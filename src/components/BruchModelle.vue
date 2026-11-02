@@ -94,7 +94,7 @@ function toggle(i: number): void {
           :aria-label="fill(cell, { i, n: current.n })"
           @click="toggle(i)"
         >
-          {{ selected.includes(i) ? "✓" : "○" }}
+          {{ view === "strip" ? "" : selected.includes(i) ? "●" : "○" }}
         </button>
       </div></template
     >
@@ -158,6 +158,11 @@ circle {
   flex-wrap: wrap;
 }
 .strip button,
+.strip button[aria-pressed="true"] {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px),
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px);
+}
 .objects button {
   min-width: 24px;
   min-height: 44px;
@@ -171,7 +176,7 @@ circle {
 }
 .strip button[aria-pressed="true"],
 .objects button[aria-pressed="true"] {
-  background: #16765d;
+  background-color: #16765d;
   color: white;
 }
 button:focus-visible {
@@ -179,7 +184,9 @@ button:focus-visible {
   outline-offset: 2px;
 }
 label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
 }
 input {
   display: block;

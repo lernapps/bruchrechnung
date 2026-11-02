@@ -30,7 +30,7 @@
           [
             {
               "type": "text",
-              "text": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Haken oder ausgefüllte Punkte kennzeichnen sie zusätzlich. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.",
+              "text": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Die Streifenflächen sind zusätzlich schraffiert; in der Mengenansicht sind ausgewählte Punkte ausgefüllt. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.",
             },
             {
               "type": "vue-component",
@@ -51,7 +51,7 @@
                     },
                   "stage": "parts",
                 },
-              "nojs": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Haken oder ausgefüllte Punkte kennzeichnen sie zusätzlich. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.\n\nIm Anfangsbild sind drei von vier Kreisteilen und drei von vier Streifenfeldern markiert. Im Mengenbild sind sechs von acht Plättchen markiert. Jedes Bild zeigt denselben Anteil: 3/4.",
+              "nojs": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Die Streifenflächen sind zusätzlich schraffiert; in der Mengenansicht sind ausgewählte Punkte ausgefüllt. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.\n\nIm Anfangsbild sind drei von vier Kreisteilen und drei von vier Streifenfeldern markiert. Im Mengenbild sind sechs von acht Plättchen markiert. Jedes Bild zeigt denselben Anteil: 3/4.",
             },
             {
               "type": "note",
@@ -121,7 +121,7 @@
                       "selected": "Ausgewählt",
                     },
                 },
-              "nojs": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Haken oder ausgefüllte Punkte kennzeichnen sie zusätzlich. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.",
+              "nojs": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Die Streifenflächen sind zusätzlich schraffiert; in der Mengenansicht sind ausgewählte Punkte ausgefüllt. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.",
             },
             {
               "type": "single-choice",

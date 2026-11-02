@@ -47,8 +47,8 @@ function toggle(i: number): void {
         </button>
       </div></template
     ><template v-else
-      ><div class="strip">
-        <span v-for="i in taskNow.n" :key="i" :class="{ on: i <= taskNow.z }">{{ i <= taskNow.z ? "✓" : "?" }}</span>
+      ><div class="strip" role="img" :aria-label="`${givenLabel}: ${taskNow.z}/${taskNow.n}`">
+        <span v-for="i in taskNow.n" :key="i" :class="{ on: i <= taskNow.z }">{{ i <= taskNow.z ? "" : "?" }}</span>
       </div></template
     >
     <div class="tools">
@@ -74,7 +74,9 @@ input {
   border-radius: 8px;
 }
 .tools label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
   margin: 0.6rem 0;
 }
 .tools input {
@@ -104,7 +106,7 @@ input {
 }
 .cells button[aria-pressed="true"],
 .signs button[aria-pressed="true"] {
-  background: #16765d;
+  background-color: #16765d;
   color: white;
 }
 .matrix {
@@ -125,7 +127,7 @@ input {
   color: #20332e;
 }
 .matrix button[aria-pressed="true"] {
-  background: #16765d;
+  background-color: #16765d;
   color: white;
 }
 .strip {
@@ -139,7 +141,10 @@ input {
   text-align: center;
 }
 .strip .on {
-  background: #16765d;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px),
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px);
+  background-color: #16765d;
   color: white;
 }
 .signs,

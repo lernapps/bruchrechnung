@@ -164,6 +164,13 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Die Bündelungs-/Rastermethodik wird bereits bei gemeinsamen Teilern und Vielfachen interaktiv eingeführt: `TeilerVielfacheEntdecken` bündelt 12 und 18 Plättchen für den ggT; ein zweiter Modus unterteilt gleich große Ganze mit 4/6 Teilen feiner, um das kgV zu finden. Plus/Minus ist ausdrücklich die Wiederaufnahme dieser bekannten Unterteilung und verlinkt zurück. Gröbere Gruppen und feinere Unterteilungen werden klar getrennt; nojs beschreibt beide mit Beispielen.
 
+
+- Bruchstreifen zeigen ausgewählte Flächen gefüllt und dezent schraffiert, ohne Haken/Punkte als sichtbare Zellzeichen. Nicht ausgewählte Flächen bleiben leer; Fragezeichen für unbekannte Mengen bleiben fachlich sinnvoll. Screenreader-Beschriftungen und aria-pressed erhalten. Alle Eingabefelder der eigenen Komponenten sind in ihrem Label verschachtelt und werden mit vertikalem Abstand angeordnet; kein for-Attribut für diese implizite Zuordnung nötig.
+
+
+- Multiplikation nutzt ausdrücklich zwei gleichberechtigte Vorstellungen: `KuchenMultiplizieren` zeigt interaktiv b/d von drei Vierteln, indem jedes ursprüngliche Viertel in d Stückchen zerlegt und b davon genommen werden; das Ergebnis bezieht sich auf den ganzen Kuchen. Daneben bleibt das Rechteck aus zwei Seitenlängen mit eigener Übungsaufgabe. Unterschiedliche Zahlen sind als eigene Aufgabe angekündigt. Beide Ideen besitzen getrennte Methoden-/nojs-Texte und eine gemeinsame Beispielrechnung.
+- Flächenmuster sind Rauten und Punkte statt vertikaler/horizontaler Schraffur, damit sie nicht mit Teilgrenzen verwechselt werden. Die Beschriftungen erklären dieselbe Musterzuordnung.
+
 ## Explore
 
 <!--

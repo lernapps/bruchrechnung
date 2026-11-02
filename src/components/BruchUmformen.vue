@@ -75,7 +75,9 @@ input {
   border-radius: 8px;
 }
 .tools label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
   margin: 0.6rem 0;
 }
 .tools input {

@@ -46,7 +46,9 @@ input[type="range"] {
 }
 
 label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
   margin: 1rem 0;
 }
 input {

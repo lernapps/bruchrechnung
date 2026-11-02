@@ -54,14 +54,14 @@ function toggle(i: number): void {
       </p>
       <div
         class="strip"
+        role="img"
+        :aria-label="`${givenLabel}: ${strip.z}/${strip.n}`"
         :class="{
           'column-factor': kind === 'multiply' && index === 0,
           'row-factor': kind === 'multiply' && index === 1,
         }"
       >
-        <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }">{{
-          i <= strip.z ? (kind === "multiply" ? (index === 0 ? "│" : "─") : "✓") : "·"
-        }}</span>
+        <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }" aria-hidden="true"></span>
       </div>
     </template>
     <div class="tools">
@@ -70,7 +70,13 @@ function toggle(i: number): void {
         <div class="product-model">
           <p class="column-caption">{{ fill(columnLabel ?? "", params(taskNow)) }}</p>
           <p class="row-caption">{{ fill(rowLabel ?? "", params(taskNow)) }}</p>
-          <div class="matrix" :style="{ gridTemplateColumns: `28px repeat(${taskNow.n}, minmax(0, 1fr))` }">
+          <div
+            class="matrix"
+            :style="{
+              gridTemplateColumns: `28px repeat(${taskNow.n}, minmax(0, 1fr))`,
+              gridTemplateRows: `28px repeat(${taskNow.d}, minmax(0, 1fr))`,
+            }"
+          >
             <span aria-hidden="true"></span>
             <span
               v-for="column in taskNow.n"
@@ -79,12 +85,9 @@ function toggle(i: number): void {
               :class="{ active: column <= taskNow.z }"
               aria-hidden="true"
             >
-              {{ column <= taskNow.z ? "│" : "·" }}
             </span>
             <template v-for="row in taskNow.d" :key="row">
-              <span class="row-part" :class="{ active: row <= taskNow.b }" aria-hidden="true">{{
-                row <= taskNow.b ? "─" : "·"
-              }}</span>
+              <span class="row-part" :class="{ active: row <= taskNow.b }" aria-hidden="true"></span>
               <button
                 v-for="column in taskNow.n"
                 :key="column"
@@ -92,9 +95,7 @@ function toggle(i: number): void {
                 :aria-label="fill(cellLabel ?? pieceLabel, { row, column })"
                 :aria-pressed="marked.includes((row - 1) * taskNow.n + column)"
                 @click="toggle((row - 1) * taskNow.n + column)"
-              >
-                {{ marked.includes((row - 1) * taskNow.n + column) ? "✓" : "·" }}
-              </button>
+              ></button>
             </template>
           </div>
         </div>
@@ -110,8 +111,8 @@ function toggle(i: number): void {
             +
           </button>
         </div>
-        <div class="strip">
-          <span v-for="i in taskNow.d" :key="i" :class="{ on: i <= pieces }">{{ i <= pieces ? "✓" : "·" }}</span>
+        <div class="strip" role="img" :aria-label="`${pieceLabel}: ${pieces}`">
+          <span v-for="i in taskNow.d" :key="i" :class="{ on: i <= pieces }" aria-hidden="true"></span>
           <span
             class="fit-boundary"
             :style="{ left: `${(taskNow.z / taskNow.n) * 100}%` }"
@@ -120,8 +121,14 @@ function toggle(i: number): void {
       ></template>
       <template v-else
         ><label>{{ stepLabel }}: {{ split }}<input v-model.number="split" type="range" min="2" max="24" /></label>
-        <div v-for="(strip, index) in givenStrips" :key="index" class="strip">
-          <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }">{{ i <= strip.z ? "✓" : "·" }}</span>
+        <div
+          v-for="(strip, index) in givenStrips"
+          :key="index"
+          class="strip"
+          role="img"
+          :aria-label="`${givenLabel}: ${strip.z}/${strip.n}`"
+        >
+          <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }" aria-hidden="true"></span>
           <svg
             v-if="kind === 'add' || kind === 'subtract'"
             class="partition-guides"
@@ -151,6 +158,7 @@ input {
 }
 
 input[type="range"] {
+  width: 100%;
   accent-color: var(--page-accent);
 }
 
@@ -161,7 +169,9 @@ input[type="range"] {
   border-radius: 8px;
 }
 .tools label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
   margin: 0.6rem 0;
 }
 .tools input {
@@ -183,6 +193,7 @@ input[type="range"] {
 }
 .matrix {
   display: grid;
+  aspect-ratio: 1;
   gap: 2px;
   min-width: 0;
   margin: 0;
@@ -221,16 +232,30 @@ input[type="range"] {
   border: 1px solid currentColor;
   min-height: 28px;
 }
+.column-part.active,
+.strip.column-factor .on {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgb(255 255 255 / 0.3) 7px 8px),
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.3) 7px 8px);
+}
 .column-part.active {
-  background: #1b5c9e;
+  background-color: #1b5c9e;
   color: white;
 }
+.row-part.active,
+.strip.row-factor .on {
+  background-image: radial-gradient(circle, rgb(50 37 8 / 0.55) 1.3px, transparent 1.6px);
+  background-size: 8px 8px;
+}
 .row-part.active {
-  background: #f6ce78;
+  background-color: #f6ce78;
   color: #322508;
 }
 .matrix button[aria-pressed="true"] {
-  background: #16765d;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px),
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px);
+  background-color: #16765d;
   color: white;
 }
 .strip {
@@ -286,18 +311,21 @@ input[type="range"] {
   text-underline-offset: 4px;
 }
 .strip.column-factor .on {
-  background: #1b5c9e;
+  background-color: #1b5c9e;
   color: white;
 }
 .strip.row-factor .on {
-  background: #f6ce78;
+  background-color: #f6ce78;
   color: #322508;
 }
 .area-count {
   font-weight: 600;
 }
 .strip .on {
-  background: #16765d;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px),
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px);
+  background-color: #16765d;
   color: white;
 }
 .pieces {

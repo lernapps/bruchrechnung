@@ -86,7 +86,9 @@ const rows = computed(() => (props.mode === "groups" ? [12, 18] : [4, 6]));
   padding: 1rem;
 }
 label {
-  display: block;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
 }
 input {
   display: block;

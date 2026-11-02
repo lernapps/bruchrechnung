@@ -30,10 +30,15 @@ const objects = computed(() => props.total ?? props.n);
     </div>
     <div v-if="!view || view.includes('strip')" class="model">
       <strong>{{ labels.strip }}</strong>
-      <div v-for="whole in wholes" :key="whole" class="strip" :style="{ gridTemplateColumns: `repeat(${n},1fr)` }">
-        <span v-for="i in n" :key="i" :class="{ on: (whole - 1) * n + i <= z }">{{
-          (whole - 1) * n + i <= z ? "✓" : "·"
-        }}</span>
+      <div
+        v-for="whole in wholes"
+        :key="whole"
+        class="strip"
+        role="img"
+        :aria-label="`${labels.selected}: ${Math.min(n, Math.max(0, z - (whole - 1) * n))}/${n}`"
+        :style="{ gridTemplateColumns: `repeat(${n},1fr)` }"
+      >
+        <span v-for="i in n" :key="i" :class="{ on: (whole - 1) * n + i <= z }" aria-hidden="true"></span>
       </div>
       <span>{{ labels.selected }}: {{ z }}/{{ n }}</span>
     </div>
@@ -110,12 +115,17 @@ circle {
   display: grid;
   min-height: 2rem;
 }
+.strip .on {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px),
+    repeating-linear-gradient(135deg, transparent 0 7px, rgb(255 255 255 / 0.24) 7px 8px);
+}
 .strip span {
   border: 1px solid currentColor;
   text-align: center;
 }
 .on {
-  background: #16765d !important;
+  background: #16765d;
   color: white;
   fill: #16765d;
 }
