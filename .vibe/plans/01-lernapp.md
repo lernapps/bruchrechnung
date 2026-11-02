@@ -146,6 +146,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Bruch-Eingabefelder zeigen bei gültiger Schreibweise mit / eine MathML-Vorschau „So schreibst du das“. Sie übernimmt den eigenen Zähler und Nenner unverändert, ohne Kürzung, Rechnung oder Korrektheitsanzeige. Für leere, unvollständige, ungültige und reine natürliche Zahleneingaben entfällt die Vorschau. Gemeinsame Hilfe `BruchEingabe` in Umformen, Grundaufgaben und Rechenarten.
 
+
+- Multiplikationsmodell: Beide Faktoren sind als Randstreifen desselben Rechtecks dargestellt – z von n Spalten oben, b von d Zeilen links, jeweils beschriftet und zusätzlich zur Farbe markiert. Die Schnittmenge markiert das Kind selbst; keine vorausgefüllte Ergebnisfläche und kein berechneter Ergebnisbruch.
+
 ## Explore
 
 <!--

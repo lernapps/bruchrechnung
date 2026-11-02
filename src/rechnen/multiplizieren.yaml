@@ -48,7 +48,10 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "toolLabel": "Oben sind die ausgewählten Spalten markiert, links die ausgewählten Zeilen. Markiere im Rechteck die Felder, die zu einer ausgewählten Spalte UND einer ausgewählten Zeile gehören. Welchen Anteil des ganzen Rechtecks hast du damit ausgewählt? Gib ihn als Bruch ein.",
+                  "columnLabel": "Spalten: {z} von {n}",
+                  "rowLabel": "Zeilen: {b} von {d}",
+                  "cellLabel": "Zeile {row}, Spalte {column}",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":

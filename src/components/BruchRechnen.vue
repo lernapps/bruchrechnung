@@ -15,6 +15,9 @@ const props = defineProps<{
   toolLabel: string;
   pieceLabel: string;
   stepLabel: string;
+  columnLabel?: string;
+  rowLabel?: string;
+  cellLabel?: string;
   labels: { circle: string; strip: string; line: string; set: string; whole: string; selected: string };
 }>();
 const emit = defineEmits<{ answer: [string] }>();
@@ -44,21 +47,39 @@ function toggle(i: number): void {
     </div>
     <div class="tools">
       <p>{{ toolLabel }}</p>
-      <template v-if="kind === 'multiply'"
-        ><div class="matrix" :style="{ gridTemplateColumns: `repeat(${taskNow.n},1fr)` }">
-          <button
-            v-for="i in taskNow.n * taskNow.d"
-            :key="i"
-            type="button"
-            :class="{ given: (i - 1) % taskNow.n < taskNow.z }"
-            :aria-label="`${pieceLabel} ${i}`"
-            :aria-pressed="marked.includes(i)"
-            @click="toggle(i)"
-          >
-            {{ marked.includes(i) ? "✓" : "·" }}
-          </button>
-        </div></template
-      >
+      <template v-if="kind === 'multiply'">
+        <div class="product-model">
+          <p class="column-caption">{{ fill(columnLabel ?? "", params(taskNow)) }}</p>
+          <p class="row-caption">{{ fill(rowLabel ?? "", params(taskNow)) }}</p>
+          <div class="matrix" :style="{ gridTemplateColumns: `28px repeat(${taskNow.n}, minmax(0, 1fr))` }">
+            <span aria-hidden="true"></span>
+            <span
+              v-for="column in taskNow.n"
+              :key="`column-${column}`"
+              class="column-part"
+              :class="{ active: column <= taskNow.z }"
+              aria-hidden="true"
+            >
+              {{ column <= taskNow.z ? "✓" : "·" }}
+            </span>
+            <template v-for="row in taskNow.d" :key="row">
+              <span class="row-part" :class="{ active: row <= taskNow.b }" aria-hidden="true">{{
+                row <= taskNow.b ? "✓" : "·"
+              }}</span>
+              <button
+                v-for="column in taskNow.n"
+                :key="column"
+                type="button"
+                :aria-label="fill(cellLabel ?? pieceLabel, { row, column })"
+                :aria-pressed="marked.includes((row - 1) * taskNow.n + column)"
+                @click="toggle((row - 1) * taskNow.n + column)"
+              >
+                {{ marked.includes((row - 1) * taskNow.n + column) ? "✓" : "·" }}
+              </button>
+            </template>
+          </div>
+        </div>
+      </template>
       <template v-else-if="kind === 'divide'"
         ><div class="pieces">
           <button type="button" :aria-label="`${pieceLabel} −`" @click="pieces = Math.max(0, pieces - 1)">−</button
@@ -126,19 +147,50 @@ function toggle(i: number): void {
 .matrix {
   display: grid;
   gap: 2px;
-  max-width: 25rem;
-  margin: 0.75rem 0;
+  min-width: 0;
+  margin: 0;
 }
 .matrix button {
-  min-width: 24px;
-  min-height: 32px;
+  min-width: 0;
+  min-height: 44px;
   border: 1px solid currentColor;
   background: var(--vp-c-bg, #fff);
   color: inherit;
 }
-.matrix button.given {
-  background: #d9eee4;
-  color: #20332e;
+.product-model {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.4rem;
+  max-width: 28rem;
+  margin: 0.75rem 0;
+}
+.column-caption {
+  grid-column: 2;
+  margin: 0 0 0 28px;
+  text-align: center;
+}
+.row-caption {
+  grid-row: 2;
+  margin: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+.column-part,
+.row-part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor;
+  min-height: 28px;
+}
+.column-part.active {
+  background: #16765d;
+  color: white;
+}
+.row-part.active {
+  background: #f6ce78;
+  color: #322508;
 }
 .matrix button[aria-pressed="true"] {
   background: #16765d;
