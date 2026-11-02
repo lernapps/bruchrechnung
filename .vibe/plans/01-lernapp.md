@@ -6,9 +6,9 @@ archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
 phase: commit
 # prePushFailures: written by the pre-push hook. Never change it.
-prePushFailures: 0
+prePushFailures: 1
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 7 }
+failedChecks: { checks-pass: 8 }
 ---
 
 # Plan: Bruchrechnung – Schritt für Schritt, first version
