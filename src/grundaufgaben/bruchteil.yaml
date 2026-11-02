@@ -1,0 +1,164 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Den Bruchteil berechnen",
+  "description": "Drei Viertel von zwölf Plättchen: Wie kannst du erst gleiche Gruppen bilden?",
+  "scope": "Bruchteil = Ganzes · Anteil. Teile das Ganze durch den Nenner und nimm das Ergebnis mal den Zähler. Der Bruchteil hat dieselbe Einheit wie das Ganze. 12 Plättchen in vier Gruppen: 12 : 4 = 3 pro Gruppe. Drei Gruppen enthalten 3 · 3 = 9 Plättchen. Also sind 3/4 von 12 gleich 9.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Du willst drei Viertel einer Menge verteilen. Jetzt interessiert nicht nur der Bruch, sondern wie viele Gegenstände das sind.",
+            },
+            {
+              "type": "definition",
+              "term": "Bruchteil",
+              "explanation": "Der Bruchteil ist die ausgewählte Größe, zum Beispiel neun von zwölf Plättchen. Er hat dieselbe Einheit wie das Ganze.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            { "type": "text", "text": "Drei Viertel von zwölf Plättchen: Wie kannst du erst gleiche Gruppen bilden?" },
+            {
+              "type": "figure",
+              "draw": { "kind": "bar", "part": 3, "whole": 4 },
+              "alt": "Ein Ganzes aus vier gleich großen Teilen, drei davon markiert.",
+              "caption": "Ein Ausgangsmodell: drei Viertel. Übertrage die Idee auf die Aufgabe dieser Seite.",
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Bruchteil = Ganzes · Anteil. Teile das Ganze durch den Nenner und nimm das Ergebnis mal den Zähler. Der Bruchteil hat dieselbe Einheit wie das Ganze.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "12 Plättchen in vier Gruppen: 12 : 4 = 3 pro Gruppe. Drei Gruppen enthalten 3 · 3 = 9 Plättchen. Also sind 3/4 von 12 gleich 9.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "component": "AnteilGanzes",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "part",
+                  "task": "Markiere {z}/{n} von {G} Gegenständen. Wie viele sind das?",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort als Bruch (z. B. 2/3) oder ganze Zahl",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Gegenstände pro Gruppe",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "3", "seed": 1 }, { "answer": "6/2", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Welche Rechnung ergibt 3/4 von 12?",
+              "options":
+                [
+                  {
+                    "text": "12 : 4 · 3",
+                    "correct": true,
+                    "info": "12 Plättchen in vier Gruppen: 12 : 4 = 3 pro Gruppe. Drei Gruppen enthalten 3 · 3 = 9 Plättchen. Also sind 3/4 von 12 gleich 9.",
+                  },
+                  {
+                    "text": "12 : 3 · 4",
+                    "correct": false,
+                    "info": "Hier wurden Zähler und Nenner vertauscht. Teile zuerst in vier gleiche Gruppen.",
+                  },
+                  {
+                    "text": "12 + 3 + 4",
+                    "correct": false,
+                    "info": "Ein Anteil einer Größe entsteht durch Teilen und Multiplizieren, nicht durch Addieren der drei Zahlen.",
+                  },
+                ],
+              "explanation": "12 Plättchen in vier Gruppen: 12 : 4 = 3 pro Gruppe. Drei Gruppen enthalten 3 · 3 = 9 Plättchen. Also sind 3/4 von 12 gleich 9.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://unterrichten.zum.de/wiki/Teil,_Anteil_und_Ganzes_bei_der_Bruchrechnung",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Berechne 3/4 von {{n}} · 4 Plättchen. Wie viele Plättchen sind es?" },
+              "answer": { "value": "n*3", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n", "message": "Das ist erst eine der vier Gruppen. Gesucht sind drei Gruppen." },
+                  { "value": "n*4", "message": "Das ist das Ganze, nicht der ausgewählte Bruchteil." },
+                ],
+              "hint": "Bruchteil = Ganzes · Anteil.",
+              "steps":
+                [
+                  "Das Ganze hat {{n}} · 4 Plättchen. Beim Teilen in vier gleiche Gruppen hat jede Gruppe {{n}} Plättchen.",
+                  "Drei Gruppen enthalten ${{n}} \\cdot 3 = {{answer}}$ Plättchen.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

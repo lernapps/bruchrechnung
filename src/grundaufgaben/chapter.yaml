@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Anteil, Bruchteil, Ganzes",
+  "summary": "Drei Viertel von zwölf Plättchen: Wie kannst du erst gleiche Gruppen bilden?",
+  "pages": ["bruchteil", "ganzes", "anteil"],
+}

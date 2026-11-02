@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Das Ganze berechnen",
+  "description": "Neun Plättchen sind drei Viertel. Wie viele gehören zu einem Viertel und wie viele zum Ganzen?",
+  "scope": "Ganzes = Bruchteil : Anteil. Du kannst zuerst durch den Zähler teilen und dann mit dem Nenner multiplizieren. So schließt du von den ausgewählten Gruppen auf alle Gruppen. 9 Plättchen sind 3/4. Ein Viertel sind 9 : 3 = 3 Plättchen. Vier Viertel sind 3 · 4 = 12 Plättchen.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Du siehst nur einen Teil einer Menge und weißt, welcher Anteil das ist. Daraus kannst du die ganze Menge rekonstruieren.",
+            },
+            {
+              "type": "definition",
+              "term": "Ganzes",
+              "explanation": "Das Ganze ist die Bezugsgröße, von der ein Anteil betrachtet wird. Alle gleich großen Teilgruppen zusammen ergeben das Ganze.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Neun Plättchen sind drei Viertel. Wie viele gehören zu einem Viertel und wie viele zum Ganzen?",
+            },
+            {
+              "type": "figure",
+              "draw": { "kind": "bar", "part": 3, "whole": 4 },
+              "alt": "Ein Ganzes aus vier gleich großen Teilen, drei davon markiert.",
+              "caption": "Ein Ausgangsmodell: drei Viertel. Übertrage die Idee auf die Aufgabe dieser Seite.",
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Ganzes = Bruchteil : Anteil. Du kannst zuerst durch den Zähler teilen und dann mit dem Nenner multiplizieren. So schließt du von den ausgewählten Gruppen auf alle Gruppen.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "9 Plättchen sind 3/4. Ein Viertel sind 9 : 3 = 3 Plättchen. Vier Viertel sind 3 · 4 = 12 Plättchen.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "component": "AnteilGanzes",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "whole",
+                  "task": "{part} Gegenstände sind {z}/{n} des Ganzen. Wie viele hat das Ganze?",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort als Bruch (z. B. 2/3) oder ganze Zahl",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Gegenstände pro Gruppe",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "9", "seed": 1 }, { "answer": "18/2", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "9 sind 3/4. Welche Rechnung liefert das Ganze?",
+              "options":
+                [
+                  {
+                    "text": "9 : 3 · 4",
+                    "correct": true,
+                    "info": "9 Plättchen sind 3/4. Ein Viertel sind 9 : 3 = 3 Plättchen. Vier Viertel sind 3 · 4 = 12 Plättchen.",
+                  },
+                  {
+                    "text": "9 : 4 · 3",
+                    "correct": false,
+                    "info": "Das würde drei Viertel von neun berechnen; neun ist aber schon der Bruchteil.",
+                  },
+                  {
+                    "text": "9 · 3 · 4",
+                    "correct": false,
+                    "info": "Drei Gruppen sind schon gegeben. Ermittle zuerst eine Gruppe durch Teilen.",
+                  },
+                ],
+              "explanation": "9 Plättchen sind 3/4. Ein Viertel sind 9 : 3 = 3 Plättchen. Vier Viertel sind 3 · 4 = 12 Plättchen.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://unterrichten.zum.de/wiki/Teil,_Anteil_und_Ganzes_bei_der_Bruchrechnung",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "{{n}} · 3 Plättchen sind 3/4 des Ganzen. Wie viele Plättchen hat das Ganze?" },
+              "answer": { "value": "n*4", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n*3", "message": "Das ist der gegebene Bruchteil. Ergänze von drei auf vier Gruppen." },
+                  { "value": "n", "message": "Das ist erst eine Gruppe. Das Ganze besteht aus vier Gruppen." },
+                ],
+              "hint": "Ganzes = Bruchteil : Anteil.",
+              "steps":
+                [
+                  "Die gegebenen {{n}} · 3 Plättchen bilden drei von vier gleichen Gruppen. Eine Gruppe hat deshalb {{n}} Plättchen.",
+                  "Das Ganze hat vier Gruppen: ${{n}} \\cdot 4 = {{answer}}$ Plättchen.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}
