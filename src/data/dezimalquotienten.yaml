@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+[
+  { "azahl": "0,8", "bzahl": "0,2", "faktor": 10, "erweiterta": 8, "erweitertb": 2 },
+  { "azahl": "1,8", "bzahl": "0,3", "faktor": 10, "erweiterta": 18, "erweitertb": 3 },
+  { "azahl": "2,8", "bzahl": "0,4", "faktor": 10, "erweiterta": 28, "erweitertb": 4 },
+  { "azahl": "4,5", "bzahl": "0,5", "faktor": 10, "erweiterta": 45, "erweitertb": 5 },
+  { "azahl": "0,75", "bzahl": "0,25", "faktor": 100, "erweiterta": 75, "erweitertb": 25 },
+  { "azahl": "1,25", "bzahl": "0,25", "faktor": 100, "erweiterta": 125, "erweitertb": 25 },
+]

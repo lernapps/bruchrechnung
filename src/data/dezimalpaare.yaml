@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+[
+  { "azahl": "0,76", "bzahl": "0,4", "a100": 76, "b100": 40, "summe100": 116, "differenz100": 36 },
+  { "azahl": "0,84", "bzahl": "0,25", "a100": 84, "b100": 25, "summe100": 109, "differenz100": 59 },
+  { "azahl": "0,57", "bzahl": "0,18", "a100": 57, "b100": 18, "summe100": 75, "differenz100": 39 },
+  { "azahl": "1,25", "bzahl": "0,5", "a100": 125, "b100": 50, "summe100": 175, "differenz100": 75 },
+  { "azahl": "2,4", "bzahl": "0,65", "a100": 240, "b100": 65, "summe100": 305, "differenz100": 175 },
+  { "azahl": "1,03", "bzahl": "0,27", "a100": 103, "b100": 27, "summe100": 130, "differenz100": 76 },
+]

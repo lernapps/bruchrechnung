@@ -174,6 +174,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Kuchenmultiplikation startet mit dem zweiten Regler am Maximum (3 von 3). Auch eine Änderung der Unterteilung wählt zunächst alle neuen Stückchen aus. Damit ist zuerst die unveränderte Kuchenfläche sichtbar; erst die zweite Handlung verkleinert den Anteil.
 
+
+- Dezimalrechnen ist in zwei Lernseiten geteilt: `dezimalrechnen` für Addition/Subtraktion, `dezimal-mal-geteilt` für Multiplikation/Division. Jede Rechenart hat eine eigene Herleitung, einen getrennten Beispielkasten mit Rechenschritten und eine variierte Übung mit sechs Datensätzen. Stellenwerttausch, Zehntelrechteck und gleichmäßige Skalierung der Division werden getrennt begründet. Daten in dezimalpaare/dezimalprodukte/dezimalquotienten. 21 Lernseiten, Kapitel Anwendungen nun fünf Seiten; der alte Plus/Minus-Pfad und die Übungs-ID aufgaben bleiben erhalten.
+
 ## Explore
 
 <!--
@@ -277,7 +280,7 @@ Die Vorlage erzeugt Start, Kapitelübersichten, Navigation, Glossar und Tutor-Se
 | `umformen` | `erweitern`, `kuerzen`, `vergleichen` | kapitel-3.svg, interaktionen.svg |
 | `grundaufgaben` | `bruchteil`, `ganzes`, `anteil` | kapitel-4.svg |
 | `rechnen` | `plus-minus`, `multiplizieren`, `dividieren`, `terme`, `gleichungen` | kapitel-5.svg, interaktionen.svg |
-| `anwendungen` | `dezimaldarstellung`, `dezimalrechnen`, `runden`, `sachaufgaben` | kapitel-6.svg |
+| `anwendungen` | `dezimaldarstellung`, `dezimalrechnen`, `dezimal-mal-geteilt`, `runden`, `sachaufgaben` | kapitel-6.svg |
 
 Alle Skizzen liegen in `.vibe/sketches/`. `ablauf-1.svg` zeigt die Startnavigation, `ablauf-2.svg` den gemeinsamen Seiten- und Übungsablauf. Zustände: unberührt → eigene Eingabe → Prüfung → Erfolg mit Begründung oder Fehler mit Hinweis → erneuter Versuch/neue Aufgabe. Ein neuer Versuch behält die Aufgabe, eine neue Aufgabe löscht Antwort und Feedback. Keine Zeitschranke, keine Bestenliste. Kleine Kapitel-Selbsteinschätzungen werden zum Schluss aus vorhandenen Übungen zusammengestellt, ohne ein zweites Aufgabensystem.
 

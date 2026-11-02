@@ -52,7 +52,7 @@ Die Vorlage erzeugt Start, Kapitelübersichten, Navigation, Glossar und Tutor-Se
 | `umformen` | `erweitern`, `kuerzen`, `vergleichen` | kapitel-3.svg, interaktionen.svg |
 | `grundaufgaben` | `bruchteil`, `ganzes`, `anteil` | kapitel-4.svg |
 | `rechnen` | `plus-minus`, `multiplizieren`, `dividieren`, `terme`, `gleichungen` | kapitel-5.svg, interaktionen.svg |
-| `anwendungen` | `dezimaldarstellung`, `dezimalrechnen`, `runden`, `sachaufgaben` | kapitel-6.svg |
+| `anwendungen` | `dezimaldarstellung`, `dezimalrechnen`, `dezimal-mal-geteilt`, `runden`, `sachaufgaben` | kapitel-6.svg |
 
 Alle Skizzen liegen in `.vibe/sketches/`. `ablauf-1.svg` zeigt die Startnavigation, `ablauf-2.svg` den gemeinsamen Seiten- und Übungsablauf. Zustände: unberührt → eigene Eingabe → Prüfung → Erfolg mit Begründung oder Fehler mit Hinweis → erneuter Versuch/neue Aufgabe. Ein neuer Versuch behält die Aufgabe, eine neue Aufgabe löscht Antwort und Feedback. Keine Zeitschranke, keine Bestenliste. Kleine Kapitel-Selbsteinschätzungen werden zum Schluss aus vorhandenen Übungen zusammengestellt, ohne ein zweites Aufgabensystem.
 
@@ -111,7 +111,7 @@ Kreis, Streifen, Menge und Zahlenstrahl mit gleichen Teilen, ausgewiesenem Ganze
 
 ### Umfang und Annahmen
 
-- Inhalt: Bruchrechnung einschließlich zugehöriger Teilbarkeit und Dezimaldarstellung; keine vollständige Mathematik-App für Klasse 6. Sechs Kapitel mit 20 Lernseiten. Pro Lernseite ein Verständnischeck und eine wechselnde Übung mit mindestens sechs geprüften Aufgabenvarianten; insgesamt mindestens 140 Aufgabenstellungen, dazu die interaktiven Entdeckermodelle.
+- Inhalt: Bruchrechnung einschließlich zugehöriger Teilbarkeit und Dezimaldarstellung; keine vollständige Mathematik-App für Klasse 6. Sechs Kapitel mit 21 Lernseiten. Pro Lernseite ein Verständnischeck und eine wechselnde Übung mit mindestens sechs geprüften Aufgabenvarianten; insgesamt mindestens 140 Aufgabenstellungen, dazu die interaktiven Entdeckermodelle.
 - Datenbereich (guess): nichtnegative Brüche; Modelle mit Nenner 1–12 und Wert 0–3, Mengen 1–48 mit ganzzahligem Ergebnis. Rechenaufgaben Zähler 0–36, Nenner 1–24, Ergebnisse bis 12; Division nur durch von null verschiedene Brüche. Kürzen/Erweitern Faktoren 2–6. Teilbarkeit natürliche Zahlen 1–200, Primzahlen bis 50, Regeln für 2, 3, 4, 5, 9, 10, 25 und 100. Umwandlungen zusätzlich Nenner 10, 100, 1000 sowie einfache periodische Fälle 1/3, 2/3, 1/6, 5/6, 1/9. Dezimalrechnung höchstens drei Nachkommastellen; Runden mit ausdrücklich benannter Stelle. Keine stillschweigende Begrenzung auf Stammbrüche.
 - Enthalten: gemischte Zahlen, Brüche über 1, Grundrechenarten, einfache kombinierte Terme/Vorrangregeln, Rechengesetze, einfache Platzhaltergleichungen und Alltagsanwendungen mit Einheiten; Dezimalrechnung als Anschluss zur Bruchdarstellung. Einfache Prozentangaben als Hundertstel und relative Häufigkeit als Anwendung des Anteils.
 - Ausgeschlossen (guess): negative Bruchrechnung, Doppelbrüche, euklidischer Algorithmus, algebraisches Rückumwandeln periodischer Dezimalzahlen; die letzten drei nennt der G9-Lehrplan fakultativ. Keine eigene Geometrie- oder Statistiklektion.
@@ -160,7 +160,7 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 
 ### Didaktischer Aufbau nach Browserfeedback
 
-- Alle 20 Seiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Inhaltlich passende Einstiegstitel, anschließend „Ausprobieren“ nur bei Interaktion oder sonst „Anschaulich erklärt“, danach „Am Beispiel nachvollziehen“ und „Üben“.
+- Alle Lernseiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Inhaltlich passende Einstiegstitel, anschließend „Ausprobieren“ nur bei Interaktion oder sonst „Anschaulich erklärt“, danach „Am Beispiel nachvollziehen“ und „Üben“.
 - `teilbarkeit/regeln`: Faktor und Produkt anhand von Bauklotz-Reihen, dann `FaktorEntdecken` zum selbstständigen Zerlegen einer Zahl von 2 bis 48; erst danach Primzahl und Primfaktorzerlegung definieren, zum Schluss Teilbarkeitsregeln als Abkürzungen. Jede Aufteilung bewahrt das Produkt; 1 und unpassende Faktoren sind ausgeschlossen. Eigene Tests prüfen genau das und das Ende bei Primzahlen.
 - Neue Kompetenz: Ich kann eine zusammengesetzte Zahl in Primfaktoren zerlegen. Übung `primfaktoren` mit sechs Fällen aus `src/data/primfaktoren.yaml`, zusätzlicher Verständnischeck `verstehen` und Gruppenübung `aufgaben`.
 - Quelle ergänzt und vollständig im Web gelesen: Serlo, „Primfaktorzerlegung“, https://de.serlo.org/mathe/1779/primfaktorzerlegung (Beispiele und Vorgehensweise).
@@ -201,3 +201,5 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Flächenmuster sind Rauten und Punkte statt vertikaler/horizontaler Schraffur, damit sie nicht mit Teilgrenzen verwechselt werden. Die Beschriftungen erklären dieselbe Musterzuordnung.
 
 - Kuchenmultiplikation startet mit dem zweiten Regler am Maximum (3 von 3). Auch eine Änderung der Unterteilung wählt zunächst alle neuen Stückchen aus. Damit ist zuerst die unveränderte Kuchenfläche sichtbar; erst die zweite Handlung verkleinert den Anteil.
+
+- Dezimalrechnen ist in zwei Lernseiten geteilt: `dezimalrechnen` für Addition/Subtraktion, `dezimal-mal-geteilt` für Multiplikation/Division. Jede Rechenart hat eine eigene Herleitung, einen getrennten Beispielkasten mit Rechenschritten und eine variierte Übung mit sechs Datensätzen. Stellenwerttausch, Zehntelrechteck und gleichmäßige Skalierung der Division werden getrennt begründet. Daten in dezimalpaare/dezimalprodukte/dezimalquotienten. 21 Lernseiten, Kapitel Anwendungen nun fünf Seiten; der alte Plus/Minus-Pfad und die Übungs-ID aufgaben bleiben erhalten.
