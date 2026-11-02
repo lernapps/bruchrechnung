@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Umformen und vergleichen",
+  "summary": "Wenn jedes Stück halbiert wird, ist dann mehr Kuchen da?",
+  "pages": ["erweitern", "kuerzen", "vergleichen"],
+}

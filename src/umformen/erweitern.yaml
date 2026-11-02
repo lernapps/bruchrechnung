@@ -1,0 +1,161 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche erweitern",
+  "description": "Wenn jedes Stück halbiert wird, ist dann mehr Kuchen da?",
+  "scope": "Beim Erweitern multiplizierst du Zähler und Nenner mit derselben positiven ganzen Zahl. Es gibt mehr, aber kleinere Teile. Der Anteil bleibt gleich. 2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Ein Kuchenstück wird noch einmal durchgeschnitten. Die Stücke werden kleiner, aber du hast genauso viel Kuchen wie vorher.",
+            },
+            {
+              "type": "definition",
+              "term": "Erweitern",
+              "explanation": "Beim Erweitern werden Zähler und Nenner mit derselben positiven ganzen Zahl multipliziert. Der Anteil bleibt gleich.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            { "type": "text", "text": "Wenn jedes Stück halbiert wird, ist dann mehr Kuchen da?" },
+            {
+              "type": "figure",
+              "draw": { "kind": "bar", "part": 2, "whole": 3 },
+              "alt": "Ein Streifen mit drei gleich großen Teilen, zwei markiert.",
+              "caption": "Zwei Drittel: Bei einer neuen Unterteilung soll der ausgewählte Anteil gleich bleiben.",
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Beim Erweitern multiplizierst du Zähler und Nenner mit derselben positiven ganzen Zahl. Es gibt mehr, aber kleinere Teile. Der Anteil bleibt gleich.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "component": "BruchUmformen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "expand",
+                  "task": "Erweitere {z}/{n} mit {f}. Gib den erweiterten Bruch an.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort als Bruch (z. B. 2/3) oder ganze Zahl",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Verändere die Unterteilung und markiere deinen Ergebnisbruch. Du kannst den Bruch auch direkt eingeben.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                { "accepted": [{ "answer": "2/6", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Was bleibt beim Erweitern gleich?",
+              "options":
+                [
+                  {
+                    "text": "Der Wert des Bruchs.",
+                    "correct": true,
+                    "info": "2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+                  },
+                  {
+                    "text": "Die Zahl der Teilstücke.",
+                    "correct": false,
+                    "info": "Die Zahl der Teilstücke steigt beim Erweitern. Der Anteil bleibt gleich.",
+                  },
+                  {
+                    "text": "Die Größe eines Teilstücks.",
+                    "correct": false,
+                    "info": "Die Teilstücke werden kleiner, weil jedes weiter unterteilt wird.",
+                  },
+                ],
+              "explanation": "2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/1509/brueche-kuerzen-und-erweitern",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Erweitere 1/{{n}} mit 3. Welcher Nenner entsteht?" },
+              "answer": { "value": "n*3", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n+3", "message": "Erweitern bedeutet multiplizieren, nicht addieren." },
+                  { "value": "n", "message": "Auch der Nenner muss mit dem Erweiterungsfaktor multipliziert werden." },
+                ],
+              "hint": "Beim Erweitern multiplizierst du Zähler und Nenner mit derselben positiven ganzen Zahl.",
+              "steps":
+                [
+                  "Beim Erweitern wird jedes ursprüngliche Teil in drei gleich große kleinere Teile zerlegt.",
+                  "Darum verdreifacht sich auch die Gesamtzahl der Teile: ${{n}} \\cdot 3 = {{answer}}$. Das ist der neue Nenner.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}
