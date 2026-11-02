@@ -18,6 +18,10 @@ const props = defineProps<{
 }>();
 const emit = defineEmits<{ answer: [string] }>();
 const taskNow = computed(() => generate(props.seed, props));
+const givenStrips = computed(() => [
+  { n: taskNow.value.n, z: taskNow.value.z },
+  { n: taskNow.value.d, z: taskNow.value.b },
+]);
 const input = ref("");
 const split = ref(taskNow.value.n);
 const marked = ref<number[]>([]);
@@ -29,20 +33,13 @@ function update(value: string): void {
 function toggle(i: number): void {
   marked.value = marked.value.includes(i) ? marked.value.filter((x) => x !== i) : [...marked.value, i];
 }
-function partition(): void {
-  marked.value = [];
-  update("");
-}
 </script>
 <template>
   <div>
     <p>{{ fill(task, params(taskNow)) }}</p>
     <p>{{ givenLabel }}</p>
-    <div class="strip">
-      <span v-for="i in taskNow.n" :key="i" :class="{ on: i <= taskNow.z }">{{ i <= taskNow.z ? "✓" : "·" }}</span>
-    </div>
-    <div class="strip">
-      <span v-for="i in taskNow.d" :key="i" :class="{ on: i <= taskNow.b }">{{ i <= taskNow.b ? "✓" : "·" }}</span>
+    <div v-for="(strip, index) in givenStrips" :key="index" class="strip">
+      <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }">{{ i <= strip.z ? "✓" : "·" }}</span>
     </div>
     <div class="tools">
       <p>{{ toolLabel }}</p>
@@ -72,22 +69,23 @@ function partition(): void {
         </div></template
       >
       <template v-else
-        ><label
-          >{{ stepLabel }}: {{ split }}<input v-model.number="split" type="range" min="2" max="24" @input="partition"
-        /></label>
-        <div class="cells">
-          <button
-            v-for="i in split * 2"
-            :key="i"
-            type="button"
-            :aria-label="`${pieceLabel} ${i}/${split}`"
-            :aria-pressed="marked.includes(i)"
-            @click="toggle(i)"
+        ><label>{{ stepLabel }}: {{ split }}<input v-model.number="split" type="range" min="2" max="24" /></label>
+        <div v-for="(strip, index) in givenStrips" :key="index" class="strip">
+          <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }">{{ i <= strip.z ? "✓" : "·" }}</span>
+          <svg
+            v-if="kind === 'add' || kind === 'subtract'"
+            class="partition-guides"
+            viewBox="0 0 1000 40"
+            preserveAspectRatio="none"
+            aria-hidden="true"
           >
-            {{ marked.includes(i) ? "✓" : "○" }}
-          </button>
-        </div></template
-      >
+            <g v-for="i in split - 1" :key="i">
+              <line :x1="(i * 1000) / split" y1="0" :x2="(i * 1000) / split" y2="40" class="guide-halo" />
+              <line :x1="(i * 1000) / split" y1="0" :x2="(i * 1000) / split" y2="40" class="guide" />
+            </g>
+          </svg>
+        </div>
+      </template>
       <label
         >{{ inputLabel
         }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)"
@@ -116,14 +114,6 @@ function partition(): void {
   color: inherit;
   background: var(--vp-c-bg, #fff);
 }
-.cells {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin: 0.75rem 0;
-}
-.cells button,
-.signs button,
 .pieces button {
   min-width: 44px;
   min-height: 44px;
@@ -131,11 +121,6 @@ function partition(): void {
   background: var(--vp-c-bg, #fff);
   color: inherit;
   border-radius: 4px;
-}
-.cells button[aria-pressed="true"],
-.signs button[aria-pressed="true"] {
-  background: #16765d;
-  color: white;
 }
 .matrix {
   display: grid;
@@ -159,6 +144,7 @@ function partition(): void {
   color: white;
 }
 .strip {
+  position: relative;
   display: flex;
   min-height: 40px;
   margin: 0.5rem 0;
@@ -168,11 +154,29 @@ function partition(): void {
   border: 1px solid currentColor;
   text-align: center;
 }
+.partition-guides {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.partition-guides line {
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 4 4;
+}
+.guide-halo {
+  stroke: white;
+  stroke-width: 4px;
+}
+.guide {
+  stroke: #17212b;
+  stroke-width: 2px;
+}
 .strip .on {
   background: #16765d;
   color: white;
 }
-.signs,
 .pieces {
   display: flex;
   gap: 0.7rem;

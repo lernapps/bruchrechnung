@@ -36,7 +36,7 @@
               "props":
                 {
                   "kind": "add",
-                  "task": "Berechne {z}/{n} + {b}/{d}. Stelle das Ergebnis mit passenden Bruchstücken dar.",
+                  "task": "Berechne {z}/{n} + {b}/{d}. Finde eine gemeinsame Unterteilung und gib das Ergebnis als Bruch ein.",
                   "mistakes":
                     [
                       "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
@@ -45,7 +45,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "toolLabel": "Verändere „Teile pro Ganzem“. Unter dem Regler siehst du dieselben Anteile noch einmal. Die gestrichelten Linien zeigen die gewählte Unterteilung. Passen sie zu allen ursprünglichen Teilgrenzen? Das Ergebnis gibst du selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -71,7 +71,7 @@
               "props":
                 {
                   "kind": "subtract",
-                  "task": "Berechne {z}/{n} − {b}/{d}. Stelle den Rest dar.",
+                  "task": "Berechne {z}/{n} − {b}/{d}. Finde eine gemeinsame Unterteilung und gib den Rest als Bruch ein.",
                   "mistakes":
                     [
                       "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
@@ -80,7 +80,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "toolLabel": "Verändere „Teile pro Ganzem“. Unter dem Regler siehst du dieselben Anteile noch einmal. Die gestrichelten Linien zeigen die gewählte Unterteilung. Passen sie zu allen ursprünglichen Teilgrenzen? Das Ergebnis gibst du selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":

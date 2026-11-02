@@ -140,6 +140,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Konkrete Aufgabenwerte statt versteckter Erzeugungsrechnungen: gemeinsame Datensätze in `src/data/grundzahlen.yaml`. Kürzungsaufgaben zeigen z. B. 6/48 statt 6/(8 · 6); Gruppenmengen und Rundungszahlen sind ebenfalls bereits ausgerechnet. Rechenterme bleiben nur dort stehen, wo gerade das Berechnen solcher Terme geübt wird.
 
+
+- Browserkorrektur Plus/Minus: Die lose Markierreihe bei Plus/Minus wird durch wiederholte, gleich breite Streifen unter dem Regler ersetzt. Die gewählte Unterteilung „Teile pro Ganzem“ liegt dort als gestricheltes Raster über beiden gegebenen Anteilen; darüber stehen die ursprünglichen Streifen zum Vergleich. Ursprüngliche Grenzen und Flächenanteile bleiben sichtbar; kein gemeinsamer Nenner und kein Ergebnis werden automatisch gewählt.
+
 ## Explore
 
 <!--
