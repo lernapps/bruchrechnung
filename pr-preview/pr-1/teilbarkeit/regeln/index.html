@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" crossorigin src="../../assets/index-DAmd8Dpw.js"></script>
+    <link rel="modulepreload" crossorigin href="../../assets/tasks-DADUYy52-D5IfZDbd.js">
+    <link rel="stylesheet" crossorigin href="../../assets/index-BjdyLTt2.css">
+    <title>Teilbarkeit und Primzahlen – Bruchrechnung – Schritt für Schritt</title>
+    <meta name="description" content="Zahlen als Produkte zerlegen und dabei Primzahlen entdecken." />
+    <meta name="lernapps-archetype" content="explainer" />
+    <link rel="alternate" hreflang="de" href="../../teilbarkeit/regeln/" />
+    <script type="module" crossorigin src="../../assets/islands-CrSEUBBs.js"></script>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <nav class="explainer-breadcrumbs" aria-label="Du bist hier"><ol><li><a href="../../">Start</a></li><li><a href="../../teilbarkeit/">Teilbarkeit nutzen</a></li><li aria-current="page">Teilbarkeit und Primzahlen</li></ol></nav>
+<main class="explainer" id="inhalt-der-seite">
+<div class="explainer-title-row">
+<h1>Teilbarkeit und Primzahlen</h1>
+<div class="explainer-tutor explainer-tutor-page">
+<details class="explainer-tutor-off">
+<summary>Mit einem KI-Tutor lernen</summary>
+<p>Ein KI-Tutor erklärt dir diese Seite und hilft dir bei den Übungen. Wähl deinen Assistenten:</p>
+<p class="explainer-tutor-actions"><span class="explainer-tutor-way" hidden><select class="explainer-tutor-select" aria-label="Assistent"><option value="Claude">Claude</option><option value="ChatGPT">ChatGPT</option><option value="Mistral Vibe" data-hint="Mistral Vibe lädt keine Webseiten, wenn der Link aus einem Knopf kommt. Darum kopieren wir den Satz mit dem Link für dich. Ein Klick auf „Mit Mistral Vibe lernen“ öffnet Mistral Vibe mit einer kurzen Nachricht. Füg danach den kopierten Satz ein (Strg+V, am Mac ⌘+V) und schick ihn ab.">Mistral Vibe</option><option value="copy">Ein anderer: Text kopieren</option></select> <button type="button" class="explainer-tutor-on">Einschalten</button></span> <span class="explainer-tutor-plain"><a class="explainer-tutor-provider" href="https://claude.ai/new" rel="noopener" target="_blank">Mit Claude öffnen</a> <a class="explainer-tutor-provider" href="https://chatgpt.com/" rel="noopener" target="_blank">Mit ChatGPT öffnen</a> <a class="explainer-tutor-provider" href="https://chat.mistral.ai/chat" rel="noopener" target="_blank">Mit Mistral Vibe öffnen</a></span></p>
+<p class="explainer-tutor-hint" role="status" aria-live="polite" hidden></p>
+<p class="explainer-tutor-note">Du nutzt dein eigenes Konto beim Anbieter. Der Assistent ist kein Angebot von lernapps.net: lernapps liefert nur Inhalte und Übungen. Die Wahl gilt für alle Seiten, nur auf diesem Gerät.</p>
+<p><a class="explainer-tutor-guide" href="../../teilbarkeit/regeln/tutor/">Ansehen, was dein Tutor zu dieser Seite bekommt</a></p>
+</details>
+<p class="explainer-tutor-bar" hidden><button type="button" class="explainer-tutor-go"></button></p>
+<p class="explainer-tutor-status" role="status" aria-live="polite"></p>
+<script type="application/json" class="explainer-tutor-prompt">{"start":"Lade ⟦base⟧teilbarkeit/regeln/tutor/⟦query⟧ und sei mein Tutor.","base":"⟦base⟧","query":"⟦query⟧","root":"../../","storage":"lernapp","page":{"id":"regeln","title":"Teilbarkeit und Primzahlen","exercises":[{"id":"verstehen","section":"ueben","numbered":false},{"id":"aufgaben","section":"ueben","numbered":true},{"id":"primfaktoren","section":"ueben","numbered":true}],"sections":["regel","entdecken","entdecken/primzahlen","entdecken/abkuerzungen","beispiel","ueben"]},"tutor":"teilbarkeit/regeln/tutor/","markdown":"teilbarkeit/regeln/tutor/index.md","ways":[{"name":"Claude","url":"https://claude.ai/new?q={prompt}"},{"name":"ChatGPT","url":"https://chatgpt.com/?q={prompt}"},{"name":"Mistral Vibe","url":"https://chat.mistral.ai/chat?q={prompt}","paste":true}],"placeholder":"Ich brauche Hilfe bei einer Lern-Einheit. Ich schreibe Dir gleich, worum es geht.","go":"Mit {name} lernen","done":"✓ Kopiert – jetzt in {name} einfügen","copy":"Text kopieren","copied":"Der Prompt ist kopiert. Füg ihn in den Chat deines KI-Assistenten ein.","failed":"Kopieren ging nicht. Versuch es noch einmal."}</script>
+</div>
+</div>
+<nav class="explainer-toc" aria-label="Auf dieser Seite"><p class="explainer-toc-title">Auf dieser Seite</p><ol><li><a href="#regel">Zahlen als Malaufgabe</a></li><li><a href="#entdecken">Ausprobieren</a><ol><li><a href="#entdecken/primzahlen">Wo das Zerlegen endet</a></li><li><a href="#entdecken/abkuerzungen">Abkürzungen beim Suchen</a></li></ol></li><li><a href="#beispiel">Am Beispiel nachvollziehen</a></li><li><a href="#ueben">Üben</a></li></ol></nav>
+<section class="explainer-section">
+<h2 id="regel">Zahlen als Malaufgabe</h2>
+<div class="block-text"><p>Stell dir zwölf Bauklötze vor. Du kannst daraus drei Reihen mit je vier Klötzen legen – oder zwei Reihen mit je sechs. Dieselbe Anzahl lässt sich also auf verschiedene Arten als Malaufgabe schreiben.</p></div>
+<dl class="explainer-definition"><dt><dfn id="begriff-faktor"><a href="../../glossar/#faktor">Faktor</a></dfn></dt><dd><p>Die Zahlen, die du miteinander multiplizierst, heißen Faktoren. Das Ergebnis heißt Produkt. Bei 3 · 4 = 12 sind 3 und 4 die Faktoren.</p></dd></dl>
+</section>
+<section class="explainer-section">
+<h2 id="entdecken">Ausprobieren</h2>
+<div class="block-text"><p>Stell dir 12 Bauklötze vor: Du kannst daraus 3 Reihen mit je 4 Klötzen legen. Die Rechnung 3 · 4 beschreibt diese Anordnung. Die Zahlen 3 und 4 heißen Faktoren. Unten kannst du so eine Zahl immer weiter aufteilen: Wähle einen Faktor und darunter eine passende Malaufgabe. Die neuen Faktoren ersetzen den alten, aber das Ergebnis bleibt gleich. Ein Stern bedeutet: Diese Zahl lässt sich nicht weiter in zwei ganze Faktoren größer als 1 zerlegen. Probiere unterschiedliche Zerlegungen aus und vergleiche die Zahlen, bei denen du landest.</p></div>
+<div class="explainer-component" data-component="FaktorEntdecken" data-nojs="caption" data-caption="Beschreibung als Text">
+<div class="explainer-island" hidden><div class="factor-lab" data-v-e5229ebd><p data-v-e5229ebd>Wähle eine Zahl. Tippe dann auf einen Faktor, den du weiter zerlegen möchtest, und wähle eine passende Malaufgabe. Was bleibt am Ende übrig?</p><label data-v-e5229ebd>Deine Zahl: 12<input value="12" type="range" min="2" max="48" data-v-e5229ebd></label><p class="product" data-v-e5229ebd><strong data-v-e5229ebd>12 = </strong><!--[--><!--[--><!----><button type="button" aria-pressed="true" aria-label="Faktor 12 untersuchen" data-v-e5229ebd>12<!----></button><!--]--><!--]--></p><p data-v-e5229ebd>So kannst du den gewählten Faktor zerlegen:</p><div class="choices" data-v-e5229ebd><!--[--><button type="button" data-v-e5229ebd>2 · 6</button><button type="button" data-v-e5229ebd>3 · 4</button><button type="button" data-v-e5229ebd>4 · 3</button><button type="button" data-v-e5229ebd>6 · 2</button><!--]--></div><!----><!----><p class="reset-actions" data-v-e5229ebd><button type="button" data-v-e5229ebd>Noch einmal zerlegen</button></p></div></div>
+<div class="explainer-nojs"><p>Stell dir 12 Bauklötze vor: Du kannst daraus 3 Reihen mit je 4 Klötzen legen. Die Rechnung 3 · 4 beschreibt diese Anordnung. Die Zahlen 3 und 4 heißen Faktoren. Unten kannst du so eine Zahl immer weiter aufteilen: Wähle einen Faktor und darunter eine passende Malaufgabe. Die neuen Faktoren ersetzen den alten, aber das Ergebnis bleibt gleich. Ein Stern bedeutet: Diese Zahl lässt sich nicht weiter in zwei ganze Faktoren größer als 1 zerlegen. Probiere unterschiedliche Zerlegungen aus und vergleiche die Zahlen, bei denen du landest.</p>
+<p>Beispiel: 12 = 3 · 4 = 3 · 2 · 2. Die Faktoren 3, 2 und 2 lassen sich nicht weiter in ganze Faktoren größer als 1 zerlegen.</p></div>
+<script type="application/json" class="explainer-component-props">{"numberLabel":"Deine Zahl","instruction":"Wähle eine Zahl. Tippe dann auf einen Faktor, den du weiter zerlegen möchtest, und wähle eine passende Malaufgabe. Was bleibt am Ende übrig?","chooseLabel":"Faktor {n} untersuchen","splitLabel":"So kannst du den gewählten Faktor zerlegen:","primeLabel":"{n} lässt sich nicht in zwei ganze Faktoren größer als 1 zerlegen. Mit solchen Zahlen endet das Zerlegen.","finishedLabel":"Jetzt lässt sich keiner der Faktoren weiter zerlegen. Alle sind Primzahlen; die Sterne markieren diese Endpunkte.","resetLabel":"Noch einmal zerlegen"}</script>
+</div>
+<section class="explainer-section">
+<h3 id="entdecken/primzahlen">Wo das Zerlegen endet</h3>
+<div class="block-text"><p>Du kannst 12 als 3 · 4 schreiben. Die 4 lässt sich weiter zerlegen: 4 = 2 · 2. Bei 12 = 3 · 2 · 2 geht es nicht weiter, wenn alle Faktoren größer als 1 sein sollen.</p></div>
+<dl class="explainer-definition"><dt><dfn id="begriff-primzahl"><a href="../../glossar/#primzahl">Primzahl</a></dfn></dt><dd><p>Eine Primzahl ist eine natürliche Zahl größer als 1, die sich nicht in zwei ganze Faktoren größer als 1 zerlegen lässt. Sie hat genau zwei positive Teiler: 1 und sich selbst. Die 1 ist keine Primzahl.</p></dd></dl>
+<dl class="explainer-definition"><dt><dfn id="begriff-primfaktorzerlegung"><a href="../../glossar/#primfaktorzerlegung">Primfaktorzerlegung</a></dfn></dt><dd><p>Bei einer Primfaktorzerlegung wird eine Zahl als Produkt von Primzahlen geschrieben. Du zerlegst zusammengesetzte Faktoren weiter, bis nur noch Primzahlen übrig sind.</p></dd></dl>
+</section>
+<section class="explainer-section">
+<h3 id="entdecken/abkuerzungen">Abkürzungen beim Suchen</h3>
+<div class="block-text"><p>Wenn du die Faktoren ausprobieren kannst, helfen diese Regeln, schneller einen passenden zu finden. Die Quersumme ist die Summe aller Ziffern einer Zahl.</p></div>
+<div class="block-table" role="region" aria-label="Teilbarkeitsregeln helfen beim Finden von Faktoren" tabindex="0"><table><caption>Teilbarkeitsregeln helfen beim Finden von Faktoren</caption><thead><tr><th scope="col">Teilbar durch</th><th scope="col">Woran du es erkennst</th></tr></thead><tbody><tr><td>2</td><td>Letzte Ziffer 0, 2, 4, 6 oder 8</td></tr><tr><td>5</td><td>Letzte Ziffer 0 oder 5</td></tr><tr><td>10</td><td>Letzte Ziffer 0</td></tr><tr><td>4</td><td>Die letzten zwei Ziffern bilden eine durch 4 teilbare Zahl</td></tr><tr><td>25</td><td>Endung 00, 25, 50 oder 75</td></tr><tr><td>100</td><td>Endung 00</td></tr><tr><td>3</td><td>Quersumme durch 3 teilbar</td></tr><tr><td>9</td><td>Quersumme durch 9 teilbar</td></tr></tbody></table></div>
+</section>
+</section>
+<section class="explainer-section">
+<h2 id="beispiel">Am Beispiel nachvollziehen</h2>
+<div class="explainer-box explainer-example">
+<h3 class="explainer-box-title">24 Schritt für Schritt zerlegen</h3>
+<div class="block-formula"><math display="block" class="tml-display" style="display:block math;"><mrow><mn>24</mn><mo>=</mo><mn>4</mn><mo>⋅</mo><mn>6</mn></mrow></math></div>
+<div class="block-text"><p>Die Faktoren 4 und 6 lassen sich beide weiter zerlegen.</p></div>
+<div class="block-formula"><math display="block" class="tml-display" style="display:block math;"><mrow><mn>24</mn><mo>=</mo><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mn>2</mn><mo>⋅</mo><mn>2</mn><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>⋅</mo><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mn>2</mn><mo>⋅</mo><mn>3</mn><mo fence="true" form="postfix" stretchy="false">)</mo></mrow></mrow></math></div>
+<div class="block-text"><p>Jetzt bleiben nur Primzahlen übrig: 2, 2, 2 und 3. Du könntest auch mit 24 = 2 · 12 beginnen; am Ende erhältst du dieselben Primfaktoren in vielleicht anderer Reihenfolge.</p></div>
+</div>
+</section>
+<section class="explainer-section">
+<h2 id="ueben">Üben</h2>
+<div class="explainer-exercise explainer-question" id="verstehen">
+<p class="explainer-exercise-label">Übung</p>
+<div class="question" id="frage-verstehen" data-id="verstehen" data-type="single-choice">
+<form class="question-form" novalidate>
+<fieldset>
+<legend class="question-text">Welche Zahl ist eine Primzahl?</legend>
+<label class="question-option"><input type="radio" name="frage-verstehen" value="0"> <span>13</span></label>
+<label class="question-option"><input type="radio" name="frage-verstehen" value="1"> <span>1</span></label>
+<label class="question-option"><input type="radio" name="frage-verstehen" value="2"> <span>15</span></label>
+</fieldset>
+<div class="question-feedback" role="status"></div>
+<div class="question-reveal" hidden>
+<ul class="question-infos">
+<li class="question-info question-info-right" data-option="0"><p class="question-info-head"><strong>13</strong> <span class="question-badge question-badge-right">richtige Antwort</span></p><p>132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.</p></li>
+<li class="question-info" data-option="1"><p class="question-info-head"><strong>1</strong></p><p>Die 1 hat nur einen positiven Teiler. Eine Primzahl braucht genau zwei.</p></li>
+<li class="question-info" data-option="2"><p class="question-info-head"><strong>15</strong></p><p>15 hat außer 1 und 15 auch die Teiler 3 und 5.</p></li>
+</ul>
+<p class="question-explanation">132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.</p>
+<p class="question-more">Mehr dazu:</p>
+<ul class="question-links">
+<li><a href="https://de.wikipedia.org/wiki/Teilbarkeit" rel="noopener">Weiterlesen zur Herleitung</a></li>
+</ul>
+</div>
+<p class="question-actions" hidden><button type="submit" class="question-check">Prüfen</button></p>
+</form>
+</div>
+<details class="explainer-solution"><summary>Lösung</summary>
+<ul class="question-infos">
+<li class="question-info question-info-right" data-option="0"><p class="question-info-head"><strong>13</strong> <span class="question-badge question-badge-right">richtige Antwort</span></p><p>132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.</p></li>
+<li class="question-info" data-option="1"><p class="question-info-head"><strong>1</strong></p><p>Die 1 hat nur einen positiven Teiler. Eine Primzahl braucht genau zwei.</p></li>
+<li class="question-info" data-option="2"><p class="question-info-head"><strong>15</strong></p><p>15 hat außer 1 und 15 auch die Teiler 3 und 5.</p></li>
+</ul>
+<p class="question-explanation">132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.</p>
+<p class="question-more">Mehr dazu:</p>
+<ul class="question-links">
+<li><a href="https://de.wikipedia.org/wiki/Teilbarkeit" rel="noopener">Weiterlesen zur Herleitung</a></li>
+</ul>
+</details>
+<script type="application/json" class="explainer-exercise-data">{"kind":"question","lang":"de","question":{"id":"verstehen","text":"Welche Zahl ist eine Primzahl?","explanation":"132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.","links":[{"title":"Weiterlesen zur Herleitung","url":"https://de.wikipedia.org/wiki/Teilbarkeit"}],"type":"single-choice","options":[{"text":"13","correct":true,"info":"132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung."},{"text":"1","correct":false,"info":"Die 1 hat nur einen positiven Teiler. Eine Primzahl braucht genau zwei."},{"text":"15","correct":false,"info":"15 hat außer 1 und 15 auch die Teiler 3 und 5."}]},"rendered":{}}</script>
+</div>
+<div class="explainer-exercise explainer-generated" id="aufgaben">
+<p class="explainer-exercise-label">Übung</p>
+<div class="explainer-live" hidden></div>
+<p class="explainer-worked-intro">Drei Beispielaufgaben, jede mit ihrer Lösung:</p>
+<ol class="explainer-worked"><li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 1</p><p class="explainer-task">30 Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?</p><details class="explainer-hint"><summary>Tipp</summary><p>Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Die 30 Gegenstände werden auf drei gleich große Gruppen verteilt.</li><li>30 : 3 = 10. So viele Gegenstände liegen in jeder Gruppe.</li></ol><p><strong>Richtige Antwort:</strong> 10</p></details></li>
+<li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 2</p><p class="explainer-task">15 Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?</p><details class="explainer-hint"><summary>Tipp</summary><p>Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Die 15 Gegenstände werden auf drei gleich große Gruppen verteilt.</li><li>15 : 3 = 5. So viele Gegenstände liegen in jeder Gruppe.</li></ol><p><strong>Richtige Antwort:</strong> 5</p></details></li>
+<li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 3</p><p class="explainer-task">12 Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?</p><details class="explainer-hint"><summary>Tipp</summary><p>Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Die 12 Gegenstände werden auf drei gleich große Gruppen verteilt.</li><li>12 : 3 = 4. So viele Gegenstände liegen in jeder Gruppe.</li></ol><p><strong>Richtige Antwort:</strong> 4</p></details></li></ol>
+<script type="application/json" class="explainer-exercise-data">{"kind":"generated","lang":"de","spec":{"type":"generated","id":"aufgaben","given":{"e":{"pick":1,"from":{"data":"grundzahlen"}}},"task":{"text":"{{e.dreifach}} Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?"},"answer":{"value":"e.dreifach / 3","compare":"number"},"mistakes":[{"value":"e.dreifach","message":"Das ist die Gesamtmenge, nicht die Menge in einer Gruppe."},{"value":"1","message":"Teile die gesamte Menge in drei gleich große Gruppen."}],"hint":"Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.","steps":["Die {{e.dreifach}} Gegenstände werden auf drei gleich große Gruppen verteilt.","{{e.dreifach}} : 3 = {{answer}}. So viele Gegenstände liegen in jeder Gruppe."]},"templates":{"de":{"task":"⟦e.dreifach⟧ Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?","steps":["Die ⟦e.dreifach⟧ Gegenstände werden auf drei gleich große Gruppen verteilt.","⟦e.dreifach⟧ : 3 = ⟦answer⟧. So viele Gegenstände liegen in jeder Gruppe."],"hint":"Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.","messages":["Das ist die Gesamtmenge, nicht die Menge in einer Gruppe.","Teile die gesamte Menge in drei gleich große Gruppen."]}},"data":{"grundzahlen":[{"basis":3,"dreifach":9,"vierfach":12,"doppelt":6,"sechsfach":18,"rundungszahl":0.346},{"basis":4,"dreifach":12,"vierfach":16,"doppelt":8,"sechsfach":24,"rundungszahl":0.446},{"basis":5,"dreifach":15,"vierfach":20,"doppelt":10,"sechsfach":30,"rundungszahl":0.546},{"basis":6,"dreifach":18,"vierfach":24,"doppelt":12,"sechsfach":36,"rundungszahl":0.646},{"basis":8,"dreifach":24,"vierfach":32,"doppelt":16,"sechsfach":48,"rundungszahl":0.846},{"basis":10,"dreifach":30,"vierfach":40,"doppelt":20,"sechsfach":60,"rundungszahl":1.046}]},"seeds":[1,2,3,4,6,25],"texts":{"newTask":"Neue Aufgabe","practice":"Übe selbst, mit immer neuen Aufgaben:","hint":"Tipp","solution":"Lösung","taskNumber":"Aufgabe Nr. {n}"}}</script>
+</div>
+<div class="explainer-exercise explainer-generated" id="primfaktoren">
+<p class="explainer-exercise-label">Übung</p>
+<div class="explainer-live" hidden></div>
+<p class="explainer-worked-intro">Drei Beispielaufgaben, jede mit ihrer Lösung:</p>
+<ol class="explainer-worked"><li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 1</p><p class="explainer-task">Zerlege 14 vollständig in Primfaktoren. Eine 2 ist schon gefunden: 14 = 2 · … . Welcher Primfaktor fehlt?</p><details class="explainer-hint"><summary>Tipp</summary><p>Suche die Zahl, die mit 2 multipliziert die Ausgangszahl ergibt. Prüfe danach, ob sie selbst prim ist.</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Teile 14 durch den schon gefundenen Primfaktor 2. Das ergibt 7.</li><li>7 ist eine Primzahl. Damit ist 14 = 2 · 7 vollständig in Primfaktoren zerlegt.</li></ol><p><strong>Richtige Antwort:</strong> 7</p></details></li>
+<li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 2</p><p class="explainer-task">Zerlege 4 vollständig in Primfaktoren. Eine 2 ist schon gefunden: 4 = 2 · … . Welcher Primfaktor fehlt?</p><details class="explainer-hint"><summary>Tipp</summary><p>Suche die Zahl, die mit 2 multipliziert die Ausgangszahl ergibt. Prüfe danach, ob sie selbst prim ist.</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Teile 4 durch den schon gefundenen Primfaktor 2. Das ergibt 2.</li><li>2 ist eine Primzahl. Damit ist 4 = 2 · 2 vollständig in Primfaktoren zerlegt.</li></ol><p><strong>Richtige Antwort:</strong> 2</p></details></li>
+<li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 3</p><p class="explainer-task">Zerlege 6 vollständig in Primfaktoren. Eine 2 ist schon gefunden: 6 = 2 · … . Welcher Primfaktor fehlt?</p><details class="explainer-hint"><summary>Tipp</summary><p>Suche die Zahl, die mit 2 multipliziert die Ausgangszahl ergibt. Prüfe danach, ob sie selbst prim ist.</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Teile 6 durch den schon gefundenen Primfaktor 2. Das ergibt 3.</li><li>3 ist eine Primzahl. Damit ist 6 = 2 · 3 vollständig in Primfaktoren zerlegt.</li></ol><p><strong>Richtige Antwort:</strong> 3</p></details></li></ol>
+<script type="application/json" class="explainer-exercise-data">{"kind":"generated","lang":"de","spec":{"type":"generated","id":"primfaktoren","given":{"e":{"pick":1,"from":{"data":"primfaktoren"}}},"task":{"text":"Zerlege {{e.zahl}} vollständig in Primfaktoren. Eine 2 ist schon gefunden: {{e.zahl}} = 2 · … . Welcher Primfaktor fehlt?"},"answer":{"value":"e.prime","compare":"number"},"mistakes":[{"value":"1","message":"Mit 1 bleibt der andere Faktor unverändert. Gesucht ist ein Primfaktor größer als 1."},{"value":"e.zahl","message":"Das ist die Ausgangszahl. Teile sie durch den schon gefundenen Faktor 2."}],"hint":"Suche die Zahl, die mit 2 multipliziert die Ausgangszahl ergibt. Prüfe danach, ob sie selbst prim ist.","steps":["Teile {{e.zahl}} durch den schon gefundenen Primfaktor 2. Das ergibt {{answer}}.","{{answer}} ist eine Primzahl. Damit ist {{e.zahl}} = 2 · {{answer}} vollständig in Primfaktoren zerlegt."]},"templates":{"de":{"task":"Zerlege ⟦e.zahl⟧ vollständig in Primfaktoren. Eine 2 ist schon gefunden: ⟦e.zahl⟧ = 2 · … . Welcher Primfaktor fehlt?","steps":["Teile ⟦e.zahl⟧ durch den schon gefundenen Primfaktor 2. Das ergibt ⟦answer⟧.","⟦answer⟧ ist eine Primzahl. Damit ist ⟦e.zahl⟧ = 2 · ⟦answer⟧ vollständig in Primfaktoren zerlegt."],"hint":"Suche die Zahl, die mit 2 multipliziert die Ausgangszahl ergibt. Prüfe danach, ob sie selbst prim ist.","messages":["Mit 1 bleibt der andere Faktor unverändert. Gesucht ist ein Primfaktor größer als 1.","Das ist die Ausgangszahl. Teile sie durch den schon gefundenen Faktor 2."]}},"data":{"primfaktoren":[{"zahl":4,"prime":2},{"zahl":6,"prime":3},{"zahl":10,"prime":5},{"zahl":14,"prime":7},{"zahl":22,"prime":11},{"zahl":26,"prime":13}]},"seeds":[1,2,4,5,16,18],"texts":{"newTask":"Neue Aufgabe","practice":"Übe selbst, mit immer neuen Aufgaben:","hint":"Tipp","solution":"Lösung","taskNumber":"Aufgabe Nr. {n}"}}</script>
+</div>
+</section>
+</main>
+<nav class="explainer-pager" aria-label="Weiterblättern"><a rel="prev" href="../../anteile/gemischte-zahlen/">Zurück: Mehr als ein Ganzes</a><a rel="next" href="../../teilbarkeit/teiler-vielfache/">Weiter: Gemeinsame Teiler und Vielfache</a></nav>
+<footer class="page-footer"><p>Eine Erklär-App auf lernapps.net · <a href="https://lernapps.net/imprint/">Impressum</a> · <a href="https://lernapps.net/privacy/">Datenschutz</a></p></footer>
+  </body>
+</html>
