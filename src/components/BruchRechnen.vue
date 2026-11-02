@@ -19,7 +19,7 @@ const props = defineProps<{
 const emit = defineEmits<{ answer: [string] }>();
 const taskNow = computed(() => generate(props.seed, props));
 const input = ref("");
-const split = ref(6);
+const split = ref(taskNow.value.n);
 const marked = ref<number[]>([]);
 const pieces = ref(0);
 function update(value: string): void {

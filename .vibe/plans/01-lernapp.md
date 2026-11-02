@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 5 }
+failedChecks: { checks-pass: 6 }
 ---
 
 # Plan: Bruchrechnung – Schritt für Schritt, first version
@@ -393,3 +393,5 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 - 20 Lernseiten bei 360 und 1280 px geöffnet und Bildschirmfotos gespeichert; keine Überbreite und richtige Reihenfolge der Hauptabschnitte. Zahlenstrahl ohne Antwortvorschau und mit erfolgreicher Prüfung getestet; konkreten Lösungsweg geprüft. Faktorzerlegung von 12 bis 3 · 2 · 2 durchgespielt; alternative Antwort 4/18 für 2/9 erfolgreich geprüft.
 - `lernapps check` bleibt offen: zwei Browser-Schritte scheitern beim Start von Chromium an der macOS-Sandbox (MachPortRendezvousServer: Permission denied). Keine Prüfung abgeschaltet und keine Schutzvorkehrung umgangen. Der verfügbare Browser wurde für die oben genannten manuellen Prüfungen verwendet; das ersetzt keine vollständige axe-/End-to-end-Prüfung.
 - Phase bleibt deshalb Code. Veröffentlichung und Selbsteinschätzung aus Commit stehen noch aus.
+
+- Browserkorrektur Erweitern: Kuchenbeispiel konsequent mit `KuchenTeilen` als Kreis mit drei ursprünglichen Stücken; alle Stücke gleichmäßig unterteilen. Zähler und Nenner wachsen bei unverändertem Flächenanteil. Keine Prozent-/Balkengrafik für diese Herleitung. Die freie Entdeckung zeigt 2/3 und die umgeschriebene Form; Aufgaben haben getrennte eigene Eingaben ohne Ergebnisvorschau.

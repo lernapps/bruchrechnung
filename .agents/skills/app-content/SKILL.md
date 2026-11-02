@@ -171,3 +171,5 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Die interaktiven Modelle von Umformen, Grundaufgaben und Rechenarten stehen nach der Begriffsklärung unter „Ausprobieren“. Danach folgen die Herleitung am Beispiel und eigene Standardübungen unter „Üben“. Die stabilen Übungs-IDs bleiben erhalten.
 
 - Tatsächliche Datenhaltung: zentrale Quellen in `src/app.yaml`, Zahlenlogik in `BruchAufgaben.ts` und `BruchModelle.ts`, Primfaktor-Datensätze in `src/data/primfaktoren.yaml`. Keine unbenutzten Data-Dateien anlegen. Die 20 Standardübungen liefern je sechs Varianten; zusammen mit den 20 Verständnisfragen und sechs Primfaktoraufgaben mindestens 146 Aufgabenstellungen, dazu Modellaufgaben.
+
+- Browserkorrektur Erweitern: Kuchenbeispiel konsequent mit `KuchenTeilen` als Kreis mit drei ursprünglichen Stücken; alle Stücke gleichmäßig unterteilen. Zähler und Nenner wachsen bei unverändertem Flächenanteil. Keine Prozent-/Balkengrafik für diese Herleitung. Die freie Entdeckung zeigt 2/3 und die umgeschriebene Form; Aufgaben haben getrennte eigene Eingaben ohne Ergebnisvorschau.

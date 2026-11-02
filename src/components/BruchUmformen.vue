@@ -20,7 +20,7 @@ const props = defineProps<{
 const emit = defineEmits<{ answer: [string] }>();
 const taskNow = computed(() => generate(props.seed, props));
 const input = ref("");
-const split = ref(6);
+const split = ref(taskNow.value.n);
 const marked = ref<number[]>([]);
 const mine = computed(() => parse(input.value));
 function update(value: string): void {
@@ -41,7 +41,7 @@ function partition(): void {
     <p>
       <strong>{{ givenLabel }}</strong>
     </p>
-    <BruchBild view="strip" :z="taskNow.z" :n="taskNow.n" :labels="labels" />
+    <BruchBild :view="kind === 'expand' ? 'circle' : 'strip'" :z="taskNow.z" :n="taskNow.n" :labels="labels" />
     <template v-if="kind === 'compare'"
       ><BruchBild view="strip" :z="taskNow.b" :n="taskNow.d" :labels="labels" />
       <div class="signs">
@@ -79,7 +79,7 @@ function partition(): void {
         }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)" /></label
       ><template v-if="mine && mine.n <= 24 && mine.z <= mine.n * 3"
         ><p>{{ ownLabel }}</p>
-        <BruchBild view="strip" :z="mine.z" :n="mine.n" :labels="labels"
+        <BruchBild :view="kind === 'expand' ? 'circle' : 'strip'" :z="mine.z" :n="mine.n" :labels="labels"
       /></template>
     </div>
   </div>

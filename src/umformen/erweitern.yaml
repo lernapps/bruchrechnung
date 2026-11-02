@@ -2,7 +2,7 @@
 {
   "title": "Brüche erweitern",
   "description": "Wenn jedes Stück halbiert wird, ist dann mehr Kuchen da?",
-  "scope": "Beim Erweitern multiplizierst du Zähler und Nenner mit derselben positiven ganzen Zahl. Es gibt mehr, aber kleinere Teile. Der Anteil bleibt gleich. 2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+  "scope": "Erweitern wird am gleichmäßigen Unterteilen aller Kuchenstücke hergeleitet. Zwei Drittel bleiben derselbe Anteil, wenn jedes der drei Stücke in gleich viele kleinere Stücke geteilt wird. Zähler und Nenner werden mit demselben Faktor multipliziert; die Fläche bleibt gleich.",
   "blocks":
     [
       {
@@ -13,12 +13,12 @@
           [
             {
               "type": "text",
-              "text": "Ein Kuchenstück wird noch einmal durchgeschnitten. Die Stücke werden kleiner, aber du hast genauso viel Kuchen wie vorher.",
+              "text": "Ein Kuchen ist in drei gleich große Stücke geteilt. Zwei davon sind für dich: zwei Drittel. Nun teilst du jedes der drei Stücke noch einmal in zwei gleich große Stücke. Wie beschreibst du deinen Anteil jetzt?",
             },
             {
               "type": "definition",
               "term": "Erweitern",
-              "explanation": "Beim Erweitern werden Zähler und Nenner mit derselben positiven ganzen Zahl multipliziert. Der Anteil bleibt gleich.",
+              "explanation": "Erweitern heißt, denselben Anteil mit mehr, kleineren Teilstücken zu beschreiben. Dafür werden Zähler und Nenner mit derselben positiven ganzen Zahl multipliziert. Das Wort bezieht sich auf die Bruchschreibweise: Beim Erweitern mit einem Faktor größer als 1 wachsen hier Zähler und Nenner, der Anteil bleibt gleich.",
             },
           ],
       },
@@ -28,7 +28,55 @@
         "title": "Ausprobieren",
         "blocks":
           [
-            { "type": "text", "text": "Wenn jedes Stück halbiert wird, ist dann mehr Kuchen da?" },
+            {
+              "type": "text",
+              "text": "Unterteile jedes ursprüngliche Kuchenstück gleich oft. Die dicken Linien zeigen weiterhin die drei ursprünglichen Stücke. Beobachte die markierte Fläche und die Anzahl der kleinen Stücke.",
+            },
+            {
+              "type": "vue-component",
+              "component": "KuchenTeilen",
+              "props":
+                {
+                  "beforeLabel": "Vor dem Unterteilen",
+                  "afterLabel": "Nach dem Unterteilen",
+                  "factorLabel": "Jedes ursprüngliche Stück in so viele Stücke teilen",
+                  "explanation": "Unterteilung pro ursprünglichem Stück: {f}. Insgesamt hat der Kuchen jetzt {n} gleich große Teile. Davon gehören {z} zu deinem Anteil. Die markierte Kuchenfläche bleibt gleich.",
+                  "imageLabel": "Kuchen aus {n} gleich großen Stücken, davon {z} markiert.",
+                },
+              "nojs": "Zwei von drei gleich großen Kuchenstücken sind markiert: 2/3. Wird jedes ursprüngliche Stück halbiert, entstehen sechs gleich große Stücke. Vier davon gehören zum vorher markierten Anteil: 4/6. Die markierte Fläche hat sich nicht verändert.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Derselbe Kuchenanteil in kleineren Stücken",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Anfangs hast du zwei von drei gleich großen Stücken. Halbierst du jedes Stück, werden aus deinen zwei Stücken vier kleine Stücke. Aus allen drei Stücken werden insgesamt sechs kleine Stücke.",
+                  },
+                  { "type": "formula", "formula": "\\frac{2}{3} = \\frac{2 \\cdot 2}{3 \\cdot 2} = \\frac{4}{6}" },
+                  {
+                    "type": "text",
+                    "text": "Du hast weiterhin denselben Anteil am Kuchen. Die größere Anzahl der kleineren Stücke erklärt, warum beim Erweitern Zähler und Nenner mit derselben Zahl multipliziert werden.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
             {
               "type": "vue-component",
               "component": "BruchUmformen",
@@ -61,44 +109,6 @@
               "examples":
                 { "accepted": [{ "answer": "2/6", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
             },
-            {
-              "type": "note",
-              "title": "Was du dabei beobachten kannst",
-              "blocks":
-                [
-                  {
-                    "type": "text",
-                    "text": "Beim Erweitern multiplizierst du Zähler und Nenner mit derselben positiven ganzen Zahl. Es gibt mehr, aber kleinere Teile. Der Anteil bleibt gleich.",
-                  },
-                ],
-            },
-          ],
-      },
-      {
-        "type": "section",
-        "id": "beispiel",
-        "title": "Am Beispiel nachvollziehen",
-        "blocks":
-          [
-            {
-              "type": "example",
-              "title": "Schritt für Schritt",
-              "blocks":
-                [
-                  {
-                    "type": "text",
-                    "text": "2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
-                  },
-                ],
-            },
-          ],
-      },
-      {
-        "type": "section",
-        "id": "ueben",
-        "title": "Üben",
-        "blocks":
-          [
             {
               "type": "single-choice",
               "id": "verstehen",
