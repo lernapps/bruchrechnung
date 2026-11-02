@@ -30,10 +30,39 @@
           [
             { "type": "text", "text": "Drei Viertel von zwölf Plättchen: Wie kannst du erst gleiche Gruppen bilden?" },
             {
-              "type": "figure",
-              "draw": { "kind": "bar", "part": 3, "whole": 4 },
-              "alt": "Ein Ganzes aus vier gleich großen Teilen, drei davon markiert.",
-              "caption": "Ein Ausgangsmodell: drei Viertel. Übertrage die Idee auf die Aufgabe dieser Seite.",
+              "type": "vue-component",
+              "component": "AnteilGanzes",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "part",
+                  "task": "Wie viele Gegenstände sind {z}/{n} von {G}? Du kannst die Gegenstände als Rechenhilfe markieren.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Gegenstände pro Gruppe",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "3", "seed": 1 }, { "answer": "6/2", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
             },
             {
               "type": "note",
@@ -73,41 +102,6 @@
         "title": "Üben",
         "blocks":
           [
-            {
-              "type": "vue-component",
-              "component": "AnteilGanzes",
-              "id": "modell",
-              "props":
-                {
-                  "kind": "part",
-                  "task": "Markiere {z}/{n} von {G} Gegenständen. Wie viele sind das?",
-                  "mistakes":
-                    [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
-                    ],
-                  "inputLabel": "Deine Antwort als Bruch (z. B. 2/3) oder ganze Zahl",
-                  "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
-                  "pieceLabel": "Teil",
-                  "stepLabel": "Gegenstände pro Gruppe",
-                  "labels":
-                    {
-                      "circle": "Kreis",
-                      "strip": "Bruchstreifen",
-                      "line": "Zahlenstrahl",
-                      "set": "Menge",
-                      "whole": "Ganzes",
-                      "selected": "Ausgewählt",
-                    },
-                },
-              "examples":
-                {
-                  "accepted": [{ "answer": "3", "seed": 1 }, { "answer": "6/2", "seed": 1 }],
-                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
-                },
-            },
             {
               "type": "single-choice",
               "id": "verstehen",

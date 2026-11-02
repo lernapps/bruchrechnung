@@ -30,10 +30,39 @@
           [
             { "type": "text", "text": "Sechs von acht Plättchen sind markiert. Welcher Anteil ist das?" },
             {
-              "type": "figure",
-              "draw": { "kind": "bar", "part": 3, "whole": 4 },
-              "alt": "Ein Ganzes aus vier gleich großen Teilen, drei davon markiert.",
-              "caption": "Ein Ausgangsmodell: drei Viertel. Übertrage die Idee auf die Aufgabe dieser Seite.",
+              "type": "vue-component",
+              "component": "AnteilGanzes",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "ratio",
+                  "task": "Welcher Anteil sind {part} von {G} Gegenständen? Du kannst den Teil als Rechenhilfe markieren. Gib einen Bruch an.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Gegenstände pro Gruppe",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "1/3", "seed": 1 }, { "answer": "2/6", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
             },
             {
               "type": "note",
@@ -73,41 +102,6 @@
         "title": "Üben",
         "blocks":
           [
-            {
-              "type": "vue-component",
-              "component": "AnteilGanzes",
-              "id": "modell",
-              "props":
-                {
-                  "kind": "ratio",
-                  "task": "Welcher Anteil sind {part} von {G} Gegenständen? Markiere den Teil und gib einen Bruch an.",
-                  "mistakes":
-                    [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
-                    ],
-                  "inputLabel": "Deine Antwort als Bruch (z. B. 2/3) oder ganze Zahl",
-                  "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
-                  "pieceLabel": "Teil",
-                  "stepLabel": "Gegenstände pro Gruppe",
-                  "labels":
-                    {
-                      "circle": "Kreis",
-                      "strip": "Bruchstreifen",
-                      "line": "Zahlenstrahl",
-                      "set": "Menge",
-                      "whole": "Ganzes",
-                      "selected": "Ausgewählt",
-                    },
-                },
-              "examples":
-                {
-                  "accepted": [{ "answer": "1/3", "seed": 1 }, { "answer": "2/6", "seed": 1 }],
-                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
-                },
-            },
             {
               "type": "single-choice",
               "id": "verstehen",

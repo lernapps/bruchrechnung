@@ -30,10 +30,39 @@
           [
             { "type": "text", "text": "Wie viele Achtelstücke passen in drei Viertel?" },
             {
-              "type": "table",
-              "caption": "Die Angaben im Beispiel",
-              "header": ["Erste Größe", "Zweite Größe"],
-              "rows": [["3/4 als Ausgangsgröße", "1/8 als Stückgröße"]],
+              "type": "vue-component",
+              "component": "BruchRechnen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "divide",
+                  "task": "Wie oft passt {b}/{d} in {z}/{n}? Lege die Stücke hinein und gib die Anzahl an.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "pieceLabel": "Bruchstück",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "2", "seed": 1 }, { "answer": "4/2", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
             },
             {
               "type": "note",
@@ -73,41 +102,6 @@
         "title": "Üben",
         "blocks":
           [
-            {
-              "type": "vue-component",
-              "component": "BruchRechnen",
-              "id": "modell",
-              "props":
-                {
-                  "kind": "divide",
-                  "task": "Wie oft passt {b}/{d} in {z}/{n}? Lege die Stücke hinein und gib die Anzahl an.",
-                  "mistakes":
-                    [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
-                    ],
-                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
-                  "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
-                  "pieceLabel": "Bruchstück",
-                  "stepLabel": "Teile pro Ganzem",
-                  "labels":
-                    {
-                      "circle": "Kreis",
-                      "strip": "Bruchstreifen",
-                      "line": "Zahlenstrahl",
-                      "set": "Menge",
-                      "whole": "Ganzes",
-                      "selected": "Ausgewählt",
-                    },
-                },
-              "examples":
-                {
-                  "accepted": [{ "answer": "2", "seed": 1 }, { "answer": "4/2", "seed": 1 }],
-                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
-                },
-            },
             {
               "type": "single-choice",
               "id": "verstehen",

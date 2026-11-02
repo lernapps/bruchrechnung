@@ -1,0 +1,125 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Mit Dezimalzahlen rechnen",
+  "description": "Wie lassen sich Dezimalzahlen als gleich große Bruchteile auffassen?",
+  "scope": "Bei Plus und Minus ordnest du gleiche Stellenwerte untereinander an: Komma unter Komma. Beim Multiplizieren rechnest du zunächst ohne Komma; das Ergebnis erhält zusammen so viele Nachkommastellen wie beide Faktoren. Beim Dividieren verschiebst du das Komma in beiden Zahlen gleich weit, bis der Divisor ganzzahlig ist. 0,75 + 0,5 = 75/100 + 50/100 = 125/100 = 1,25. 0,2 · 0,3 = 0,06. 0,75 : 0,25 = 75 : 25 = 3.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Beim Rechnen mit Geld legst du Euro zu Euro und Cent zu Cent. Bei Dezimalzahlen ordnest du entsprechend gleiche Stellenwerte zusammen.",
+            },
+            {
+              "type": "definition",
+              "term": "Stellenwert",
+              "explanation": "Der Stellenwert sagt, ob eine Ziffer Einer, Zehntel, Hundertstel oder eine andere Zehnerpotenz zählt.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            { "type": "text", "text": "Wie lassen sich Dezimalzahlen als gleich große Bruchteile auffassen?" },
+            {
+              "type": "table",
+              "caption": "Ausgangswerte untersuchen",
+              "header": ["Gegeben", "Achte auf"],
+              "rows": [["0,75 und 0,5", "Gleiche Stellenwerte"]],
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Bei Plus und Minus ordnest du gleiche Stellenwerte untereinander an: Komma unter Komma. Beim Multiplizieren rechnest du zunächst ohne Komma; das Ergebnis erhält zusammen so viele Nachkommastellen wie beide Faktoren. Beim Dividieren verschiebst du das Komma in beiden Zahlen gleich weit, bis der Divisor ganzzahlig ist.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "0,75 + 0,5 = 75/100 + 50/100 = 125/100 = 1,25. 0,2 · 0,3 = 0,06. 0,75 : 0,25 = 75 : 25 = 3.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Wie viel ist 0,2 · 0,3?",
+              "options":
+                [
+                  {
+                    "text": "0,06",
+                    "correct": true,
+                    "info": "0,75 + 0,5 = 75/100 + 50/100 = 125/100 = 1,25. 0,2 · 0,3 = 0,06. 0,75 : 0,25 = 75 : 25 = 3.",
+                  },
+                  {
+                    "text": "0,6",
+                    "correct": false,
+                    "info": "Beide Faktoren haben je eine Nachkommastelle. Das Produkt hat hier zwei.",
+                  },
+                  { "text": "0,5", "correct": false, "info": "Das ist die Summe, nicht das Produkt." },
+                ],
+              "explanation": "0,75 + 0,5 = 75/100 + 50/100 = 125/100 = 1,25. 0,2 · 0,3 = 0,06. 0,75 : 0,25 = 75 : 25 = 3.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Berechne {{n}}/10 + 0,25. Gib das Ergebnis als Dezimalzahl an." },
+              "answer": { "value": "n/10+1/4", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n/10+25", "message": "0,25 sind 25 Hundertstel, nicht 25 Ganze." },
+                  { "value": "n/10+25/1000", "message": "0,25 sind Hundertstel, keine Tausendstel." },
+                ],
+              "hint": "Bei Plus und Minus ordnest du gleiche Stellenwerte untereinander an: Komma unter Komma.",
+              "steps":
+                [
+                  "Schreibe beide Zahlen in Hundertsteln. {{n}}/10 entspricht {{n}} · 10 Hundertsteln; 0,25 sind 25 Hundertstel.",
+                  "Addiere die Hundertstel und teile durch 100. Das ergibt {{answer}}.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 4 }
+failedChecks: { checks-pass: 5 }
 ---
 
 # Plan: Bruchrechnung – Schritt für Schritt, first version
@@ -279,11 +279,8 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 
 ### Tasks
 
-- [ ] `grep '^phase:'` prints `phase: code`; else set it.
+- [x] `phase: code` ist gesetzt.
 - [ ] Show the creator a first look (`early-preview`): erste echte Lernseite mit interaktiven Modellen auf Desktop und bei 360 px zeigen; anschließend weiterarbeiten.
-- [ ] Kapitel 6: vier Seiten zu Umwandlungen, Dezimalrechnung, Runden und Sachaufgaben; Prozent/relative Häufigkeit als Anteilsanwendungen. Commit.
-- [ ] Alle 20 Seiten: je ein Verständnischeck und ein variierter Übungsblock mit mindestens sechs Varianten; gemeinsame Begriffe, Quellen und Tutorhinweise konsistent. Mindestens 140 Aufgabenstellungen insgesamt prüfen; Guide aktualisieren. Commit.
-- [ ] The content guide matches what was built (`app-content-matches`).
 - [ ] `npx --no -- lernapps check` passes.
 - [ ] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px. Compare
       each with the confirmed sketches; each figure in its own image (`npx --no -- lernapps screenshots --desktop`).
@@ -292,6 +289,11 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
       No checkpoint here: set it before you ask or report anything, then start Commit in the same message.
 
 ### Completed
+
+- [x] Alle 20 Seiten: je ein Verständnischeck und ein variierter Übungsblock mit mindestens sechs Varianten; gemeinsame Begriffe, Quellen und Tutorhinweise konsistent. Mindestens 140 Aufgabenstellungen insgesamt prüfen; Guide aktualisieren. Commit.
+- [x] The content guide matches what was built (`app-content-matches`).
+
+- [x] Kapitel 6: vier Seiten zu Umwandlungen, Dezimalrechnung, Runden und Sachaufgaben; Prozent/relative Häufigkeit als Anteilsanwendungen. Commit.
 
 - [x] Kapitel 5: fünf Seiten und BruchRechnen in vier Rechenmodi; Terme, Gesetze und einfache Gleichungen; Fehlerrückmeldungen und Komponentenprüfungen. Commit.
 
@@ -381,3 +383,13 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 - Die offenen Zweitquellen sind ergänzt: Wikipedia „Teilbarkeit“ (Endstellen-/Quersummenregeln und Primzahlbegriff), ARD alpha „Addieren – so geht’s“, https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html (Stellenwerte beim Addieren/Subtrahieren), Serlo „Aufgaben zur Multiplikation und Division von Dezimalzahlen“, https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen (geöffnete Lösungen einschließlich Kommaregeln), ARD alpha „Dezimalbrüche runden“ (Regeln und Beispiele). Keine fremden Sätze/Abbildungen übernommen.
 - Standardübungen haben jetzt einen konkreten Lösungsweg mit den jeweiligen Zahlen und einer fachlichen Begründung; keine Sätze wie „Angaben einsetzen“ ohne Erklärung.
 - Übungsmodelle schreiben niemals einen aus Markierungen berechneten Bruch in das Antwortfeld. Bei BruchModelle erscheint die symbolische Darstellung erst nach der Prüfung. Entdeckermodelle sind ausdrücklich freie Erkundung und dürfen Zusammenhänge anzeigen.
+
+- Die interaktiven Modelle von Umformen, Grundaufgaben und Rechenarten stehen nach der Begriffsklärung unter „Ausprobieren“. Danach folgen die Herleitung am Beispiel und eigene Standardübungen unter „Üben“. Die stabilen Übungs-IDs bleiben erhalten.
+
+
+### Verifikation des lokalen Stands
+
+- `vp check --fix`, `vue-tsc --noEmit`, acht Testdateien mit zehn Tests und der Build bestanden. Generierte Aufgaben werden beim Build über feste Seeds geprüft; Komponenten zusätzlich mit alternativen richtigen Antworten.
+- 20 Lernseiten bei 360 und 1280 px geöffnet und Bildschirmfotos gespeichert; keine Überbreite und richtige Reihenfolge der Hauptabschnitte. Zahlenstrahl ohne Antwortvorschau und mit erfolgreicher Prüfung getestet; konkreten Lösungsweg geprüft. Faktorzerlegung von 12 bis 3 · 2 · 2 durchgespielt; alternative Antwort 4/18 für 2/9 erfolgreich geprüft.
+- `lernapps check` bleibt offen: zwei Browser-Schritte scheitern beim Start von Chromium an der macOS-Sandbox (MachPortRendezvousServer: Permission denied). Keine Prüfung abgeschaltet und keine Schutzvorkehrung umgangen. Der verfügbare Browser wurde für die oben genannten manuellen Prüfungen verwendet; das ersetzt keine vollständige axe-/End-to-end-Prüfung.
+- Phase bleibt deshalb Code. Veröffentlichung und Selbsteinschätzung aus Commit stehen noch aus.

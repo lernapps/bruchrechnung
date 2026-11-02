@@ -3,7 +3,7 @@
   "title": "Bruchrechnung – Schritt für Schritt",
   "intro": "Entdecke Brüche mit Kreis, Streifen, Mengen und Zahlenstrahl. Verändere die Modelle, begründe deine Schritte und übe mit neuen Aufgaben. Für Klasse 6; orientiert an den hessischen Gymnasialvorgaben.",
   "languages": ["de"],
-  "chapters": ["anteile"],
+  "chapters": ["anteile", "teilbarkeit", "umformen", "grundaufgaben", "rechnen", "anwendungen"],
   "sources":
     [
       {
@@ -31,6 +31,15 @@
       {
         "title": "Dezimalbrüche runden (ARD alpha)",
         "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen104.html",
+      },
+      { "title": "Primfaktorzerlegung (Serlo)", "url": "https://de.serlo.org/mathe/1779/primfaktorzerlegung" },
+      {
+        "title": "Dezimalzahlen addieren und subtrahieren (ARD alpha)",
+        "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html",
+      },
+      {
+        "title": "Dezimalzahlen multiplizieren und dividieren (Serlo)",
+        "url": "https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen",
       },
     ],
   "scope":

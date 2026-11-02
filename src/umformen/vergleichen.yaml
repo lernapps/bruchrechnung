@@ -33,10 +33,36 @@
               "text": "Ist ein Bruch mit größerem Nenner automatisch größer? Vergleiche gleich große Ganze.",
             },
             {
-              "type": "figure",
-              "draw": { "kind": "bar", "part": 2, "whole": 3 },
-              "alt": "Ein Streifen mit drei gleich großen Teilen, zwei markiert.",
-              "caption": "Zwei Drittel: Bei einer neuen Unterteilung soll der ausgewählte Anteil gleich bleiben.",
+              "type": "vue-component",
+              "component": "BruchUmformen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "compare",
+                  "task": "Vergleiche {z}/{n} und {b}/{d}. Wähle das passende Zeichen.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Verändere die Unterteilung und markiere deinen Ergebnisbruch. Du kannst den Bruch auch direkt eingeben.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                { "accepted": [{ "answer": "<", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
             },
             {
               "type": "note",
@@ -76,38 +102,6 @@
         "title": "Üben",
         "blocks":
           [
-            {
-              "type": "vue-component",
-              "component": "BruchUmformen",
-              "id": "modell",
-              "props":
-                {
-                  "kind": "compare",
-                  "task": "Vergleiche {z}/{n} und {b}/{d}. Wähle das passende Zeichen.",
-                  "mistakes":
-                    [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
-                    ],
-                  "inputLabel": "Vergleichszeichen",
-                  "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Verändere die Unterteilung und markiere deinen Ergebnisbruch. Du kannst den Bruch auch direkt eingeben.",
-                  "pieceLabel": "Teil",
-                  "stepLabel": "Teile pro Ganzem",
-                  "labels":
-                    {
-                      "circle": "Kreis",
-                      "strip": "Bruchstreifen",
-                      "line": "Zahlenstrahl",
-                      "set": "Menge",
-                      "whole": "Ganzes",
-                      "selected": "Ausgewählt",
-                    },
-                },
-              "examples":
-                { "accepted": [{ "answer": "<", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
-            },
             {
               "type": "single-choice",
               "id": "verstehen",

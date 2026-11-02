@@ -33,10 +33,39 @@
               "text": "Neun Plättchen sind drei Viertel. Wie viele gehören zu einem Viertel und wie viele zum Ganzen?",
             },
             {
-              "type": "figure",
-              "draw": { "kind": "bar", "part": 3, "whole": 4 },
-              "alt": "Ein Ganzes aus vier gleich großen Teilen, drei davon markiert.",
-              "caption": "Ein Ausgangsmodell: drei Viertel. Übertrage die Idee auf die Aufgabe dieser Seite.",
+              "type": "vue-component",
+              "component": "AnteilGanzes",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "whole",
+                  "task": "{part} Gegenstände sind {z}/{n} des Ganzen. Wie viele hat das Ganze?",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Gegenstände pro Gruppe",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "9", "seed": 1 }, { "answer": "18/2", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
             },
             {
               "type": "note",
@@ -76,41 +105,6 @@
         "title": "Üben",
         "blocks":
           [
-            {
-              "type": "vue-component",
-              "component": "AnteilGanzes",
-              "id": "modell",
-              "props":
-                {
-                  "kind": "whole",
-                  "task": "{part} Gegenstände sind {z}/{n} des Ganzen. Wie viele hat das Ganze?",
-                  "mistakes":
-                    [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
-                    ],
-                  "inputLabel": "Deine Antwort als Bruch (z. B. 2/3) oder ganze Zahl",
-                  "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
-                  "pieceLabel": "Teil",
-                  "stepLabel": "Gegenstände pro Gruppe",
-                  "labels":
-                    {
-                      "circle": "Kreis",
-                      "strip": "Bruchstreifen",
-                      "line": "Zahlenstrahl",
-                      "set": "Menge",
-                      "whole": "Ganzes",
-                      "selected": "Ausgewählt",
-                    },
-                },
-              "examples":
-                {
-                  "accepted": [{ "answer": "9", "seed": 1 }, { "answer": "18/2", "seed": 1 }],
-                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
-                },
-            },
             {
               "type": "single-choice",
               "id": "verstehen",

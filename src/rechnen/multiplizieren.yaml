@@ -33,10 +33,39 @@
               "text": "Was bedeutet zwei Drittel von drei Vierteln? Unterteile ein Rechteck in beide Richtungen.",
             },
             {
-              "type": "table",
-              "caption": "Die Angaben im Beispiel",
-              "header": ["Erste Größe", "Zweite Größe"],
-              "rows": [["3/4 eines Ganzen", "2/3 davon"]],
+              "type": "vue-component",
+              "component": "BruchRechnen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "multiply",
+                  "task": "Berechne {b}/{d} von {z}/{n}. Nutze das Rechteck zum Ausprobieren und gib den Ergebnisbruch an.",
+                  "mistakes":
+                    [
+                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "Deine Eingabe",
+                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                {
+                  "accepted": [{ "answer": "2/9", "seed": 1 }, { "answer": "4/18", "seed": 1 }],
+                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                },
             },
             {
               "type": "note",
@@ -76,41 +105,6 @@
         "title": "Üben",
         "blocks":
           [
-            {
-              "type": "vue-component",
-              "component": "BruchRechnen",
-              "id": "modell",
-              "props":
-                {
-                  "kind": "multiply",
-                  "task": "Berechne {b}/{d} von {z}/{n}. Nutze das Rechteck zum Ausprobieren und gib den Ergebnisbruch an.",
-                  "mistakes":
-                    [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
-                    ],
-                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
-                  "givenLabel": "Gegeben",
-                  "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
-                  "pieceLabel": "Teil",
-                  "stepLabel": "Teile pro Ganzem",
-                  "labels":
-                    {
-                      "circle": "Kreis",
-                      "strip": "Bruchstreifen",
-                      "line": "Zahlenstrahl",
-                      "set": "Menge",
-                      "whole": "Ganzes",
-                      "selected": "Ausgewählt",
-                    },
-                },
-              "examples":
-                {
-                  "accepted": [{ "answer": "2/9", "seed": 1 }, { "answer": "4/18", "seed": 1 }],
-                  "rejected": [{ "answer": "1/0" }, { "answer": "" }],
-                },
-            },
             {
               "type": "single-choice",
               "id": "verstehen",

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Dezimalzahlen und Anwendungen",
+  "summary": "Ein Anteil kann verschiedene Schreibweisen haben. Wie passen Viertel zu Hundertsteln?",
+  "pages": ["dezimaldarstellung", "dezimalrechnen", "runden", "sachaufgaben"],
+}
