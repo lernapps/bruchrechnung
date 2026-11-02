@@ -8,17 +8,12 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Wer bekommt mehr?",
         "blocks":
           [
             {
               "type": "text",
               "text": "Zwei Kinder bekommen unterschiedlich große Bruchteile einer gleich großen Tafel. Wie kannst du herausfinden, wer mehr bekommt?",
-            },
-            {
-              "type": "definition",
-              "term": "Brüche vergleichen",
-              "explanation": "Du vergleichst die Werte der Brüche. Bei Bildern muss das Bezugs-Ganze gleich groß sein.",
             },
           ],
       },
@@ -30,7 +25,7 @@
           [
             {
               "type": "text",
-              "text": "Ist ein Bruch mit größerem Nenner automatisch größer? Vergleiche gleich große Ganze.",
+              "text": "Beide Streifen stehen für gleich große Ganze. Die grünen Felder mit Haken zeigen jeweils den Anteil. Vergleiche, wie weit die grüne Fläche reicht; die Anzahl der Felder allein reicht bei verschiedenen Feldgrößen nicht aus. Du kannst beide Brüche auch auf dieselbe Unterteilung erweitern und dann gleich große Stücke zählen. Wähle <, wenn der obere Bruch kleiner ist, = bei gleichem Wert und >, wenn der obere größer ist. Danach drückst du „Prüfen“.",
             },
             {
               "type": "vue-component",
@@ -50,7 +45,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Gib deinen umgeformten Bruch ein. Zähler und Nenner werden durch / getrennt.",
+                  "toolLabel": "Vergleiche die markierten Längen bei gleich großen Ganzen. < heißt: oberer Bruch kleiner; > heißt: oberer Bruch größer; = heißt: beide gleich groß. Wähle dein Zeichen und drücke „Prüfen“.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -65,6 +60,7 @@
                 },
               "examples":
                 { "accepted": [{ "answer": "<", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+              "nojs": "Beide Streifen stehen für gleich große Ganze. Die grünen Felder mit Haken zeigen jeweils den Anteil. Vergleiche, wie weit die grüne Fläche reicht; die Anzahl der Felder allein reicht bei verschiedenen Feldgrößen nicht aus. Du kannst beide Brüche auch auf dieselbe Unterteilung erweitern und dann gleich große Stücke zählen. Wähle <, wenn der obere Bruch kleiner ist, = bei gleichem Wert und >, wenn der obere größer ist. Danach drückst du „Prüfen“.",
             },
             {
               "type": "note",

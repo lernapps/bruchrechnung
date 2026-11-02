@@ -8,7 +8,8 @@ const props = defineProps<{
   note: string;
   labels: { circle: string; strip: string; line: string; set: string; whole: string; selected: string };
 }>();
-const z = ref(3);
+defineOptions({ nojs: "caption" });
+const z = ref(props.stage === "mixed" ? 5 : 3);
 const n = ref(4);
 const total = computed(() => n.value * 2);
 </script>

@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Was passt zu beiden Zahlen?",
         "blocks":
           [
             {
@@ -25,18 +25,24 @@
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
             {
               "type": "text",
-              "text": "Welche Gruppengröße passt zu zwei Mengen? Welche Unterteilung passt zu zwei Brüchen?",
+              "text": "Du möchtest 12 rote und 18 blaue Plättchen in gleich große Gruppen legen, ohne dass welche übrig bleiben. In der Tabelle stehen die möglichen Gruppengrößen für jede Farbe. Suche Zahlen, die in beiden Zeilen vorkommen. Welche gemeinsame Gruppengröße ist die größte? Das ist der größte gemeinsame Teiler. Für gemeinsame Vielfache gehst du andersherum vor: Schreibe die 12er- und die 18er-Reihe auf. Die erste positive Zahl in beiden Reihen ist das kleinste gemeinsame Vielfache. Bei den Übungen entscheidet die Frage, welche der beiden Suchen du brauchst.",
             },
             {
               "type": "table",
               "caption": "Gruppengrößen untersuchen",
               "header": ["Zahl", "Mögliche Gruppengrößen ohne Rest"],
               "rows": [["12", "1, 2, 3, 4, 6, 12"], ["18", "1, 2, 3, 6, 9, 18"]],
+            },
+            {
+              "type": "table",
+              "caption": "Vielfachenlisten: Welche positive Zahl erscheint zuerst in beiden Reihen?",
+              "header": ["Zahl", "Erste Vielfache"],
+              "rows": [["12", "12, 24, 36, 48, 60"], ["18", "18, 36, 54, 72, 90"]],
             },
             {
               "type": "note",

@@ -8,17 +8,12 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Vom bekannten Teil zum Ganzen",
         "blocks":
           [
             {
               "type": "text",
               "text": "Du siehst nur einen Teil einer Menge und weißt, welcher Anteil das ist. Daraus kannst du die ganze Menge rekonstruieren.",
-            },
-            {
-              "type": "definition",
-              "term": "Ganzes",
-              "explanation": "Das Ganze ist die Bezugsgröße, von der ein Anteil betrachtet wird. Alle gleich großen Teilgruppen zusammen ergeben das Ganze.",
             },
           ],
       },
@@ -30,7 +25,7 @@
           [
             {
               "type": "text",
-              "text": "Neun Plättchen sind drei Viertel. Wie viele gehören zu einem Viertel und wie viele zum Ganzen?",
+              "text": "Du kennst nur einen Teil und möchtest herausfinden, wie groß das Ganze war. Im Streifen zeigen die grünen Felder den bekannten Bruchteil. Die Felder mit Fragezeichen fehlen noch; alle Felder sind gleich groß. Teile die bekannte Anzahl zuerst durch die Anzahl der grünen Felder. So weißt du, wie viel zu EINEM Feld gehört. Dann überlege, wie viel zu ALLEN Feldern gehört. Gib die Gesamtanzahl ins Antwortfeld ein. Das Bild zeigt das Verhältnis der Gruppen, nicht jedes einzelne Plättchen.",
             },
             {
               "type": "vue-component",
@@ -48,7 +43,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "toolLabel": "Diese Aufgabe hat eigene Zahlen. Die grünen Felder zeigen die bekannten Gruppen, die Fragezeichen die fehlenden. Bestimme zuerst die Anzahl pro Gruppe, dann die Anzahl aller Gruppen. Gib die Gesamtanzahl selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Gegenstände pro Gruppe",
                   "labels":
@@ -66,6 +61,7 @@
                   "accepted": [{ "answer": "9", "seed": 1 }, { "answer": "18/2", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
+              "nojs": "Du kennst nur einen Teil und möchtest herausfinden, wie groß das Ganze war. Im Streifen zeigen die grünen Felder den bekannten Bruchteil. Die Felder mit Fragezeichen fehlen noch; alle Felder sind gleich groß. Teile die bekannte Anzahl zuerst durch die Anzahl der grünen Felder. So weißt du, wie viel zu EINEM Feld gehört. Dann überlege, wie viel zu ALLEN Feldern gehört. Gib die Gesamtanzahl ins Antwortfeld ein. Das Bild zeigt das Verhältnis der Gruppen, nicht jedes einzelne Plättchen.",
             },
             {
               "type": "note",

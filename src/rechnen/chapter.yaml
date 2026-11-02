@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
 {
   "title": "Mit Brüchen rechnen",
-  "summary": "Kannst du halbe und drittel Stücke sofort zusammenzählen?",
+  "summary": "Du lernst vier Arten, mit Brüchen zu rechnen: Anteile zusammenlegen, etwas wegnehmen, einen Teil von einem Teil nehmen und prüfen, wie oft ein Stück hineinpasst. Danach löst du Rechnungen mit mehreren Schritten und findest fehlende Zahlen. Bilder helfen dir zu verstehen, warum die Rechenregeln funktionieren.",
   "pages": ["plus-minus", "multiplizieren", "dividieren", "terme", "gleichungen"],
 }

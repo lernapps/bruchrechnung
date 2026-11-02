@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Ein halber Liter oder 0,5 Liter?",
         "blocks":
           [
             {
@@ -25,18 +25,24 @@
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
             {
               "type": "text",
-              "text": "Ein Anteil kann verschiedene Schreibweisen haben. Wie passen Viertel zu Hundertsteln?",
+              "text": "Ein Bruch und eine Dezimalzahl können denselben Anteil beschreiben. Stell dir ein Quadrat aus 100 gleich großen Kästchen vor. Teile es in vier gleich große Gruppen und markiere drei Gruppen: Das sind drei Viertel. Überlege, wie viele Hundertstelkästchen dazu gehören. Die Tabelle zeigt die beiden Schreibweisen nebeneinander. Bei eigenen Brüchen kannst du auf Zehntel oder Hundertstel erweitern oder den Zähler durch den Nenner teilen. Trage bei der Übung die ausdrücklich gefragte Zahl ein.",
+            },
+            {
+              "type": "figure",
+              "draw": { "kind": "hundred-grid", "filled": 75 },
+              "alt": "Ein Quadrat aus zehn Zeilen und zehn Spalten enthält 100 gleich große Kästchen. 75 davon sind gefüllt. Das sind drei Viertel des Quadrats.",
+              "caption": "Drei Viertel desselben Ganzen: 75 von 100 Kästchen.",
             },
             {
               "type": "table",
-              "caption": "Ausgangswerte untersuchen",
-              "header": ["Gegeben", "Achte auf"],
-              "rows": [["3/4", "Zehntel und Hundertstel"]],
+              "caption": "Derselbe Anteil in drei Schreibweisen",
+              "header": ["Viertel", "Hundertstel", "Dezimalzahl"],
+              "rows": [["3/4", "75/100", "0,75"]],
             },
             {
               "type": "note",

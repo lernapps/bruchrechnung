@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Brüche haben einen Platz",
         "blocks":
           [
             {
@@ -30,7 +30,7 @@
           [
             {
               "type": "text",
-              "text": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie findest du drei Viertel auf dieser Strecke?",
+              "text": "Der Zahlenstrahl ist wie ein Lineal für Zahlen. Die Strecke von 0 bis 1 ist ein Ganzes. Der Nenner sagt, wie viele gleich lange Abschnitte du daraus machst. Jeder Abstand zwischen zwei Strichen ist ein Teilstück – zähle also die Abstände, nicht die Striche. Der Zähler sagt, wie viele dieser Schritte du von 0 nach rechts gehst. Der grüne Punkt zeigt die gewählte Stelle. Probiere die Regler aus. In der Übung verschiebst du den Punkt und drückst anschließend „Prüfen“.",
             },
             {
               "type": "vue-component",
@@ -39,7 +39,7 @@
                 {
                   "numerator": "Zähler",
                   "denominator": "Nenner",
-                  "note": "Verändere Zähler und Nenner. Beobachte, was gleich bleibt und was sich ändert. Die Mengenansicht erscheint nur, wenn ganze Gegenstände ausgewählt werden können.",
+                  "note": "Der Nenner teilt die Strecke von 0 bis 1 in gleich lange Abschnitte. Der Zähler bestimmt die Schritte von 0 zum Punkt. Zähle die Abstände zwischen den Strichen.",
                   "labels":
                     {
                       "circle": "Kreis",
@@ -51,7 +51,7 @@
                     },
                   "stage": "line",
                 },
-              "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
+              "nojs": "Der Zahlenstrahl ist wie ein Lineal für Zahlen. Die Strecke von 0 bis 1 ist ein Ganzes. Der Nenner sagt, wie viele gleich lange Abschnitte du daraus machst. Jeder Abstand zwischen zwei Strichen ist ein Teilstück – zähle also die Abstände, nicht die Striche. Der Zähler sagt, wie viele dieser Schritte du von 0 nach rechts gehst. Der grüne Punkt zeigt die gewählte Stelle. Probiere die Regler aus. In der Übung verschiebst du den Punkt und drückst anschließend „Prüfen“.\n\nIm Anfangsbild ist die Strecke von 0 bis 1 in vier gleich lange Abschnitte geteilt. Der Punkt liegt nach dem dritten Abschnitt, also bei 3/4.",
             },
             {
               "type": "note",
@@ -121,6 +121,7 @@
                       "selected": "Ausgewählt",
                     },
                 },
+              "nojs": "Der Zahlenstrahl ist wie ein Lineal für Zahlen. Die Strecke von 0 bis 1 ist ein Ganzes. Der Nenner sagt, wie viele gleich lange Abschnitte du daraus machst. Jeder Abstand zwischen zwei Strichen ist ein Teilstück – zähle also die Abstände, nicht die Striche. Der Zähler sagt, wie viele dieser Schritte du von 0 nach rechts gehst. Der grüne Punkt zeigt die gewählte Stelle. Probiere die Regler aus. In der Übung verschiebst du den Punkt und drückst anschließend „Prüfen“.",
             },
             {
               "type": "single-choice",

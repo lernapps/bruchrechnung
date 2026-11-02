@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Zahlen als Malaufgabe",
         "blocks":
           [
             {
@@ -29,6 +29,10 @@
         "blocks":
           [
             {
+              "type": "text",
+              "text": "Stell dir 12 Bauklötze vor: Du kannst daraus 3 Reihen mit je 4 Klötzen legen. Die Rechnung 3 · 4 beschreibt diese Anordnung. Die Zahlen 3 und 4 heißen Faktoren. Unten kannst du so eine Zahl immer weiter aufteilen: Wähle einen Faktor und darunter eine passende Malaufgabe. Die neuen Faktoren ersetzen den alten, aber das Ergebnis bleibt gleich. Ein Stern bedeutet: Diese Zahl lässt sich nicht weiter in zwei ganze Faktoren größer als 1 zerlegen. Probiere unterschiedliche Zerlegungen aus und vergleiche die Zahlen, bei denen du landest.",
+            },
+            {
               "type": "vue-component",
               "component": "FaktorEntdecken",
               "props":
@@ -41,7 +45,7 @@
                   "finishedLabel": "Jetzt lässt sich keiner der Faktoren weiter zerlegen. Alle sind Primzahlen; die Sterne markieren diese Endpunkte.",
                   "resetLabel": "Noch einmal zerlegen",
                 },
-              "nojs": "12 lässt sich als 3 · 4 schreiben. Zerlege 4 weiter in 2 · 2. Nun steht 12 = 3 · 2 · 2. Keine der Zahlen 3, 2 und 2 lässt sich in zwei ganze Faktoren größer als 1 zerlegen. Bei 13 geht das schon am Anfang nicht: 13 ist selbst eine Primzahl.",
+              "nojs": "Stell dir 12 Bauklötze vor: Du kannst daraus 3 Reihen mit je 4 Klötzen legen. Die Rechnung 3 · 4 beschreibt diese Anordnung. Die Zahlen 3 und 4 heißen Faktoren. Unten kannst du so eine Zahl immer weiter aufteilen: Wähle einen Faktor und darunter eine passende Malaufgabe. Die neuen Faktoren ersetzen den alten, aber das Ergebnis bleibt gleich. Ein Stern bedeutet: Diese Zahl lässt sich nicht weiter in zwei ganze Faktoren größer als 1 zerlegen. Probiere unterschiedliche Zerlegungen aus und vergleiche die Zahlen, bei denen du landest.\n\nBeispiel: 12 = 3 · 4 = 3 · 2 · 2. Die Faktoren 3, 2 und 2 lassen sich nicht weiter in ganze Faktoren größer als 1 zerlegen.",
             },
             {
               "type": "section",

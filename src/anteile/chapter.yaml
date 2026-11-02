@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
 {
   "title": "Anteile darstellen",
-  "summary": "Was ist überhaupt ein Bruch? Mit einem Beinbruch hat er hier nichts zu tun. Mit einem Bruchteil schon eher! Stell dir vor, ihr teilt eine Pizza in vier gleich große Stücke. Du nimmst eines: Das ist ein Viertel der Pizza. Ein Bruch beschreibt, wie viele gleich große Teile von einem Ganzen gemeint sind. Probiere unten aus, was mit den Stücken passiert.",
+  "summary": "Eine Pizza wird in vier gleich große Stücke geteilt. Eines davon ist ein Viertel. Hier lernst du, wie ein Bruch solche Anteile beschreibt, wo er auf dem Zahlenstrahl liegt und wie du mehr als ein Ganzes darstellen kannst. Beginne mit „Was bedeutet ein Bruch?“.",
   "pages": ["darstellen", "zahlenstrahl", "gemischte-zahlen"],
 }

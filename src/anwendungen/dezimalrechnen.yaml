@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Gleiche Stellen gehören zusammen",
         "blocks":
           [
             {
@@ -25,15 +25,18 @@
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
-            { "type": "text", "text": "Wie lassen sich Dezimalzahlen als gleich große Bruchteile auffassen?" },
+            {
+              "type": "text",
+              "text": "Die Tabelle ordnet jede Ziffer ihrem Platz zu: Ganze, Zehntel oder Hundertstel. 0,5 kannst du auch als 0,50 schreiben. So vergleichst du gleich große Teile. Schreibe 0,75 und 0,50 untereinander, Komma unter Komma. Addiere erst Hundertstel, dann Zehntel und Ganze; zehn Teile einer Sorte ergeben ein Teil der nächstgrößeren Sorte. Bei Minus gehst du genauso nach Stellen vor. Lies bei den Übungen zuerst, welche Rechenart gefragt ist. Trage danach die berechnete Zahl mit Dezimalkomma ein.",
+            },
             {
               "type": "table",
-              "caption": "Ausgangswerte untersuchen",
-              "header": ["Gegeben", "Achte auf"],
-              "rows": [["0,75 und 0,5", "Gleiche Stellenwerte"]],
+              "caption": "Ziffern nach Stellenwerten ordnen",
+              "header": ["Zahl", "Ganze", "Zehntel", "Hundertstel"],
+              "rows": [["0,75", "0", "7", "5"], ["0,50", "0", "5", "0"]],
             },
             {
               "type": "note",

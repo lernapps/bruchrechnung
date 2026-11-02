@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Eine ganze Pizza reicht nicht",
         "blocks":
           [
             {
@@ -30,7 +30,7 @@
           [
             {
               "type": "text",
-              "text": "Kann der Zähler größer als der Nenner sein? Baue mehrere Ganze aus gleich großen Bruchteilen.",
+              "text": "Ein Streifen steht für ein Ganzes. Alle Streifen sind gleich groß und gleich unterteilt. Wählst du mehr Teile aus, als in einen Streifen passen, geht es im nächsten weiter. Lass den Nenner gleich und erhöhe den Zähler: Wann ist ein Streifen voll? Wie viele Teile bleiben im nächsten übrig? Die vollen Streifen ergeben die ganzen Zahlen, die übrigen Teile den Restbruch. In der Übung klickst du die gefragte Anzahl Teilstücke an. Mit erneutem Klicken entfernst du eine Markierung.",
             },
             {
               "type": "vue-component",
@@ -39,7 +39,7 @@
                 {
                   "numerator": "Zähler",
                   "denominator": "Nenner",
-                  "note": "Verändere Zähler und Nenner. Beobachte, was gleich bleibt und was sich ändert. Die Mengenansicht erscheint nur, wenn ganze Gegenstände ausgewählt werden können.",
+                  "note": "Erhöhe zuerst den Zähler über den Nenner hinaus. Ein voller Streifen ist ein Ganzes. Zähle volle Streifen und übrige Teilstücke getrennt.",
                   "labels":
                     {
                       "circle": "Kreis",
@@ -51,7 +51,7 @@
                     },
                   "stage": "mixed",
                 },
-              "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
+              "nojs": "Ein Streifen steht für ein Ganzes. Alle Streifen sind gleich groß und gleich unterteilt. Wählst du mehr Teile aus, als in einen Streifen passen, geht es im nächsten weiter. Lass den Nenner gleich und erhöhe den Zähler: Wann ist ein Streifen voll? Wie viele Teile bleiben im nächsten übrig? Die vollen Streifen ergeben die ganzen Zahlen, die übrigen Teile den Restbruch. In der Übung klickst du die gefragte Anzahl Teilstücke an. Mit erneutem Klicken entfernst du eine Markierung.\n\nIm Anfangsbild sind fünf Viertel ausgewählt: Ein Streifen mit vier Vierteln ist voll, im nächsten ist ein Viertel markiert. Das ist 1 Ganzes und 1/4, kurz 1 1/4.",
             },
             {
               "type": "note",
@@ -121,6 +121,7 @@
                       "selected": "Ausgewählt",
                     },
                 },
+              "nojs": "Ein Streifen steht für ein Ganzes. Alle Streifen sind gleich groß und gleich unterteilt. Wählst du mehr Teile aus, als in einen Streifen passen, geht es im nächsten weiter. Lass den Nenner gleich und erhöhe den Zähler: Wann ist ein Streifen voll? Wie viele Teile bleiben im nächsten übrig? Die vollen Streifen ergeben die ganzen Zahlen, die übrigen Teile den Restbruch. In der Übung klickst du die gefragte Anzahl Teilstücke an. Mit erneutem Klicken entfernst du eine Markierung.",
             },
             {
               "type": "single-choice",

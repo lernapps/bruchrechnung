@@ -43,7 +43,7 @@ Jede Zeile nennt Kompetenz, Herleitung und typische Fehlvorstellung; Quellenkenn
 
 ### Seitenstruktur und Zuordnung
 
-Die Vorlage erzeugt Start, Kapitelübersichten, Navigation, Glossar und Tutor-Seiten. Jede Lernseite folgt **Begriffe klären → Ausprobieren → Am Beispiel nachvollziehen → Üben**, mit festen Abschnitts-IDs `entdecken`, `regel`, `beispiel`, `ueben`. Kapitel und Seiten werden in YAML unter `src/` angelegt; die konkrete Dateibenennung folgt nach `create` dem installierten Schema. Kein eigenes Seitenlayout.
+Die Vorlage erzeugt Start, Kapitelübersichten, Navigation, Glossar und Tutor-Seiten. Jede Lernseite folgt **passender Einstieg → Ausprobieren oder Anschaulich erklärt → Am Beispiel nachvollziehen → Üben**, mit festen Abschnitts-IDs `entdecken`, `regel`, `beispiel`, `ueben`. Kapitel und Seiten werden in YAML unter `src/` angelegt; die konkrete Dateibenennung folgt nach `create` dem installierten Schema. Kein eigenes Seitenlayout.
 
 | Kapitel / Pfad | Lernseiten | Skizze |
 |---|---|---|
@@ -160,7 +160,7 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 
 ### Didaktischer Aufbau nach Browserfeedback
 
-- Alle 20 Seiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Titel „Begriffe klären“, „Ausprobieren“, „Am Beispiel nachvollziehen“, „Üben“.
+- Alle 20 Seiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Inhaltlich passende Einstiegstitel, anschließend „Ausprobieren“ nur bei Interaktion oder sonst „Anschaulich erklärt“, danach „Am Beispiel nachvollziehen“ und „Üben“.
 - `teilbarkeit/regeln`: Faktor und Produkt anhand von Bauklotz-Reihen, dann `FaktorEntdecken` zum selbstständigen Zerlegen einer Zahl von 2 bis 48; erst danach Primzahl und Primfaktorzerlegung definieren, zum Schluss Teilbarkeitsregeln als Abkürzungen. Jede Aufteilung bewahrt das Produkt; 1 und unpassende Faktoren sind ausgeschlossen. Eigene Tests prüfen genau das und das Ende bei Primzahlen.
 - Neue Kompetenz: Ich kann eine zusammengesetzte Zahl in Primfaktoren zerlegen. Übung `primfaktoren` mit sechs Fällen aus `src/data/primfaktoren.yaml`, zusätzlicher Verständnischeck `verstehen` und Gruppenübung `aufgaben`.
 - Quelle ergänzt und vollständig im Web gelesen: Serlo, „Primfaktorzerlegung“, https://de.serlo.org/mathe/1779/primfaktorzerlegung (Beispiele und Vorgehensweise).
@@ -185,3 +185,6 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Bruch-Eingabefelder zeigen bei gültiger Schreibweise mit / eine MathML-Vorschau „So schreibst du das“. Sie übernimmt den eigenen Zähler und Nenner unverändert, ohne Kürzung, Rechnung oder Korrektheitsanzeige. Für leere, unvollständige, ungültige und reine natürliche Zahleneingaben entfällt die Vorschau. Gemeinsame Hilfe `BruchEingabe` in Umformen, Grundaufgaben und Rechenarten.
 
 - Multiplikationsmodell: Beide Faktoren sind als Randstreifen desselben Rechtecks dargestellt – z von n Spalten oben, b von d Zeilen links, jeweils beschriftet und zusätzlich zur Farbe markiert. Die Schnittmenge markiert das Kind selbst; keine vorausgefüllte Ergebnisfläche und kein berechneter Ergebnisbruch.
+
+- Verbindliche Methodik nach Browserfeedback und simuliertem Kinder-Audit: Jede Darstellung erklärt das Ganze, ihre Teile/Zeichen, die Bedienhandlung und die Beobachtung. Gleichbleibende Farben und zusätzliche Muster verbinden die Faktoren beim Produkt mit Breite und Höhe; Zähler nennt nur eigene Markierungen, nicht die Musterlösung. Textbeschreibungen stehen im nojs-Block und bei Aufgaben zusätzlich im exakten describe-Vertrag; freie Modelle behalten nojs als aufklappbare Beschreibung.
+- Abschnittstitel folgen der tatsächlichen Handlung: „Ausprobieren“ ausschließlich mit bedienbarer Interaktion, sonst „Anschaulich erklärt“. Einstiege bekommen inhaltliche Titel; überflüssige Definitionen werden nicht erzwungen. Stabile Anker-IDs bleiben bestehen.

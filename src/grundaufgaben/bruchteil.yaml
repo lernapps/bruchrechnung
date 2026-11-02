@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Ein Teil von zwölf Plättchen",
         "blocks":
           [
             {
@@ -30,7 +30,7 @@
           [
             {
               "type": "text",
-              "text": "Probiere die beiden Schritte nacheinander aus. Zuerst teilst du die 12 Plättchen in vier gleiche Gruppen. Danach wählst du drei Gruppen aus.",
+              "text": "Hier geht es um eine Anzahl: Wie viele Plättchen sind drei Viertel von 12? Alle 12 Plättchen zusammen sind das Ganze. Drücke zuerst den Knopf zum Aufteilen: Es entstehen vier gleich große Gruppen, jede Gruppe ist ein Viertel. Klicke danach drei Gruppen an. Die ausgewählten Gruppen sind grün und zusätzlich mit Haken markiert. Zähle ihre Plättchen. In den späteren Aufgaben ist die Gesamtzahl anders. Markierungen sind dort nur eine Rechenhilfe; die gesuchte Anzahl trägst du selbst ins Antwortfeld ein.",
             },
             {
               "type": "vue-component",
@@ -44,7 +44,7 @@
                   "resultLabel": "Du hast {groups} von 4 Gruppen ausgewählt. Darin liegen {part} Plättchen.",
                   "resetLabel": "Von vorn ausprobieren",
                 },
-              "nojs": "12 Plättchen werden auf vier gleich große Gruppen aufgeteilt: In jeder Gruppe liegen 3 Plättchen. Eine Gruppe ist ein Viertel von 12. Drei Gruppen enthalten 3 + 3 + 3 = 9 Plättchen. Also sind drei Viertel von 12 gleich 9.",
+              "nojs": "Hier geht es um eine Anzahl: Wie viele Plättchen sind drei Viertel von 12? Alle 12 Plättchen zusammen sind das Ganze. Drücke zuerst den Knopf zum Aufteilen: Es entstehen vier gleich große Gruppen, jede Gruppe ist ein Viertel. Klicke danach drei Gruppen an. Die ausgewählten Gruppen sind grün und zusätzlich mit Haken markiert. Zähle ihre Plättchen. In den späteren Aufgaben ist die Gesamtzahl anders. Markierungen sind dort nur eine Rechenhilfe; die gesuchte Anzahl trägst du selbst ins Antwortfeld ein.\n\nBeispiel: 12 : 4 = 3 Plättchen pro Gruppe. Drei Gruppen enthalten 3 + 3 + 3 = 9 Plättchen. Drei Viertel von 12 sind 9.",
             },
           ],
       },
@@ -90,7 +90,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "toolLabel": "Diese Übung hat eine eigene Gesamtzahl. Teile sie gedanklich in so viele gleich große Gruppen, wie der Nenner angibt. Wähle die vom Zähler verlangten Gruppen. Du kannst ihre Plättchen als Hilfe markieren. Die Anzahl trägst du selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Gegenstände pro Gruppe",
                   "labels":
@@ -108,6 +108,7 @@
                   "accepted": [{ "answer": "3", "seed": 1 }, { "answer": "6/2", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
+              "nojs": "Hier geht es um eine Anzahl: Wie viele Plättchen sind drei Viertel von 12? Alle 12 Plättchen zusammen sind das Ganze. Drücke zuerst den Knopf zum Aufteilen: Es entstehen vier gleich große Gruppen, jede Gruppe ist ein Viertel. Klicke danach drei Gruppen an. Die ausgewählten Gruppen sind grün und zusätzlich mit Haken markiert. Zähle ihre Plättchen. In den späteren Aufgaben ist die Gesamtzahl anders. Markierungen sind dort nur eine Rechenhilfe; die gesuchte Anzahl trägst du selbst ins Antwortfeld ein.",
             },
             {
               "type": "single-choice",

@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Wie oft passt ein Stück hinein?",
         "blocks":
           [
             {
@@ -28,7 +28,10 @@
         "title": "Ausprobieren",
         "blocks":
           [
-            { "type": "text", "text": "Wie viele Achtelstücke passen in drei Viertel?" },
+            {
+              "type": "text",
+              "text": "Teilen kann bedeuten: Wie oft passt ein Stück in eine Menge hinein? Der obere Streifen zeigt die Menge, die du hast. Der zweite zeigt die Größe eines Stücks. Beide ganzen Streifen sind gleich groß. Mit + und − probierst du aus, wie viele Stücke in den oberen Anteil passen. Im unteren Probierstreifen ist jedes Feld so groß wie ein solches Stück; es füllt sich von links nach rechts. Suche die Stückzahl, bei der seine gefüllte Länge genau zur gegebenen Menge passt. Diese Stückzahl gibst du ins Antwortfeld ein.",
+            },
             {
               "type": "vue-component",
               "component": "BruchRechnen",
@@ -45,7 +48,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Nutze die Bruchstücke als Rechenhilfe. Markierungen und Ergebnis gibst du selbst ein.",
+                  "toolLabel": "Oben siehst du die vorhandene Menge und die Größe eines Stücks. Mit + und − legst du solche Stücke in den Probierstreifen. Die gestrichelte Grenze zeigt, wie weit deine vorhandene Menge reicht. Wie viele Stücke brauchst du genau bis zu dieser Grenze? Gib die Anzahl selbst ein.",
                   "pieceLabel": "Bruchstück",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -63,6 +66,7 @@
                   "accepted": [{ "answer": "2", "seed": 1 }, { "answer": "4/2", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
+              "nojs": "Teilen kann bedeuten: Wie oft passt ein Stück in eine Menge hinein? Der obere Streifen zeigt die Menge, die du hast. Der zweite zeigt die Größe eines Stücks. Beide ganzen Streifen sind gleich groß. Mit + und − probierst du aus, wie viele Stücke in den oberen Anteil passen. Im unteren Probierstreifen ist jedes Feld so groß wie ein solches Stück; es füllt sich von links nach rechts. Suche die Stückzahl, bei der seine gefüllte Länge genau zur gegebenen Menge passt. Diese Stückzahl gibst du ins Antwortfeld ein.",
             },
             {
               "type": "note",

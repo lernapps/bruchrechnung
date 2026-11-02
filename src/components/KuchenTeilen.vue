@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ nojs: "caption" });
 import { computed, ref } from "vue";
 import { expanded } from "./KuchenTeilen.ts";
 import { sector, fill } from "./BruchMath.ts";

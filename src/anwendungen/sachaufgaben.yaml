@@ -8,27 +8,25 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Von der Geschichte zur Rechnung",
         "blocks":
           [
             {
               "type": "text",
               "text": "Eine Geschichte beschreibt Mengen und Anteile. Bevor du rechnest, klärst du, was du schon weißt und was du herausfinden möchtest.",
             },
-            {
-              "type": "definition",
-              "term": "Sachaufgabe",
-              "explanation": "Eine Sachaufgabe verbindet eine Alltagssituation mit einer mathematischen Frage. Zum Ergebnis gehören eine passende Einheit und eine Antwort auf diese Frage.",
-            },
           ],
       },
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
-            { "type": "text", "text": "Was ist gegeben und was wird gesucht? Zeichne zuerst die Situation." },
+            {
+              "type": "text",
+              "text": "Drei Viertel Liter Saft sollen gleichmäßig auf zwei Gefäße verteilt werden. Gesucht ist die Saftmenge in EINEM Gefäß. Stell dir einen Liter als Streifen mit vier gleich großen Abschnitten vor. Drei Abschnitte enthalten Saft. Teile jeden dieser drei Abschnitte noch einmal in zwei gleich große Stücke. Gib von jedem Paar ein Stück in jedes Gefäß. So bekommt jedes Gefäß gleich viel. Schreibe danach auf, welcher Anteil eines Liters in einem Gefäß ist. Bei den Übungen klärst du genauso zuerst: Was ist gegeben, was wird gesucht und in welcher Einheit?",
+            },
             {
               "type": "table",
               "caption": "Ausgangswerte untersuchen",

@@ -18,6 +18,8 @@ const props = defineProps<{
   columnLabel?: string;
   rowLabel?: string;
   cellLabel?: string;
+  totalLabel?: string;
+  markedLabel?: string;
   labels: { circle: string; strip: string; line: string; set: string; whole: string; selected: string };
 }>();
 const emit = defineEmits<{ answer: [string] }>();
@@ -42,9 +44,26 @@ function toggle(i: number): void {
   <div>
     <p>{{ fill(task, params(taskNow)) }}</p>
     <p>{{ givenLabel }}</p>
-    <div v-for="(strip, index) in givenStrips" :key="index" class="strip">
-      <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }">{{ i <= strip.z ? "✓" : "·" }}</span>
-    </div>
+    <template v-for="(strip, index) in givenStrips" :key="index">
+      <p
+        v-if="kind === 'multiply'"
+        class="factor-caption"
+        :class="index === 0 ? 'column-caption-color' : 'row-caption-color'"
+      >
+        {{ fill((index === 0 ? columnLabel : rowLabel) ?? "", params(taskNow)) }}
+      </p>
+      <div
+        class="strip"
+        :class="{
+          'column-factor': kind === 'multiply' && index === 0,
+          'row-factor': kind === 'multiply' && index === 1,
+        }"
+      >
+        <span v-for="i in strip.n" :key="i" :class="{ on: i <= strip.z }">{{
+          i <= strip.z ? (kind === "multiply" ? (index === 0 ? "│" : "─") : "✓") : "·"
+        }}</span>
+      </div>
+    </template>
     <div class="tools">
       <p>{{ toolLabel }}</p>
       <template v-if="kind === 'multiply'">
@@ -60,7 +79,7 @@ function toggle(i: number): void {
               :class="{ active: column <= taskNow.z }"
               aria-hidden="true"
             >
-              {{ column <= taskNow.z ? "✓" : "·" }}
+              {{ column <= taskNow.z ? "│" : "·" }}
             </span>
             <template v-for="row in taskNow.d" :key="row">
               <span class="row-part" :class="{ active: row <= taskNow.b }" aria-hidden="true">{{
@@ -79,17 +98,26 @@ function toggle(i: number): void {
             </template>
           </div>
         </div>
+        <p class="area-count" aria-live="polite">
+          {{ totalLabel }}: {{ taskNow.n * taskNow.d }} · {{ markedLabel }}: {{ marked.length }}
+        </p>
       </template>
       <template v-else-if="kind === 'divide'"
         ><div class="pieces">
           <button type="button" :aria-label="`${pieceLabel} −`" @click="pieces = Math.max(0, pieces - 1)">−</button
           ><span>{{ pieceLabel }}: {{ pieces }}</span
-          ><button type="button" :aria-label="`${pieceLabel} +`" @click="pieces += 1">+</button>
+          ><button type="button" :aria-label="`${pieceLabel} +`" @click="pieces = Math.min(taskNow.d, pieces + 1)">
+            +
+          </button>
         </div>
         <div class="strip">
           <span v-for="i in taskNow.d" :key="i" :class="{ on: i <= pieces }">{{ i <= pieces ? "✓" : "·" }}</span>
-        </div></template
-      >
+          <span
+            class="fit-boundary"
+            :style="{ left: `${(taskNow.z / taskNow.n) * 100}%` }"
+            aria-hidden="true"
+          ></span></div
+      ></template>
       <template v-else
         ><label>{{ stepLabel }}: {{ split }}<input v-model.number="split" type="range" min="2" max="24" /></label>
         <div v-for="(strip, index) in givenStrips" :key="index" class="strip">
@@ -185,7 +213,7 @@ function toggle(i: number): void {
   min-height: 28px;
 }
 .column-part.active {
-  background: #16765d;
+  background: #1b5c9e;
   color: white;
 }
 .row-part.active {
@@ -207,6 +235,16 @@ function toggle(i: number): void {
   border: 1px solid currentColor;
   text-align: center;
 }
+.strip .fit-boundary {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 0;
+  border: 0;
+  border-left: 3px dashed #174d83;
+  box-shadow: -2px 0 white;
+  pointer-events: none;
+}
 .partition-guides {
   position: absolute;
   inset: 0;
@@ -225,6 +263,29 @@ function toggle(i: number): void {
 .guide {
   stroke: #17212b;
   stroke-width: 2px;
+}
+.factor-caption {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+.column-caption-color {
+  text-decoration: underline #1b5c9e 3px;
+  text-underline-offset: 4px;
+}
+.row-caption-color {
+  text-decoration: underline #c88b1c 3px;
+  text-underline-offset: 4px;
+}
+.strip.column-factor .on {
+  background: #1b5c9e;
+  color: white;
+}
+.strip.row-factor .on {
+  background: #f6ce78;
+  color: #322508;
+}
+.area-count {
+  font-weight: 600;
 }
 .strip .on {
   background: #16765d;

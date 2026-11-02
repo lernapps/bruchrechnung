@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ nojs: "caption" });
 import { ref, computed } from "vue";
 import { count, WHOLE, GROUPS } from "./BruchteilEntdecken.ts";
 import { fill } from "./BruchMath.ts";

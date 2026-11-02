@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Welche Zahl fehlt?",
         "blocks":
           [
             {
@@ -25,18 +25,18 @@
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
             {
               "type": "text",
-              "text": "Welche Zahl ergänzt einen Bruch zu einem Ganzen? Nutze den Streifen als Kontrolle.",
+              "text": "Gesucht ist ein fehlender Anteil: x + 1/4 soll genau 3/4 ergeben. x ist der Platzhalter für die Zahl, die du noch nicht kennst. Der Streifen zeigt das Ziel 3/4. Davon ist 1/4 schon bekannt. Überlege, welcher Anteil noch fehlt. Rechne zur Kontrolle deinen Vorschlag plus 1/4. Kommt dabei 3/4 heraus? In den Übungen ersetzt du den Platzhalter durch deine Zahl und prüfst auf dieselbe Weise nach.",
             },
             {
-              "type": "table",
-              "caption": "Die Angaben im Beispiel",
-              "header": ["Erste Größe", "Zweite Größe"],
-              "rows": [["x + 1/4", "3/4"]],
+              "type": "figure",
+              "draw": { "kind": "bar", "part": 3, "whole": 4 },
+              "alt": "Ein ganzer Streifen ist in vier gleich große Teile geteilt. Drei Teile sind gefüllt: das Ziel 3/4. Ein Viertel davon ist bereits bekannt; der fehlende Anteil ergänzt dieses Viertel zu drei Vierteln.",
+              "caption": "Ziel: 3/4. Davon ist 1/4 schon bekannt. Welcher Anteil fehlt?",
             },
             {
               "type": "note",

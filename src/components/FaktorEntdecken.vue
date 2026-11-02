@@ -1,4 +1,5 @@
 <script setup lang="ts">
+defineOptions({ nojs: "caption" });
 import { computed, ref } from "vue";
 import { divisors, isPrime, split } from "./FaktorEntdecken.ts";
 import { fill } from "./BruchMath.ts";

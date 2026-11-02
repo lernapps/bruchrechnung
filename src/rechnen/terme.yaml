@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Welche Rechnung kommt zuerst?",
         "blocks":
           [
             {
@@ -25,17 +25,17 @@
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
             {
               "type": "text",
-              "text": "Welcher Schritt muss zuerst kommen? Vergleiche unterschiedliche Gruppierungen.",
+              "text": "In der Tabelle stehen zwei fast gleiche Rechnungen. Rechts kommt eine Klammer hinzu. Schreibe beide Rechnungen auf. Markiere links zuerst die Multiplikation und rechts zuerst die Klammer. Rechne jeweils nur diesen Teil aus und schreibe die übrige Rechnung unverändert ab. Mach so weiter, bis du bei einem Ergebnis ankommst. Vergleiche die Ergebnisse: Die Klammer kann verändern, was du zuerst rechnen musst. Bei den Übungen löst du die Rechnung in dieser Reihenfolge und trägst das Ergebnis ein.",
             },
             {
               "type": "table",
-              "caption": "Die Angaben im Beispiel",
-              "header": ["Erste Größe", "Zweite Größe"],
+              "caption": "Gleiche Zahlen, andere Reihenfolge",
+              "header": ["Ohne Klammer", "Mit Klammer"],
               "rows": [["1/2 + 1/3 · 3", "(1/2 + 1/3) · 3"]],
             },
             {

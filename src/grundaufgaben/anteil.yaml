@@ -8,12 +8,12 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Wie groß ist der Anteil?",
         "blocks":
           [
             {
               "type": "text",
-              "text": "Sechs von acht Plättchen sind markiert. Die Frage ist nun, welcher Bruch diese Auswahl beschreibt.",
+              "text": "Du kennst die Größe einer ganzen Menge und die Größe eines Teils davon. Wie kannst du mit einem Bruch ausdrücken, wie groß der Teil im Vergleich zum Ganzen ist?",
             },
             {
               "type": "definition",
@@ -28,7 +28,10 @@
         "title": "Ausprobieren",
         "blocks":
           [
-            { "type": "text", "text": "Sechs von acht Plättchen sind markiert. Welcher Anteil ist das?" },
+            {
+              "type": "text",
+              "text": "Alle Plättchen zusammen bilden das Ganze. Gesucht ist diesmal keine Anzahl, sondern ein Bruch: Wie viele Plättchen gehören zum ausgewählten Teil, verglichen mit allen? Die Aufgabe nennt beide Anzahlen. Du kannst die passende Anzahl Plättchen anklicken, um den Teil sichtbar zu machen. Zähle dann ausgewählte und alle Plättchen. Die erste Anzahl kommt über den Bruchstrich, die zweite darunter. Gib den Bruch mit / ein und kürze ihn, wenn möglich. Das Anklicken füllt das Antwortfeld nicht aus.",
+            },
             {
               "type": "vue-component",
               "component": "AnteilGanzes",
@@ -45,7 +48,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Bilde gleich große Gruppen. Der Regler hilft dir, unterschiedliche Gruppengrößen zu untersuchen.",
+                  "toolLabel": "Diese Aufgabe hat eigene Zahlen. Alle Plättchen sind das Ganze. Markiere als Hilfe die in der Aufgabe genannte Teilmenge. Schreibe ausgewählte Anzahl / gesamte Anzahl ins Antwortfeld; kürze, wenn möglich.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Gegenstände pro Gruppe",
                   "labels":
@@ -63,6 +66,7 @@
                   "accepted": [{ "answer": "1/3", "seed": 1 }, { "answer": "2/6", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
+              "nojs": "Alle Plättchen zusammen bilden das Ganze. Gesucht ist diesmal keine Anzahl, sondern ein Bruch: Wie viele Plättchen gehören zum ausgewählten Teil, verglichen mit allen? Die Aufgabe nennt beide Anzahlen. Du kannst die passende Anzahl Plättchen anklicken, um den Teil sichtbar zu machen. Zähle dann ausgewählte und alle Plättchen. Die erste Anzahl kommt über den Bruchstrich, die zweite darunter. Gib den Bruch mit / ein und kürze ihn, wenn möglich. Das Anklicken füllt das Antwortfeld nicht aus.",
             },
             {
               "type": "note",

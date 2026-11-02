@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Was ist ein Bruch?",
         "blocks":
           [
             {
@@ -30,7 +30,7 @@
           [
             {
               "type": "text",
-              "text": "Verschiebe die Regler. Was verändert sich, wenn du das Ganze in mehr Stücke teilst? Und was, wenn du mehr Stücke auswählst?",
+              "text": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Haken oder ausgefüllte Punkte kennzeichnen sie zusätzlich. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.",
             },
             {
               "type": "vue-component",
@@ -39,7 +39,7 @@
                 {
                   "numerator": "Zähler",
                   "denominator": "Nenner",
-                  "note": "Verschiebe die Regler: In wie viele gleich große Stücke teilst du das Ganze? Wie viele davon wählst du aus?",
+                  "note": "Die Bilder zeigen denselben Anteil in verschiedenen Formen. Ändere zuerst nur den Zähler oder nur den Nenner und beobachte, was sich ändert.",
                   "labels":
                     {
                       "circle": "Kreis",
@@ -51,7 +51,7 @@
                     },
                   "stage": "parts",
                 },
-              "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
+              "nojs": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Haken oder ausgefüllte Punkte kennzeichnen sie zusätzlich. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.\n\nIm Anfangsbild sind drei von vier Kreisteilen und drei von vier Streifenfeldern markiert. Im Mengenbild sind sechs von acht Plättchen markiert. Jedes Bild zeigt denselben Anteil: 3/4.",
             },
             {
               "type": "note",
@@ -121,6 +121,7 @@
                       "selected": "Ausgewählt",
                     },
                 },
+              "nojs": "Ein Bruch beschreibt einen Teil von einem Ganzen. In den Bildern ist das Ganze ein Kreis, ein Streifen oder die gesamte Menge an Plättchen. Die grünen Stücke sind ausgewählt; Haken oder ausgefüllte Punkte kennzeichnen sie zusätzlich. Mit „Nenner“ stellst du ein, in wie viele gleich große Teile du das Ganze zerlegst. Mit „Zähler“ wählst du aus, wie viele davon dazugehören. Ändere zuerst nur einen Regler und vergleiche die Bilder. In der Übung klickst du die benötigten Teile an; ein weiterer Klick nimmt die Markierung zurück. Danach drückst du „Prüfen“.",
             },
             {
               "type": "single-choice",

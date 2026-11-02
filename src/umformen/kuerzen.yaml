@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Gleicher Anteil, weniger Stücke",
         "blocks":
           [
             {
@@ -28,7 +28,10 @@
         "title": "Ausprobieren",
         "blocks":
           [
-            { "type": "text", "text": "Welche kleinen Teilstücke kannst du zu größeren Gruppen zusammenfassen?" },
+            {
+              "type": "text",
+              "text": "Ein Streifen steht für ein Ganzes. Die grünen Felder mit Haken zeigen den gegebenen Anteil. Beim Kürzen fasst du benachbarte kleine Felder zu größeren, gleich großen Gruppen zusammen. Dabei dürfen die Gruppen nicht über die Grenze zwischen markiert und nicht markiert reichen. Überlege: Wie viele kleine Felder kannst du überall zusammenfassen? Wie viele Gruppen sind danach markiert, wie viele gibt es insgesamt? Gib diese beiden Anzahlen als Bruch mit / ein. Das zweite Bild zeigt genau deine Eingabe – es bestätigt noch nicht, dass sie richtig ist.",
+            },
             {
               "type": "vue-component",
               "component": "BruchUmformen",
@@ -47,7 +50,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Gib deinen umgeformten Bruch ein. Zähler und Nenner werden durch / getrennt.",
+                  "toolLabel": "Überlege, wie viele kleine Felder du zu einer größeren Gruppe zusammenfassen kannst. Gib dann den vollständig gekürzten Bruch mit / ein. Das zweite Bild zeigt deinen Vorschlag, ohne ihn zu prüfen.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -62,6 +65,7 @@
                 },
               "examples":
                 { "accepted": [{ "answer": "1/3", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+              "nojs": "Ein Streifen steht für ein Ganzes. Die grünen Felder mit Haken zeigen den gegebenen Anteil. Beim Kürzen fasst du benachbarte kleine Felder zu größeren, gleich großen Gruppen zusammen. Dabei dürfen die Gruppen nicht über die Grenze zwischen markiert und nicht markiert reichen. Überlege: Wie viele kleine Felder kannst du überall zusammenfassen? Wie viele Gruppen sind danach markiert, wie viele gibt es insgesamt? Gib diese beiden Anzahlen als Bruch mit / ein. Das zweite Bild zeigt genau deine Eingabe – es bestätigt noch nicht, dass sie richtig ist.",
             },
             {
               "type": "note",

@@ -8,32 +8,30 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Wie genau brauchst du die Zahl?",
         "blocks":
           [
             {
               "type": "text",
               "text": "Eine Messung ist oft genauer angegeben, als du sie brauchst. Beim Runden wählst du einen nahe gelegenen Wert mit weniger Stellen.",
             },
-            {
-              "type": "definition",
-              "term": "Runden",
-              "explanation": "Runden ersetzt einen Wert durch einen benachbarten Wert an einer vorgegebenen Stelle. Das gerundete Ergebnis ist im Allgemeinen nur eine Näherung.",
-            },
           ],
       },
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Ausprobieren",
+        "title": "Anschaulich erklärt",
         "blocks":
           [
-            { "type": "text", "text": "Zwischen welchen zwei Hundertsteln liegt eine Zahl? Welches davon ist näher?" },
+            {
+              "type": "text",
+              "text": "Runden heißt, eine nahe gelegene Zahl mit weniger Nachkommastellen anzugeben. In der Tabelle steht 0,746 zwischen den Hundertstelwerten 0,74 und 0,75. Stell dir die drei Zahlen auf einer Strecke vor: Zu welchem Nachbarn ist der Abstand kleiner? 0,746 hat zu 0,74 den Abstand 0,006 und zu 0,75 den Abstand 0,004. Probiere danach weitere Zahlen aus. Bei einer Übung steht immer dabei, auf welche Stelle du runden sollst. Gib nur den gerundeten Wert ein.",
+            },
             {
               "type": "table",
-              "caption": "Ausgangswerte untersuchen",
-              "header": ["Gegeben", "Achte auf"],
-              "rows": [["0,746", "Hundertstelstelle und rechte Nachbarziffer"]],
+              "caption": "Eine Zahl zwischen zwei Hundertstelwerten",
+              "header": ["Unterer Nachbar", "Ausgangszahl", "Oberer Nachbar"],
+              "rows": [["0,74", "0,746", "0,75"]],
             },
             {
               "type": "note",

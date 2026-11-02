@@ -8,17 +8,12 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Ein Teil von einem Teil",
         "blocks":
           [
             {
               "type": "text",
               "text": "Von einem Teil wird noch einmal ein Teil ausgewählt: etwa die Hälfte eines Viertels. Das ist weniger als das ursprüngliche Viertel.",
-            },
-            {
-              "type": "definition",
-              "term": "Anteil eines Anteils",
-              "explanation": "Ein Anteil eines Anteils entsteht, wenn ein bereits ausgewählter Bruchteil erneut unterteilt und daraus ein Anteil genommen wird.",
             },
           ],
       },
@@ -30,7 +25,7 @@
           [
             {
               "type": "text",
-              "text": "Was bedeutet zwei Drittel von drei Vierteln? Unterteile ein Rechteck in beide Richtungen.",
+              "text": "Eine Malaufgabe kannst du als Rechteck sehen: Die beiden Faktoren geben seine Seitenlängen an. Bei 3 · 2 passt ein Rechteck mit 3 Spalten und 2 Zeilen. Bei Brüchen hilft dieselbe Idee: Das große Rechteck steht für ein Ganzes. Teile seine Breite und Höhe in gleich große Abschnitte. Der eine Bruch bestimmt die Breite, der andere die Höhe des kleineren Rechtecks. Unten erkennst du den waagerechten Anteil an Blau und senkrechten Strichen, den senkrechten Anteil an Orange und waagerechten Strichen. Folge diesen Abschnitten ins Rechteck. Markiere nur die Felder, die zu BEIDEN Anteilen gehören. Vergleiche die markierten Teilflächen mit ALLEN Teilflächen des großen Rechtecks: Dieser Anteil ist das Ergebnis der Malaufgabe.",
             },
             {
               "type": "vue-component",
@@ -48,9 +43,9 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Oben sind die ausgewählten Spalten markiert, links die ausgewählten Zeilen. Markiere im Rechteck die Felder, die zu einer ausgewählten Spalte UND einer ausgewählten Zeile gehören. Welchen Anteil des ganzen Rechtecks hast du damit ausgewählt? Gib ihn als Bruch ein.",
-                  "columnLabel": "Spalten: {z} von {n}",
-                  "rowLabel": "Zeilen: {b} von {d}",
+                  "toolLabel": "Der blaue Bruch oben gehört zur Breite des Rechtecks und zu den blauen Spaltenabschnitten mit senkrechten Strichen. Der orange Bruch gehört zur Höhe und zu den orangefarbenen Zeilenabschnitten mit waagerechten Strichen. Markiere die Felder, die sowohl unter einem blauen Abschnitt als auch neben einem orangefarbenen Abschnitt liegen. Vergleiche deine markierte Anzahl mit allen Teilflächen. Gib deinen Ergebnisbruch selbst ein.",
+                  "columnLabel": "Blau: Breite {z}/{n}",
+                  "rowLabel": "Orange: Höhe {b}/{d}",
                   "cellLabel": "Zeile {row}, Spalte {column}",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
@@ -63,12 +58,15 @@
                       "whole": "Ganzes",
                       "selected": "Ausgewählt",
                     },
+                  "totalLabel": "Teilflächen insgesamt",
+                  "markedLabel": "Von dir markiert",
                 },
               "examples":
                 {
                   "accepted": [{ "answer": "2/9", "seed": 1 }, { "answer": "4/18", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
+              "nojs": "Eine Malaufgabe kannst du als Rechteck sehen: Die beiden Faktoren geben seine Seitenlängen an. Bei 3 · 2 passt ein Rechteck mit 3 Spalten und 2 Zeilen. Bei Brüchen hilft dieselbe Idee: Das große Rechteck steht für ein Ganzes. Teile seine Breite und Höhe in gleich große Abschnitte. Der eine Bruch bestimmt die Breite, der andere die Höhe des kleineren Rechtecks. Unten erkennst du den waagerechten Anteil an Blau und senkrechten Strichen, den senkrechten Anteil an Orange und waagerechten Strichen. Folge diesen Abschnitten ins Rechteck. Markiere nur die Felder, die zu BEIDEN Anteilen gehören. Vergleiche die markierten Teilflächen mit ALLEN Teilflächen des großen Rechtecks: Dieser Anteil ist das Ergebnis der Malaufgabe.",
             },
             {
               "type": "note",

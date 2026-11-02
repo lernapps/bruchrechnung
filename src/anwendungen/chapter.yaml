@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
 {
   "title": "Dezimalzahlen und Anwendungen",
-  "summary": "Ein Anteil kann verschiedene Schreibweisen haben. Wie passen Viertel zu Hundertsteln?",
+  "summary": "Ein halber Liter lässt sich auch als 0,5 Liter schreiben. Hier wechselst du zwischen Brüchen und Dezimalzahlen, rechnest mit Dezimalzahlen und rundest auf eine passende Genauigkeit. Zum Schluss nutzt du das in Geschichten mit Mengen und Einheiten.",
   "pages": ["dezimaldarstellung", "dezimalrechnen", "runden", "sachaufgaben"],
 }

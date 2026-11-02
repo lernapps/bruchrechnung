@@ -8,7 +8,7 @@
       {
         "type": "section",
         "id": "regel",
-        "title": "Begriffe klären",
+        "title": "Gleicher Anteil, mehr Stücke",
         "blocks":
           [
             {
@@ -30,7 +30,7 @@
           [
             {
               "type": "text",
-              "text": "Unterteile jedes ursprüngliche Kuchenstück gleich oft. Die dicken Linien zeigen weiterhin die drei ursprünglichen Stücke. Beobachte die markierte Fläche und die Anzahl der kleinen Stücke.",
+              "text": "Der Kreis stellt einen ganzen Kuchen dar. Zwei seiner drei gleich großen Stücke sind grün markiert. Die grüne Fläche ist dein Kuchenanteil. Mit dem Regler zerschneidest du JEDES Stück gleich oft – auch die nicht markierten. Die dicken Linien zeigen die ursprünglichen Drittel, die dünnen die neuen Schnittkanten. Beobachte: Es werden mehr Stücke, aber nicht mehr Kuchen. Zähle die markierten und alle Stücke. So erhältst du eine andere Bruchschreibweise für denselben Anteil. In der Übung tippst du deinen erweiterten Bruch mit / ein.",
             },
             {
               "type": "vue-component",
@@ -43,7 +43,7 @@
                   "explanation": "Unterteilung pro ursprünglichem Stück: {f}. Insgesamt hat der Kuchen jetzt {n} gleich große Teile. Davon gehören {z} zu deinem Anteil. Die markierte Kuchenfläche bleibt gleich.",
                   "imageLabel": "Kuchen aus {n} gleich großen Stücken, davon {z} markiert.",
                 },
-              "nojs": "Zwei von drei gleich großen Kuchenstücken sind markiert: 2/3. Wird jedes ursprüngliche Stück halbiert, entstehen sechs gleich große Stücke. Vier davon gehören zum vorher markierten Anteil: 4/6. Die markierte Fläche hat sich nicht verändert.",
+              "nojs": "Der Kreis stellt einen ganzen Kuchen dar. Zwei seiner drei gleich großen Stücke sind grün markiert. Die grüne Fläche ist dein Kuchenanteil. Mit dem Regler zerschneidest du JEDES Stück gleich oft – auch die nicht markierten. Die dicken Linien zeigen die ursprünglichen Drittel, die dünnen die neuen Schnittkanten. Beobachte: Es werden mehr Stücke, aber nicht mehr Kuchen. Zähle die markierten und alle Stücke. So erhältst du eine andere Bruchschreibweise für denselben Anteil. In der Übung tippst du deinen erweiterten Bruch mit / ein.\n\nBeispiel: Jedes Drittel halbieren. Aus drei Stücken werden sechs, aus den zwei markierten Stücken werden vier. 2/3 und 4/6 beschreiben dieselbe Kuchenfläche.",
             },
           ],
       },
@@ -95,7 +95,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Gib deinen umgeformten Bruch ein. Zähler und Nenner werden durch / getrennt.",
+                  "toolLabel": "Nun kommt eine eigene Aufgabe mit anderen Zahlen. Unterteile gedanklich jedes ursprüngliche Stück in die verlangte Anzahl gleich großer Stücke. Gib den erweiterten Bruch mit / ein. Das zweite Bild zeigt deinen Vorschlag.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -110,6 +110,7 @@
                 },
               "examples":
                 { "accepted": [{ "answer": "2/6", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+              "nojs": "Der Kreis stellt einen ganzen Kuchen dar. Zwei seiner drei gleich großen Stücke sind grün markiert. Die grüne Fläche ist dein Kuchenanteil. Mit dem Regler zerschneidest du JEDES Stück gleich oft – auch die nicht markierten. Die dicken Linien zeigen die ursprünglichen Drittel, die dünnen die neuen Schnittkanten. Beobachte: Es werden mehr Stücke, aber nicht mehr Kuchen. Zähle die markierten und alle Stücke. So erhältst du eine andere Bruchschreibweise für denselben Anteil. In der Übung tippst du deinen erweiterten Bruch mit / ein.",
             },
             {
               "type": "single-choice",

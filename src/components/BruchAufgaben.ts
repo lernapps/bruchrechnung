@@ -127,7 +127,19 @@ export function describe(t: Task, p: Props): { task: string; solution: string } 
     multiply: `${t.b}/${t.d} von ${t.z}/${t.n}: Wähle ${t.b} von ${t.d} Zeilen der ${t.z} ausgewählten Spalten. Das sind ${t.rz} von ${t.rn} Feldern, also ${result}.`,
     divide: `${t.z}/${t.n} sind ${t.z * 2}/${t.d}. Darin passen ${t.z * 2} Stücke der Größe 1/${t.d}.`,
   };
-  return { task: fill(p.task, params(t)), solution: paths[t.kind] ?? result };
+  const drawings: Record<string, string> = {
+    expand: `Ein ganzer Kreis ist in ${t.n} gleich große Sektoren geteilt; ${t.z} sind markiert. Unterteile jeden Sektor ${t.f}-fach. Das zweite Bild zeigt nur deine eingegebene Bruchschreibweise.`,
+    reduce: `Ein ganzer Streifen hat ${t.n} gleich große Felder; ${t.z} sind markiert. Fasse sie zu gleich großen Gruppen zusammen, ohne über die Grenze des markierten Anteils zu gehen.`,
+    compare: `Zwei gleich lange Streifen stellen je ein Ganzes dar. Oben sind ${t.z} von ${t.n} Feldern markiert, unten ${t.b} von ${t.d}. Vergleiche die markierten Längen und wähle <, = oder >.`,
+    part: `Die Menge besteht aus ${t.G} Plättchen. Der Bruch ${t.z}/${t.n} beschreibt den gesuchten Teil. Markieren ist eine Rechenhilfe; gib die gesuchte Anzahl selbst ein.`,
+    whole: `Ein Streifen hat ${t.n} gleich große Gruppen. Davon sind ${t.z} markiert; sie stehen zusammen für die bekannten ${t.part} Gegenstände. Die übrigen Gruppen tragen Fragezeichen. Gesucht ist die Anzahl in allen Gruppen.`,
+    ratio: `Es gibt ${t.G} Plättchen insgesamt; ${t.part} sollen den Teil bilden. Markiere sie als Hilfe und gib den Anteil als Bruch ein.`,
+    add: `Zwei gleich lange Streifen zeigen ${t.z}/${t.n} und ${t.b}/${t.d}. Der Regler legt ein gleichmäßiges gestricheltes Raster über beide. Suche eine Unterteilung, die zu allen alten Feldgrenzen passt, und zähle diese gleich großen Stücke zusammen.`,
+    subtract: `Zwei gleich lange Streifen zeigen ${t.z}/${t.n} und ${t.b}/${t.d}. Das gestrichelte Raster folgt deiner gewählten Unterteilung. Nimm die Stücke des zweiten Anteils vom ersten weg und bestimme den Rest.`,
+    multiply: `Das ganze Rechteck hat ${t.n} Spalten und ${t.d} Zeilen. Blau mit senkrechten Strichen kennzeichnet ${t.z} Spalten für ${t.z}/${t.n}; Orange mit waagerechten Strichen kennzeichnet ${t.b} Zeilen für ${t.b}/${t.d}. Markiere die Felder, die zu beiden gehören. Darunter stehen die Gesamtzahl der Teilflächen und die Anzahl deiner eigenen Markierungen. Vergleiche beide Anzahlen, um den Ergebnisbruch anzugeben.`,
+    divide: `Der erste Streifen zeigt die vorhandene Menge ${t.z}/${t.n}, der zweite ein Stück der Größe ${t.b}/${t.d}. Mit Plus und Minus legst du Stücke in einen Probierstreifen. Eine gestrichelte Grenze zeigt die Länge der vorhandenen Menge. Suche die Stückzahl, die genau bis zu dieser Grenze reicht.`,
+  };
+  return { task: `${fill(p.task, params(t))}\n\n${drawings[t.kind] ?? ""}`, solution: paths[t.kind] ?? result };
 }
 export const about = {
   task: "Bruchmodell verändern, fehlende Größe berechnen oder Brüche vergleichen; die Frage nennt den gesuchten Wert.",
