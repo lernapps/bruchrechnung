@@ -191,7 +191,7 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 
 - Theme-Regel aus Browserfeedback: Eigene Komponenten verwenden ausschließlich die vorhandenen Explainer-Variablen für Oberflächen, Text, Rahmen, Fokus und Bedienelement-Akzent (`--page-*`). Keine VitePress-Variablen oder weißen Fallback-Hintergründe. Fachliche Diagrammfarben bleiben mit jeweils eigenem kontrastreichem Textpaar und zusätzlicher Markierung verbunden. Hell- und Dunkelmodus prüfen.
 
-- Faktorzerlegung: Knopfgruppen verwenden die vorhandene Runtime-Klasse `question-actions` für Umbruch und Abstände. Neustart steht in einer eigenen Aktionszeile im normalen Absatzrhythmus; kein zusätzliches lokales Abstands-Theme.
+- Faktorzerlegung: Knopfgruppen verwenden dieselben 0,5-rem-Abstände wie die Runtime und umbrechendes Flex-Layout. Die Runtime-Klasse `question-actions` bleibt ausschließlich deren Prüfsteuerung vorbehalten, weil sie dort auch Verhalten kennzeichnet. Neustart steht in einer eigenen Aktionszeile im normalen Absatzrhythmus; kein zusätzliches lokales Abstands-Theme.
 
 - Die Bündelungs-/Rastermethodik wird bereits bei gemeinsamen Teilern und Vielfachen interaktiv eingeführt: `TeilerVielfacheEntdecken` bündelt 12 und 18 Plättchen für den ggT; ein zweiter Modus unterteilt gleich große Ganze mit 4/6 Teilen feiner, um das kgV zu finden. Plus/Minus ist ausdrücklich die Wiederaufnahme dieser bekannten Unterteilung und verlinkt zurück. Gröbere Gruppen und feinere Unterteilungen werden klar getrennt; nojs beschreibt beide mit Beispielen.
 
@@ -199,3 +199,5 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 
 - Multiplikation nutzt ausdrücklich zwei gleichberechtigte Vorstellungen: `KuchenMultiplizieren` zeigt interaktiv b/d von drei Vierteln, indem jedes ursprüngliche Viertel in d Stückchen zerlegt und b davon genommen werden; das Ergebnis bezieht sich auf den ganzen Kuchen. Daneben bleibt das Rechteck aus zwei Seitenlängen mit eigener Übungsaufgabe. Unterschiedliche Zahlen sind als eigene Aufgabe angekündigt. Beide Ideen besitzen getrennte Methoden-/nojs-Texte und eine gemeinsame Beispielrechnung.
 - Flächenmuster sind Rauten und Punkte statt vertikaler/horizontaler Schraffur, damit sie nicht mit Teilgrenzen verwechselt werden. Die Beschriftungen erklären dieselbe Musterzuordnung.
+
+- Kuchenmultiplikation startet mit dem zweiten Regler am Maximum (3 von 3). Auch eine Änderung der Unterteilung wählt zunächst alle neuen Stückchen aus. Damit ist zuerst die unveränderte Kuchenfläche sichtbar; erst die zweite Handlung verkleinert den Anteil.

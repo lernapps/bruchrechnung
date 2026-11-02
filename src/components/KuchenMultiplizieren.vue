@@ -13,7 +13,7 @@ const props = defineProps<{
   resultLabel: string;
 }>();
 const d = ref(3);
-const b = ref(2);
+const b = ref(3);
 const patternId = useId();
 const selection = computed(() => cakeSelection(3, 4, b.value, d.value));
 </script>
@@ -21,8 +21,7 @@ const selection = computed(() => cakeSelection(3, 4, b.value, d.value));
   <div class="cake-product">
     <p>{{ instruction }}</p>
     <label
-      >{{ denominatorLabel }}: {{ d
-      }}<input v-model.number="d" type="range" min="1" max="6" @input="b = Math.min(b, d)"
+      >{{ denominatorLabel }}: {{ d }}<input v-model.number="d" type="range" min="1" max="6" @input="b = d"
     /></label>
     <label>{{ numeratorLabel }}: {{ b }}<input v-model.number="b" type="range" min="0" :max="d" /></label>
     <div class="cakes">

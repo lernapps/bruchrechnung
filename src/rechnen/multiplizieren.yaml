@@ -38,7 +38,7 @@
                     "component": "KuchenMultiplizieren",
                     "props":
                       {
-                        "instruction": "Links gehören dir drei Viertel des Kuchens. Rechts teilst du jedes deiner Viertel weiter und wählst aus jedem dieselbe Anzahl Stückchen. Die gefüllte Fläche zeigt, was du davon nimmst.",
+                        "instruction": "Links gehören dir drei Viertel des Kuchens. Rechts teilst du jedes deiner Viertel weiter. Zunächst bleiben alle Stückchen ausgewählt: Du hast noch genauso viel Kuchen. Nimm dann mit dem zweiten Regler aus jedem Viertel weniger Stückchen. Die gefüllte Fläche zeigt, was du davon nimmst.",
                         "denominatorLabel": "Jedes deiner Viertel in so viele Stückchen teilen",
                         "numeratorLabel": "Davon pro Viertel so viele Stückchen nehmen",
                         "beforeLabel": "Dein Kuchenanteil",
@@ -46,7 +46,7 @@
                         "imageLabel": "{z} von {n} gleich großen Stücken des ganzen Kuchens sind gefüllt",
                         "resultLabel": "Du nimmst {b}/{d} von 3/4. Der ganze Kuchen besteht nun aus {n} gleich großen Stückchen. Du hast {z} davon genommen: {z}/{n} des ganzen Kuchens.",
                       },
-                    "nojs": "Stell dir einen Kuchen vor, der in vier gleich große Stücke geteilt ist. Drei Stücke gehören dir: 3/4 des Kuchens. Davon möchtest du zwei Drittel nehmen. Schneide JEDES deiner drei Stücke in drei gleich große Stückchen und nimm jeweils zwei davon. Achte auf das Ganze: Der Ergebnisbruch bezieht sich weiterhin auf den ganzen Kuchen, nicht nur auf deine drei Stücke. Im rechten Bild sind nur die genommenen Stückchen gefüllt; dicke Linien zeigen die ursprünglichen Viertel. Verändere die Regler und beobachte, wie viel von deinen drei Vierteln übrig bleibt.\n\nBei zwei von drei Stückchen pro Viertel sind sechs von zwölf Stückchen des ganzen Kuchens ausgewählt. 2/3 · 3/4 = 6/12 = 1/2.",
+                    "nojs": "Stell dir einen Kuchen vor, der in vier gleich große Stücke geteilt ist. Drei Stücke gehören dir: 3/4 des Kuchens. Davon möchtest du zwei Drittel nehmen. Schneide JEDES deiner drei Stücke in drei gleich große Stückchen und nimm jeweils zwei davon. Achte auf das Ganze: Der Ergebnisbruch bezieht sich weiterhin auf den ganzen Kuchen, nicht nur auf deine drei Stücke. Im rechten Bild sind nur die genommenen Stückchen gefüllt; dicke Linien zeigen die ursprünglichen Viertel. Verändere die Regler und beobachte, wie viel von deinen drei Vierteln übrig bleibt.\n\nZu Beginn bleiben drei von drei Stückchen pro Viertel ausgewählt: neun von zwölf Stückchen, weiterhin 3/4 des ganzen Kuchens. Nimmst du danach nur zwei von drei Stückchen pro Viertel, sind sechs von zwölf Stückchen des ganzen Kuchens ausgewählt. 2/3 · 3/4 = 6/12 = 1/2.",
                   },
                 ],
             },
