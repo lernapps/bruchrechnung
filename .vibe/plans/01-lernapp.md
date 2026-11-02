@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 2 }
+failedChecks: { checks-pass: 3 }
 ---
 
 # Plan: Bruchrechnung – Schritt für Schritt, first version
@@ -355,3 +355,13 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 ### Where I had to guess
 
 <!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
+
+
+### Korrektur aus der frühen Vorschau
+
+- Nutzerwunsch: einladender Einstieg „Was ist überhaupt ein Bruch?“, Beinbruch/Bruchteil und kurzes Pizza-Beispiel.
+- Nutzerwunsch: In jeder Übungsaufgabe genau eine Darstellung. Die freie Entdeckung darf mehrere Ansichten vergleichen. BruchModelle zeigt pro Aufgabe Kreis, Streifen, Menge oder Zahlenstrahl, nicht alle gleichzeitig.
+
+- Zweite Vorschaukorrektur: Lerninhalte nicht vorwegnehmen. `darstellen` nur Ganzes, gleich große Teile, Zähler und Nenner; `zahlenstrahl` nur Positionen; `gemischte-zahlen` nur Ganze/Rest. Gleichwertigkeit erst in `umformen`, Rechenarten erst in `rechnen`. Jede Aufgabe muss die eigene Seitenkompetenz üben.
+
+- Verbindliche Übungsregel aus Browserfeedback: Vor der Prüfung weder markierte Anzahl als Ergebnisbruch anzeigen noch ein Ergebnisfeld durch Markieren, Regler oder Stückzähler ausfüllen. Modelle zeigen Gegebenes und eigene Markierungen. Zahlenstrahl-Seite ausschließlich 0 bis 1; unechte Brüche erst auf `gemischte-zahlen`.

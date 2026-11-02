@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
 {
   "title": "Was bedeutet ein Bruch?",
-  "description": "Wie kannst du drei Viertel zeigen, ohne eine Rechnung aufzuschreiben? Markiere zuerst einen Anteil und vergleiche die Darstellungen.",
-  "scope": "Der Nenner nennt die Anzahl gleich großer Teile **pro Ganzem**. Der Zähler nennt die ausgewählten Teile. Der Bruchstrich bedeutet auch geteilt durch. Ein Ganzes muss feststehen: Ein Viertel einer großen Tafel kann mehr sein als ein Viertel einer kleinen Tafel. Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Bei acht gleich großen Feldern sind sechs markiert: 6/8. Beide bedeuten denselben Anteil.",
+  "description": "Was ist überhaupt ein Bruch? Mit einem Beinbruch hat er hier nichts zu tun. Mit einem Bruchteil schon eher! Stell dir vor, ihr teilt eine Pizza in vier gleich große Stücke. Du nimmst eines: Das ist ein Viertel der Pizza. Ein Bruch beschreibt, wie viele gleich große Teile von einem Ganzen gemeint sind. Probiere unten aus, was mit den Stücken passiert.",
+  "scope": "Der Nenner nennt die Anzahl gleich großer Teile **pro Ganzem**. Der Zähler nennt die ausgewählten Teile. Der Bruchstrich bedeutet auch geteilt durch. Ein Ganzes muss feststehen: Ein Viertel einer großen Tafel kann mehr sein als ein Viertel einer kleinen Tafel. Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Die 4 unter dem Bruchstrich sagt: Vier gleich große Teile bilden das Ganze. Die 3 darüber sagt: Drei davon sind ausgewählt.",
   "blocks":
     [
       {
@@ -13,7 +13,7 @@
           [
             {
               "type": "text",
-              "text": "Wie kannst du drei Viertel zeigen, ohne eine Rechnung aufzuschreiben? Markiere zuerst einen Anteil und vergleiche die Darstellungen.",
+              "text": "Was ist überhaupt ein Bruch? Mit einem Beinbruch hat er hier nichts zu tun. Mit einem Bruchteil schon eher! Stell dir vor, ihr teilt eine Pizza in vier gleich große Stücke. Du nimmst eines: Das ist ein Viertel der Pizza. Ein Bruch beschreibt, wie viele gleich große Teile von einem Ganzen gemeint sind. Probiere unten aus, was mit den Stücken passiert.",
             },
             {
               "type": "vue-component",
@@ -22,7 +22,7 @@
                 {
                   "numerator": "Zähler",
                   "denominator": "Nenner",
-                  "note": "Verändere Zähler und Nenner. Beobachte, was gleich bleibt und was sich ändert. Die Mengenansicht erscheint nur, wenn ganze Gegenstände ausgewählt werden können.",
+                  "note": "Verschiebe die Regler: In wie viele gleich große Stücke teilst du das Ganze? Wie viele davon wählst du aus?",
                   "labels":
                     {
                       "circle": "Kreis",
@@ -32,6 +32,7 @@
                       "whole": "Ganzes",
                       "selected": "Ausgewählt",
                     },
+                  "stage": "parts",
                 },
               "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
             },
@@ -62,7 +63,7 @@
                 [
                   {
                     "type": "text",
-                    "text": "Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Bei acht gleich großen Feldern sind sechs markiert: 6/8. Beide bedeuten denselben Anteil.",
+                    "text": "Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Die 4 unter dem Bruchstrich sagt: Vier gleich große Teile bilden das Ganze. Die 3 darüber sagt: Drei davon sind ausgewählt.",
                   },
                 ],
             },
@@ -114,20 +115,20 @@
                   {
                     "text": "Vier gleich große Teile pro Ganzem.",
                     "correct": true,
-                    "info": "Das passt zur Regel auf dieser Seite.",
+                    "info": "Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Die 4 unter dem Bruchstrich sagt: Vier gleich große Teile bilden das Ganze. Die 3 darüber sagt: Drei davon sind ausgewählt.",
                   },
                   {
                     "text": "Drei ausgewählte Teile.",
                     "correct": false,
-                    "info": "Das verwechselt die Rolle der Größen oder die Rechenoperation. Vergleiche deine Wahl mit der Herleitung.",
+                    "info": "Das ist die Aufgabe des Zählers: Er zählt die ausgewählten Teile.",
                   },
                   {
                     "text": "Vier ausgewählte Ganze.",
                     "correct": false,
-                    "info": "Das verwechselt die Rolle der Größen oder die Rechenoperation. Vergleiche deine Wahl mit der Herleitung.",
+                    "info": "Der Nenner beschreibt die Unterteilung eines Ganzen, nicht die Zahl ausgewählter Ganzer.",
                   },
                 ],
-              "explanation": "Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Bei acht gleich großen Feldern sind sechs markiert: 6/8. Beide bedeuten denselben Anteil.",
+              "explanation": "Ein Streifen besteht aus vier gleich großen Feldern. Drei sind markiert: 3/4. Die 4 unter dem Bruchstrich sagt: Vier gleich große Teile bilden das Ganze. Die 3 darüber sagt: Drei davon sind ausgewählt.",
               "links":
                 [
                   {
@@ -148,16 +149,17 @@
               "mistakes":
                 [
                   {
-                    "value": "(n)+1",
-                    "message": "Dein Ergebnis ist um eine ganze Einheit zu groß. Prüfe, was genau gesucht ist und welche Teile du zählst.",
+                    "value": "1",
+                    "message": "Du hast den Zähler angegeben. Gesucht ist die Zahl aller gleich großen Teile pro Ganzem.",
                   },
-                  {
-                    "value": "(n)+2",
-                    "message": "Prüfe die Rechenoperation und die Bedeutung von Zähler und Nenner. Beginne bei der gegebenen Größe.",
-                  },
+                  { "value": "n+1", "message": "Zähle Teile, nicht Teilstriche einschließlich beider Ränder." },
                 ],
-              "hint": "Nutze die Regel und das Beispiel dieser Seite. Achte darauf, ob ein Zähler, Nenner oder eine Größe gesucht ist.",
-              "steps": ["Die Angaben in die passende Regel einsetzen.", "Die Rechnung ergibt {{answer}}."],
+              "hint": "Der Nenner nennt die Anzahl gleich großer Teile **pro Ganzem**.",
+              "steps":
+                [
+                  "Der Nenner beschreibt die Unterteilung des Ganzen. Hier besteht das Ganze aus {{n}} gleich großen Teilen.",
+                  "Ein ausgewählter Teil heißt deshalb ein {{n}}-tel; unten steht {{answer}}.",
+                ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },
           ],

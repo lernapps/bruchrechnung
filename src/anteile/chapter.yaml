@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
 {
   "title": "Anteile darstellen",
-  "summary": "Wie kannst du drei Viertel zeigen, ohne eine Rechnung aufzuschreiben? Markiere zuerst einen Anteil und vergleiche die Darstellungen.",
+  "summary": "Was ist überhaupt ein Bruch? Mit einem Beinbruch hat er hier nichts zu tun. Mit einem Bruchteil schon eher! Stell dir vor, ihr teilt eine Pizza in vier gleich große Stücke. Du nimmst eines: Das ist ein Viertel der Pizza. Ein Bruch beschreibt, wie viele gleich große Teile von einem Ganzen gemeint sind. Probiere unten aus, was mit den Stücken passiert.",
   "pages": ["darstellen", "zahlenstrahl", "gemischte-zahlen"],
 }

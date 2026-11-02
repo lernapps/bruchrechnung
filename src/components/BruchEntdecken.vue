@@ -2,6 +2,7 @@
 import { ref, computed } from "vue";
 import BruchBild from "./BruchBild.vue";
 const props = defineProps<{
+  stage?: string;
   numerator: string;
   denominator: string;
   note: string;
@@ -14,15 +15,23 @@ const total = computed(() => n.value * 2);
 <template>
   <div class="explore">
     <p>{{ note }}</p>
-    <label>{{ numerator }}: {{ z }} <input v-model.number="z" type="range" min="0" :max="n * 3" /></label
+    <label
+      >{{ numerator }}: {{ z }}
+      <input v-model.number="z" type="range" min="0" :max="stage === 'mixed' ? n * 3 : n" /></label
     ><label
       >{{ denominator }}: {{ n }}
-      <input v-model.number="n" type="range" min="1" max="12" @input="z = Math.min(z, n * 3)"
+      <input v-model.number="n" type="range" min="1" max="12" @input="z = Math.min(z, stage === 'mixed' ? n * 3 : n)"
     /></label>
     <p>
-      <strong>{{ Math.min(z, n * 3) }}/{{ n }}</strong>
+      <strong>{{ Math.min(z, stage === "mixed" ? n * 3 : n) }}/{{ n }}</strong>
     </p>
-    <BruchBild :z="Math.min(z, n * 3)" :n="n" :total="total" :labels="props.labels" />
+    <BruchBild
+      :view="stage === 'mixed' ? 'strip' : stage === 'line' ? 'line' : 'circle,strip,set'"
+      :z="Math.min(z, stage === 'mixed' ? n * 3 : n)"
+      :n="n"
+      :total="total"
+      :labels="props.labels"
+    />
   </div>
 </template>
 <style scoped>

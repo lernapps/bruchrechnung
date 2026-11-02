@@ -12,7 +12,7 @@ export interface Task {
 export type Answer = number;
 export function generate(seed: number, props: Props): Task {
   const n = [3, 4, 5, 6, 8, 10, 12][(seed - 1) % 7] ?? 4;
-  const z = props.mode === "line" ? n + 1 + (seed % Math.max(1, n - 1)) : 1 + (seed % Math.max(1, n - 1));
+  const z = props.mode === "mixed" ? n + 1 + (seed % Math.max(1, n - 1)) : 1 + (seed % Math.max(1, n - 1));
   return { z, n, mode: props.mode ?? "mark" };
 }
 export function check(task: Task, answer: unknown): boolean {

@@ -5,6 +5,7 @@ const props = defineProps<{
   z: number;
   n: number;
   total?: number;
+  view?: string;
   labels: { circle: string; strip: string; line: string; set: string; whole: string; selected: string };
 }>();
 const wholes = computed(() => Math.max(1, Math.ceil(props.z / props.n)));
@@ -12,7 +13,7 @@ const objects = computed(() => props.total ?? props.n);
 </script>
 <template>
   <div class="models">
-    <div class="model">
+    <div v-if="!view || view.includes('circle')" class="model">
       <strong>{{ labels.circle }}</strong>
       <div class="circles">
         <svg
@@ -27,7 +28,7 @@ const objects = computed(() => props.total ?? props.n);
       </div>
       <span>{{ labels.whole }}: 1</span>
     </div>
-    <div class="model">
+    <div v-if="!view || view.includes('strip')" class="model">
       <strong>{{ labels.strip }}</strong>
       <div v-for="whole in wholes" :key="whole" class="strip" :style="{ gridTemplateColumns: `repeat(${n},1fr)` }">
         <span v-for="i in n" :key="i" :class="{ on: (whole - 1) * n + i <= z }">{{
@@ -36,7 +37,7 @@ const objects = computed(() => props.total ?? props.n);
       </div>
       <span>{{ labels.selected }}: {{ z }}/{{ n }}</span>
     </div>
-    <div class="model">
+    <div v-if="!view || view.includes('line')" class="model">
       <strong>{{ labels.line }}</strong
       ><svg viewBox="0 0 300 76" role="img" :aria-label="`${labels.line}: ${z}/${n}`">
         <line x1="12" y1="26" x2="288" y2="26" />
@@ -49,7 +50,7 @@ const objects = computed(() => props.total ?? props.n);
         <circle :cx="12 + (z * 276) / (wholes * n)" cy="26" r="6" /></svg
       ><span>{{ labels.selected }}: {{ z }}/{{ n }}</span>
     </div>
-    <div v-if="z <= n && (objects * z) % n === 0" class="model">
+    <div v-if="(!view || view.includes('set')) && z <= n && (objects * z) % n === 0" class="model">
       <strong>{{ labels.set }}</strong>
       <div class="objects">
         <span v-for="i in objects" :key="i" :class="{ on: i <= (objects * z) / n }">{{

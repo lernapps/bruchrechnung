@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
 {
   "title": "Brüche auf dem Zahlenstrahl",
-  "description": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie viele Schritte brauchst du, um fünf Viertel zu erreichen?",
-  "scope": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt. Gleichwertige Brüche liegen an derselben Stelle. Bei Vierteln liegt 4/4 an der 1. Ein weiterer Viertelschritt führt zu 5/4. Daher liegt 5/4 zwischen 1 und 2.",
+  "description": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie findest du drei Viertel auf dieser Strecke?",
+  "scope": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt. Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
   "blocks":
     [
       {
@@ -13,7 +13,7 @@
           [
             {
               "type": "text",
-              "text": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie viele Schritte brauchst du, um fünf Viertel zu erreichen?",
+              "text": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie findest du drei Viertel auf dieser Strecke?",
             },
             {
               "type": "vue-component",
@@ -32,6 +32,7 @@
                       "whole": "Ganzes",
                       "selected": "Ausgewählt",
                     },
+                  "stage": "line",
                 },
               "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
             },
@@ -45,7 +46,7 @@
           [
             {
               "type": "text",
-              "text": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt. Gleichwertige Brüche liegen an derselben Stelle.",
+              "text": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt.",
             },
           ],
       },
@@ -62,7 +63,7 @@
                 [
                   {
                     "type": "text",
-                    "text": "Bei Vierteln liegt 4/4 an der 1. Ein weiterer Viertelschritt führt zu 5/4. Daher liegt 5/4 zwischen 1 und 2.",
+                    "text": "Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
                   },
                 ],
             },
@@ -80,8 +81,8 @@
               "component": "BruchModelle",
               "examples":
                 {
-                  "accepted": [{ "answer": 5, "seed": 1 }],
-                  "rejected": [{ "answer": 6, "seed": 1 }, { "answer": 0, "seed": 1 }],
+                  "accepted": [{ "answer": 2, "seed": 1 }],
+                  "rejected": [{ "answer": 3, "seed": 1 }, { "answer": 0, "seed": 1 }],
                 },
               "props":
                 {
@@ -92,7 +93,7 @@
                       "Vergleiche die Zahl der ausgewählten Teile mit dem Zähler. Die Teilung pro Ganzem gibt der Nenner an.",
                       "Wähle zuerst Teile oder einen Teilstrich aus.",
                     ],
-                  "cell": "Position {i}/{n}",
+                  "cell": "Wähle die Position",
                   "counter": "Deine Darstellung: {z}/{n}",
                   "labels":
                     {
@@ -108,22 +109,26 @@
             {
               "type": "single-choice",
               "id": "verstehen",
-              "text": "Wo liegt 5/4?",
+              "text": "Wo liegt 3/4?",
               "options":
                 [
-                  { "text": "Zwischen 1 und 2.", "correct": true, "info": "Das passt zur Regel auf dieser Seite." },
                   {
                     "text": "Zwischen 0 und 1.",
-                    "correct": false,
-                    "info": "Das verwechselt die Rolle der Größen oder die Rechenoperation. Vergleiche deine Wahl mit der Herleitung.",
+                    "correct": true,
+                    "info": "Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
                   },
                   {
-                    "text": "Genau bei 5.",
+                    "text": "Genau bei 3.",
                     "correct": false,
-                    "info": "Das verwechselt die Rolle der Größen oder die Rechenoperation. Vergleiche deine Wahl mit der Herleitung.",
+                    "info": "Drei Viertelschritte sind keine drei Ganzen. Jeder Schritt ist nur ein Viertel lang.",
+                  },
+                  {
+                    "text": "Rechts von 1.",
+                    "correct": false,
+                    "info": "Drei von vier gleich großen Abständen erreichen die 1 noch nicht.",
                   },
                 ],
-              "explanation": "Bei Vierteln liegt 4/4 an der 1. Ein weiterer Viertelschritt führt zu 5/4. Daher liegt 5/4 zwischen 1 und 2.",
+              "explanation": "Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
               "links":
                 [
                   {
@@ -142,16 +147,17 @@
               "mistakes":
                 [
                   {
-                    "value": "(n)+1",
-                    "message": "Dein Ergebnis ist um eine ganze Einheit zu groß. Prüfe, was genau gesucht ist und welche Teile du zählst.",
+                    "value": "n+1",
+                    "message": "Du hast den Startpunkt mitgezählt. Gefragt ist die Anzahl der Abstände.",
                   },
-                  {
-                    "value": "(n)+2",
-                    "message": "Prüfe die Rechenoperation und die Bedeutung von Zähler und Nenner. Beginne bei der gegebenen Größe.",
-                  },
+                  { "value": "1", "message": "Ein Ganzes ist hier in mehrere gleich große Abstände unterteilt." },
                 ],
-              "hint": "Nutze die Regel und das Beispiel dieser Seite. Achte darauf, ob ein Zähler, Nenner oder eine Größe gesucht ist.",
-              "steps": ["Die Angaben in die passende Regel einsetzen.", "Die Rechnung ergibt {{answer}}."],
+              "hint": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt.",
+              "steps":
+                [
+                  "Zwischen 0 und 1 liegen {{n}} gleich große Abstände. Ein Schritt ist also 1/{{n}} lang.",
+                  "Für {{n}}/{{n}} gehst du alle {{n}} Schritte und erreichst genau 1. Der Startpunkt zählt nicht als Schritt.",
+                ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },
           ],
