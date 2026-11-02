@@ -1,20 +1,41 @@
 # yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
-title: Prozentrechnung
-intro: |
-  Prozentwert, Prozentsatz und Grundwert: Was sie bedeuten, wie du sie ausrechnest, und je ein Beispiel dazu.
-  Für die Klassen 7 und 8.
-languages: [de]
-chapters: [prozent]
-sources:
-  - title: Prozentrechnung mittels Formeln (Serlo)
-    url: https://de.serlo.org/mathe/2193/prozentrechnung-mittels-formeln
-scope:
-  text: |
-    Die App führt in die Prozentrechnung ein. Sie geht von drei Größen aus: dem Grundwert $G$ (das Ganze, 100 %), dem
-    Prozentsatz $p\,\%$ (welcher Anteil gemeint ist) und dem Prozentwert $W$ (der Teil, in der Einheit des Ganzen). Jede
-    Seite nimmt eine der drei Größen als die gesuchte und zeigt, wie man sie aus den beiden anderen ausrechnet. Der Weg
-    über 1 % hilft auf allen drei Seiten: Das Ganze geteilt durch 100 ist 1 %.
-  out:
-    - "Zinsen und Zinseszins"
-    - "Prozentpunkte und die Veränderung eines Prozentsatzes"
-    - "vermehrter und verminderter Grundwert (Preis mit Aufschlag oder nach Rabatt in einem Schritt)"
+{
+  "title": "Bruchrechnung – Schritt für Schritt",
+  "intro": "Entdecke Brüche mit Kreis, Streifen, Mengen und Zahlenstrahl. Verändere die Modelle, begründe deine Schritte und übe mit neuen Aufgaben. Für Klasse 6; orientiert an den hessischen Gymnasialvorgaben.",
+  "languages": ["de"],
+  "chapters": ["anteile"],
+  "sources":
+    [
+      {
+        "title": "Kerncurriculum Mathematik Hessen – Gymnasium, S. 26",
+        "url": "https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf",
+      },
+      { "title": "Einführung zu Brüchen (Serlo)", "url": "https://de.serlo.org/mathe/19479/einfuehrung-zu-bruechen" },
+      {
+        "title": "Kürzen und Erweitern (Serlo)",
+        "url": "https://de.serlo.org/mathe/1509/brueche-kuerzen-und-erweitern",
+      },
+      {
+        "title": "Rechnen mit Brüchen (Serlo)",
+        "url": "https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick",
+      },
+      {
+        "title": "Anteil, Bruchteil und Ganzes (ZUM)",
+        "url": "https://unterrichten.zum.de/wiki/Teil,_Anteil_und_Ganzes_bei_der_Bruchrechnung",
+      },
+      { "title": "Teilbarkeit (Wikipedia)", "url": "https://de.wikipedia.org/wiki/Teilbarkeit" },
+      {
+        "title": "Umwandeln von Brüchen (TU Berlin)",
+        "url": "https://vorkurs-mathematik.innocampus.tu-berlin.de/section/001-VBKM01/001-M01_Bruchrechnung/001-VBKM01_USBrueche",
+      },
+      {
+        "title": "Dezimalbrüche runden (ARD alpha)",
+        "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen104.html",
+      },
+    ],
+  "scope":
+    {
+      "text": "Bruchrechnung mit anschaulichen Modellen. Hilf zuerst mit einer Frage zum nächsten Schritt. Zeige auf Wunsch einen Lösungsweg. Unterscheide Anteil, Bruchteil und Ganzes, prüfe Einheiten und erkenne gleichwertige Brüche an.",
+      "out": ["Negative Brüche", "Doppelbrüche", "Algebraische Umwandlung periodischer Dezimalzahlen"],
+    },
+}

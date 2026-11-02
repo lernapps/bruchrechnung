@@ -103,7 +103,7 @@ Zähler (Anzahl ausgewählter Teile), Nenner (Anzahl gleich großer Teile pro Ga
 
 ## Exercise patterns
 
-Die obigen Muster gelten. Jede Seite nutzt stabile Übungs-IDs `verstehen` und `ueben`, interaktive Aufgaben zusätzlich `modell`. Alternative korrekte Brüche über Kreuzprodukt prüfen, vollständige Kürzung nur bei ausdrücklicher Aufforderung.
+Die obigen Muster gelten. Jede Seite nutzt stabile Übungs-IDs `verstehen` und `aufgaben`, interaktive Aufgaben zusätzlich `modell`. Alternative korrekte Brüche über Kreuzprodukt prüfen, vollständige Kürzung nur bei ausdrücklicher Aufforderung.
 
 ## Figures
 
@@ -144,3 +144,5 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 
 - Das Tooling erlaubt beim Anlegen nur seine Init-Dateien und `.vibe`: Hilfsskripte im übergeordneten `work/` halten.
 - Übungskomponenten haben keinen eigenen Prüfknopf, keine eigene Ergebnisanzeige und keine eigenen Formulare; die Runtime prüft.
+
+- `BruchBild` ist eine gemeinsame Zeichenhilfe; `BruchEntdecken` erlaubt freies Verändern von Zähler und Nenner. Übungen nutzen `BruchModelle` mit dem Runtime-Prüfvertrag. Beide Hilfen sind Teil der geplanten Bruchmodell-Komponente.

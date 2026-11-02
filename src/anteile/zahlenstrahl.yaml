@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche auf dem Zahlenstrahl",
+  "description": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie viele Schritte brauchst du, um fünf Viertel zu erreichen?",
+  "scope": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt. Gleichwertige Brüche liegen an derselben Stelle. Bei Vierteln liegt 4/4 an der 1. Ein weiterer Viertelschritt führt zu 5/4. Daher liegt 5/4 zwischen 1 und 2.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Entdecken",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie viele Schritte brauchst du, um fünf Viertel zu erreichen?",
+            },
+            {
+              "type": "vue-component",
+              "component": "BruchEntdecken",
+              "props":
+                {
+                  "numerator": "Zähler",
+                  "denominator": "Nenner",
+                  "note": "Verändere Zähler und Nenner. Beobachte, was gleich bleibt und was sich ändert. Die Mengenansicht erscheint nur, wenn ganze Gegenstände ausgewählt werden können.",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "nojs": "Drei Viertel bedeuten drei von vier gleich großen Teilen eines Ganzen. Im Kreis sind drei Viertelkreise, im Streifen drei Viertel und von acht Gegenständen sechs ausgewählt. Auf dem Zahlenstrahl liegt 3/4 zwischen 0 und 1. Ein größerer Nenner macht die einzelnen Teile kleiner.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Regel",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt. Gleichwertige Brüche liegen an derselben Stelle.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Beispiel",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Bei Vierteln liegt 4/4 an der 1. Ein weiterer Viertelschritt führt zu 5/4. Daher liegt 5/4 zwischen 1 und 2.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "id": "modell",
+              "component": "BruchModelle",
+              "examples":
+                {
+                  "accepted": [{ "answer": 5, "seed": 1 }],
+                  "rejected": [{ "answer": 6, "seed": 1 }, { "answer": 0, "seed": 1 }],
+                },
+              "props":
+                {
+                  "task": "Platziere {z}/{n} auf dem Zahlenstrahl. Wähle den passenden Teilstrich.",
+                  "mode": "line",
+                  "mistakes":
+                    [
+                      "Vergleiche die Zahl der ausgewählten Teile mit dem Zähler. Die Teilung pro Ganzem gibt der Nenner an.",
+                      "Wähle zuerst Teile oder einen Teilstrich aus.",
+                    ],
+                  "cell": "Position {i}/{n}",
+                  "counter": "Deine Darstellung: {z}/{n}",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Wo liegt 5/4?",
+              "options":
+                [
+                  { "text": "Zwischen 1 und 2.", "correct": true, "info": "Das passt zur Regel auf dieser Seite." },
+                  {
+                    "text": "Zwischen 0 und 1.",
+                    "correct": false,
+                    "info": "Das verwechselt die Rolle der Größen oder die Rechenoperation. Vergleiche deine Wahl mit der Herleitung.",
+                  },
+                  {
+                    "text": "Genau bei 5.",
+                    "correct": false,
+                    "info": "Das verwechselt die Rolle der Größen oder die Rechenoperation. Vergleiche deine Wahl mit der Herleitung.",
+                  },
+                ],
+              "explanation": "Bei Vierteln liegt 4/4 an der 1. Ein weiterer Viertelschritt führt zu 5/4. Daher liegt 5/4 zwischen 1 und 2.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/19479/einfuehrung-zu-bruechen",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task":
+                { "text": "Eine Einheit hat {{n}} gleiche Abstände. Wie viele davon brauchst du für {{n}}/{{n}}?" },
+              "answer": { "value": "n", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "(n)+1",
+                    "message": "Dein Ergebnis ist um eine ganze Einheit zu groß. Prüfe, was genau gesucht ist und welche Teile du zählst.",
+                  },
+                  {
+                    "value": "(n)+2",
+                    "message": "Prüfe die Rechenoperation und die Bedeutung von Zähler und Nenner. Beginne bei der gegebenen Größe.",
+                  },
+                ],
+              "hint": "Nutze die Regel und das Beispiel dieser Seite. Achte darauf, ob ein Zähler, Nenner oder eine Größe gesucht ist.",
+              "steps": ["Die Angaben in die passende Regel einsetzen.", "Die Rechnung ergibt {{answer}}."],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

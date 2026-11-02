@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Anteile darstellen",
+  "summary": "Wie kannst du drei Viertel zeigen, ohne eine Rechnung aufzuschreiben? Markiere zuerst einen Anteil und vergleiche die Darstellungen.",
+  "pages": ["darstellen", "zahlenstrahl", "gemischte-zahlen"],
+}
