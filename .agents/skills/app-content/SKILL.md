@@ -203,3 +203,5 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Kuchenmultiplikation startet mit dem zweiten Regler am Maximum (3 von 3). Auch eine Änderung der Unterteilung wählt zunächst alle neuen Stückchen aus. Damit ist zuerst die unveränderte Kuchenfläche sichtbar; erst die zweite Handlung verkleinert den Anteil.
 
 - Dezimalrechnen ist in zwei Lernseiten geteilt: `dezimalrechnen` für Addition/Subtraktion, `dezimal-mal-geteilt` für Multiplikation/Division. Jede Rechenart hat eine eigene Herleitung, einen getrennten Beispielkasten mit Rechenschritten und eine variierte Übung mit sechs Datensätzen. Stellenwerttausch, Zehntelrechteck und gleichmäßige Skalierung der Division werden getrennt begründet. Daten in dezimalpaare/dezimalprodukte/dezimalquotienten. 21 Lernseiten, Kapitel Anwendungen nun fünf Seiten; der alte Plus/Minus-Pfad und die Übungs-ID aufgaben bleiben erhalten.
+
+- Die abgenommene erste Fassung enthält keinen zusätzlichen Kapitel-Einstufungstest. Auf Wunsch des Nutzers ist der fertig durchgesehene Funktionsumfang für die Veröffentlichung abgeschlossen; die vorhandenen Übungen bleiben unmittelbar auf den Lernseiten.

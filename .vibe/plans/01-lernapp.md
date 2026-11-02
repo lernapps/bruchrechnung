@@ -4,7 +4,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -37,6 +37,9 @@ For you, the assistant.
 Die Lernenden der Klasse 6 erschließen Bruchrechnung nach den hessischen Gymnasialvorgaben durch veränderbare Modelle und Übungen. Sie stellen Brüche dar, formen sie um, rechnen damit und lösen Sachaufgaben.
 
 ## Key decisions
+
+- GitHub-Ziel vom Nutzer festgelegt: `lernapps/bruchrechnung`; öffentliches Repository angelegt, Schreibzugriff bestätigt.
+- Kein zusätzlicher Kapitel-Einstufungstest in dieser Fassung: Der Nutzer hat den durchgesehenen Umfang ausdrücklich als fertig abgenommen. Die Übungen sind auf den Lernseiten vorhanden; vor der Veröffentlichung werden keine weiteren Funktionen ergänzt.
 
 - Archetyp: explainer mit interaktiven Übungskomponenten: Lehrplangestützter Lernweg mit Herleitungen und Übungen; Komponenten für veränderbare Bruchmodelle, die statische Blöcke nicht darstellen können.
 
@@ -353,14 +356,17 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 ### Tasks
 
 - [x] `phase: code` ist gesetzt.
-- [ ] Show the creator a first look (`early-preview`): erste echte Lernseite mit interaktiven Modellen auf Desktop und bei 360 px zeigen; anschließend weiterarbeiten.
-- [ ] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px. Compare
-      each with the confirmed sketches; each figure in its own image (`npx --no -- lernapps screenshots --desktop`).
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
-      No checkpoint here: set it before you ask or report anything, then start Commit in the same message.
 
 ### Completed
+
+- [x] Show the creator a first look (`early-preview`): erste echte Lernseite mit interaktiven Modellen auf Desktop und bei 360 px zeigen; anschließend weiterarbeiten.
+- [x] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px. Compare
+      each with the confirmed sketches; each figure in its own image (`npx --no -- lernapps screenshots --desktop`).
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+      No checkpoint here: set it before you ask or report anything, then start Commit in the same message.
+
+- Abschluss: Nutzerabnahme nach den Browserkorrekturen; vollständige Erstgalerie und gezielte Nachprüfungen aller veränderten Darstellungen, Desktop/360 px, Hell/Dunkel, nojs und Bedienzustände. Kein Pause-/Endmodus in dieser Erklär-App. Vollständiger Check der finalen 21 Seiten: 12 Regeln ohne Befund am Implementierungsstand c91c35e.
 
 - [x] `npx --no -- lernapps check` passes: 12 Regeln ohne Befund, Implementierungsstand 1fd2b47, einschließlich Browser-/Barrierefreiheitsprüfung.
 
@@ -399,10 +405,6 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 
 ### Tasks
 
-- [ ] `grep '^phase:'` prints `phase: commit`; else set it.
-- [ ] An explainer: load skill `lernapps-explainer-self-assessment` (missing → `npx --no -- lernapps skills --archetype
-      explainer`). Add the self-assessment as it says, or
-      write under "Key decisions" why the app has none. Commit; the hooks check.
 - [ ] Load skill `lernapps-github`. Repo and Pages as it says: ask the repo name and every click only the creator can
       make in one message.
 - [ ] Push `work`, open the preview pull request, see its checks to green as the skill says.
@@ -419,6 +421,12 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 - [ ] Plan changed since its last push → commit it on `main`, push again.
 
 ### Completed
+
+- [x] An explainer: load skill `lernapps-explainer-self-assessment` (missing → `npx --no -- lernapps skills --archetype
+      explainer`). Add the self-assessment as it says, or
+      write under "Key decisions" why the app has none. Commit; the hooks check.
+
+- [x] `grep '^phase:'` prints `phase: commit`; else set it.
 
 - [x] Fill the retrospective: zum ausdrücklich gewünschten lokalen Abschluss ausgefüllt.
 
@@ -448,4 +456,4 @@ Zuerst eine vollständige Musterseite mit echter Bedienhandlung aus Sicht eines 
 
 ### Ausführliche Retro
 
-Die vollständige Rückschau mit konkreten Nachschärfungen, Ursachen und Verbesserungsvorschlägen liegt im übergeordneten Projekt unter `outputs/retro.md`. Der simulierte Kinder-Audit steht unter `outputs/kinderperspektive-pruefung.md`; er ist keine echte Kinderstudie.
+Die vollständige Rückschau mit konkreten Nachschärfungen, Ursachen und Verbesserungsvorschlägen liegt im übergeordneten Projekt unter `docs/retro.md` (im Repository; zusätzlich als `outputs/retro.md` im Projekt). Der simulierte Kinder-Audit steht unter `outputs/kinderperspektive-pruefung.md`; er ist keine echte Kinderstudie.
