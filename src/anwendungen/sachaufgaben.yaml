@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche im Alltag anwenden",
+  "description": "Was ist gegeben und was wird gesucht? Zeichne zuerst die Situation.",
+  "scope": "Ordne die Angaben: Ganzes, Bruchteil oder Anteil. Entscheide dann, welche Rechnung die Frage beantwortet. Nenne die Einheit und prüfe durch Schätzen, ob das Ergebnis sinnvoll ist. Beim Vergleichen von Anteilen brauchst du dieselbe Bezugsgröße. 3/4 Liter Saft werden gleich auf zwei Gefäße verteilt: 3/4 : 2 = 3/8 Liter pro Gefäß. Bei 20 Würfen fällt 5-mal eine Sechs: relative Häufigkeit 5/20 = 1/4 = 25 %. Das beschreibt die beobachteten Würfe und keine sichere Vorhersage.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Von der Geschichte zur Rechnung",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Eine Geschichte beschreibt Mengen und Anteile. Bevor du rechnest, klärst du, was du schon weißt und was du herausfinden möchtest.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Anschaulich erklärt",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Drei Viertel Liter Saft sollen gleichmäßig auf zwei Gefäße verteilt werden. Gesucht ist die Saftmenge in EINEM Gefäß. Stell dir einen Liter als Streifen mit vier gleich großen Abschnitten vor. Drei Abschnitte enthalten Saft. Teile jeden dieser drei Abschnitte noch einmal in zwei gleich große Stücke. Gib von jedem Paar ein Stück in jedes Gefäß. So bekommt jedes Gefäß gleich viel. Schreibe danach auf, welcher Anteil eines Liters in einem Gefäß ist. Bei den Übungen klärst du genauso zuerst: Was ist gegeben, was wird gesucht und in welcher Einheit?",
+            },
+            {
+              "type": "table",
+              "caption": "Ausgangswerte untersuchen",
+              "header": ["Gegeben", "Achte auf"],
+              "rows": [["3/4 Liter und 2 Gefäße", "Gesuchte Menge pro Gefäß"]],
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Ordne die Angaben: Ganzes, Bruchteil oder Anteil. Entscheide dann, welche Rechnung die Frage beantwortet. Nenne die Einheit und prüfe durch Schätzen, ob das Ergebnis sinnvoll ist. Beim Vergleichen von Anteilen brauchst du dieselbe Bezugsgröße.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "3/4 Liter Saft werden gleich auf zwei Gefäße verteilt: 3/4 : 2 = 3/8 Liter pro Gefäß. Bei 20 Würfen fällt 5-mal eine Sechs: relative Häufigkeit 5/20 = 1/4 = 25 %. Das beschreibt die beobachteten Würfe und keine sichere Vorhersage.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "3/4 Liter werden auf zwei gleiche Gefäße verteilt. Wie viel erhält jedes?",
+              "options":
+                [
+                  {
+                    "text": "3/8 Liter",
+                    "correct": true,
+                    "info": "3/4 Liter Saft werden gleich auf zwei Gefäße verteilt: 3/4 : 2 = 3/8 Liter pro Gefäß. Bei 20 Würfen fällt 5-mal eine Sechs: relative Häufigkeit 5/20 = 1/4 = 25 %. Das beschreibt die beobachteten Würfe und keine sichere Vorhersage.",
+                  },
+                  {
+                    "text": "3/2 Liter",
+                    "correct": false,
+                    "info": "Beim Verteilen auf zwei Gefäße wird die Menge pro Gefäß kleiner.",
+                  },
+                  {
+                    "text": "3/6 Liter",
+                    "correct": false,
+                    "info": "Du teilst drei Viertel durch zwei, nicht den Nenner durch eine beliebige neue Zahl.",
+                  },
+                ],
+              "explanation": "3/4 Liter Saft werden gleich auf zwei Gefäße verteilt: 3/4 : 2 = 3/8 Liter pro Gefäß. Bei 20 Würfen fällt 5-mal eine Sechs: relative Häufigkeit 5/20 = 1/4 = 25 %. Das beschreibt die beobachteten Würfe und keine sichere Vorhersage.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://unterrichten.zum.de/wiki/Teil,_Anteil_und_Ganzes_bei_der_Bruchrechnung",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task":
+                {
+                  "text": "Eine Strecke ist {{e.vierfach}} km lang. Du gehst 3/4 davon. Wie viele Kilometer sind das?",
+                },
+              "answer": { "value": "e.vierfach / 4 * 3", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "e.vierfach", "message": "Das ist die ganze Strecke, nicht der zurückgelegte Teil." },
+                  { "value": "e.basis", "message": "Das ist ein Viertel. Gefragt sind drei Viertel." },
+                ],
+              "hint": "Ordne die Angaben: Ganzes, Bruchteil oder Anteil.",
+              "steps":
+                [
+                  "Ein Viertel der Strecke ist {{e.vierfach}} : 4 = {{e.basis}} km lang.",
+                  "Drei Viertel sind {{e.basis}} · 3 = {{answer}} km.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

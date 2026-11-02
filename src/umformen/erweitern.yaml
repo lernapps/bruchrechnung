@@ -1,0 +1,168 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche erweitern",
+  "description": "Wenn jedes Stück halbiert wird, ist dann mehr Kuchen da?",
+  "scope": "Erweitern wird am gleichmäßigen Unterteilen aller Kuchenstücke hergeleitet. Zwei Drittel bleiben derselbe Anteil, wenn jedes der drei Stücke in gleich viele kleinere Stücke geteilt wird. Zähler und Nenner werden mit demselben Faktor multipliziert; die Fläche bleibt gleich.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Gleicher Anteil, mehr Stücke",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Ein Kuchen ist in drei gleich große Stücke geteilt. Zwei davon sind für dich: zwei Drittel. Nun teilst du jedes der drei Stücke noch einmal in zwei gleich große Stücke. Wie beschreibst du deinen Anteil jetzt?",
+            },
+            {
+              "type": "definition",
+              "term": "Erweitern",
+              "explanation": "Erweitern heißt, denselben Anteil mit mehr, kleineren Teilstücken zu beschreiben. Dafür werden Zähler und Nenner mit derselben positiven ganzen Zahl multipliziert. Das Wort bezieht sich auf die Bruchschreibweise: Beim Erweitern mit einem Faktor größer als 1 wachsen hier Zähler und Nenner, der Anteil bleibt gleich.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Der Kreis stellt einen ganzen Kuchen dar. Zwei seiner drei gleich großen Stücke sind grün markiert. Die grüne Fläche ist dein Kuchenanteil. Mit dem Regler zerschneidest du JEDES Stück gleich oft – auch die nicht markierten. Die dicken Linien zeigen die ursprünglichen Drittel, die dünnen die neuen Schnittkanten. Beobachte: Es werden mehr Stücke, aber nicht mehr Kuchen. Zähle die markierten und alle Stücke. So erhältst du eine andere Bruchschreibweise für denselben Anteil. In der Übung tippst du deinen erweiterten Bruch mit / ein.",
+            },
+            {
+              "type": "vue-component",
+              "component": "KuchenTeilen",
+              "props":
+                {
+                  "beforeLabel": "Vor dem Unterteilen",
+                  "afterLabel": "Nach dem Unterteilen",
+                  "factorLabel": "Jedes ursprüngliche Stück in so viele Stücke teilen",
+                  "explanation": "Unterteilung pro ursprünglichem Stück: {f}. Insgesamt hat der Kuchen jetzt {n} gleich große Teile. Davon gehören {z} zu deinem Anteil. Die markierte Kuchenfläche bleibt gleich.",
+                  "imageLabel": "Kuchen aus {n} gleich großen Stücken, davon {z} markiert.",
+                },
+              "nojs": "Der Kreis stellt einen ganzen Kuchen dar. Zwei seiner drei gleich großen Stücke sind grün markiert. Die grüne Fläche ist dein Kuchenanteil. Mit dem Regler zerschneidest du JEDES Stück gleich oft – auch die nicht markierten. Die dicken Linien zeigen die ursprünglichen Drittel, die dünnen die neuen Schnittkanten. Beobachte: Es werden mehr Stücke, aber nicht mehr Kuchen. Zähle die markierten und alle Stücke. So erhältst du eine andere Bruchschreibweise für denselben Anteil. In der Übung tippst du deinen erweiterten Bruch mit / ein.\n\nBeispiel: Jedes Drittel halbieren. Aus drei Stücken werden sechs, aus den zwei markierten Stücken werden vier. 2/3 und 4/6 beschreiben dieselbe Kuchenfläche.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Derselbe Kuchenanteil in kleineren Stücken",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Anfangs hast du zwei von drei gleich großen Stücken. Halbierst du jedes Stück, werden aus deinen zwei Stücken vier kleine Stücke. Aus allen drei Stücken werden insgesamt sechs kleine Stücke.",
+                  },
+                  { "type": "formula", "formula": "\\frac{2}{3} = \\frac{2 \\cdot 2}{3 \\cdot 2} = \\frac{4}{6}" },
+                  {
+                    "type": "text",
+                    "text": "Du hast weiterhin denselben Anteil am Kuchen. Die größere Anzahl der kleineren Stücke erklärt, warum beim Erweitern Zähler und Nenner mit derselben Zahl multipliziert werden.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "component": "BruchUmformen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "expand",
+                  "task": "Erweitere {z}/{n} mit {f}. Gib den erweiterten Bruch an.",
+                  "mistakes":
+                    [
+                      "Dein Bruch hat einen anderen Wert als der Ausgangsbruch. Beim Umformen müssen Zähler und Nenner mit derselben Zahl multipliziert oder durch denselben gemeinsamen Teiler geteilt werden.",
+                      "Schreibe eine ganze Zahl oder einen Bruch mit / und einem Nenner größer als 0.",
+                      "Der Wert stimmt, aber Zähler und Nenner haben noch einen gemeinsamen Teiler größer als 1. Kürze noch weiter.",
+                      "Der Wert stimmt. Verwende aber den in der Aufgabe verlangten Erweiterungsfaktor für Zähler und Nenner.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "So schreibst du das",
+                  "toolLabel": "Nun kommt eine eigene Aufgabe mit anderen Zahlen. Unterteile gedanklich jedes ursprüngliche Stück in die verlangte Anzahl gleich großer Stücke. Gib den erweiterten Bruch mit / ein. Das zweite Bild zeigt deinen Vorschlag.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                { "accepted": [{ "answer": "2/6", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+              "nojs": "Der Kreis stellt einen ganzen Kuchen dar. Zwei seiner drei gleich großen Stücke sind grün markiert. Die grüne Fläche ist dein Kuchenanteil. Mit dem Regler zerschneidest du JEDES Stück gleich oft – auch die nicht markierten. Die dicken Linien zeigen die ursprünglichen Drittel, die dünnen die neuen Schnittkanten. Beobachte: Es werden mehr Stücke, aber nicht mehr Kuchen. Zähle die markierten und alle Stücke. So erhältst du eine andere Bruchschreibweise für denselben Anteil. In der Übung tippst du deinen erweiterten Bruch mit / ein.",
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Was bleibt beim Erweitern gleich?",
+              "options":
+                [
+                  {
+                    "text": "Der Wert des Bruchs.",
+                    "correct": true,
+                    "info": "2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+                  },
+                  {
+                    "text": "Die Zahl der Teilstücke.",
+                    "correct": false,
+                    "info": "Die Zahl der Teilstücke steigt beim Erweitern. Der Anteil bleibt gleich.",
+                  },
+                  {
+                    "text": "Die Größe eines Teilstücks.",
+                    "correct": false,
+                    "info": "Die Teilstücke werden kleiner, weil jedes weiter unterteilt wird.",
+                  },
+                ],
+              "explanation": "2/3 mit 2 erweitern: 2 · 2 = 4 und 3 · 2 = 6. Also 2/3 = 4/6. Jedes Drittel wurde in zwei Sechstel unterteilt.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/1509/brueche-kuerzen-und-erweitern",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Erweitere 1/{{n}} mit 3. Welcher Nenner entsteht?" },
+              "answer": { "value": "n*3", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n+3", "message": "Erweitern bedeutet multiplizieren, nicht addieren." },
+                  { "value": "n", "message": "Auch der Nenner muss mit dem Erweiterungsfaktor multipliziert werden." },
+                ],
+              "hint": "Beim Erweitern multiplizierst du Zähler und Nenner mit derselben positiven ganzen Zahl.",
+              "steps":
+                [
+                  "Beim Erweitern wird jedes ursprüngliche Teil in drei gleich große kleinere Teile zerlegt.",
+                  "Darum verdreifacht sich auch die Gesamtzahl der Teile: ${{n}} \\cdot 3 = {{answer}}$. Das ist der neue Nenner.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

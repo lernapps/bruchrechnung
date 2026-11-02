@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+[
+  { "basis": 3, "dreifach": 9, "vierfach": 12, "doppelt": 6, "sechsfach": 18, "rundungszahl": 0.346 },
+  { "basis": 4, "dreifach": 12, "vierfach": 16, "doppelt": 8, "sechsfach": 24, "rundungszahl": 0.446 },
+  { "basis": 5, "dreifach": 15, "vierfach": 20, "doppelt": 10, "sechsfach": 30, "rundungszahl": 0.546 },
+  { "basis": 6, "dreifach": 18, "vierfach": 24, "doppelt": 12, "sechsfach": 36, "rundungszahl": 0.646 },
+  { "basis": 8, "dreifach": 24, "vierfach": 32, "doppelt": 16, "sechsfach": 48, "rundungszahl": 0.846 },
+  { "basis": 10, "dreifach": 30, "vierfach": 40, "doppelt": 20, "sechsfach": 60, "rundungszahl": 1.046 },
+]

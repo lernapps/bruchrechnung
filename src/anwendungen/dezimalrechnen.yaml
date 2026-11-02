@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Dezimalzahlen addieren und subtrahieren",
+  "description": "Gleiche Stellenwerte zusammenlegen oder wegnehmen: Komma unter Komma.",
+  "scope": "Addition und Subtraktion von Dezimalzahlen werden getrennt hergeleitet. Gleiche Stellenwerte stehen untereinander, Komma unter Komma. Endnullen hinter dem Komma ändern den Wert nicht. Bei der Addition werden zehn Hundertstel zu einem Zehntel und zehn Zehntel zu einem Ganzen gebündelt. 0,75 + 0,50 = 1,25. Bei der Subtraktion können größere Stellenwerte in zehn kleinere getauscht werden. 1,20 sind 11 Zehntel und 10 Hundertstel; davon 3 Zehntel und 5 Hundertstel weggenommen ergeben 0,85. Also 1,20 − 0,35 = 0,85. Die Übungen enthalten ausschließlich Addition und Subtraktion, keine Punktrechnung.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Gleiche Stellen gehören zusammen",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Du hast 0,75 Euro und bekommst 0,50 Euro dazu. Beim Zusammenlegen rechnest du Euro zu Euro und Cent zu Cent. Beim Ausgeben nimmst du solche Beträge wieder weg. Bei Dezimalzahlen helfen dir dafür die Stellenwerte: Ganze, Zehntel, Hundertstel.",
+            },
+            {
+              "type": "definition",
+              "term": "Stellenwert",
+              "explanation": "Der Stellenwert sagt, ob eine Ziffer Einer, Zehntel, Hundertstel oder eine andere Zehnerpotenz zählt.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Anschaulich erklärt",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Auf dieser Seite geht es um Plus und Minus. Schreibe die Zahlen so untereinander, dass gleiche Stellenwerte in derselben Spalte stehen: Komma unter Komma. Ergänze bei Bedarf Nullen am Ende, etwa 0,5 = 0,50. Die folgenden Tabellen zeigen die Stellen getrennt, damit du gleich große Teile zusammenlegen oder wegnehmen kannst.",
+            },
+            {
+              "type": "section",
+              "id": "addition",
+              "title": "Plus: gleich große Teile zusammenlegen",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "In der Tabelle stehen sieben Zehntel und fünf Hundertstel in der ersten Zahl, fünf Zehntel und null Hundertstel in der zweiten. Lege Hundertstel zu Hundertsteln und Zehntel zu Zehnteln. Werden es zehn kleinere Teile, kannst du sie gegen einen Teil der nächstgrößeren Sorte tauschen.",
+                  },
+                  {
+                    "type": "table",
+                    "caption": "Beide Zahlen sind nach Stellenwerten ausgerichtet",
+                    "header": ["Zahl", "Ganze", "Zehntel", "Hundertstel"],
+                    "rows": [["0,75", "0", "7", "5"], ["0,50", "0", "5", "0"]],
+                  },
+                ],
+            },
+            {
+              "type": "section",
+              "id": "subtraktion",
+              "title": "Minus: bei Bedarf in kleinere Teile tauschen",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Beim Subtrahieren nimmst du gleich große Teile weg. Wenn an einer Stelle zu wenig vorhanden ist, tauschst du einen größeren Teil in zehn kleinere: ein Ganzes in zehn Zehntel oder ein Zehntel in zehn Hundertstel. Der Wert der Zahl bleibt dabei gleich. Bei 1,20 − 0,35 reicht es nicht, nur die Ziffern direkt voneinander abzuziehen; zuerst musst du tauschen.",
+                  },
+                  {
+                    "type": "table",
+                    "caption": "Der Anfang der Minusrechnung",
+                    "header": ["Zahl", "Ganze", "Zehntel", "Hundertstel"],
+                    "rows": [["1,20", "1", "2", "0"], ["0,35", "0", "3", "5"]],
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Zwei Beispiele, Schritt für Schritt",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Addition: 0,75 + 0,50",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "1. Hundertstel: 5 + 0 = 5.\n2. Zehntel: 7 + 5 = 12. Bündele zehn Zehntel zu einem Ganzen; zwei Zehntel bleiben.\n3. Zusammen hast du ein Ganzes, zwei Zehntel und fünf Hundertstel: 1,25.",
+                  },
+                  { "type": "formula", "formula": "0,75 + 0,50 = 1,25" },
+                ],
+            },
+            {
+              "type": "example",
+              "title": "Subtraktion: 1,20 − 0,35",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "1. Tausche das Ganze in zehn Zehntel. Zusammen mit den zwei Zehnteln sind es zwölf Zehntel.\n2. Tausche ein Zehntel in zehn Hundertstel. Nun hast du elf Zehntel und zehn Hundertstel.\n3. Nimm drei Zehntel und fünf Hundertstel weg. Es bleiben acht Zehntel und fünf Hundertstel: 0,85.",
+                  },
+                  { "type": "formula", "formula": "1,20 - 0,35 = 0,85" },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Warum kannst du 0,5 als 0,50 schreiben?",
+              "options":
+                [
+                  {
+                    "text": "Fünf Zehntel und fünfzig Hundertstel sind gleich viel.",
+                    "correct": true,
+                    "info": "0,5 sind fünf Zehntel. Jedes Zehntel besteht aus zehn Hundertsteln. Deshalb sind fünf Zehntel dasselbe wie fünfzig Hundertstel: 0,5 = 0,50. Eine Null am Ende nach dem Komma verändert den Wert nicht.",
+                  },
+                  {
+                    "text": "Durch die Null wird die Zahl zehnmal größer.",
+                    "correct": false,
+                    "info": "Eine Endnull nach dem Komma verändert den Wert nicht.",
+                  },
+                  {
+                    "text": "0,50 sind fünf Hundertstel.",
+                    "correct": false,
+                    "info": "Fünf Hundertstel wären 0,05; 0,50 sind fünfzig Hundertstel.",
+                  },
+                ],
+              "explanation": "0,5 sind fünf Zehntel. Jedes Zehntel besteht aus zehn Hundertsteln. Deshalb sind fünf Zehntel dasselbe wie fünfzig Hundertstel: 0,5 = 0,50. Eine Null am Ende nach dem Komma verändert den Wert nicht.",
+              "links":
+                [
+                  {
+                    "title": "Dezimalzahlen addieren und subtrahieren (ARD alpha)",
+                    "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "dezimalpaare" } } },
+              "task": { "text": "Addiere {{e.azahl}} + {{e.bzahl}}. Gib das Ergebnis als Dezimalzahl an." },
+              "answer":
+                { "value": "(e.a100+e.b100)/100", "compare": { "number": { "format": "decimal", "decimals": 2 } } },
+              "mistakes":
+                [
+                  {
+                    "value": "e.a100+e.b100",
+                    "message": "Diese Anzahl zählt Hundertstel, nicht Ganze. Setze das Komma passend.",
+                  },
+                  { "value": "(e.a100+e.b100)/1000", "message": "Die Teile sind Hundertstel, keine Tausendstel." },
+                ],
+              "hint": "Schreibe beide Zahlen in Hundertsteln und ordne Komma unter Komma.",
+              "steps":
+                [
+                  "{{e.azahl}} sind {{e.a100}} Hundertstel; {{e.bzahl}} sind {{e.b100}} Hundertstel.",
+                  "Zusammen sind es {{e.summe100}} Hundertstel. Bündele jeweils hundert Hundertstel zu einem Ganzen. Das ergibt {{answer}}.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+            {
+              "type": "generated",
+              "id": "minus-aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "dezimalpaare" } } },
+              "task": { "text": "Subtrahiere {{e.azahl}} − {{e.bzahl}}. Gib das Ergebnis als Dezimalzahl an." },
+              "answer":
+                { "value": "(e.a100-e.b100)/100", "compare": { "number": { "format": "decimal", "decimals": 2 } } },
+              "mistakes":
+                [
+                  {
+                    "value": "(e.a100+e.b100)/100",
+                    "message": "Das ist die Summe. Bei Minus nimmst du den zweiten Betrag weg.",
+                  },
+                  {
+                    "value": "e.a100/100-e.b100/1000",
+                    "message": "Der zweite Betrag besteht aus Hundertsteln, nicht aus Tausendsteln.",
+                  },
+                ],
+              "hint": "Ordne gleiche Stellen untereinander. Tausche bei Bedarf ein größeres Teil in zehn kleinere.",
+              "steps":
+                [
+                  "Die Beträge entsprechen {{e.a100}} und {{e.b100}} Hundertsteln.",
+                  "Nach dem Wegnehmen bleiben {{e.differenz100}} Hundertstel: {{answer}}. Prüfe, indem du {{e.bzahl}} wieder addierst.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

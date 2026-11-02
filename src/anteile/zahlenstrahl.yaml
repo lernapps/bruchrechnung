@@ -1,0 +1,183 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche auf dem Zahlenstrahl",
+  "description": "Zwischen 0 und 1 liegt eine ganze Einheit. Wie findest du drei Viertel auf dieser Strecke?",
+  "scope": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt. Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Brüche haben einen Platz",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Eine Zahl kann auch einen Platz auf einer Strecke haben. Wir betrachten zunächst nur die Strecke von 0 bis 1.",
+            },
+            {
+              "type": "definition",
+              "term": "Zahlenstrahl",
+              "explanation": "Auf einem Zahlenstrahl haben Zahlen feste Positionen. Gleiche Zahlenabstände werden als gleich lange Strecken dargestellt.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Der Zahlenstrahl ist wie ein Lineal für Zahlen. Die Strecke von 0 bis 1 ist ein Ganzes. Der Nenner sagt, wie viele gleich lange Abschnitte du daraus machst. Jeder Abstand zwischen zwei Strichen ist ein Teilstück – zähle also die Abstände, nicht die Striche. Der Zähler sagt, wie viele dieser Schritte du von 0 nach rechts gehst. Der grüne Punkt zeigt die gewählte Stelle. Probiere die Regler aus. In der Übung verschiebst du den Punkt und drückst anschließend „Prüfen“.",
+            },
+            {
+              "type": "vue-component",
+              "component": "BruchEntdecken",
+              "props":
+                {
+                  "numerator": "Zähler",
+                  "denominator": "Nenner",
+                  "note": "Der Nenner teilt die Strecke von 0 bis 1 in gleich lange Abschnitte. Der Zähler bestimmt die Schritte von 0 zum Punkt. Zähle die Abstände zwischen den Strichen.",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                  "stage": "line",
+                },
+              "nojs": "Der Zahlenstrahl ist wie ein Lineal für Zahlen. Die Strecke von 0 bis 1 ist ein Ganzes. Der Nenner sagt, wie viele gleich lange Abschnitte du daraus machst. Jeder Abstand zwischen zwei Strichen ist ein Teilstück – zähle also die Abstände, nicht die Striche. Der Zähler sagt, wie viele dieser Schritte du von 0 nach rechts gehst. Der grüne Punkt zeigt die gewählte Stelle. Probiere die Regler aus. In der Übung verschiebst du den Punkt und drückst anschließend „Prüfen“.\n\nIm Anfangsbild ist die Strecke von 0 bis 1 in vier gleich lange Abschnitte geteilt. Der Punkt liegt nach dem dritten Abschnitt, also bei 3/4.",
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt. Vom Nullpunkt gehst du so viele Schritte nach rechts, wie der Zähler angibt.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "vue-component",
+              "id": "modell",
+              "component": "BruchModelle",
+              "examples":
+                {
+                  "accepted": [{ "answer": 2, "seed": 1 }],
+                  "rejected": [{ "answer": 3, "seed": 1 }, { "answer": 0, "seed": 1 }],
+                },
+              "props":
+                {
+                  "task": "Platziere {z}/{n} auf dem Zahlenstrahl. Wähle den passenden Teilstrich.",
+                  "mode": "line",
+                  "mistakes":
+                    [
+                      "Vergleiche die Zahl der ausgewählten Teile mit dem Zähler. Die Teilung pro Ganzem gibt der Nenner an.",
+                      "Wähle zuerst Teile oder einen Teilstrich aus.",
+                    ],
+                  "cell": "Wähle die Position",
+                  "counter": "Deine Darstellung: {z}/{n}",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "nojs": "Der Zahlenstrahl ist wie ein Lineal für Zahlen. Die Strecke von 0 bis 1 ist ein Ganzes. Der Nenner sagt, wie viele gleich lange Abschnitte du daraus machst. Jeder Abstand zwischen zwei Strichen ist ein Teilstück – zähle also die Abstände, nicht die Striche. Der Zähler sagt, wie viele dieser Schritte du von 0 nach rechts gehst. Der grüne Punkt zeigt die gewählte Stelle. Probiere die Regler aus. In der Übung verschiebst du den Punkt und drückst anschließend „Prüfen“.",
+            },
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Wo liegt 3/4?",
+              "options":
+                [
+                  {
+                    "text": "Zwischen 0 und 1.",
+                    "correct": true,
+                    "info": "Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
+                  },
+                  {
+                    "text": "Genau bei 3.",
+                    "correct": false,
+                    "info": "Drei Viertelschritte sind keine drei Ganzen. Jeder Schritt ist nur ein Viertel lang.",
+                  },
+                  {
+                    "text": "Rechts von 1.",
+                    "correct": false,
+                    "info": "Drei von vier gleich großen Abständen erreichen die 1 noch nicht.",
+                  },
+                ],
+              "explanation": "Teile die Strecke von 0 bis 1 in vier gleich große Abstände. Der erste Schritt führt zu 1/4, der zweite zu 2/4 und der dritte zu 3/4. Vier Schritte führen zu 4/4, also zur 1.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/19479/einfuehrung-zu-bruechen",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task":
+                { "text": "Eine Einheit hat {{n}} gleiche Abstände. Wie viele davon brauchst du für {{n}}/{{n}}?" },
+              "answer": { "value": "n", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "n+1",
+                    "message": "Du hast den Startpunkt mitgezählt. Gefragt ist die Anzahl der Abstände.",
+                  },
+                  { "value": "1", "message": "Ein Ganzes ist hier in mehrere gleich große Abstände unterteilt." },
+                ],
+              "hint": "Teile jede Einheit in so viele gleich große **Abstände**, wie der Nenner angibt.",
+              "steps":
+                [
+                  "Zwischen 0 und 1 liegen {{n}} gleich große Abstände. Ein Schritt ist also 1/{{n}} lang.",
+                  "Für {{n}}/{{n}} gehst du alle {{n}} Schritte und erreichst genau 1. Der Startpunkt zählt nicht als Schritt.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Bruchrechnung – Schritt für Schritt",
+  "intro": "Entdecke Brüche mit Kreis, Streifen, Mengen und Zahlenstrahl. Verändere die Modelle, begründe deine Schritte und übe mit neuen Aufgaben. Für Klasse 6; orientiert an den hessischen Gymnasialvorgaben.",
+  "languages": ["de"],
+  "chapters": ["anteile", "teilbarkeit", "umformen", "grundaufgaben", "rechnen", "anwendungen"],
+  "sources":
+    [
+      {
+        "title": "Kerncurriculum Mathematik Hessen – Gymnasium, S. 26",
+        "url": "https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf",
+      },
+      { "title": "Einführung zu Brüchen (Serlo)", "url": "https://de.serlo.org/mathe/19479/einfuehrung-zu-bruechen" },
+      {
+        "title": "Kürzen und Erweitern (Serlo)",
+        "url": "https://de.serlo.org/mathe/1509/brueche-kuerzen-und-erweitern",
+      },
+      {
+        "title": "Rechnen mit Brüchen (Serlo)",
+        "url": "https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick",
+      },
+      {
+        "title": "Anteil, Bruchteil und Ganzes (ZUM)",
+        "url": "https://unterrichten.zum.de/wiki/Teil,_Anteil_und_Ganzes_bei_der_Bruchrechnung",
+      },
+      { "title": "Teilbarkeit (Wikipedia)", "url": "https://de.wikipedia.org/wiki/Teilbarkeit" },
+      {
+        "title": "Umwandeln von Brüchen (TU Berlin)",
+        "url": "https://vorkurs-mathematik.innocampus.tu-berlin.de/section/001-VBKM01/001-M01_Bruchrechnung/001-VBKM01_USBrueche",
+      },
+      {
+        "title": "Dezimalbrüche runden (ARD alpha)",
+        "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen104.html",
+      },
+      { "title": "Primfaktorzerlegung (Serlo)", "url": "https://de.serlo.org/mathe/1779/primfaktorzerlegung" },
+      {
+        "title": "Dezimalzahlen addieren und subtrahieren (ARD alpha)",
+        "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html",
+      },
+      {
+        "title": "Dezimalzahlen multiplizieren und dividieren (Serlo)",
+        "url": "https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen",
+      },
+    ],
+  "scope":
+    {
+      "text": "Bruchrechnung mit anschaulichen Modellen. Hilf zuerst mit einer Frage zum nächsten Schritt. Zeige auf Wunsch einen Lösungsweg. Unterscheide Anteil, Bruchteil und Ganzes, prüfe Einheiten und erkenne gleichwertige Brüche an.",
+      "out": ["Negative Brüche", "Doppelbrüche", "Algebraische Umwandlung periodischer Dezimalzahlen"],
+    },
+}

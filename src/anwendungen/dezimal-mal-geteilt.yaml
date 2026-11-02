@@ -1,0 +1,219 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Dezimalzahlen multiplizieren und dividieren",
+  "description": "Malnehmen mit Zehnteln und Hundertsteln; beim Teilen beide Zahlen gleich vergrößern.",
+  "scope": "Diese Lernseite behandelt nur Multiplikation und Division von Dezimalzahlen. Bei der Multiplikation werden die Zahlen zunächst ohne Komma multipliziert. Zusammen so viele Nachkommastellen wie die Faktoren werden im Ergebnis gesetzt; Endnullen dürfen entfallen. Begründung am Einheitsquadrat: 0,2 · 0,3 sind 2/10 · 3/10 = 6/100 = 0,06. Multiplizieren mit einer positiven Zahl kleiner als 1 verkleinert. Beim Dividieren werden beide Zahlen mit derselben Zehnerpotenz multipliziert, bis die zweite Zahl ganzzahlig ist; das Verhältnis bleibt unverändert. 0,75 Liter geteilt durch 0,25 Liter pro Portion ergibt drei Portionen; in Zentilitern 75 : 25 = 3. Addition und Subtraktion stehen auf der vorherigen Seite.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Malnehmen und Teilen: Was macht das Komma?",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Wie viel sind drei Zehntel von zwei Zehnteln? Und wie viele Portionen von 0,25 Litern passen in 0,75 Liter? Bei diesen Fragen multiplizierst oder dividierst du. Die beiden Rechenarten werden hier getrennt erklärt. Das Komma steht jeweils an der Stelle, die zu den Größen passt.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Anschaulich erklärt",
+        "blocks":
+          [
+            {
+              "type": "section",
+              "id": "multiplikation",
+              "title": "Mal: Zehntel mal Zehntel ergeben Hundertstel",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Erinnerst du dich an das Rechteckmodell für Brüche? Das Quadrat unten ist ein Ganzes. Seine Breite und Höhe sind jeweils in zehn gleiche Abschnitte geteilt. Zwei Spalten entsprechen der Breite 0,2, drei Zeilen der Höhe 0,3. Ihr gemeinsames Rechteck enthält sechs der hundert Kästchen: 0,06. So erklärt sich, warum du die Nachkommastellen beider Faktoren zusammenzählst.",
+                  },
+                  {
+                    "type": "figure",
+                    "image": "images/dezimalprodukt.svg",
+                    "source": "eigene Zeichnung",
+                    "licence": "CC-BY-4.0",
+                    "alt": "Ein Einheitsquadrat ist in zehn Spalten und zehn Zeilen geteilt. Ein grünes Rechteck umfasst die ersten zwei Spalten und drei Zeilen, also sechs der hundert Kästchen. Die Breite ist mit 0,2 und die Höhe mit 0,3 beschriftet. Seine Fläche ist 0,06 des Ganzen.",
+                    "caption": "Breite 0,2 · Höhe 0,3 = sechs Hundertstel Fläche.",
+                  },
+                ],
+            },
+            {
+              "type": "section",
+              "id": "division",
+              "title": "Geteilt: dieselbe Rechnung in einer anderen Einheit",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "In 0,75 Litern sollen Portionen von je 0,25 Litern gezählt werden. In Litern wirken die Zahlen klein. Rechne beide Mengen in Zentiliter um: Es sind 75 Zentiliter und Portionen von je 25 Zentilitern. Die Anzahl der Portionen ändert sich durch die neue Einheit nicht. Du hast beide Zahlen mit 100 multipliziert. Genau deshalb darfst du bei einer Division das Komma in BEIDEN Zahlen gleich weit verschieben.",
+                  },
+                  {
+                    "type": "table",
+                    "caption": "Dieselbe Portionsfrage in zwei Einheiten",
+                    "header": ["Einheit", "Menge insgesamt", "Menge pro Portion"],
+                    "rows": [["Liter", "0,75", "0,25"], ["Zentiliter", "75", "25"]],
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Zwei Beispiele, Schritt für Schritt",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Multiplikation: 0,2 · 0,3",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "1. Rechne zunächst 2 · 3 = 6.\n2. Beide Faktoren haben eine Nachkommastelle, zusammen also zwei.\n3. Setze das Komma so, dass sechs Hundertstel entstehen: 0,06. Die Null vor der 6 ist nötig.\n4. Probe am Bild: Sechs von hundert Kästchen sind tatsächlich 0,06.",
+                  },
+                  {
+                    "type": "formula",
+                    "formula": "0,2 \\cdot 0,3 = \\frac{2}{10} \\cdot \\frac{3}{10} = \\frac{6}{100} = 0,06",
+                  },
+                ],
+            },
+            {
+              "type": "example",
+              "title": "Division: 0,75 : 0,25",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "1. Die zweite Zahl hat zwei Nachkommastellen. Multipliziere BEIDE Zahlen mit 100.\n2. Die Rechnung lautet nun 75 : 25.\n3. Drei Portionen zu je 25 ergeben 75. Also ist das Ergebnis 3.\n4. Probe: 3 · 0,25 = 0,75.",
+                  },
+                  { "type": "formula", "formula": "0,75 : 0,25 = 75 : 25 = 3" },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Wie viel ist 0,2 · 0,3?",
+              "options":
+                [
+                  {
+                    "text": "0,06",
+                    "correct": true,
+                    "info": "0,2 sind zwei Zehntel und 0,3 sind drei Zehntel. Ein Zehntel mal ein Zehntel ist ein Hundertstel. Zwei mal drei ergibt sechs Hundertstel: 0,06.",
+                  },
+                  {
+                    "text": "0,6",
+                    "correct": false,
+                    "info": "Sechs Zehntel wären zu viel. Zehntel mal Zehntel ergeben Hundertstel.",
+                  },
+                  { "text": "0,5", "correct": false, "info": "Das ist die Summe, nicht das Produkt." },
+                ],
+              "explanation": "0,2 sind zwei Zehntel und 0,3 sind drei Zehntel. Ein Zehntel mal ein Zehntel ist ein Hundertstel. Zwei mal drei ergibt sechs Hundertstel: 0,06.",
+              "links":
+                [
+                  {
+                    "title": "Dezimalzahlen multiplizieren und dividieren (Serlo)",
+                    "url": "https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "dezimalprodukte" } } },
+              "task": { "text": "Multipliziere {{e.azahl}} · {{e.bzahl}}. Gib das Ergebnis als Dezimalzahl an." },
+              "answer": { "value": "e.produkt/100", "compare": { "number": { "format": "decimal", "decimals": 2 } } },
+              "mistakes":
+                [
+                  {
+                    "value": "e.produkt/10",
+                    "message": "Beide Faktoren haben eine Nachkommastelle. Zusammen brauchst du zwei, nicht eine.",
+                  },
+                  { "value": "(e.a10+e.b10)/10", "message": "Das ist die Addition. Gefragt ist das Produkt." },
+                ],
+              "hint": "Multipliziere zunächst ohne Komma. Beide Faktoren haben je eine Nachkommastelle.",
+              "steps":
+                [
+                  "Ohne Komma rechnest du {{e.a10}} · {{e.b10}} = {{e.produkt}}.",
+                  "Die beiden Faktoren stehen jeweils für Zehntel. Das Ergebnis zählt daher Hundertstel: {{answer}}. Endnullen nach dem Komma dürfen entfallen.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+            {
+              "type": "single-choice",
+              "id": "division-verstehen",
+              "text": "Warum wird aus 0,75 : 0,25 die Rechnung 75 : 25?",
+              "options":
+                [
+                  {
+                    "text": "Beide Zahlen werden mit 100 multipliziert; ihr Verhältnis bleibt gleich.",
+                    "correct": true,
+                    "info": "Multiplizierst du beide Zahlen einer Division mit derselben positiven Zahl, bleibt das Verhältnis gleich. 0,75 : 0,25 wird mit dem Faktor 100 zu 75 : 25. Es passen drei Portionen hinein.",
+                  },
+                  {
+                    "text": "Nur bei der ersten Zahl darf das Komma verschoben werden.",
+                    "correct": false,
+                    "info": "Dann würde sich das Ergebnis ändern. Beide Zahlen müssen denselben Faktor bekommen.",
+                  },
+                  {
+                    "text": "Man darf die Kommas bei jeder Rechnung einfach weglassen.",
+                    "correct": false,
+                    "info": "Die Zahlen müssen mit derselben Zehnerpotenz multipliziert werden. Unterschiedlich weit verschieben verändert das Verhältnis.",
+                  },
+                ],
+              "explanation": "Multiplizierst du beide Zahlen einer Division mit derselben positiven Zahl, bleibt das Verhältnis gleich. 0,75 : 0,25 wird mit dem Faktor 100 zu 75 : 25. Es passen drei Portionen hinein.",
+              "links":
+                [
+                  {
+                    "title": "Dezimalzahlen multiplizieren und dividieren (Serlo)",
+                    "url": "https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "geteilt-aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "dezimalquotienten" } } },
+              "task": { "text": "Dividiere {{e.azahl}} : {{e.bzahl}}. Gib das Ergebnis an." },
+              "answer":
+                {
+                  "value": "e.erweiterta/e.erweitertb",
+                  "compare": { "number": { "format": "decimal", "decimals": 0 } },
+                },
+              "mistakes":
+                [
+                  {
+                    "value": "e.erweiterta/e.erweitertb/e.faktor",
+                    "message": "Hier wurde nur die zweite Zahl vergrößert. Vergrößere beide Zahlen mit demselben Faktor.",
+                  },
+                  {
+                    "value": "e.erweiterta/e.erweitertb*e.faktor",
+                    "message": "Hier wurde nur die erste Zahl vergrößert. Beide Kommas müssen gleich weit verschoben werden.",
+                  },
+                ],
+              "hint": "Mache die zweite Zahl ganzzahlig. Vergrößere dazu beide Zahlen um denselben Faktor.",
+              "steps":
+                [
+                  "Multipliziere beide Zahlen mit {{e.faktor}}. Aus {{e.azahl}} wird {{e.erweiterta}}, aus {{e.bzahl}} wird {{e.erweitertb}}.",
+                  "Die Anzahl gleich großer Portionen bleibt gleich. Rechne {{e.erweiterta}} : {{e.erweitertb}} = {{answer}}.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Teilbarkeit nutzen",
+  "summary": "Du legst Bauklötze in gleich große Reihen und beschreibst das als Malaufgabe. So lernst du Faktoren und Primzahlen kennen. Danach suchst du Gruppengrößen, die zu zwei Zahlen passen, und Zahlen, die in beiden Einmaleinsreihen vorkommen. Das hilft dir später beim Umformen von Brüchen.",
+  "pages": ["regeln", "teiler-vielfache"],
+}

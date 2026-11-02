@@ -1,0 +1,144 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Gemeinsame Teiler und Vielfache",
+  "description": "Welche Gruppengröße passt zu zwei Mengen? Welche Unterteilung passt zu zwei Brüchen?",
+  "scope": "Teiler teilen eine Zahl ohne Rest. Vielfache entstehen durch Multiplikation mit natürlichen Zahlen. Der ggT ist der größte gemeinsame positive Teiler. Das kgV ist das kleinste gemeinsame positive Vielfache. Bei Brüchen hilft der ggT beim Kürzen und das kgV beim Hauptnenner. Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Was passt zu beiden Zahlen?",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Zwölf und achtzehn Plättchen sollen in gleich große Päckchen. Welche Päckchengröße funktioniert für beide Mengen?",
+            },
+            {
+              "type": "definition",
+              "term": "Teiler und Vielfache",
+              "explanation": "Ein Teiler teilt eine Zahl ohne Rest. Ein Vielfaches entsteht, wenn du eine Zahl mit einer natürlichen Zahl multiplizierst.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Zuerst bündelst du kleine Teile zu größeren Gruppen. Danach probierst du die umgekehrte Richtung: Du unterteilst zwei Ganze feiner. So erkennst du den Unterschied zwischen gemeinsamen Teilern und gemeinsamen Vielfachen.",
+            },
+            {
+              "type": "vue-component",
+              "component": "TeilerVielfacheEntdecken",
+              "props":
+                {
+                  "mode": "groups",
+                  "instruction": "Die beiden Reihen zeigen 12 und 18 gleich große Plättchen. Verändere die Gruppengröße. Die gestrichelten Umrandungen bündeln Plättchen; übrig gebliebene Plättchen stehen außerhalb vollständiger Gruppen. Suche eine Gruppengröße, die beide Reihen ohne Rest aufteilt. Gibt es eine größere passende Größe? Die größte ist der ggT. Die Reihen sind verschieden lang, aber jedes einzelne Plättchen ist gleich groß.",
+                  "controlLabel": "Plättchen pro Gruppe",
+                  "imageLabel": "Reihe mit {n} Plättchen, Gruppengröße {value}",
+                  "rowLabel": "{n} Plättchen",
+                  "groupStatus": "{n} Plättchen: {groups} vollständige Gruppen mit je {size} Plättchen; Rest: {rest}.",
+                  "fitsLabel": "Das Raster mit {value} Teilen trifft alle Grenzen der {n} ursprünglichen Teile.",
+                  "missesLabel": "Das Raster mit {value} Teilen passt noch nicht zu allen Grenzen der {n} ursprünglichen Teile.",
+                },
+              "nojs": "Die beiden Reihen zeigen 12 und 18 gleich große Plättchen. Verändere die Gruppengröße. Die gestrichelten Umrandungen bündeln Plättchen; übrig gebliebene Plättchen stehen außerhalb vollständiger Gruppen. Suche eine Gruppengröße, die beide Reihen ohne Rest aufteilt. Gibt es eine größere passende Größe? Die größte ist der ggT. Die Reihen sind verschieden lang, aber jedes einzelne Plättchen ist gleich groß.\n\nBei Gruppengröße 6 entstehen aus 12 Plättchen zwei und aus 18 Plättchen drei vollständige Gruppen ohne Rest. 6 ist die größte Gruppengröße, die zu beiden Mengen passt: ggT(12,18) = 6.",
+            },
+            {
+              "type": "vue-component",
+              "component": "TeilerVielfacheEntdecken",
+              "props":
+                {
+                  "mode": "grid",
+                  "instruction": "Jetzt siehst du zwei gleich lange Streifen: Jeder ist ein Ganzes. Der obere hat vier, der untere sechs gleich große Teile. Mit dem Regler legst du über beide dasselbe feinere Raster. Durchgezogene Linien zeigen die alten Teilgrenzen, gestrichelte Linien die neue Unterteilung. Suche eine Unterteilung, die ALLE alten Grenzen trifft. Sie muss ein Vielfaches von 4 und von 6 sein. Die kleinste passende Zahl ist das kgV. Diese Bildidee brauchst du später wieder, wenn Bruchstücke gleich groß werden sollen.",
+                  "controlLabel": "Teile pro Ganzem",
+                  "imageLabel": "Ganzes mit {n} ursprünglichen Teilen und {value} gestrichelten Unterteilungen",
+                  "rowLabel": "{n} ursprüngliche Teile pro Ganzem",
+                  "groupStatus": "{n} Plättchen: {groups} vollständige Gruppen mit je {size} Plättchen; Rest: {rest}.",
+                  "fitsLabel": "Das Raster mit {value} Teilen trifft alle Grenzen der {n} ursprünglichen Teile.",
+                  "missesLabel": "Das Raster mit {value} Teilen passt noch nicht zu allen Grenzen der {n} ursprünglichen Teile.",
+                },
+              "nojs": "Jetzt siehst du zwei gleich lange Streifen: Jeder ist ein Ganzes. Der obere hat vier, der untere sechs gleich große Teile. Mit dem Regler legst du über beide dasselbe feinere Raster. Durchgezogene Linien zeigen die alten Teilgrenzen, gestrichelte Linien die neue Unterteilung. Suche eine Unterteilung, die ALLE alten Grenzen trifft. Sie muss ein Vielfaches von 4 und von 6 sein. Die kleinste passende Zahl ist das kgV. Diese Bildidee brauchst du später wieder, wenn Bruchstücke gleich groß werden sollen.\n\n8 Unterteilungen passen zu Vierteln, aber nicht zu Sechsteln. 12 Unterteilungen passen zu beiden: Jedes Viertel enthält dann drei und jedes Sechstel zwei der neuen Teile. 12 ist das kleinste gemeinsame Vielfache von 4 und 6. Auch 24 würde passen, ist aber nicht das kleinste.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Was ist das kgV von 4 und 6?",
+              "options":
+                [
+                  {
+                    "text": "12",
+                    "correct": true,
+                    "info": "Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+                  },
+                  {
+                    "text": "2",
+                    "correct": false,
+                    "info": "2 ist der größte gemeinsame Teiler, aber kein Vielfaches von 4 und 6.",
+                  },
+                  {
+                    "text": "24",
+                    "correct": false,
+                    "info": "24 ist ein gemeinsames Vielfaches, aber 12 ist kleiner und ebenfalls gemeinsam.",
+                  },
+                ],
+              "explanation": "Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+              "links": [{ "title": "Weiterlesen zur Herleitung", "url": "https://de.wikipedia.org/wiki/Teilbarkeit" }],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Bestimme den größten gemeinsamen Teiler von {{e.basis}} und {{e.doppelt}}." },
+              "answer": { "value": "e.basis", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "e.doppelt", "message": "Die größere Zahl teilt die kleinere nicht." },
+                  {
+                    "value": "1",
+                    "message": "1 teilt beide Zahlen, ist hier aber nicht der größte gemeinsame Teiler.",
+                  },
+                ],
+              "hint": "Teiler teilen eine Zahl ohne Rest.",
+              "steps":
+                [
+                  "{{e.basis}} teilt sich selbst und auch {{e.doppelt}} ohne Rest.",
+                  "Ein positiver Teiler kann nicht größer als die kleinere Zahl sein. Daher ist {{answer}} der größte gemeinsame Teiler.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

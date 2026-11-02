@@ -1,0 +1,190 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche multiplizieren",
+  "description": "Kuchenstücke weiter teilen oder ein Rechteck bilden: zwei Bilder für dieselbe Multiplikation.",
+  "scope": "Brüche multiplizieren lässt sich auf zwei Arten vorstellen. Kuchenmodell: Drei Viertel eines Kuchens sind ausgewählt. Jedes ausgewählte Viertel wird in drei gleich große Stücke geteilt; davon werden jeweils zwei genommen. Das ergibt sechs von zwölf Stücken des ganzen Kuchens: 2/3 · 3/4 = 6/12 = 1/2. Rechteckmodell: Ein Einheitsquadrat steht für eine Flächeneinheit. Ein Rechteck mit Breite 3/4 und Höhe 2/3 umfasst sechs von zwölf gleich großen Teilflächen des Einheitsquadrats und hat die Fläche 1/2. In beiden Modellen werden Zähler und Nenner multipliziert. Gemeinsame Faktoren dürfen vor dem Multiplizieren gekürzt werden. Bei einem positiven Faktor zwischen 0 und 1 wird eine positive Zahl kleiner.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Zwei Bilder für eine Malaufgabe",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Was bedeutet 2/3 · 3/4? Du kannst von drei Vierteln eines Kuchens noch einmal zwei Drittel nehmen. Oder du baust ein Rechteck, dessen Seiten 3/4 und 2/3 lang sind. Beide Bilder zeigen dir denselben Ergebnisbruch. Probiere beide Ideen aus und wähle die, mit der du dir die Rechnung besser vorstellen kannst.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "section",
+              "id": "kuchen-idee",
+              "title": "Idee 1: Ein Teil von einem Kuchenanteil",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Stell dir einen Kuchen vor, der in vier gleich große Stücke geteilt ist. Drei Stücke gehören dir: 3/4 des Kuchens. Davon möchtest du zwei Drittel nehmen. Schneide JEDES deiner drei Stücke in drei gleich große Stückchen und nimm jeweils zwei davon. Achte auf das Ganze: Der Ergebnisbruch bezieht sich weiterhin auf den ganzen Kuchen, nicht nur auf deine drei Stücke. Im rechten Bild sind nur die genommenen Stückchen gefüllt; dicke Linien zeigen die ursprünglichen Viertel. Verändere die Regler und beobachte, wie viel von deinen drei Vierteln übrig bleibt.",
+                  },
+                  {
+                    "type": "vue-component",
+                    "component": "KuchenMultiplizieren",
+                    "props":
+                      {
+                        "instruction": "Links gehören dir drei Viertel des Kuchens. Rechts teilst du jedes deiner Viertel weiter. Zunächst bleiben alle Stückchen ausgewählt: Du hast noch genauso viel Kuchen. Nimm dann mit dem zweiten Regler aus jedem Viertel weniger Stückchen. Die gefüllte Fläche zeigt, was du davon nimmst.",
+                        "denominatorLabel": "Jedes deiner Viertel in so viele Stückchen teilen",
+                        "numeratorLabel": "Davon pro Viertel so viele Stückchen nehmen",
+                        "beforeLabel": "Dein Kuchenanteil",
+                        "afterLabel": "Davon genommen",
+                        "imageLabel": "{z} von {n} gleich großen Stücken des ganzen Kuchens sind gefüllt",
+                        "resultLabel": "Du nimmst {b}/{d} von 3/4. Der ganze Kuchen besteht nun aus {n} gleich großen Stückchen. Du hast {z} davon genommen: {z}/{n} des ganzen Kuchens.",
+                      },
+                    "nojs": "Stell dir einen Kuchen vor, der in vier gleich große Stücke geteilt ist. Drei Stücke gehören dir: 3/4 des Kuchens. Davon möchtest du zwei Drittel nehmen. Schneide JEDES deiner drei Stücke in drei gleich große Stückchen und nimm jeweils zwei davon. Achte auf das Ganze: Der Ergebnisbruch bezieht sich weiterhin auf den ganzen Kuchen, nicht nur auf deine drei Stücke. Im rechten Bild sind nur die genommenen Stückchen gefüllt; dicke Linien zeigen die ursprünglichen Viertel. Verändere die Regler und beobachte, wie viel von deinen drei Vierteln übrig bleibt.\n\nZu Beginn bleiben drei von drei Stückchen pro Viertel ausgewählt: neun von zwölf Stückchen, weiterhin 3/4 des ganzen Kuchens. Nimmst du danach nur zwei von drei Stückchen pro Viertel, sind sechs von zwölf Stückchen des ganzen Kuchens ausgewählt. 2/3 · 3/4 = 6/12 = 1/2.",
+                  },
+                ],
+            },
+            {
+              "type": "section",
+              "id": "rechteck-idee",
+              "title": "Idee 2: Zwei Seiten bilden ein Rechteck",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Eine Malaufgabe kannst du als Rechteck sehen: Die Faktoren geben die Breite und die Höhe an. Bei 3 · 2 hat das Rechteck drei Spalten und zwei Zeilen. Bei Brüchen beginnst du mit einem Quadrat der Seitenlänge 1: Es steht für ein Ganzes. Für die Breite 3/4 teilst du die waagerechte Seite in vier gleiche Abschnitte und nimmst drei. Für die Höhe 2/3 teilst du die senkrechte Seite in drei gleiche Abschnitte und nimmst zwei. Die gemeinsame Fläche ist ein kleineres Rechteck. Vergleiche seine Teilflächen mit allen Teilflächen des ganzen Quadrats: Das ist der Ergebnisbruch.",
+                  },
+                  {
+                    "type": "text",
+                    "text": "Nun folgt eine eigene Malaufgabe mit wechselnden Zahlen. Die blaue Breite und die orange Höhe entsprechen genau den beiden Brüchen dieser Aufgabe.",
+                  },
+                  {
+                    "type": "vue-component",
+                    "component": "BruchRechnen",
+                    "id": "modell",
+                    "props":
+                      {
+                        "kind": "multiply",
+                        "task": "Berechne {z}/{n} · {b}/{d}. Nutze das Rechteck zum Ausprobieren und gib den Ergebnisbruch an.",
+                        "mistakes":
+                          [
+                            "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
+                            "Gib zuerst eine Antwort ein oder markiere Teile.",
+                          ],
+                        "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                        "givenLabel": "Gegeben",
+                        "ownLabel": "So schreibst du das",
+                        "toolLabel": "Der blaue Bruch mit Rautenmuster gehört zur Breite des Rechtecks. Der orange Bruch mit Punktmuster gehört zur Höhe. Markiere die Felder, die sowohl unter einem blauen Abschnitt als auch neben einem orangefarbenen Abschnitt liegen. Vergleiche deine markierte Anzahl mit allen Teilflächen. Gib deinen Ergebnisbruch selbst ein.",
+                        "columnLabel": "Blau: Breite {z}/{n}",
+                        "rowLabel": "Orange: Höhe {b}/{d}",
+                        "cellLabel": "Zeile {row}, Spalte {column}",
+                        "pieceLabel": "Teil",
+                        "stepLabel": "Teile pro Ganzem",
+                        "labels":
+                          {
+                            "circle": "Kreis",
+                            "strip": "Bruchstreifen",
+                            "line": "Zahlenstrahl",
+                            "set": "Menge",
+                            "whole": "Ganzes",
+                            "selected": "Ausgewählt",
+                          },
+                        "totalLabel": "Teilflächen insgesamt",
+                        "markedLabel": "Von dir markiert",
+                      },
+                    "examples":
+                      {
+                        "accepted": [{ "answer": "2/9", "seed": 1 }, { "answer": "4/18", "seed": 1 }],
+                        "rejected": [{ "answer": "1/0" }, { "answer": "" }],
+                      },
+                    "nojs": "Eine Malaufgabe kannst du als Rechteck sehen: Die Faktoren geben die Breite und die Höhe an. Bei 3 · 2 hat das Rechteck drei Spalten und zwei Zeilen. Bei Brüchen beginnst du mit einem Quadrat der Seitenlänge 1: Es steht für ein Ganzes. Für die Breite 3/4 teilst du die waagerechte Seite in vier gleiche Abschnitte und nimmst drei. Für die Höhe 2/3 teilst du die senkrechte Seite in drei gleiche Abschnitte und nimmst zwei. Die gemeinsame Fläche ist ein kleineres Rechteck. Vergleiche seine Teilflächen mit allen Teilflächen des ganzen Quadrats: Das ist der Ergebnisbruch.\n\nDer blaue Bruch mit Rautenmuster gehört zur Breite des Rechtecks. Der orange Bruch mit Punktmuster gehört zur Höhe. Markiere die Felder, die sowohl unter einem blauen Abschnitt als auch neben einem orangefarbenen Abschnitt liegen. Vergleiche deine markierte Anzahl mit allen Teilflächen. Gib deinen Ergebnisbruch selbst ein.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Kuchen: Von jedem der drei Viertelstücke werden zwei von drei Stückchen genommen. Das sind 3 · 2 = 6 Stückchen. Der ganze Kuchen hätte 4 · 3 = 12 solcher Stückchen. Rechteck: Drei von vier Spalten und zwei von drei Zeilen bilden ein Rechteck aus 3 · 2 = 6 von insgesamt 4 · 3 = 12 Feldern. Beide Bilder zeigen 2/3 · 3/4 = 6/12 = 1/2. So wird verständlich, warum du Zähler mit Zähler und Nenner mit Nenner multiplizierst.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Welcher Bruch entsteht bei 2/3 · 3/4?",
+              "options":
+                [
+                  {
+                    "text": "1/2",
+                    "correct": true,
+                    "info": "Kuchen: Von jedem der drei Viertelstücke werden zwei von drei Stückchen genommen. Das sind 3 · 2 = 6 Stückchen. Der ganze Kuchen hätte 4 · 3 = 12 solcher Stückchen. Rechteck: Drei von vier Spalten und zwei von drei Zeilen bilden ein Rechteck aus 3 · 2 = 6 von insgesamt 4 · 3 = 12 Feldern. Beide Bilder zeigen 2/3 · 3/4 = 6/12 = 1/2. So wird verständlich, warum du Zähler mit Zähler und Nenner mit Nenner multiplizierst.",
+                  },
+                  {
+                    "text": "5/7",
+                    "correct": false,
+                    "info": "Zähler und Nenner zu addieren berechnet keinen Anteil eines Anteils.",
+                  },
+                  {
+                    "text": "2",
+                    "correct": false,
+                    "info": "Ein Teil von drei Vierteln muss kleiner als drei Viertel sein.",
+                  },
+                ],
+              "explanation": "Kuchen: Von jedem der drei Viertelstücke werden zwei von drei Stückchen genommen. Das sind 3 · 2 = 6 Stückchen. Der ganze Kuchen hätte 4 · 3 = 12 solcher Stückchen. Rechteck: Drei von vier Spalten und zwei von drei Zeilen bilden ein Rechteck aus 3 · 2 = 6 von insgesamt 4 · 3 = 12 Feldern. Beide Bilder zeigen 2/3 · 3/4 = 6/12 = 1/2. So wird verständlich, warum du Zähler mit Zähler und Nenner mit Nenner multiplizierst.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Berechne 2/{{n}} · 1/3. Welcher Nenner entsteht vor dem Kürzen?" },
+              "answer": { "value": "n*3", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n+3", "message": "Beim Multiplizieren werden die Nenner multipliziert, nicht addiert." },
+                  { "value": "n", "message": "Der zweite Nenner muss ebenfalls berücksichtigt werden." },
+                ],
+              "hint": "Ein Anteil von einem Anteil wird multipliziert: Zähler mal Zähler und Nenner mal Nenner.",
+              "steps":
+                [
+                  "Für das Produkt brauchst du {{n}} Unterteilungen in einer Richtung und drei in der anderen.",
+                  "So entstehen ${{n}} \\cdot 3 = {{answer}}$ Felder pro Ganzem. Das ist der Nenner vor dem Kürzen.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

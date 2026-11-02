@@ -1,0 +1,203 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Teilbarkeit und Primzahlen",
+  "description": "Zahlen als Produkte zerlegen und dabei Primzahlen entdecken.",
+  "scope": "Faktor und Produkt an Reihen von Bauklötzen erläutern. Zusammengesetzte Zahlen wiederholt in Faktoren größer als 1 zerlegen; am Ende bleiben Primzahlen. Primzahlen größer als 1 haben genau zwei positive Teiler, 1 ist keine Primzahl. Erst danach Teilbarkeitsregeln als Abkürzungen nutzen.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Zahlen als Malaufgabe",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Stell dir zwölf Bauklötze vor. Du kannst daraus drei Reihen mit je vier Klötzen legen – oder zwei Reihen mit je sechs. Dieselbe Anzahl lässt sich also auf verschiedene Arten als Malaufgabe schreiben.",
+            },
+            {
+              "type": "definition",
+              "term": "Faktor",
+              "explanation": "Die Zahlen, die du miteinander multiplizierst, heißen Faktoren. Das Ergebnis heißt Produkt. Bei 3 · 4 = 12 sind 3 und 4 die Faktoren.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Stell dir 12 Bauklötze vor: Du kannst daraus 3 Reihen mit je 4 Klötzen legen. Die Rechnung 3 · 4 beschreibt diese Anordnung. Die Zahlen 3 und 4 heißen Faktoren. Unten kannst du so eine Zahl immer weiter aufteilen: Wähle einen Faktor und darunter eine passende Malaufgabe. Die neuen Faktoren ersetzen den alten, aber das Ergebnis bleibt gleich. Ein Stern bedeutet: Diese Zahl lässt sich nicht weiter in zwei ganze Faktoren größer als 1 zerlegen. Probiere unterschiedliche Zerlegungen aus und vergleiche die Zahlen, bei denen du landest.",
+            },
+            {
+              "type": "vue-component",
+              "component": "FaktorEntdecken",
+              "props":
+                {
+                  "numberLabel": "Deine Zahl",
+                  "instruction": "Wähle eine Zahl. Tippe dann auf einen Faktor, den du weiter zerlegen möchtest, und wähle eine passende Malaufgabe. Was bleibt am Ende übrig?",
+                  "chooseLabel": "Faktor {n} untersuchen",
+                  "splitLabel": "So kannst du den gewählten Faktor zerlegen:",
+                  "primeLabel": "{n} lässt sich nicht in zwei ganze Faktoren größer als 1 zerlegen. Mit solchen Zahlen endet das Zerlegen.",
+                  "finishedLabel": "Jetzt lässt sich keiner der Faktoren weiter zerlegen. Alle sind Primzahlen; die Sterne markieren diese Endpunkte.",
+                  "resetLabel": "Noch einmal zerlegen",
+                },
+              "nojs": "Stell dir 12 Bauklötze vor: Du kannst daraus 3 Reihen mit je 4 Klötzen legen. Die Rechnung 3 · 4 beschreibt diese Anordnung. Die Zahlen 3 und 4 heißen Faktoren. Unten kannst du so eine Zahl immer weiter aufteilen: Wähle einen Faktor und darunter eine passende Malaufgabe. Die neuen Faktoren ersetzen den alten, aber das Ergebnis bleibt gleich. Ein Stern bedeutet: Diese Zahl lässt sich nicht weiter in zwei ganze Faktoren größer als 1 zerlegen. Probiere unterschiedliche Zerlegungen aus und vergleiche die Zahlen, bei denen du landest.\n\nBeispiel: 12 = 3 · 4 = 3 · 2 · 2. Die Faktoren 3, 2 und 2 lassen sich nicht weiter in ganze Faktoren größer als 1 zerlegen.",
+            },
+            {
+              "type": "section",
+              "id": "primzahlen",
+              "title": "Wo das Zerlegen endet",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Du kannst 12 als 3 · 4 schreiben. Die 4 lässt sich weiter zerlegen: 4 = 2 · 2. Bei 12 = 3 · 2 · 2 geht es nicht weiter, wenn alle Faktoren größer als 1 sein sollen.",
+                  },
+                  {
+                    "type": "definition",
+                    "term": "Primzahl",
+                    "explanation": "Eine Primzahl ist eine natürliche Zahl größer als 1, die sich nicht in zwei ganze Faktoren größer als 1 zerlegen lässt. Sie hat genau zwei positive Teiler: 1 und sich selbst. Die 1 ist keine Primzahl.",
+                  },
+                  {
+                    "type": "definition",
+                    "term": "Primfaktorzerlegung",
+                    "explanation": "Bei einer Primfaktorzerlegung wird eine Zahl als Produkt von Primzahlen geschrieben. Du zerlegst zusammengesetzte Faktoren weiter, bis nur noch Primzahlen übrig sind.",
+                  },
+                ],
+            },
+            {
+              "type": "section",
+              "id": "abkuerzungen",
+              "title": "Abkürzungen beim Suchen",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Wenn du die Faktoren ausprobieren kannst, helfen diese Regeln, schneller einen passenden zu finden. Die Quersumme ist die Summe aller Ziffern einer Zahl.",
+                  },
+                  {
+                    "type": "table",
+                    "caption": "Teilbarkeitsregeln helfen beim Finden von Faktoren",
+                    "header": ["Teilbar durch", "Woran du es erkennst"],
+                    "rows":
+                      [
+                        ["2", "Letzte Ziffer 0, 2, 4, 6 oder 8"],
+                        ["5", "Letzte Ziffer 0 oder 5"],
+                        ["10", "Letzte Ziffer 0"],
+                        ["4", "Die letzten zwei Ziffern bilden eine durch 4 teilbare Zahl"],
+                        ["25", "Endung 00, 25, 50 oder 75"],
+                        ["100", "Endung 00"],
+                        ["3", "Quersumme durch 3 teilbar"],
+                        ["9", "Quersumme durch 9 teilbar"],
+                      ],
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "24 Schritt für Schritt zerlegen",
+              "blocks":
+                [
+                  { "type": "formula", "formula": "24 = 4 \\cdot 6" },
+                  { "type": "text", "text": "Die Faktoren 4 und 6 lassen sich beide weiter zerlegen." },
+                  { "type": "formula", "formula": "24 = (2 \\cdot 2) \\cdot (2 \\cdot 3)" },
+                  {
+                    "type": "text",
+                    "text": "Jetzt bleiben nur Primzahlen übrig: 2, 2, 2 und 3. Du könntest auch mit 24 = 2 · 12 beginnen; am Ende erhältst du dieselben Primfaktoren in vielleicht anderer Reihenfolge.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Welche Zahl ist eine Primzahl?",
+              "options":
+                [
+                  {
+                    "text": "13",
+                    "correct": true,
+                    "info": "132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.",
+                  },
+                  {
+                    "text": "1",
+                    "correct": false,
+                    "info": "Die 1 hat nur einen positiven Teiler. Eine Primzahl braucht genau zwei.",
+                  },
+                  { "text": "15", "correct": false, "info": "15 hat außer 1 und 15 auch die Teiler 3 und 5." },
+                ],
+              "explanation": "132 ist durch 3 teilbar, denn 1 + 3 + 2 = 6 ist durch 3 teilbar. Durch 4 ist sie ebenfalls teilbar, denn 32 ist durch 4 teilbar. 12 = 2 · 2 · 3 ist eine Primfaktorzerlegung.",
+              "links": [{ "title": "Weiterlesen zur Herleitung", "url": "https://de.wikipedia.org/wiki/Teilbarkeit" }],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task":
+                {
+                  "text": "{{e.dreifach}} Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?",
+                },
+              "answer": { "value": "e.dreifach / 3", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "e.dreifach", "message": "Das ist die Gesamtmenge, nicht die Menge in einer Gruppe." },
+                  { "value": "1", "message": "Teile die gesamte Menge in drei gleich große Gruppen." },
+                ],
+              "hint": "Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.",
+              "steps":
+                [
+                  "Die {{e.dreifach}} Gegenstände werden auf drei gleich große Gruppen verteilt.",
+                  "{{e.dreifach}} : 3 = {{answer}}. So viele Gegenstände liegen in jeder Gruppe.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+            {
+              "type": "generated",
+              "id": "primfaktoren",
+              "given": { "e": { "pick": 1, "from": { "data": "primfaktoren" } } },
+              "task":
+                {
+                  "text": "Zerlege {{e.zahl}} vollständig in Primfaktoren. Eine 2 ist schon gefunden: {{e.zahl}} = 2 · … . Welcher Primfaktor fehlt?",
+                },
+              "answer": { "value": "e.prime", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "1",
+                    "message": "Mit 1 bleibt der andere Faktor unverändert. Gesucht ist ein Primfaktor größer als 1.",
+                  },
+                  {
+                    "value": "e.zahl",
+                    "message": "Das ist die Ausgangszahl. Teile sie durch den schon gefundenen Faktor 2.",
+                  },
+                ],
+              "hint": "Suche die Zahl, die mit 2 multipliziert die Ausgangszahl ergibt. Prüfe danach, ob sie selbst prim ist.",
+              "steps":
+                [
+                  "Teile {{e.zahl}} durch den schon gefundenen Primfaktor 2. Das ergibt {{answer}}.",
+                  "{{answer}} ist eine Primzahl. Damit ist {{e.zahl}} = 2 · {{answer}} vollständig in Primfaktoren zerlegt.",
+                ],
+            },
+          ],
+      },
+    ],
+}

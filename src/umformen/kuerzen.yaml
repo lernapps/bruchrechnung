@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche kürzen",
+  "description": "Welche kleinen Teilstücke kannst du zu größeren Gruppen zusammenfassen?",
+  "scope": "Beim Kürzen teilst du Zähler und Nenner durch denselben gemeinsamen Teiler. Der Anteil bleibt gleich. Vollständig gekürzt ist ein Bruch, wenn Zähler und Nenner außer 1 keinen gemeinsamen positiven Teiler mehr haben. Aus Summen darfst du keine einzelnen Summanden kürzen. 6/8 mit 2 kürzen: 6 : 2 = 3 und 8 : 2 = 4. Also 6/8 = 3/4. Je zwei Achtel werden zu einem Viertel gebündelt.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Gleicher Anteil, weniger Stücke",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Mehrere kleine Stücke können zusammen ein größeres Stück bilden. So kannst du denselben Anteil mit weniger Teilen beschreiben.",
+            },
+            {
+              "type": "definition",
+              "term": "Kürzen",
+              "explanation": "Beim Kürzen werden Zähler und Nenner durch denselben gemeinsamen Teiler geteilt. Der Wert bleibt gleich.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Ein Streifen steht für ein Ganzes. Die grün gefüllten, schraffierten Felder zeigen den gegebenen Anteil. Beim Kürzen fasst du benachbarte kleine Felder zu größeren, gleich großen Gruppen zusammen. Dabei dürfen die Gruppen nicht über die Grenze zwischen markiert und nicht markiert reichen. Überlege: Wie viele kleine Felder kannst du überall zusammenfassen? Wie viele Gruppen sind danach markiert, wie viele gibt es insgesamt? Gib diese beiden Anzahlen als Bruch mit / ein. Das zweite Bild zeigt genau deine Eingabe – es bestätigt noch nicht, dass sie richtig ist.",
+            },
+            {
+              "type": "vue-component",
+              "component": "BruchUmformen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "reduce",
+                  "task": "Kürze {z}/{n} vollständig.",
+                  "mistakes":
+                    [
+                      "Dein Bruch hat einen anderen Wert als der Ausgangsbruch. Beim Umformen müssen Zähler und Nenner mit derselben Zahl multipliziert oder durch denselben gemeinsamen Teiler geteilt werden.",
+                      "Schreibe eine ganze Zahl oder einen Bruch mit / und einem Nenner größer als 0.",
+                      "Der Wert stimmt, aber Zähler und Nenner haben noch einen gemeinsamen Teiler größer als 1. Kürze noch weiter.",
+                      "Der Wert stimmt. Verwende aber den in der Aufgabe verlangten Erweiterungsfaktor für Zähler und Nenner.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "So schreibst du das",
+                  "toolLabel": "Überlege, wie viele kleine Felder du zu einer größeren Gruppe zusammenfassen kannst. Gib dann den vollständig gekürzten Bruch mit / ein. Das zweite Bild zeigt deinen Vorschlag, ohne ihn zu prüfen.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                { "accepted": [{ "answer": "1/3", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+              "nojs": "Ein Streifen steht für ein Ganzes. Die grün gefüllten, schraffierten Felder zeigen den gegebenen Anteil. Beim Kürzen fasst du benachbarte kleine Felder zu größeren, gleich großen Gruppen zusammen. Dabei dürfen die Gruppen nicht über die Grenze zwischen markiert und nicht markiert reichen. Überlege: Wie viele kleine Felder kannst du überall zusammenfassen? Wie viele Gruppen sind danach markiert, wie viele gibt es insgesamt? Gib diese beiden Anzahlen als Bruch mit / ein. Das zweite Bild zeigt genau deine Eingabe – es bestätigt noch nicht, dass sie richtig ist.",
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Beim Kürzen teilst du Zähler und Nenner durch denselben gemeinsamen Teiler. Der Anteil bleibt gleich. Vollständig gekürzt ist ein Bruch, wenn Zähler und Nenner außer 1 keinen gemeinsamen positiven Teiler mehr haben. Aus Summen darfst du keine einzelnen Summanden kürzen.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "6/8 mit 2 kürzen: 6 : 2 = 3 und 8 : 2 = 4. Also 6/8 = 3/4. Je zwei Achtel werden zu einem Viertel gebündelt.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Welcher Bruch ist vollständig gekürzt?",
+              "options":
+                [
+                  {
+                    "text": "3/4",
+                    "correct": true,
+                    "info": "6/8 mit 2 kürzen: 6 : 2 = 3 und 8 : 2 = 4. Also 6/8 = 3/4. Je zwei Achtel werden zu einem Viertel gebündelt.",
+                  },
+                  { "text": "6/8", "correct": false, "info": "Zähler und Nenner sind beide durch 2 teilbar." },
+                  { "text": "9/12", "correct": false, "info": "Zähler und Nenner sind beide durch 3 teilbar." },
+                ],
+              "explanation": "6/8 mit 2 kürzen: 6 : 2 = 3 und 8 : 2 = 4. Also 6/8 = 3/4. Je zwei Achtel werden zu einem Viertel gebündelt.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/1509/brueche-kuerzen-und-erweitern",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Kürze 6/{{e.sechsfach}} mit 6. Welcher Nenner entsteht?" },
+              "answer": { "value": "e.sechsfach / 6", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "e.sechsfach", "message": "Du hast den Nenner noch nicht durch 6 geteilt." },
+                  { "value": "e.sechsfach-6", "message": "Kürzen bedeutet dividieren, nicht subtrahieren." },
+                ],
+              "hint": "Beim Kürzen teilst du Zähler und Nenner durch denselben gemeinsamen Teiler.",
+              "steps":
+                [
+                  "Sechs kleine Teile werden zu jeweils einem größeren Teil zusammengefasst.",
+                  "Der Zähler wird 6 : 6 = 1. Der Nenner wird {{e.sechsfach}} : 6 = {{answer}}.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

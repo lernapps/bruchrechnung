@@ -1,0 +1,151 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Brüche vergleichen",
+  "description": "Ist ein Bruch mit größerem Nenner automatisch größer? Vergleiche gleich große Ganze.",
+  "scope": "Bei gleichem Nenner entscheidet der Zähler. Bei gleichem positiven Zähler ist der Bruch mit kleinerem Nenner größer. Sonst kannst du auf einen gemeinsamen Nenner erweitern. Auf dem Zahlenstrahl liegt der größere Bruch weiter rechts. 2/3 = 8/12 und 3/4 = 9/12. Daher ist 2/3 kleiner als 3/4. Die Bezugs-Ganzen müssen gleich groß sein, wenn du die Flächen vergleichst.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Wer bekommt mehr?",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Zwei Kinder bekommen unterschiedlich große Bruchteile einer gleich großen Tafel. Wie kannst du herausfinden, wer mehr bekommt?",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Beide Streifen stehen für gleich große Ganze. Die grün gefüllten, schraffierten Felder zeigen jeweils den Anteil. Vergleiche, wie weit die grüne Fläche reicht; die Anzahl der Felder allein reicht bei verschiedenen Feldgrößen nicht aus. Du kannst beide Brüche auch auf dieselbe Unterteilung erweitern und dann gleich große Stücke zählen. Wähle <, wenn der obere Bruch kleiner ist, = bei gleichem Wert und >, wenn der obere größer ist. Danach drückst du „Prüfen“.",
+            },
+            {
+              "type": "vue-component",
+              "component": "BruchUmformen",
+              "id": "modell",
+              "props":
+                {
+                  "kind": "compare",
+                  "task": "Vergleiche {z}/{n} und {b}/{d}. Wähle das passende Zeichen.",
+                  "mistakes":
+                    [
+                      "Dein Bruch hat einen anderen Wert als der Ausgangsbruch. Beim Umformen müssen Zähler und Nenner mit derselben Zahl multipliziert oder durch denselben gemeinsamen Teiler geteilt werden.",
+                      "Schreibe eine ganze Zahl oder einen Bruch mit / und einem Nenner größer als 0.",
+                      "Der Wert stimmt, aber Zähler und Nenner haben noch einen gemeinsamen Teiler größer als 1. Kürze noch weiter.",
+                      "Der Wert stimmt. Verwende aber den in der Aufgabe verlangten Erweiterungsfaktor für Zähler und Nenner.",
+                    ],
+                  "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
+                  "givenLabel": "Gegeben",
+                  "ownLabel": "So schreibst du das",
+                  "toolLabel": "Vergleiche die markierten Längen bei gleich großen Ganzen. < heißt: oberer Bruch kleiner; > heißt: oberer Bruch größer; = heißt: beide gleich groß. Wähle dein Zeichen und drücke „Prüfen“.",
+                  "pieceLabel": "Teil",
+                  "stepLabel": "Teile pro Ganzem",
+                  "labels":
+                    {
+                      "circle": "Kreis",
+                      "strip": "Bruchstreifen",
+                      "line": "Zahlenstrahl",
+                      "set": "Menge",
+                      "whole": "Ganzes",
+                      "selected": "Ausgewählt",
+                    },
+                },
+              "examples":
+                { "accepted": [{ "answer": "<", "seed": 1 }], "rejected": [{ "answer": "1/0" }, { "answer": "" }] },
+              "nojs": "Beide Streifen stehen für gleich große Ganze. Die grün gefüllten, schraffierten Felder zeigen jeweils den Anteil. Vergleiche, wie weit die grüne Fläche reicht; die Anzahl der Felder allein reicht bei verschiedenen Feldgrößen nicht aus. Du kannst beide Brüche auch auf dieselbe Unterteilung erweitern und dann gleich große Stücke zählen. Wähle <, wenn der obere Bruch kleiner ist, = bei gleichem Wert und >, wenn der obere größer ist. Danach drückst du „Prüfen“.",
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Bei gleichem Nenner entscheidet der Zähler. Bei gleichem positiven Zähler ist der Bruch mit kleinerem Nenner größer. Sonst kannst du auf einen gemeinsamen Nenner erweitern. Auf dem Zahlenstrahl liegt der größere Bruch weiter rechts.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "2/3 = 8/12 und 3/4 = 9/12. Daher ist 2/3 kleiner als 3/4. Die Bezugs-Ganzen müssen gleich groß sein, wenn du die Flächen vergleichst.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Welcher Vergleich stimmt?",
+              "options":
+                [
+                  {
+                    "text": "2/3 < 3/4",
+                    "correct": true,
+                    "info": "2/3 = 8/12 und 3/4 = 9/12. Daher ist 2/3 kleiner als 3/4. Die Bezugs-Ganzen müssen gleich groß sein, wenn du die Flächen vergleichst.",
+                  },
+                  { "text": "2/3 > 3/4", "correct": false, "info": "Acht Zwölftel sind kleiner als neun Zwölftel." },
+                  { "text": "2/3 = 3/4", "correct": false, "info": "Die Anteile sind verschieden: 8/12 und 9/12." },
+                ],
+              "explanation": "2/3 = 8/12 und 3/4 = 9/12. Daher ist 2/3 kleiner als 3/4. Die Bezugs-Ganzen müssen gleich groß sein, wenn du die Flächen vergleichst.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://de.serlo.org/mathe/1509/brueche-kuerzen-und-erweitern",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Vergleiche 1/{{n}} und 2/{{n}}. Gib den Zähler des größeren Bruchs an." },
+              "answer": { "value": "2", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "1",
+                    "message": "Bei gleichem Nenner vergleichst du die Zähler. Gefragt ist der Zähler des größeren Bruchs.",
+                  },
+                  { "value": "n", "message": "Das ist der gemeinsame Nenner, nicht der gesuchte Zähler." },
+                ],
+              "hint": "Bei gleichem Nenner entscheidet der Zähler.",
+              "steps":
+                [
+                  "Beide Brüche haben den Nenner {{n}}. Ihre Teilstücke sind deshalb gleich groß.",
+                  "Zwei solcher Teile sind mehr als eines. Der größere Bruch hat daher den Zähler 2.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

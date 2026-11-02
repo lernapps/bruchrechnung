@@ -1,0 +1,133 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Dezimalzahlen runden",
+  "description": "Zwischen welchen zwei Hundertsteln liegt eine Zahl? Welches davon ist näher?",
+  "scope": "Bestimme zuerst die Rundungsstelle. Entscheidend ist die Ziffer direkt rechts davon: Bei 0 bis 4 bleibt die Rundungsziffer, bei 5 bis 9 wird sie um 1 erhöht. Die folgenden Stellen entfallen. Benutze für gerundete Werte ein Näherungszeichen, wenn du sie mit dem Ausgangswert vergleichst. 0,746 auf Hundertstel: Die Hundertstelziffer ist 4, danach steht 6. Daher wird auf 0,75 gerundet. 0,744 wird auf 0,74 gerundet.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Wie genau brauchst du die Zahl?",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Eine Messung ist oft genauer angegeben, als du sie brauchst. Beim Runden wählst du einen nahe gelegenen Wert mit weniger Stellen.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Anschaulich erklärt",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Runden heißt, eine nahe gelegene Zahl mit weniger Nachkommastellen anzugeben. In der Tabelle steht 0,746 zwischen den Hundertstelwerten 0,74 und 0,75. Stell dir die drei Zahlen auf einer Strecke vor: Zu welchem Nachbarn ist der Abstand kleiner? 0,746 hat zu 0,74 den Abstand 0,006 und zu 0,75 den Abstand 0,004. Probiere danach weitere Zahlen aus. Bei einer Übung steht immer dabei, auf welche Stelle du runden sollst. Gib nur den gerundeten Wert ein.",
+            },
+            {
+              "type": "table",
+              "caption": "Eine Zahl zwischen zwei Hundertstelwerten",
+              "header": ["Unterer Nachbar", "Ausgangszahl", "Oberer Nachbar"],
+              "rows": [["0,74", "0,746", "0,75"]],
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Bestimme zuerst die Rundungsstelle. Entscheidend ist die Ziffer direkt rechts davon: Bei 0 bis 4 bleibt die Rundungsziffer, bei 5 bis 9 wird sie um 1 erhöht. Die folgenden Stellen entfallen. Benutze für gerundete Werte ein Näherungszeichen, wenn du sie mit dem Ausgangswert vergleichst.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "0,746 auf Hundertstel: Die Hundertstelziffer ist 4, danach steht 6. Daher wird auf 0,75 gerundet. 0,744 wird auf 0,74 gerundet.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Wie lautet 0,746 auf Hundertstel gerundet?",
+              "options":
+                [
+                  {
+                    "text": "0,75",
+                    "correct": true,
+                    "info": "0,746 auf Hundertstel: Die Hundertstelziffer ist 4, danach steht 6. Daher wird auf 0,75 gerundet. 0,744 wird auf 0,74 gerundet.",
+                  },
+                  {
+                    "text": "0,74",
+                    "correct": false,
+                    "info": "Das schneidet die Tausendstelziffer ab. Eine 6 verlangt Aufrunden.",
+                  },
+                  {
+                    "text": "0,8",
+                    "correct": false,
+                    "info": "Das wäre auf Zehntel gerundet. Gefragt sind Hundertstel.",
+                  },
+                ],
+              "explanation": "0,746 auf Hundertstel: Die Hundertstelziffer ist 4, danach steht 6. Daher wird auf 0,75 gerundet. 0,744 wird auf 0,74 gerundet.",
+              "links":
+                [
+                  {
+                    "title": "Weiterlesen zur Herleitung",
+                    "url": "https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen104.html",
+                  },
+                ],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Runde {{e.rundungszahl}} auf Hundertstel." },
+              "answer": { "value": "round(e.rundungszahl,2)", "compare": "number" },
+              "mistakes":
+                [
+                  {
+                    "value": "e.basis/10+4/100",
+                    "message": "Du hast abgeschnitten. Die Ziffer rechts von der Hundertstelstelle verlangt Aufrunden.",
+                  },
+                  {
+                    "value": "round(e.rundungszahl,1)",
+                    "message": "Du hast auf Zehntel statt auf Hundertstel gerundet.",
+                  },
+                ],
+              "hint": "Bestimme zuerst die Rundungsstelle.",
+              "steps":
+                [
+                  "Die Hundertstelstelle ist die zweite Stelle nach dem Komma. Die nächste Ziffer von {{e.rundungszahl}} ist eine 6.",
+                  "Deshalb wird die Hundertstelziffer um 1 erhöht. Das gerundete Ergebnis lautet {{answer}}.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}
