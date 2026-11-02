@@ -136,19 +136,19 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
-              "task": { "text": "Berechne 3/4 von {{n}} · 4 Plättchen. Wie viele Plättchen sind es?" },
-              "answer": { "value": "n*3", "compare": "number" },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Berechne 3/4 von {{e.vierfach}} Plättchen. Wie viele Plättchen sind es?" },
+              "answer": { "value": "e.vierfach / 4 * 3", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "n", "message": "Das ist erst eine der vier Gruppen. Gesucht sind drei Gruppen." },
-                  { "value": "n*4", "message": "Das ist das Ganze, nicht der ausgewählte Bruchteil." },
+                  { "value": "e.basis", "message": "Das ist erst ein Viertel. Gesucht sind drei Viertel." },
+                  { "value": "e.vierfach", "message": "Das ist das Ganze, nicht der Bruchteil." },
                 ],
               "hint": "Bruchteil = Ganzes · Anteil.",
               "steps":
                 [
-                  "Das Ganze hat {{n}} · 4 Plättchen. Beim Teilen in vier gleiche Gruppen hat jede Gruppe {{n}} Plättchen.",
-                  "Drei Gruppen enthalten ${{n}} \\cdot 3 = {{answer}}$ Plättchen.",
+                  "Teile {{e.vierfach}} Plättchen in vier gleiche Gruppen. Jede Gruppe enthält {{e.basis}} Plättchen.",
+                  "Drei Gruppen enthalten {{e.basis}} · 3 = {{answer}} Plättchen.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

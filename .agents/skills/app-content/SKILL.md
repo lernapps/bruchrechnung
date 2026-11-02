@@ -173,3 +173,7 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Tatsächliche Datenhaltung: zentrale Quellen in `src/app.yaml`, Zahlenlogik in `BruchAufgaben.ts` und `BruchModelle.ts`, Primfaktor-Datensätze in `src/data/primfaktoren.yaml`. Keine unbenutzten Data-Dateien anlegen. Die 20 Standardübungen liefern je sechs Varianten; zusammen mit den 20 Verständnisfragen und sechs Primfaktoraufgaben mindestens 146 Aufgabenstellungen, dazu Modellaufgaben.
 
 - Browserkorrektur Erweitern: Kuchenbeispiel konsequent mit `KuchenTeilen` als Kreis mit drei ursprünglichen Stücken; alle Stücke gleichmäßig unterteilen. Zähler und Nenner wachsen bei unverändertem Flächenanteil. Keine Prozent-/Balkengrafik für diese Herleitung. Die freie Entdeckung zeigt 2/3 und die umgeschriebene Form; Aufgaben haben getrennte eigene Eingaben ohne Ergebnisvorschau.
+
+- Browserkorrektur Umformen: unverbundene Markierreihe samt Unterteilungsregler entfernt. Aufgaben nutzen gegebenes Modell und direkte Bruch-Eingabe; konkrete Rückmeldung unterscheidet Wertänderung, ungültige Eingabe, noch mögliche Kürzung und falschen Erweiterungsfaktor. Regressionstest ergänzt.
+
+- Konkrete Aufgabenwerte statt versteckter Erzeugungsrechnungen: gemeinsame Datensätze in `src/data/grundzahlen.yaml`. Kürzungsaufgaben zeigen z. B. 6/48 statt 6/(8 · 6); Gruppenmengen und Rundungszahlen sind ebenfalls bereits ausgerechnet. Rechenterme bleiben nur dort stehen, wo gerade das Berechnen solcher Terme geübt wird.

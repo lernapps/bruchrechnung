@@ -10,3 +10,16 @@ test("exact properties and alternate answers across all supported tasks", () => 
       if (!["expand", "reduce", "compare"].includes(kind)) expect(check(t, `${t.rz * 2}/${t.rn * 2}`)).toBe(true);
     }
 });
+
+import { reason } from "./BruchUmformen.ts";
+test("feedback distinguishes changed value from incomplete reduction", () => {
+  const p = {
+    kind: "reduce",
+    task: "Kürze",
+    mistakes: ["Wert verändert", "Ungültige Eingabe", "Noch kürzbar", "Faktor passt nicht"],
+  };
+  const t = generate(1, p);
+  expect(reason(t, "6/5", p)).toBe("Wert verändert");
+  expect(reason(t, "2/6", p)).toBe("Noch kürzbar");
+  expect(reason(t, "1/0", p)).toBe("Ungültige Eingabe");
+});

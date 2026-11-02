@@ -132,22 +132,25 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
-              "task": { "text": "Von {{n}} · 4 Plättchen sind {{n}} · 3 markiert. Ergänze den gekürzten Anteil 3/… ." },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task":
+                {
+                  "text": "Von {{e.vierfach}} Plättchen sind {{e.dreifach}} markiert. Ergänze den vollständig gekürzten Anteil 3/… .",
+                },
               "answer": { "value": "4", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "3", "message": "Drei gehört hier in den Zähler. Gesucht ist der Nenner." },
+                  { "value": "3", "message": "Drei ist hier der Zähler. Gefragt ist der Nenner." },
                   {
-                    "value": "n*4",
-                    "message": "Du hast die Gesamtzahl vor dem Kürzen verwendet. Gefragt ist der gekürzte Anteil.",
+                    "value": "e.vierfach",
+                    "message": "Das ist die Gesamtmenge vor dem Kürzen. Kürze auch den Nenner.",
                   },
                 ],
               "hint": "Anteil = Bruchteil : Ganzes.",
               "steps":
                 [
-                  "Der Anteil lautet ({{n}} · 3) / ({{n}} · 4). Teile Zähler und Nenner durch den gemeinsamen Faktor {{n}}.",
-                  "Es bleiben 3 von 4 gleich großen Gruppen. Der gekürzte Anteil ist 3/4, der gesuchte Nenner also 4.",
+                  "Der Anteil ist {{e.dreifach}}/{{e.vierfach}}. Zähler und Nenner sind durch {{e.basis}} teilbar.",
+                  "Kürzen ergibt 3/4. Der gesuchte Nenner ist 4.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

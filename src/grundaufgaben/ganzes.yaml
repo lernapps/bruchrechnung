@@ -139,19 +139,19 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
-              "task": { "text": "{{n}} · 3 Plättchen sind 3/4 des Ganzen. Wie viele Plättchen hat das Ganze?" },
-              "answer": { "value": "n*4", "compare": "number" },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "{{e.dreifach}} Plättchen sind 3/4 des Ganzen. Wie viele Plättchen hat das Ganze?" },
+              "answer": { "value": "e.dreifach / 3 * 4", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "n*3", "message": "Das ist der gegebene Bruchteil. Ergänze von drei auf vier Gruppen." },
-                  { "value": "n", "message": "Das ist erst eine Gruppe. Das Ganze besteht aus vier Gruppen." },
+                  { "value": "e.dreifach", "message": "Das ist der gegebene Bruchteil, nicht das Ganze." },
+                  { "value": "e.basis", "message": "Das ist erst eine Gruppe. Das Ganze hat vier Gruppen." },
                 ],
               "hint": "Ganzes = Bruchteil : Anteil.",
               "steps":
                 [
-                  "Die gegebenen {{n}} · 3 Plättchen bilden drei von vier gleichen Gruppen. Eine Gruppe hat deshalb {{n}} Plättchen.",
-                  "Das Ganze hat vier Gruppen: ${{n}} \\cdot 4 = {{answer}}$ Plättchen.",
+                  "Die {{e.dreifach}} Plättchen bilden drei gleich große Gruppen. Ein Viertel enthält {{e.dreifach}} : 3 = {{e.basis}} Plättchen.",
+                  "Das Ganze enthält vier solche Gruppen: {{e.basis}} · 4 = {{answer}} Plättchen.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

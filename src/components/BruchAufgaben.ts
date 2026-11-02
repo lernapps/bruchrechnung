@@ -98,7 +98,19 @@ export function params(t: Task): Record<string, number> {
 }
 export const template = (p: Props): string => p.task;
 export const show = (answer: unknown): string => (String(answer) === "" ? "Keine Eingabe" : String(answer));
-export const reason = (t: Task, a: unknown, p: Props): string => fill(p.mistakes[a === "" ? 1 : 0] ?? "", params(t));
+export function reason(t: Task, a: unknown, p: Props): string {
+  let index = 0;
+  if (typeof a !== "string" || a.trim() === "") index = 1;
+  else if (t.kind !== "compare") {
+    const input = parse(a);
+    if (!input) index = 1;
+    else if (equal(input, { z: t.rz, n: t.rn })) {
+      if (t.kind === "reduce" && gcd(input.z, input.n) > 1) index = 2;
+      else if (t.kind === "expand") index = 3;
+    }
+  }
+  return fill(p.mistakes[index] ?? p.mistakes[0] ?? "", params(t));
+}
 export function describe(t: Task, p: Props): { task: string; solution: string } {
   const q = t.rz >= 0 ? reduce(t.rz, t.rn) : { z: t.rz, n: t.rn };
   const result = q.n === 1 ? String(q.z) : `${q.z}/${q.n}`;

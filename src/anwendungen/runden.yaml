@@ -107,25 +107,25 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
-              "task": { "text": "Runde {{n}}/10 + 0,046 auf Hundertstel." },
-              "answer": { "value": "round(n/10+46/1000,2)", "compare": "number" },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Runde {{e.rundungszahl}} auf Hundertstel." },
+              "answer": { "value": "round(e.rundungszahl,2)", "compare": "number" },
               "mistakes":
                 [
                   {
-                    "value": "n/10+4/100",
-                    "message": "Du hast abgeschnitten. Schau auf die Ziffer direkt rechts der Rundungsstelle.",
+                    "value": "e.basis/10+4/100",
+                    "message": "Du hast abgeschnitten. Die Ziffer rechts von der Hundertstelstelle verlangt Aufrunden.",
                   },
                   {
-                    "value": "round(n/10+46/1000,1)",
+                    "value": "round(e.rundungszahl,1)",
                     "message": "Du hast auf Zehntel statt auf Hundertstel gerundet.",
                   },
                 ],
               "hint": "Bestimme zuerst die Rundungsstelle.",
               "steps":
                 [
-                  "Die Rundungsstelle ist die zweite Stelle nach dem Komma. Rechts davon steht bei {{n}}/10 + 0,046 eine 6.",
-                  "Deshalb rundest du die Hundertstel auf. Du erhältst {{answer}}, nicht den abgeschnittenen Wert.",
+                  "Die Hundertstelstelle ist die zweite Stelle nach dem Komma. Die nächste Ziffer von {{e.rundungszahl}} ist eine 6.",
+                  "Deshalb wird die Hundertstelziffer um 1 erhöht. Das gerundete Ergebnis lautet {{answer}}.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

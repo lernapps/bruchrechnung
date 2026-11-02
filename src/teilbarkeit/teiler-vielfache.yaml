@@ -104,19 +104,22 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
-              "task": { "text": "Bestimme den größten gemeinsamen Teiler von {{n}} und {{n}} · 2." },
-              "answer": { "value": "n", "compare": "number" },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Bestimme den größten gemeinsamen Teiler von {{e.basis}} und {{e.doppelt}}." },
+              "answer": { "value": "e.basis", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "n*2", "message": "Die größere Zahl teilt die kleinere nicht. Prüfe beide Zahlen." },
-                  { "value": "1", "message": "1 ist ein gemeinsamer Teiler, aber es gibt einen größeren." },
+                  { "value": "e.doppelt", "message": "Die größere Zahl teilt die kleinere nicht." },
+                  {
+                    "value": "1",
+                    "message": "1 teilt beide Zahlen, ist hier aber nicht der größte gemeinsame Teiler.",
+                  },
                 ],
               "hint": "Teiler teilen eine Zahl ohne Rest.",
               "steps":
                 [
-                  "{{n}} teilt die erste Zahl {{n}} und auch ihr Doppeltes ohne Rest.",
-                  "Ein positiver Teiler kann nicht größer als die erste Zahl sein. Deshalb ist {{n}} der größte gemeinsame Teiler.",
+                  "{{e.basis}} teilt sich selbst und auch {{e.doppelt}} ohne Rest.",
+                  "Ein positiver Teiler kann nicht größer als die kleinere Zahl sein. Daher ist {{answer}} der größte gemeinsame Teiler.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

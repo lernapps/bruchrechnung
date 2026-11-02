@@ -147,25 +147,22 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
               "task":
                 {
-                  "text": "{{n}} · 3 Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?",
+                  "text": "{{e.dreifach}} Gegenstände werden gleichmäßig auf 3 Gruppen verteilt. Wie viele sind in einer Gruppe?",
                 },
-              "answer": { "value": "n", "compare": "number" },
+              "answer": { "value": "e.dreifach / 3", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "n*3", "message": "Das ist die Gesamtmenge, nicht die Menge in einer Gruppe." },
-                  {
-                    "value": "1",
-                    "message": "Eine Gruppe besteht hier aus mehreren Gegenständen. Teile die Gesamtmenge in drei gleiche Gruppen.",
-                  },
+                  { "value": "e.dreifach", "message": "Das ist die Gesamtmenge, nicht die Menge in einer Gruppe." },
+                  { "value": "1", "message": "Teile die gesamte Menge in drei gleich große Gruppen." },
                 ],
               "hint": "Eine Zahl ist durch 2 teilbar, wenn ihre letzte Ziffer gerade ist, durch 5 bei Endziffer 0 oder 5, durch 10 bei Endziffer 0.",
               "steps":
                 [
-                  "Die Gesamtmenge besteht aus {{n}} · 3 Gegenständen. Sie wird auf drei gleich große Gruppen verteilt.",
-                  "Teile durch 3: In jeder Gruppe liegen {{answer}} Gegenstände.",
+                  "Die {{e.dreifach}} Gegenstände werden auf drei gleich große Gruppen verteilt.",
+                  "{{e.dreifach}} : 3 = {{answer}}. So viele Gegenstände liegen in jeder Gruppe.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

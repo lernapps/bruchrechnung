@@ -104,6 +104,42 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 - Nur Fakten als Grundlage; keine fremden Texte, Aufgaben oder Grafiken kopieren. Serlo nennt CC BY-SA 4.0; eigene Formulierungen und eigene Beispiele erstellen. Keine Videos geprüft oder vorgesehen.
 - Katalogschema vollständig über curl gelesen; Katalog-llms.txt gelesen. Eintragsentwurf enthält nur bekannte Daten, Veröffentlichung/Urheber/Commit/fitness werden erst nach Umsetzung ergänzt; er ist deshalb noch kein vollständiger gültiger Eintrag.
 
+### Korrektur aus der frühen Vorschau
+
+- Nutzerwunsch: einladender Einstieg „Was ist überhaupt ein Bruch?“, Beinbruch/Bruchteil und kurzes Pizza-Beispiel.
+- Nutzerwunsch: In jeder Übungsaufgabe genau eine Darstellung. Die freie Entdeckung darf mehrere Ansichten vergleichen. BruchModelle zeigt pro Aufgabe Kreis, Streifen, Menge oder Zahlenstrahl, nicht alle gleichzeitig.
+
+- Zweite Vorschaukorrektur: Lerninhalte nicht vorwegnehmen. `darstellen` nur Ganzes, gleich große Teile, Zähler und Nenner; `zahlenstrahl` nur Positionen; `gemischte-zahlen` nur Ganze/Rest. Gleichwertigkeit erst in `umformen`, Rechenarten erst in `rechnen`. Jede Aufgabe muss die eigene Seitenkompetenz üben.
+
+- Verbindliche Übungsregel aus Browserfeedback: Vor der Prüfung weder markierte Anzahl als Ergebnisbruch anzeigen noch ein Ergebnisfeld durch Markieren, Regler oder Stückzähler ausfüllen. Modelle zeigen Gegebenes und eigene Markierungen. Zahlenstrahl-Seite ausschließlich 0 bis 1; unechte Brüche erst auf `gemischte-zahlen`.
+
+
+### Didaktischer Aufbau nach Browserfeedback
+
+- Alle 20 Seiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Titel „Begriffe klären“, „Ausprobieren“, „Am Beispiel nachvollziehen“, „Üben“.
+- `teilbarkeit/regeln`: Faktor und Produkt anhand von Bauklotz-Reihen, dann `FaktorEntdecken` zum selbstständigen Zerlegen einer Zahl von 2 bis 48; erst danach Primzahl und Primfaktorzerlegung definieren, zum Schluss Teilbarkeitsregeln als Abkürzungen. Jede Aufteilung bewahrt das Produkt; 1 und unpassende Faktoren sind ausgeschlossen. Eigene Tests prüfen genau das und das Ende bei Primzahlen.
+- Neue Kompetenz: Ich kann eine zusammengesetzte Zahl in Primfaktoren zerlegen. Übung `primfaktoren` mit sechs Fällen aus `src/data/primfaktoren.yaml`, zusätzlicher Verständnischeck `verstehen` und Gruppenübung `aufgaben`.
+- Quelle ergänzt und vollständig im Web gelesen: Serlo, „Primfaktorzerlegung“, https://de.serlo.org/mathe/1779/primfaktorzerlegung (Beispiele und Vorgehensweise).
+- Die offenen Zweitquellen sind ergänzt: Wikipedia „Teilbarkeit“ (Endstellen-/Quersummenregeln und Primzahlbegriff), ARD alpha „Addieren – so geht’s“, https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html (Stellenwerte beim Addieren/Subtrahieren), Serlo „Aufgaben zur Multiplikation und Division von Dezimalzahlen“, https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen (geöffnete Lösungen einschließlich Kommaregeln), ARD alpha „Dezimalbrüche runden“ (Regeln und Beispiele). Keine fremden Sätze/Abbildungen übernommen.
+- Standardübungen haben jetzt einen konkreten Lösungsweg mit den jeweiligen Zahlen und einer fachlichen Begründung; keine Sätze wie „Angaben einsetzen“ ohne Erklärung.
+- Übungsmodelle schreiben niemals einen aus Markierungen berechneten Bruch in das Antwortfeld. Bei BruchModelle erscheint die symbolische Darstellung erst nach der Prüfung. Entdeckermodelle sind ausdrücklich freie Erkundung und dürfen Zusammenhänge anzeigen.
+
+- Die interaktiven Modelle von Umformen, Grundaufgaben und Rechenarten stehen nach der Begriffsklärung unter „Ausprobieren“. Danach folgen die Herleitung am Beispiel und eigene Standardübungen unter „Üben“. Die stabilen Übungs-IDs bleiben erhalten.
+
+
+### Verifikation des lokalen Stands
+
+- `vp check --fix`, `vue-tsc --noEmit`, acht Testdateien mit zehn Tests und der Build bestanden. Generierte Aufgaben werden beim Build über feste Seeds geprüft; Komponenten zusätzlich mit alternativen richtigen Antworten.
+- 20 Lernseiten bei 360 und 1280 px geöffnet und Bildschirmfotos gespeichert; keine Überbreite und richtige Reihenfolge der Hauptabschnitte. Zahlenstrahl ohne Antwortvorschau und mit erfolgreicher Prüfung getestet; konkreten Lösungsweg geprüft. Faktorzerlegung von 12 bis 3 · 2 · 2 durchgespielt; alternative Antwort 4/18 für 2/9 erfolgreich geprüft.
+- `lernapps check` bleibt offen: zwei Browser-Schritte scheitern beim Start von Chromium an der macOS-Sandbox (MachPortRendezvousServer: Permission denied). Keine Prüfung abgeschaltet und keine Schutzvorkehrung umgangen. Der verfügbare Browser wurde für die oben genannten manuellen Prüfungen verwendet; das ersetzt keine vollständige axe-/End-to-end-Prüfung.
+- Phase bleibt deshalb Code. Veröffentlichung und Selbsteinschätzung aus Commit stehen noch aus.
+
+- Browserkorrektur Erweitern: Kuchenbeispiel konsequent mit `KuchenTeilen` als Kreis mit drei ursprünglichen Stücken; alle Stücke gleichmäßig unterteilen. Zähler und Nenner wachsen bei unverändertem Flächenanteil. Keine Prozent-/Balkengrafik für diese Herleitung. Die freie Entdeckung zeigt 2/3 und die umgeschriebene Form; Aufgaben haben getrennte eigene Eingaben ohne Ergebnisvorschau.
+
+- Browserkorrektur Umformen: unverbundene Markierreihe samt Unterteilungsregler entfernt. Aufgaben nutzen gegebenes Modell und direkte Bruch-Eingabe; konkrete Rückmeldung unterscheidet Wertänderung, ungültige Eingabe, noch mögliche Kürzung und falschen Erweiterungsfaktor. Regressionstest ergänzt.
+
+- Konkrete Aufgabenwerte statt versteckter Erzeugungsrechnungen: gemeinsame Datensätze in `src/data/grundzahlen.yaml`. Kürzungsaufgaben zeigen z. B. 6/48 statt 6/(8 · 6); Gruppenmengen und Rundungszahlen sind ebenfalls bereits ausgerechnet. Rechenterme bleiben nur dort stehen, wo gerade das Berechnen solcher Terme geübt wird.
+
 ## Explore
 
 <!--
@@ -362,36 +398,3 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 ### Where I had to guess
 
 <!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
-
-
-### Korrektur aus der frühen Vorschau
-
-- Nutzerwunsch: einladender Einstieg „Was ist überhaupt ein Bruch?“, Beinbruch/Bruchteil und kurzes Pizza-Beispiel.
-- Nutzerwunsch: In jeder Übungsaufgabe genau eine Darstellung. Die freie Entdeckung darf mehrere Ansichten vergleichen. BruchModelle zeigt pro Aufgabe Kreis, Streifen, Menge oder Zahlenstrahl, nicht alle gleichzeitig.
-
-- Zweite Vorschaukorrektur: Lerninhalte nicht vorwegnehmen. `darstellen` nur Ganzes, gleich große Teile, Zähler und Nenner; `zahlenstrahl` nur Positionen; `gemischte-zahlen` nur Ganze/Rest. Gleichwertigkeit erst in `umformen`, Rechenarten erst in `rechnen`. Jede Aufgabe muss die eigene Seitenkompetenz üben.
-
-- Verbindliche Übungsregel aus Browserfeedback: Vor der Prüfung weder markierte Anzahl als Ergebnisbruch anzeigen noch ein Ergebnisfeld durch Markieren, Regler oder Stückzähler ausfüllen. Modelle zeigen Gegebenes und eigene Markierungen. Zahlenstrahl-Seite ausschließlich 0 bis 1; unechte Brüche erst auf `gemischte-zahlen`.
-
-
-### Didaktischer Aufbau nach Browserfeedback
-
-- Alle 20 Seiten beginnen mit einem alltagsnahen Einstieg und dem Begriff der Seite. Reihenfolge der Abschnitts-IDs jetzt `regel`, `entdecken`, `beispiel`, `ueben`; Titel „Begriffe klären“, „Ausprobieren“, „Am Beispiel nachvollziehen“, „Üben“.
-- `teilbarkeit/regeln`: Faktor und Produkt anhand von Bauklotz-Reihen, dann `FaktorEntdecken` zum selbstständigen Zerlegen einer Zahl von 2 bis 48; erst danach Primzahl und Primfaktorzerlegung definieren, zum Schluss Teilbarkeitsregeln als Abkürzungen. Jede Aufteilung bewahrt das Produkt; 1 und unpassende Faktoren sind ausgeschlossen. Eigene Tests prüfen genau das und das Ende bei Primzahlen.
-- Neue Kompetenz: Ich kann eine zusammengesetzte Zahl in Primfaktoren zerlegen. Übung `primfaktoren` mit sechs Fällen aus `src/data/primfaktoren.yaml`, zusätzlicher Verständnischeck `verstehen` und Gruppenübung `aufgaben`.
-- Quelle ergänzt und vollständig im Web gelesen: Serlo, „Primfaktorzerlegung“, https://de.serlo.org/mathe/1779/primfaktorzerlegung (Beispiele und Vorgehensweise).
-- Die offenen Zweitquellen sind ergänzt: Wikipedia „Teilbarkeit“ (Endstellen-/Quersummenregeln und Primzahlbegriff), ARD alpha „Addieren – so geht’s“, https://www.ardalpha.de/lernen/grips/faecher/grips-mathe/07-dezimalbrueche-addieren-nachlesen108.html (Stellenwerte beim Addieren/Subtrahieren), Serlo „Aufgaben zur Multiplikation und Division von Dezimalzahlen“, https://de.serlo.org/mathe/50460/aufgaben-zur-multiplikation-und-division-von-dezimalzahlen (geöffnete Lösungen einschließlich Kommaregeln), ARD alpha „Dezimalbrüche runden“ (Regeln und Beispiele). Keine fremden Sätze/Abbildungen übernommen.
-- Standardübungen haben jetzt einen konkreten Lösungsweg mit den jeweiligen Zahlen und einer fachlichen Begründung; keine Sätze wie „Angaben einsetzen“ ohne Erklärung.
-- Übungsmodelle schreiben niemals einen aus Markierungen berechneten Bruch in das Antwortfeld. Bei BruchModelle erscheint die symbolische Darstellung erst nach der Prüfung. Entdeckermodelle sind ausdrücklich freie Erkundung und dürfen Zusammenhänge anzeigen.
-
-- Die interaktiven Modelle von Umformen, Grundaufgaben und Rechenarten stehen nach der Begriffsklärung unter „Ausprobieren“. Danach folgen die Herleitung am Beispiel und eigene Standardübungen unter „Üben“. Die stabilen Übungs-IDs bleiben erhalten.
-
-
-### Verifikation des lokalen Stands
-
-- `vp check --fix`, `vue-tsc --noEmit`, acht Testdateien mit zehn Tests und der Build bestanden. Generierte Aufgaben werden beim Build über feste Seeds geprüft; Komponenten zusätzlich mit alternativen richtigen Antworten.
-- 20 Lernseiten bei 360 und 1280 px geöffnet und Bildschirmfotos gespeichert; keine Überbreite und richtige Reihenfolge der Hauptabschnitte. Zahlenstrahl ohne Antwortvorschau und mit erfolgreicher Prüfung getestet; konkreten Lösungsweg geprüft. Faktorzerlegung von 12 bis 3 · 2 · 2 durchgespielt; alternative Antwort 4/18 für 2/9 erfolgreich geprüft.
-- `lernapps check` bleibt offen: zwei Browser-Schritte scheitern beim Start von Chromium an der macOS-Sandbox (MachPortRendezvousServer: Permission denied). Keine Prüfung abgeschaltet und keine Schutzvorkehrung umgangen. Der verfügbare Browser wurde für die oben genannten manuellen Prüfungen verwendet; das ersetzt keine vollständige axe-/End-to-end-Prüfung.
-- Phase bleibt deshalb Code. Veröffentlichung und Selbsteinschätzung aus Commit stehen noch aus.
-
-- Browserkorrektur Erweitern: Kuchenbeispiel konsequent mit `KuchenTeilen` als Kreis mit drei ursprünglichen Stücken; alle Stücke gleichmäßig unterteilen. Zähler und Nenner wachsen bei unverändertem Flächenanteil. Keine Prozent-/Balkengrafik für diese Herleitung. Die freie Entdeckung zeigt 2/3 und die umgeschriebene Form; Aufgaben haben getrennte eigene Eingaben ohne Ergebnisvorschau.

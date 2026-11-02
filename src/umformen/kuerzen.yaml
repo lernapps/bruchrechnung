@@ -39,13 +39,15 @@
                   "task": "Kürze {z}/{n} vollständig.",
                   "mistakes":
                     [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                      "Dein Bruch hat einen anderen Wert als der Ausgangsbruch. Beim Umformen müssen Zähler und Nenner mit derselben Zahl multipliziert oder durch denselben gemeinsamen Teiler geteilt werden.",
+                      "Schreibe eine ganze Zahl oder einen Bruch mit / und einem Nenner größer als 0.",
+                      "Der Wert stimmt, aber Zähler und Nenner haben noch einen gemeinsamen Teiler größer als 1. Kürze noch weiter.",
+                      "Der Wert stimmt. Verwende aber den in der Aufgabe verlangten Erweiterungsfaktor für Zähler und Nenner.",
                     ],
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Verändere die Unterteilung und markiere deinen Ergebnisbruch. Du kannst den Bruch auch direkt eingeben.",
+                  "toolLabel": "Gib deinen umgeformten Bruch ein. Zähler und Nenner werden durch / getrennt.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -125,19 +127,19 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
-              "task": { "text": "Kürze 6/({{n}} · 6) mit 6. Welcher Nenner entsteht?" },
-              "answer": { "value": "n", "compare": "number" },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
+              "task": { "text": "Kürze 6/{{e.sechsfach}} mit 6. Welcher Nenner entsteht?" },
+              "answer": { "value": "e.sechsfach / 6", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "n*6", "message": "Der Nenner wurde noch nicht durch 6 geteilt." },
-                  { "value": "n*6-6", "message": "Kürzen bedeutet dividieren, nicht subtrahieren." },
+                  { "value": "e.sechsfach", "message": "Du hast den Nenner noch nicht durch 6 geteilt." },
+                  { "value": "e.sechsfach-6", "message": "Kürzen bedeutet dividieren, nicht subtrahieren." },
                 ],
               "hint": "Beim Kürzen teilst du Zähler und Nenner durch denselben gemeinsamen Teiler.",
               "steps":
                 [
-                  "Fasse jeweils sechs kleine Teile zu einem größeren Teil zusammen.",
-                  "Der Zähler wird 6 : 6 = 1. Der Nenner wird ({{n}} · 6) : 6 = {{answer}}.",
+                  "Sechs kleine Teile werden zu jeweils einem größeren Teil zusammengefasst.",
+                  "Der Zähler wird 6 : 6 = 1. Der Nenner wird {{e.sechsfach}} : 6 = {{answer}}.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

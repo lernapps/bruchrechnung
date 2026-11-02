@@ -107,20 +107,22 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
               "task":
-                { "text": "Eine Strecke ist {{n}} · 4 km lang. Du gehst 3/4 davon. Wie viele Kilometer sind das?" },
-              "answer": { "value": "n*3", "compare": "number" },
+                {
+                  "text": "Eine Strecke ist {{e.vierfach}} km lang. Du gehst 3/4 davon. Wie viele Kilometer sind das?",
+                },
+              "answer": { "value": "e.vierfach / 4 * 3", "compare": "number" },
               "mistakes":
                 [
-                  { "value": "n*4", "message": "Das ist die ganze Strecke, nicht der zurückgelegte Anteil." },
-                  { "value": "n", "message": "Das ist nur ein Viertel. Gefragt sind drei Viertel." },
+                  { "value": "e.vierfach", "message": "Das ist die ganze Strecke, nicht der zurückgelegte Teil." },
+                  { "value": "e.basis", "message": "Das ist ein Viertel. Gefragt sind drei Viertel." },
                 ],
               "hint": "Ordne die Angaben: Ganzes, Bruchteil oder Anteil.",
               "steps":
                 [
-                  "Teile die gesamte Strecke von {{n}} · 4 km in vier gleich lange Abschnitte. Ein Abschnitt ist {{n}} km lang.",
-                  "Drei dieser Abschnitte sind zurückgelegt: $3 \\cdot {{n}} = {{answer}}$ km.",
+                  "Ein Viertel der Strecke ist {{e.vierfach}} : 4 = {{e.basis}} km lang.",
+                  "Drei Viertel sind {{e.basis}} · 3 = {{answer}} km.",
                 ],
               "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
             },

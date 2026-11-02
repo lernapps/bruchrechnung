@@ -42,13 +42,15 @@
                   "task": "Vergleiche {z}/{n} und {b}/{d}. Wähle das passende Zeichen.",
                   "mistakes":
                     [
-                      "Prüfe die gefragte Größe und die Unterteilung. Rechne den Schritt aus dem Beispiel mit deinen Zahlen nach.",
-                      "Gib zuerst eine Antwort ein oder markiere Teile.",
+                      "Dein Bruch hat einen anderen Wert als der Ausgangsbruch. Beim Umformen müssen Zähler und Nenner mit derselben Zahl multipliziert oder durch denselben gemeinsamen Teiler geteilt werden.",
+                      "Schreibe eine ganze Zahl oder einen Bruch mit / und einem Nenner größer als 0.",
+                      "Der Wert stimmt, aber Zähler und Nenner haben noch einen gemeinsamen Teiler größer als 1. Kürze noch weiter.",
+                      "Der Wert stimmt. Verwende aber den in der Aufgabe verlangten Erweiterungsfaktor für Zähler und Nenner.",
                     ],
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "Deine Eingabe",
-                  "toolLabel": "Verändere die Unterteilung und markiere deinen Ergebnisbruch. Du kannst den Bruch auch direkt eingeben.",
+                  "toolLabel": "Gib deinen umgeformten Bruch ein. Zähler und Nenner werden durch / getrennt.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":

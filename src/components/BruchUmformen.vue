@@ -20,19 +20,10 @@ const props = defineProps<{
 const emit = defineEmits<{ answer: [string] }>();
 const taskNow = computed(() => generate(props.seed, props));
 const input = ref("");
-const split = ref(taskNow.value.n);
-const marked = ref<number[]>([]);
 const mine = computed(() => parse(input.value));
 function update(value: string): void {
   input.value = value;
   emit("answer", value);
-}
-function toggle(i: number): void {
-  marked.value = marked.value.includes(i) ? marked.value.filter((x) => x !== i) : [...marked.value, i];
-}
-function partition(): void {
-  marked.value = [];
-  update("");
 }
 </script>
 <template>
@@ -59,21 +50,6 @@ function partition(): void {
     >
     <div v-else class="tools">
       <p>{{ toolLabel }}</p>
-      <label
-        >{{ stepLabel }}: {{ split }}<input v-model.number="split" type="range" min="1" max="12" @input="partition"
-      /></label>
-      <div class="cells">
-        <button
-          v-for="i in split"
-          :key="i"
-          type="button"
-          :aria-label="`${pieceLabel} ${i}/${split}`"
-          :aria-pressed="marked.includes(i)"
-          @click="toggle(i)"
-        >
-          {{ marked.includes(i) ? "✓" : "○" }}
-        </button>
-      </div>
       <label
         >{{ inputLabel
         }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)" /></label
