@@ -19,7 +19,6 @@ const props = defineProps<{
 const emit = defineEmits<{ answer: [string] }>();
 const taskNow = computed(() => generate(props.seed, props));
 const input = ref("");
-const split = ref(1);
 const marked = ref<number[]>([]);
 function update(value: string): void {
   input.value = value;
@@ -53,10 +52,6 @@ function toggle(i: number): void {
     >
     <div class="tools">
       <p>{{ toolLabel }}</p>
-      <label>{{ stepLabel }}: {{ split }}<input v-model.number="split" type="range" min="1" max="12" /></label>
-      <div class="strip">
-        <span v-for="i in taskNow.n" :key="i">{{ split }}</span>
-      </div>
       <label
         >{{ inputLabel
         }}<input :value="input" inputmode="text" @input="update(($event.target as HTMLInputElement).value)"

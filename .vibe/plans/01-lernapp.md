@@ -398,3 +398,5 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 ### Where I had to guess
 
 <!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
+
+- Bruchteil-Einstieg aus Browserfeedback neu hergeleitet: `BruchteilEntdecken` führt 12 Plättchen erst in vier Gruppen, dann wählt das Kind drei Gruppen. Erst danach folgen Beispielrechnung und eigenständige Aufgaben mit anderer Menge. Der beliebige Gruppengrößenregler aus `AnteilGanzes` ist entfernt.

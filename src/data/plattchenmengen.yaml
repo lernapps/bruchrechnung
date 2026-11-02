@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+[
+  { "basis": 4, "vierfach": 16 },
+  { "basis": 5, "vierfach": 20 },
+  { "basis": 6, "vierfach": 24 },
+  { "basis": 8, "vierfach": 32 },
+  { "basis": 10, "vierfach": 40 },
+  { "basis": 12, "vierfach": 48 },
+]

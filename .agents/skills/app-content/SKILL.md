@@ -177,3 +177,5 @@ Zuerst Kompetenz, Quelle und Methode hier ergänzen, dann `src/<kapitel>/chapter
 - Browserkorrektur Umformen: unverbundene Markierreihe samt Unterteilungsregler entfernt. Aufgaben nutzen gegebenes Modell und direkte Bruch-Eingabe; konkrete Rückmeldung unterscheidet Wertänderung, ungültige Eingabe, noch mögliche Kürzung und falschen Erweiterungsfaktor. Regressionstest ergänzt.
 
 - Konkrete Aufgabenwerte statt versteckter Erzeugungsrechnungen: gemeinsame Datensätze in `src/data/grundzahlen.yaml`. Kürzungsaufgaben zeigen z. B. 6/48 statt 6/(8 · 6); Gruppenmengen und Rundungszahlen sind ebenfalls bereits ausgerechnet. Rechenterme bleiben nur dort stehen, wo gerade das Berechnen solcher Terme geübt wird.
+
+- Bruchteil-Einstieg aus Browserfeedback neu hergeleitet: `BruchteilEntdecken` führt 12 Plättchen erst in vier Gruppen, dann wählt das Kind drei Gruppen. Erst danach folgen Beispielrechnung und eigenständige Aufgaben mit anderer Menge. Der beliebige Gruppengrößenregler aus `AnteilGanzes` ist entfernt.

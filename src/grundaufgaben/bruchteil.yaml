@@ -2,7 +2,7 @@
 {
   "title": "Den Bruchteil berechnen",
   "description": "Drei Viertel von zwölf Plättchen: Wie kannst du erst gleiche Gruppen bilden?",
-  "scope": "Bruchteil = Ganzes · Anteil. Teile das Ganze durch den Nenner und nimm das Ergebnis mal den Zähler. Der Bruchteil hat dieselbe Einheit wie das Ganze. 12 Plättchen in vier Gruppen: 12 : 4 = 3 pro Gruppe. Drei Gruppen enthalten 3 · 3 = 9 Plättchen. Also sind 3/4 von 12 gleich 9.",
+  "scope": "Den Bruchteil einer Menge in zwei Schritten herleiten: Das Ganze durch den Nenner teilen, dann die Gruppengröße mit dem Zähler multiplizieren. 12 Plättchen werden erst auf vier Gruppen verteilt, dann werden drei Gruppen ausgewählt. Selbstständige Aufgaben nennen eine andere Menge und fragen nach der Anzahl der entnommenen Plättchen.",
   "blocks":
     [
       {
@@ -13,7 +13,7 @@
           [
             {
               "type": "text",
-              "text": "Du willst drei Viertel einer Menge verteilen. Jetzt interessiert nicht nur der Bruch, sondern wie viele Gegenstände das sind.",
+              "text": "Du hast 12 Plättchen vor dir und möchtest drei Viertel davon nehmen. Das bedeutet: Teile zuerst alle Plättchen in vier gleich große Gruppen und nimm dann drei dieser Gruppen. Gesucht ist, wie viele Plättchen du so erhältst.",
             },
             {
               "type": "definition",
@@ -28,7 +28,52 @@
         "title": "Ausprobieren",
         "blocks":
           [
-            { "type": "text", "text": "Drei Viertel von zwölf Plättchen: Wie kannst du erst gleiche Gruppen bilden?" },
+            {
+              "type": "text",
+              "text": "Probiere die beiden Schritte nacheinander aus. Zuerst teilst du die 12 Plättchen in vier gleiche Gruppen. Danach wählst du drei Gruppen aus.",
+            },
+            {
+              "type": "vue-component",
+              "component": "BruchteilEntdecken",
+              "props":
+                {
+                  "start": "Hier liegen 12 Plättchen. Alle zusammen sind das Ganze.",
+                  "splitLabel": "1. In vier gleich große Gruppen aufteilen",
+                  "groupLabel": "Gruppe {i}",
+                  "selectLabel": "In jeder Gruppe liegen 3 Plättchen. Eine Gruppe ist ein Viertel des Ganzen. Tippe drei Gruppen an, um drei Viertel auszuwählen.",
+                  "resultLabel": "Du hast {groups} von 4 Gruppen ausgewählt. Darin liegen {part} Plättchen.",
+                  "resetLabel": "Von vorn ausprobieren",
+                },
+              "nojs": "12 Plättchen werden auf vier gleich große Gruppen aufgeteilt: In jeder Gruppe liegen 3 Plättchen. Eine Gruppe ist ein Viertel von 12. Drei Gruppen enthalten 3 + 3 + 3 = 9 Plättchen. Also sind drei Viertel von 12 gleich 9.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Warum erst teilen und dann malnehmen?",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Der Nenner 4 sagt: Bilde vier gleich große Gruppen. 12 : 4 = 3 Plättchen liegen in jeder Gruppe. Der Zähler 3 sagt: Nimm drei dieser Gruppen. 3 · 3 = 9 Plättchen erhältst du.",
+                  },
+                  { "type": "formula", "formula": "\\frac{3}{4} \\text{ von } 12 = 12 : 4 \\cdot 3 = 9" },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
             {
               "type": "vue-component",
               "component": "AnteilGanzes",
@@ -65,44 +110,6 @@
                 },
             },
             {
-              "type": "note",
-              "title": "Was du dabei beobachten kannst",
-              "blocks":
-                [
-                  {
-                    "type": "text",
-                    "text": "Bruchteil = Ganzes · Anteil. Teile das Ganze durch den Nenner und nimm das Ergebnis mal den Zähler. Der Bruchteil hat dieselbe Einheit wie das Ganze.",
-                  },
-                ],
-            },
-          ],
-      },
-      {
-        "type": "section",
-        "id": "beispiel",
-        "title": "Am Beispiel nachvollziehen",
-        "blocks":
-          [
-            {
-              "type": "example",
-              "title": "Schritt für Schritt",
-              "blocks":
-                [
-                  {
-                    "type": "text",
-                    "text": "12 Plättchen in vier Gruppen: 12 : 4 = 3 pro Gruppe. Drei Gruppen enthalten 3 · 3 = 9 Plättchen. Also sind 3/4 von 12 gleich 9.",
-                  },
-                ],
-            },
-          ],
-      },
-      {
-        "type": "section",
-        "id": "ueben",
-        "title": "Üben",
-        "blocks":
-          [
-            {
               "type": "single-choice",
               "id": "verstehen",
               "text": "Welche Rechnung ergibt 3/4 von 12?",
@@ -136,15 +143,18 @@
             {
               "type": "generated",
               "id": "aufgaben",
-              "given": { "e": { "pick": 1, "from": { "data": "grundzahlen" } } },
-              "task": { "text": "Berechne 3/4 von {{e.vierfach}} Plättchen. Wie viele Plättchen sind es?" },
+              "given": { "e": { "pick": 1, "from": { "data": "plattchenmengen" } } },
+              "task":
+                {
+                  "text": "In einer Schachtel liegen {{e.vierfach}} Plättchen. Du nimmst drei Viertel davon. Wie viele Plättchen nimmst du?",
+                },
               "answer": { "value": "e.vierfach / 4 * 3", "compare": "number" },
               "mistakes":
                 [
                   { "value": "e.basis", "message": "Das ist erst ein Viertel. Gesucht sind drei Viertel." },
                   { "value": "e.vierfach", "message": "Das ist das Ganze, nicht der Bruchteil." },
                 ],
-              "hint": "Bruchteil = Ganzes · Anteil.",
+              "hint": "Bilde zuerst vier gleich große Gruppen. Nimm dann drei davon.",
               "steps":
                 [
                   "Teile {{e.vierfach}} Plättchen in vier gleiche Gruppen. Jede Gruppe enthält {{e.basis}} Plättchen.",
