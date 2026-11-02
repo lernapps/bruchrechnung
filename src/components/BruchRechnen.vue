@@ -83,7 +83,7 @@ function toggle(i: number): void {
             </span>
             <template v-for="row in taskNow.d" :key="row">
               <span class="row-part" :class="{ active: row <= taskNow.b }" aria-hidden="true">{{
-                row <= taskNow.b ? "✓" : "·"
+                row <= taskNow.b ? "─" : "·"
               }}</span>
               <button
                 v-for="column in taskNow.n"
