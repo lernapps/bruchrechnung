@@ -25,35 +25,44 @@
       {
         "type": "section",
         "id": "entdecken",
-        "title": "Anschaulich erklärt",
+        "title": "Ausprobieren",
         "blocks":
           [
             {
               "type": "text",
-              "text": "Du möchtest 12 rote und 18 blaue Plättchen in gleich große Gruppen legen, ohne dass welche übrig bleiben. In der Tabelle stehen die möglichen Gruppengrößen für jede Farbe. Suche Zahlen, die in beiden Zeilen vorkommen. Welche gemeinsame Gruppengröße ist die größte? Das ist der größte gemeinsame Teiler. Für gemeinsame Vielfache gehst du andersherum vor: Schreibe die 12er- und die 18er-Reihe auf. Die erste positive Zahl in beiden Reihen ist das kleinste gemeinsame Vielfache. Bei den Übungen entscheidet die Frage, welche der beiden Suchen du brauchst.",
+              "text": "Zuerst bündelst du kleine Teile zu größeren Gruppen. Danach probierst du die umgekehrte Richtung: Du unterteilst zwei Ganze feiner. So erkennst du den Unterschied zwischen gemeinsamen Teilern und gemeinsamen Vielfachen.",
             },
             {
-              "type": "table",
-              "caption": "Gruppengrößen untersuchen",
-              "header": ["Zahl", "Mögliche Gruppengrößen ohne Rest"],
-              "rows": [["12", "1, 2, 3, 4, 6, 12"], ["18", "1, 2, 3, 6, 9, 18"]],
+              "type": "vue-component",
+              "component": "TeilerVielfacheEntdecken",
+              "props":
+                {
+                  "mode": "groups",
+                  "instruction": "Die beiden Reihen zeigen 12 und 18 gleich große Plättchen. Verändere die Gruppengröße. Die gestrichelten Umrandungen bündeln Plättchen; übrig gebliebene Plättchen stehen außerhalb vollständiger Gruppen. Suche eine Gruppengröße, die beide Reihen ohne Rest aufteilt. Gibt es eine größere passende Größe? Die größte ist der ggT. Die Reihen sind verschieden lang, aber jedes einzelne Plättchen ist gleich groß.",
+                  "controlLabel": "Plättchen pro Gruppe",
+                  "imageLabel": "Reihe mit {n} Plättchen, Gruppengröße {value}",
+                  "rowLabel": "{n} Plättchen",
+                  "groupStatus": "{n} Plättchen: {groups} vollständige Gruppen mit je {size} Plättchen; Rest: {rest}.",
+                  "fitsLabel": "Das Raster mit {value} Teilen trifft alle Grenzen der {n} ursprünglichen Teile.",
+                  "missesLabel": "Das Raster mit {value} Teilen passt noch nicht zu allen Grenzen der {n} ursprünglichen Teile.",
+                },
+              "nojs": "Die beiden Reihen zeigen 12 und 18 gleich große Plättchen. Verändere die Gruppengröße. Die gestrichelten Umrandungen bündeln Plättchen; übrig gebliebene Plättchen stehen außerhalb vollständiger Gruppen. Suche eine Gruppengröße, die beide Reihen ohne Rest aufteilt. Gibt es eine größere passende Größe? Die größte ist der ggT. Die Reihen sind verschieden lang, aber jedes einzelne Plättchen ist gleich groß.\n\nBei Gruppengröße 6 entstehen aus 12 Plättchen zwei und aus 18 Plättchen drei vollständige Gruppen ohne Rest. 6 ist die größte Gruppengröße, die zu beiden Mengen passt: ggT(12,18) = 6.",
             },
             {
-              "type": "table",
-              "caption": "Vielfachenlisten: Welche positive Zahl erscheint zuerst in beiden Reihen?",
-              "header": ["Zahl", "Erste Vielfache"],
-              "rows": [["12", "12, 24, 36, 48, 60"], ["18", "18, 36, 54, 72, 90"]],
-            },
-            {
-              "type": "note",
-              "title": "Was du dabei beobachten kannst",
-              "blocks":
-                [
-                  {
-                    "type": "text",
-                    "text": "Teiler teilen eine Zahl ohne Rest. Vielfache entstehen durch Multiplikation mit natürlichen Zahlen. Der ggT ist der größte gemeinsame positive Teiler. Das kgV ist das kleinste gemeinsame positive Vielfache. Bei Brüchen hilft der ggT beim Kürzen und das kgV beim Hauptnenner.",
-                  },
-                ],
+              "type": "vue-component",
+              "component": "TeilerVielfacheEntdecken",
+              "props":
+                {
+                  "mode": "grid",
+                  "instruction": "Jetzt siehst du zwei gleich lange Streifen: Jeder ist ein Ganzes. Der obere hat vier, der untere sechs gleich große Teile. Mit dem Regler legst du über beide dasselbe feinere Raster. Durchgezogene Linien zeigen die alten Teilgrenzen, gestrichelte Linien die neue Unterteilung. Suche eine Unterteilung, die ALLE alten Grenzen trifft. Sie muss ein Vielfaches von 4 und von 6 sein. Die kleinste passende Zahl ist das kgV. Diese Bildidee brauchst du später wieder, wenn Bruchstücke gleich groß werden sollen.",
+                  "controlLabel": "Teile pro Ganzem",
+                  "imageLabel": "Ganzes mit {n} ursprünglichen Teilen und {value} gestrichelten Unterteilungen",
+                  "rowLabel": "{n} ursprüngliche Teile pro Ganzem",
+                  "groupStatus": "{n} Plättchen: {groups} vollständige Gruppen mit je {size} Plättchen; Rest: {rest}.",
+                  "fitsLabel": "Das Raster mit {value} Teilen trifft alle Grenzen der {n} ursprünglichen Teile.",
+                  "missesLabel": "Das Raster mit {value} Teilen passt noch nicht zu allen Grenzen der {n} ursprünglichen Teile.",
+                },
+              "nojs": "Jetzt siehst du zwei gleich lange Streifen: Jeder ist ein Ganzes. Der obere hat vier, der untere sechs gleich große Teile. Mit dem Regler legst du über beide dasselbe feinere Raster. Durchgezogene Linien zeigen die alten Teilgrenzen, gestrichelte Linien die neue Unterteilung. Suche eine Unterteilung, die ALLE alten Grenzen trifft. Sie muss ein Vielfaches von 4 und von 6 sein. Die kleinste passende Zahl ist das kgV. Diese Bildidee brauchst du später wieder, wenn Bruchstücke gleich groß werden sollen.\n\n8 Unterteilungen passen zu Vierteln, aber nicht zu Sechsteln. 12 Unterteilungen passen zu beiden: Jedes Viertel enthält dann drei und jedes Sechstel zwei der neuen Teile. 12 ist das kleinste gemeinsame Vielfache von 4 und 6. Auch 24 würde passen, ist aber nicht das kleinste.",
             },
           ],
       },

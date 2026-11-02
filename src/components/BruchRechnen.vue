@@ -266,11 +266,11 @@ input[type="range"] {
   stroke-dasharray: 4 4;
 }
 .guide-halo {
-  stroke: white;
+  stroke: var(--page-background);
   stroke-width: 4px;
 }
 .guide {
-  stroke: #17212b;
+  stroke: var(--page-accent);
   stroke-width: 2px;
 }
 .factor-caption {

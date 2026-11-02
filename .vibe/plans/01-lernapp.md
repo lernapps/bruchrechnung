@@ -161,6 +161,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Faktorzerlegung: Knopfgruppen verwenden die vorhandene Runtime-Klasse `question-actions` für Umbruch und Abstände. Neustart steht in einer eigenen Aktionszeile im normalen Absatzrhythmus; kein zusätzliches lokales Abstands-Theme.
 
+
+- Die Bündelungs-/Rastermethodik wird bereits bei gemeinsamen Teilern und Vielfachen interaktiv eingeführt: `TeilerVielfacheEntdecken` bündelt 12 und 18 Plättchen für den ggT; ein zweiter Modus unterteilt gleich große Ganze mit 4/6 Teilen feiner, um das kgV zu finden. Plus/Minus ist ausdrücklich die Wiederaufnahme dieser bekannten Unterteilung und verlinkt zurück. Gröbere Gruppen und feinere Unterteilungen werden klar getrennt; nojs beschreibt beide mit Beispielen.
+
 ## Explore
 
 <!--

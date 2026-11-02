@@ -30,7 +30,11 @@
           [
             {
               "type": "text",
-              "text": "Beim Addieren legst du Anteile zusammen, beim Subtrahieren nimmst du einen Anteil weg. Die beiden Streifen zeigen die gegebenen Brüche; jeder ganze Streifen ist gleich groß. Verschiedene Unterteilungen ergeben verschieden große Stücke. Mit „Teile pro Ganzem“ legst du ein neues Raster über beide Streifen. Die gestrichelten Linien zeigen es, die durchgezogenen Linien bleiben die alten Teilgrenzen. Suche ein Raster, das zu allen alten Grenzen passt. Dann kannst du gleich große Stücke zusammenzählen oder wegnehmen. Gib dein Ergebnis selbst als Bruch mit / ein.",
+              "text": "Erinnerst du dich an das gestrichelte Raster bei gemeinsamen Vielfachen? Hier benutzt du dieselbe Bildidee zum Rechnen. Jeder Streifen steht für ein gleich großes Ganzes. Suche mit „Teile pro Ganzem“ eine feinere Unterteilung, die alle alten Teilgrenzen trifft. Das Raster muss zu beiden Nennern passen; die kleinste passende Anzahl ist ihr kgV. Nun sind die Bruchstücke gleich groß: Du kannst sie bei Plus zusammenzählen oder bei Minus wegnehmen. Gib den Ergebnisbruch selbst ein.",
+            },
+            {
+              "type": "text",
+              "text": "[Die gemeinsame Unterteilung noch einmal ausprobieren](/teilbarkeit/teiler-vielfache/#entdecken). Der ggT hilft dagegen beim Zusammenfassen zu größeren Gruppen, etwa beim Kürzen.",
             },
             {
               "type": "vue-component",
@@ -48,7 +52,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Verändere „Teile pro Ganzem“. Unter dem Regler siehst du dieselben Anteile noch einmal. Die gestrichelten Linien zeigen die gewählte Unterteilung. Passen sie zu allen ursprünglichen Teilgrenzen? Das Ergebnis gibst du selbst ein.",
+                  "toolLabel": "Lege wie bei den gemeinsamen Vielfachen ein Raster über beide Streifen. Die gestrichelten Linien folgen „Teile pro Ganzem“. Trifft das Raster alle ursprünglichen Teilgrenzen? Dann kannst du gleich große Stücke zusammenzählen oder wegnehmen. Das Ergebnis gibst du selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -66,7 +70,7 @@
                   "accepted": [{ "answer": "7/12", "seed": 1 }, { "answer": "14/24", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
-              "nojs": "Beim Addieren legst du Anteile zusammen, beim Subtrahieren nimmst du einen Anteil weg. Die beiden Streifen zeigen die gegebenen Brüche; jeder ganze Streifen ist gleich groß. Verschiedene Unterteilungen ergeben verschieden große Stücke. Mit „Teile pro Ganzem“ legst du ein neues Raster über beide Streifen. Die gestrichelten Linien zeigen es, die durchgezogenen Linien bleiben die alten Teilgrenzen. Suche ein Raster, das zu allen alten Grenzen passt. Dann kannst du gleich große Stücke zusammenzählen oder wegnehmen. Gib dein Ergebnis selbst als Bruch mit / ein.",
+              "nojs": "Erinnerst du dich an das gestrichelte Raster bei gemeinsamen Vielfachen? Hier benutzt du dieselbe Bildidee zum Rechnen. Jeder Streifen steht für ein gleich großes Ganzes. Suche mit „Teile pro Ganzem“ eine feinere Unterteilung, die alle alten Teilgrenzen trifft. Das Raster muss zu beiden Nennern passen; die kleinste passende Anzahl ist ihr kgV. Nun sind die Bruchstücke gleich groß: Du kannst sie bei Plus zusammenzählen oder bei Minus wegnehmen. Gib den Ergebnisbruch selbst ein.",
             },
             {
               "type": "vue-component",
@@ -84,7 +88,7 @@
                   "inputLabel": "Deine Antwort (Bruch mit / oder ganze Zahl)",
                   "givenLabel": "Gegeben",
                   "ownLabel": "So schreibst du das",
-                  "toolLabel": "Verändere „Teile pro Ganzem“. Unter dem Regler siehst du dieselben Anteile noch einmal. Die gestrichelten Linien zeigen die gewählte Unterteilung. Passen sie zu allen ursprünglichen Teilgrenzen? Das Ergebnis gibst du selbst ein.",
+                  "toolLabel": "Lege wie bei den gemeinsamen Vielfachen ein Raster über beide Streifen. Die gestrichelten Linien folgen „Teile pro Ganzem“. Trifft das Raster alle ursprünglichen Teilgrenzen? Dann kannst du gleich große Stücke zusammenzählen oder wegnehmen. Das Ergebnis gibst du selbst ein.",
                   "pieceLabel": "Teil",
                   "stepLabel": "Teile pro Ganzem",
                   "labels":
@@ -102,7 +106,7 @@
                   "accepted": [{ "answer": "1/3", "seed": 1 }, { "answer": "2/6", "seed": 1 }],
                   "rejected": [{ "answer": "1/0" }, { "answer": "" }],
                 },
-              "nojs": "Beim Addieren legst du Anteile zusammen, beim Subtrahieren nimmst du einen Anteil weg. Die beiden Streifen zeigen die gegebenen Brüche; jeder ganze Streifen ist gleich groß. Verschiedene Unterteilungen ergeben verschieden große Stücke. Mit „Teile pro Ganzem“ legst du ein neues Raster über beide Streifen. Die gestrichelten Linien zeigen es, die durchgezogenen Linien bleiben die alten Teilgrenzen. Suche ein Raster, das zu allen alten Grenzen passt. Dann kannst du gleich große Stücke zusammenzählen oder wegnehmen. Gib dein Ergebnis selbst als Bruch mit / ein.",
+              "nojs": "Erinnerst du dich an das gestrichelte Raster bei gemeinsamen Vielfachen? Hier benutzt du dieselbe Bildidee zum Rechnen. Jeder Streifen steht für ein gleich großes Ganzes. Suche mit „Teile pro Ganzem“ eine feinere Unterteilung, die alle alten Teilgrenzen trifft. Das Raster muss zu beiden Nennern passen; die kleinste passende Anzahl ist ihr kgV. Nun sind die Bruchstücke gleich groß: Du kannst sie bei Plus zusammenzählen oder bei Minus wegnehmen. Gib den Ergebnisbruch selbst ein.",
             },
             {
               "type": "note",
