@@ -80,7 +80,7 @@
                   },
                   {
                     "type": "formula",
-                    "formula": "0{}2 \\cdot 0{}3 = \\frac{2}{10} \\cdot \\frac{3}{10} = \\frac{6}{100} = 0{}06",
+                    "formula": "0,2 \\cdot 0,3 = \\frac{2}{10} \\cdot \\frac{3}{10} = \\frac{6}{100} = 0,06",
                   },
                 ],
             },
@@ -93,7 +93,7 @@
                     "type": "text",
                     "text": "1. Die zweite Zahl hat zwei Nachkommastellen. Multipliziere BEIDE Zahlen mit 100.\n2. Die Rechnung lautet nun 75 : 25.\n3. Drei Portionen zu je 25 ergeben 75. Also ist das Ergebnis 3.\n4. Probe: 3 · 0,25 = 0,75.",
                   },
-                  { "type": "formula", "formula": "0{}75 : 0{}25 = 75 : 25 = 3" },
+                  { "type": "formula", "formula": "0,75 : 0,25 = 75 : 25 = 3" },
                 ],
             },
           ],

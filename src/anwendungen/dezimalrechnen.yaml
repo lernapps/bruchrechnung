@@ -85,7 +85,7 @@
                     "type": "text",
                     "text": "1. Hundertstel: 5 + 0 = 5.\n2. Zehntel: 7 + 5 = 12. Bündele zehn Zehntel zu einem Ganzen; zwei Zehntel bleiben.\n3. Zusammen hast du ein Ganzes, zwei Zehntel und fünf Hundertstel: 1,25.",
                   },
-                  { "type": "formula", "formula": "0{}75 + 0{}50 = 1{}25" },
+                  { "type": "formula", "formula": "0,75 + 0,50 = 1,25" },
                 ],
             },
             {
@@ -97,7 +97,7 @@
                     "type": "text",
                     "text": "1. Tausche das Ganze in zehn Zehntel. Zusammen mit den zwei Zehnteln sind es zwölf Zehntel.\n2. Tausche ein Zehntel in zehn Hundertstel. Nun hast du elf Zehntel und zehn Hundertstel.\n3. Nimm drei Zehntel und fünf Hundertstel weg. Es bleiben acht Zehntel und fünf Hundertstel: 0,85.",
                   },
-                  { "type": "formula", "formula": "1{}20 - 0{}35 = 0{}85" },
+                  { "type": "formula", "formula": "1,20 - 0,35 = 0,85" },
                 ],
             },
           ],

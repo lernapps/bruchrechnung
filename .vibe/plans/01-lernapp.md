@@ -412,7 +412,6 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
       with the message from this plan, the run of `Pages` watched to the end.
 - [ ] Open the address the job `deploy` printed; confirm the app shows. Use that address, never a derived one.
 - [ ] Load skill `lernapps-listing`. Complete the entry draft (e.g. the address).
-- [ ] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it: the listing check and the review read it there.
 - [ ] **Checkpoint:** list. Open the listing pull request as the skill says, without asking first: the pull request
       is the review. See it to "bestanden", then show the creator the pull request and its result; change nothing in
@@ -421,20 +420,32 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 
 ### Completed
 
-## Retrospective
+- [x] Fill the retrospective: zum ausdrücklich gewünschten lokalen Abschluss ausgefüllt.
 
-<!-- At the end of Commit, before the listing pull request. Facts, short, no names. Read by review and evals. -->
+## Retrospective
 
 ### Phases reached
 
-<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+Explore und Plan abgeschlossen und bestätigt; lokale Umsetzung in Code durch den Auftraggeber mit „nun sind wir fertig“ angenommen. Die Retro wurde auf ausdrücklichen Wunsch bereits zum lokalen Abschluss geschrieben. Veröffentlichung und Katalogeintrag sind nicht erfolgt. Keine weiteren Funktionen nach dieser Abnahme ergänzen.
 
 ### Creator turns after the plan
 
-<!-- Number of creator messages after the confirmation, topic of each. Target: at most 3. -->
+Zahlreiche weitere fachliche Rückmeldungen und Browserkommentare; das Ziel von höchstens drei Rückmeldungen nach der Planbestätigung wurde deutlich verfehlt. Hauptthemen: einladende Einstiege, begrenzte Lernschritte, passende Übungen, sinnvolle Modelle, verständliche Bedienung, Textalternativen, Theme und Abstände. Der erste Entwurf vervielfältigte unzureichend geprüfte didaktische Muster über alle Seiten.
 
 ### Where I had to guess
 
-<!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
+- „Interaktive Visualisierungen“ wurde zunächst zu stark als technische Darstellbarkeit verstanden. Benötigt wurden erklärte Lernhandlungen mit eindeutigem Ganzem, Handlung und mathematischer Bedeutung.
+- Ein einheitliches Seitenschema wurde zu starr angewandt. Der Auftraggeber präzisierte: Begriffsklärung nur bei Bedarf; „Ausprobieren“ nur mit Interaktion, sonst „Anschaulich erklärt“.
+- Übungen nahmen spätere Inhalte vorweg und mussten nach Seitenkompetenz zugeschnitten werden. Ergebnisvorschauen und automatische Eintragungen wurden entfernt.
+- Kuchen und Rechteck sind zwei unterschiedliche, gleichberechtigte Vorstellungen der Multiplikation. Beide wurden auf einer Seite mit eigener Herleitung umgesetzt.
+- GgT als Bündeln und kgV als gemeinsame feinere Unterteilung mussten vor der späteren Wiederaufnahme bei Plus/Minus eingeführt werden.
+- Eigene Komponenten brauchten sorgfältige Einbettung: Explainer-Farben, passende Abstände, verständliche Muster, korrekte Label-Zuordnung und erklärende nojs-Texte. Runtime-Klassen können neben dem Aussehen auch Verhalten kennzeichnen.
+- Die Dezimalrechnung wurde am Ende in Strich- und Punktrechnung aufgeteilt; jetzt 21 Lernseiten. Jede Rechenart erhielt ein getrenntes Beispiel und eigene Aufgabenvarianten.
 
-- Bruchteil-Einstieg aus Browserfeedback neu hergeleitet: `BruchteilEntdecken` führt 12 Plättchen erst in vier Gruppen, dann wählt das Kind drei Gruppen. Erst danach folgen Beispielrechnung und eigenständige Aufgaben mit anderer Menge. Der beliebige Gruppengrößenregler aus `AnteilGanzes` ist entfernt.
+### Was den Weg verkürzt hätte
+
+Zuerst eine vollständige Musterseite mit echter Bedienhandlung aus Sicht eines zwölfjährigen Kindes prüfen und bestätigen lassen. Danach die geprüften Muster übertragen. Je Visualisierung vorab das Ganze, die Zeichen, die Handlung, die unveränderte Größe und den Weg zur Antwort beschreiben. Hell/Dunkel, 360 px, Tastatur, nojs, Startzustand und typische Fehler schon an der Musterseite prüfen. Den unabhängigen simulierten Kinder-Audit früher einsetzen. Technische Korrektheit und verständliche Lernhandlung getrennt beurteilen.
+
+### Ausführliche Retro
+
+Die vollständige Rückschau mit konkreten Nachschärfungen, Ursachen und Verbesserungsvorschlägen liegt im übergeordneten Projekt unter `outputs/retro.md`. Der simulierte Kinder-Audit steht unter `outputs/kinderperspektive-pruefung.md`; er ist keine echte Kinderstudie.
