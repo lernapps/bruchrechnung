@@ -280,9 +280,7 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
 ### Tasks
 
 - [ ] `grep '^phase:'` prints `phase: code`; else set it.
-- [ ] Offene Zweitquellen für Teilbarkeitsregeln, Dezimalrechnung und Runden vollständig öffnen und lesen; Notes/Content-Guide vor dem jeweiligen Inhalt ergänzen. Commit.
 - [ ] Show the creator a first look (`early-preview`): erste echte Lernseite mit interaktiven Modellen auf Desktop und bei 360 px zeigen; anschließend weiterarbeiten.
-- [ ] Kapitel 2: zwei Seiten zu Teilbarkeit und ggT/kgV mit Gruppen-/Listenherleitung, Verständnischecks und wechselnden Zahlaufgaben. Commit.
 - [ ] Kapitel 3: drei Seiten und BruchUmformen mit Unterteilen/Bündeln, Vergleich und passender Antwortprüfung. Commit.
 - [ ] Kapitel 4: drei Seiten und AnteilGanzes mit den drei Suchrichtungen, Mengenmodellen und Sachaufgaben. Commit.
 - [ ] Kapitel 5: fünf Seiten und BruchRechnen in vier Rechenmodi; Terme, Gesetze und einfache Gleichungen; Fehlerrückmeldungen und Komponentenprüfungen. Commit.
@@ -297,6 +295,9 @@ Warum eigene Komponenten: Die eingebauten statischen Figuren und Standardfragen 
       No checkpoint here: set it before you ask or report anything, then start Commit in the same message.
 
 ### Completed
+
+- [x] Offene Zweitquellen für Teilbarkeitsregeln, Dezimalrechnung und Runden vollständig öffnen und lesen; Notes/Content-Guide vor dem jeweiligen Inhalt ergänzen. Commit.
+- [x] Kapitel 2: zwei Seiten zu Teilbarkeit und ggT/kgV mit Gruppen-/Listenherleitung, Verständnischecks und wechselnden Zahlaufgaben. Commit.
 
 - [x] Load skill `lernapps-cli`. Create the app in this plan's folder as it says. `create` keeps this plan. Never
       write the app by hand.

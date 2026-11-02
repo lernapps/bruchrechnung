@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+[
+  { "zahl": 4, "prime": 2 },
+  { "zahl": 6, "prime": 3 },
+  { "zahl": 10, "prime": 5 },
+  { "zahl": 14, "prime": 7 },
+  { "zahl": 22, "prime": 11 },
+  { "zahl": 26, "prime": 13 },
+]

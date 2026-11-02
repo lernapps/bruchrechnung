@@ -1,0 +1,126 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Gemeinsame Teiler und Vielfache",
+  "description": "Welche Gruppengröße passt zu zwei Mengen? Welche Unterteilung passt zu zwei Brüchen?",
+  "scope": "Teiler teilen eine Zahl ohne Rest. Vielfache entstehen durch Multiplikation mit natürlichen Zahlen. Der ggT ist der größte gemeinsame positive Teiler. Das kgV ist das kleinste gemeinsame positive Vielfache. Bei Brüchen hilft der ggT beim Kürzen und das kgV beim Hauptnenner. Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+  "blocks":
+    [
+      {
+        "type": "section",
+        "id": "regel",
+        "title": "Begriffe klären",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Zwölf und achtzehn Plättchen sollen in gleich große Päckchen. Welche Päckchengröße funktioniert für beide Mengen?",
+            },
+            {
+              "type": "definition",
+              "term": "Teiler und Vielfache",
+              "explanation": "Ein Teiler teilt eine Zahl ohne Rest. Ein Vielfaches entsteht, wenn du eine Zahl mit einer natürlichen Zahl multiplizierst.",
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "entdecken",
+        "title": "Ausprobieren",
+        "blocks":
+          [
+            {
+              "type": "text",
+              "text": "Welche Gruppengröße passt zu zwei Mengen? Welche Unterteilung passt zu zwei Brüchen?",
+            },
+            {
+              "type": "table",
+              "caption": "Gruppengrößen untersuchen",
+              "header": ["Zahl", "Mögliche Gruppengrößen ohne Rest"],
+              "rows": [["12", "1, 2, 3, 4, 6, 12"], ["18", "1, 2, 3, 6, 9, 18"]],
+            },
+            {
+              "type": "note",
+              "title": "Was du dabei beobachten kannst",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Teiler teilen eine Zahl ohne Rest. Vielfache entstehen durch Multiplikation mit natürlichen Zahlen. Der ggT ist der größte gemeinsame positive Teiler. Das kgV ist das kleinste gemeinsame positive Vielfache. Bei Brüchen hilft der ggT beim Kürzen und das kgV beim Hauptnenner.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "beispiel",
+        "title": "Am Beispiel nachvollziehen",
+        "blocks":
+          [
+            {
+              "type": "example",
+              "title": "Schritt für Schritt",
+              "blocks":
+                [
+                  {
+                    "type": "text",
+                    "text": "Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+                  },
+                ],
+            },
+          ],
+      },
+      {
+        "type": "section",
+        "id": "ueben",
+        "title": "Üben",
+        "blocks":
+          [
+            {
+              "type": "single-choice",
+              "id": "verstehen",
+              "text": "Was ist das kgV von 4 und 6?",
+              "options":
+                [
+                  {
+                    "text": "12",
+                    "correct": true,
+                    "info": "Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+                  },
+                  {
+                    "text": "2",
+                    "correct": false,
+                    "info": "2 ist der größte gemeinsame Teiler, aber kein Vielfaches von 4 und 6.",
+                  },
+                  {
+                    "text": "24",
+                    "correct": false,
+                    "info": "24 ist ein gemeinsames Vielfaches, aber 12 ist kleiner und ebenfalls gemeinsam.",
+                  },
+                ],
+              "explanation": "Teiler von 12: 1, 2, 3, 4, 6, 12. Teiler von 18: 1, 2, 3, 6, 9, 18. Also ggT = 6. Positive Vielfache von 4: 4, 8, 12, …; von 6: 6, 12, … . Also kgV(4,6) = 12.",
+              "links": [{ "title": "Weiterlesen zur Herleitung", "url": "https://de.wikipedia.org/wiki/Teilbarkeit" }],
+            },
+            {
+              "type": "generated",
+              "id": "aufgaben",
+              "given": { "n": { "oneOf": [3, 4, 5, 6, 8, 10] } },
+              "task": { "text": "Bestimme den größten gemeinsamen Teiler von {{n}} und {{n}} · 2." },
+              "answer": { "value": "n", "compare": "number" },
+              "mistakes":
+                [
+                  { "value": "n*2", "message": "Die größere Zahl teilt die kleinere nicht. Prüfe beide Zahlen." },
+                  { "value": "1", "message": "1 ist ein gemeinsamer Teiler, aber es gibt einen größeren." },
+                ],
+              "hint": "Teiler teilen eine Zahl ohne Rest.",
+              "steps":
+                [
+                  "{{n}} teilt die erste Zahl {{n}} und auch ihr Doppeltes ohne Rest.",
+                  "Ein positiver Teiler kann nicht größer als die erste Zahl sein. Deshalb ist {{n}} der größte gemeinsame Teiler.",
+                ],
+              "examples": { "accepted": ["answer"], "rejected": ["answer+1"] },
+            },
+          ],
+      },
+    ],
+}

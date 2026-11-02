@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v1.schema.json
+{
+  "title": "Teilbarkeit nutzen",
+  "summary": "Aus Zahlen werden Malaufgaben: Faktoren zerlegen, Primzahlen entdecken und gemeinsame Teiler nutzen.",
+  "pages": ["regeln", "teiler-vielfache"],
+}
