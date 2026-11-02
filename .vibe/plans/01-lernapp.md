@@ -158,6 +158,9 @@ Primär: Hessisches Kultusministerium, Kerncurriculum Mathematik Sek I Gymnasium
 
 - Theme-Regel aus Browserfeedback: Eigene Komponenten verwenden ausschließlich die vorhandenen Explainer-Variablen für Oberflächen, Text, Rahmen, Fokus und Bedienelement-Akzent (`--page-*`). Keine VitePress-Variablen oder weißen Fallback-Hintergründe. Fachliche Diagrammfarben bleiben mit jeweils eigenem kontrastreichem Textpaar und zusätzlicher Markierung verbunden. Hell- und Dunkelmodus prüfen.
 
+
+- Faktorzerlegung: Knopfgruppen verwenden die vorhandene Runtime-Klasse `question-actions` für Umbruch und Abstände. Neustart steht in einer eigenen Aktionszeile im normalen Absatzrhythmus; kein zusätzliches lokales Abstands-Theme.
+
 ## Explore
 
 <!--

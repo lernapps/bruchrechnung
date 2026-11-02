@@ -35,7 +35,7 @@ function divide(factor: number): void {
     <label
       >{{ numberLabel }}: {{ number }}<input v-model.number="number" type="range" min="2" max="48" @input="reset"
     /></label>
-    <p class="product">
+    <p class="product question-actions">
       <strong>{{ number }} = </strong
       ><template v-for="(leaf, i) in leaves" :key="i"
         ><span v-if="i > 0"> · </span
@@ -50,14 +50,16 @@ function divide(factor: number): void {
       >
     </p>
     <p v-if="choices.length">{{ splitLabel }}</p>
-    <div class="choices">
+    <div class="choices question-actions">
       <button v-for="factor in choices" :key="factor" type="button" @click="divide(factor)">
         {{ factor }} · {{ (leaves[selected] ?? number) / factor }}
       </button>
     </div>
     <p v-if="choices.length === 0" aria-live="polite">{{ fill(primeLabel, { n: leaves[selected] ?? number }) }}</p>
     <p v-if="finished" aria-live="polite">{{ finishedLabel }}</p>
-    <button type="button" @click="reset">{{ resetLabel }}</button>
+    <p class="question-actions">
+      <button type="button" @click="reset">{{ resetLabel }}</button>
+    </p>
   </div>
 </template>
 <style scoped>
@@ -83,12 +85,8 @@ input[type="range"] {
   min-height: 44px;
   width: 100%;
 }
-.product,
-.choices {
-  display: flex;
-  flex-wrap: wrap;
+.product {
   align-items: center;
-  gap: 0.4rem;
 }
 .factor-lab button {
   min-width: 44px;
